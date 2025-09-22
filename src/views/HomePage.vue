@@ -37,6 +37,16 @@
       <img src="../assets/images/bg_04.jpg" alt="">
       <img src="../assets/images/bg_05.jpg" alt="">
       <img src="../assets/images/bg_06.jpg" alt="">
+      <div class="title1">
+        Daily <br>
+        Defense <span class="title1-sub1">in</span> <span class="title1-sub2">Every Bite</span>
+      </div>
+      <div class="title2">
+        Ensure comprehensive nutrition and health protection for your pet with every delicious bite.
+      </div>
+      <div class="btn-leran-more">
+        LEARN MORE
+      </div>
     </section>
 
     <!-- Unleash energy -->
@@ -49,6 +59,11 @@
       <img src="../assets/images/bg_12.jpg" alt="">
       <div class="particle" :class="{ show }">
         <img src="../assets/images/particle.png" alt="">
+      </div>
+      <div class="text">
+        <div class="text-sub1">Let your pets</div>
+        <div class="text-sub2">unleash their</div>
+        <div class="text-sub3">Joy&Energy!</div>
       </div>
     </section>
 
@@ -114,7 +129,7 @@
   </div>
 </template>
 
-<script  setup>
+<script setup>
 import { ref, onMounted, onBeforeUnmount } from "vue";
 const boxRef = ref(null);
 const show = ref(false);
@@ -125,12 +140,17 @@ onMounted(() => {
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
+          console.log(entry.target, entry.boundingClientRect, entry.isIntersecting);
           show.value = true; // 进入视口时触发动画
-          observer.unobserve(entry.target); // 只触发一次
+        } else {
+          show.value = false;
         }
       });
     },
-    { threshold: 0.2 }
+    {
+      threshold: 0,             // 只要有一点进入就检测
+      rootMargin: "0px 0px -30% 0px"
+    }
   );
 
   if (boxRef.value) {
@@ -149,10 +169,12 @@ onBeforeUnmount(() => {
 .landing-page {
   width: 100%;
   min-width: 1200px;
+
   .topnav {
     width: 100%;
     height: 80px;
     background: #212995;
+
     .nav-inner {
       box-sizing: border-box;
       display: flex;
@@ -162,6 +184,7 @@ onBeforeUnmount(() => {
       width: 100%;
       padding: 0 50px;
       margin: 0 auto;
+
       .menu {
         width: 40%;
         display: flex;
@@ -169,19 +192,23 @@ onBeforeUnmount(() => {
         font-family: "Oswald-SemiBold";
         font-size: 18px;
         line-height: 1;
+
         div {
           cursor: pointer;
           margin-right: 35px;
         }
       }
+
       .logo {
         width: 70px;
         height: auto;
       }
+
       .icons-list {
         width: 40%;
         display: flex;
         flex-direction: row-reverse;
+
         .icon {
           cursor: pointer;
           margin-left: 20px;
@@ -190,18 +217,75 @@ onBeforeUnmount(() => {
       }
     }
   }
+
   .hero {
+    position: relative;
     font-size: 0;
+    color: #fff;
+
     img {
       width: 100%;
     }
+
+    .title1 {
+      position: absolute;
+      bottom: 7%;
+      left: 4%;
+      font-family: "RedHatDisplay-Bold";
+      font-size: 132px;
+      line-height: 108px;
+      text-align: left;
+
+      .title1-sub1 {
+        display: inline-block;
+        font-size: 55px;
+        vertical-align: 10px;
+        margin-left: -5px;
+      }
+
+      .title1-sub2 {
+        font-family: 'RedHatDisplay-Regular';
+        font-size: 55px;
+        vertical-align: 10px;
+        margin-left: -15px;
+      }
+    }
+
+
+    .title2 {
+      position: absolute;
+      bottom: 30%;
+      right: 63px;
+      font-family: "Oswald-Regular";
+      font-size: 16px;
+      line-height: 1.5;
+      width: 322px;
+      text-align: left;
+    }
+
+    .btn-leran-more {
+      cursor: pointer;
+      position: absolute;
+      bottom: 19%;
+      right: 75px;
+      font-family: "RedHatDisplay-Bold";
+      border: 3px solid #fff;
+      border-radius: 25px;
+      font-size: 16px;
+      width: 130px;
+      height: 32px;
+      line-height: 32px;
+    }
   }
+
   .unleash {
     position: relative;
     font-size: 0;
+
     img {
       width: 100%;
     }
+
     .particle {
       position: absolute;
       top: 0;
@@ -214,6 +298,35 @@ onBeforeUnmount(() => {
     .particle.show {
       opacity: 1;
       transform: translateY(0);
+    }
+
+    .text {
+      position: absolute;
+      top: 24%;
+      left: 11%;
+      color: #212995;
+
+      .text-sub1 {
+        font-family: "RedHatDisplay-Bold";
+        font-size: 40px;
+        line-height: 1;
+        text-align: left;
+      }
+
+      .text-sub2 {
+        font-family: "RedHatDisplay-Bold";
+        font-size: 45px;
+        line-height: 1;
+        text-align: left;
+      }
+
+      .text-sub3 {
+        font-family: "Khalila";
+        font-size: 65px;
+        line-height: 1;
+        text-align: left;
+        color: #a1a1a1;
+      }
     }
   }
 }
