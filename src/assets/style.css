@@ -1,0 +1,73 @@
+@font-face {
+  font-family: 'Oswald-ExtraLight';
+  src: url('@/assets/fonts/Oswald-ExtraLight.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Oswald-Light';
+  src: url('@/assets/fonts/Oswald-Light.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Oswald-Medium';
+  src: url('@/assets/fonts/Oswald-Medium.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Oswald-Regular';
+  src: url('@/assets/fonts/Oswald-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Oswald-SemiBold';
+  src: url('@/assets/fonts/Oswald-SemiBold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Khalila';
+  src: url('@/assets/fonts/Khalila.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'RedHatDisplay-Black';
+  src: url('@/assets/fonts/RedHatDisplay-Black.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'RedHatDisplay-Bold';
+  src: url('@/assets/fonts/RedHatDisplay-Bold.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'RedHatDisplay-Medium';
+  src: url('@/assets/fonts/RedHatDisplay-Medium.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'RedHatDisplay-Regular';
+  src: url('@/assets/fonts/RedHatDisplay-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'RedHatText-Medium';
+  src: url('@/assets/fonts/RedHatText-Medium.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'RedHatText-Regular';
+  src: url('@/assets/fonts/RedHatText-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
