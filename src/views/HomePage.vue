@@ -14,16 +14,13 @@
         </div>
         <div class="icons-list">
           <div class="icon">
-            <img src="../assets/images/icon-youtube.svg" alt="">
+            <img src="../assets/images/icon-facebook.svg" alt="">
           </div>
           <div class="icon">
             <img src="../assets/images/icon-youtube.svg" alt="">
           </div>
           <div class="icon">
-            <img src="../assets/images/icon-youtube.svg" alt="">
-          </div>
-          <div class="icon">
-            <img src="../assets/images/icon-youtube.svg" alt="">
+            <img src="../assets/images/icon-ins.svg" alt="">
           </div>
         </div>
       </div>
@@ -60,21 +57,34 @@
       <div class="particle" :class="{ show }">
         <img src="../assets/images/particle.png" alt="">
       </div>
-      <div class="text">
+      <div class="unleash-text1">
         <div class="text-sub1">Let your pets</div>
         <div class="text-sub2">unleash their</div>
         <div class="text-sub3">Joy&Energy!</div>
       </div>
+      <div class="unleash-text2">
+        With Gloripetgo™, you're not just filling their<br>bowls—you’re fueling their lives with irresistible, <br>nourishing meals. Plus, every bite helps pets beyond your<br> own, spreading happiness all around.
+      </div>
     </section>
 
     <!-- Products -->
-    <section id="products" class="products ">
-      <h3>Discover <span>Our Products</span></h3>
+    <section id="products" class="products">
+      <h3 class="products-text1">Discover <span class="sub1">Our </span><span class="sub2">Products</span></h3>
       <div class="product-grid">
-        <div class="card" v-for="(p, i) in products" :key="i">
-          <img :src="p.img" :alt="p.title" />
-          <h4>{{ p.title }}</h4>
-          <p class="tag">{{ p.tag }}</p>
+        <div class="product-card">
+          <img src="../assets/images/pd1.png" alt="">
+          <div class="tag1">IMMUNE SUPPORT</div>
+          <div class="tag2">JOINT CARE</div>
+        </div>
+        <div class="product-card">
+          <img src="../assets/images/pd2.png" alt="">
+          <div class="tag1">IMMUNE SUPPORT</div>
+          <div class="tag2">SKIN & COAT HEALTH</div>
+        </div>
+        <div class="product-card">
+          <img src="../assets/images/pd3.png" alt="">
+          <div class="tag1">IMMUNE SUPPORT</div>
+          <div class="tag2">URINARY HEALTH</div>
         </div>
       </div>
     </section>
@@ -169,7 +179,7 @@ onBeforeUnmount(() => {
 .landing-page {
   width: 100%;
   min-width: 1200px;
-
+  background: #e8e8e8;
   .topnav {
     width: 100%;
     height: 80px;
@@ -244,13 +254,12 @@ onBeforeUnmount(() => {
       }
 
       .title1-sub2 {
-        font-family: 'RedHatDisplay-Regular';
+        font-family: "RedHatDisplay-Regular";
         font-size: 55px;
         vertical-align: 10px;
         margin-left: -15px;
       }
     }
-
 
     .title2 {
       position: absolute;
@@ -288,7 +297,7 @@ onBeforeUnmount(() => {
 
     .particle {
       position: absolute;
-      top: 0;
+      top: 45px;
       left: 0;
       opacity: 0;
       transform: translateY(150px);
@@ -300,7 +309,7 @@ onBeforeUnmount(() => {
       transform: translateY(0);
     }
 
-    .text {
+    .unleash-text1 {
       position: absolute;
       top: 24%;
       left: 11%;
@@ -326,6 +335,67 @@ onBeforeUnmount(() => {
         line-height: 1;
         text-align: left;
         color: #a1a1a1;
+      }
+    }
+    .unleash-text2 {
+      position: absolute;
+      bottom: 20%;
+      right: 6%;
+      color: #212995;
+      font-family: "Oswald-Regular";
+      font-size: 20px;
+      line-height: 1;
+      text-align: center;
+    }
+  }
+  .products {
+    .products-text1 {
+      font-family: "RedHatDisplay-Regular";
+      font-size: 30px;
+      line-height: 1;
+      text-align: center;
+      color: #212995;
+      padding: 50px 0;
+      margin: 0;
+      .sub1 {
+        font-family: "RedHatDisplay-Black";
+        font-weight: bold;
+      }
+      .sub2 {
+        font-family: "RedHatDisplay-Bold";
+        font-weight: bold;
+      }
+    }
+    .product-grid {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 90%;
+      margin: 0 auto;
+      .product-card {
+        cursor: pointer;
+        width: 30%;
+        height: auto;
+        img {
+          width: 100%;
+          max-width: 350px;
+        }
+        .tag1 {
+          font-family: "RedHatDisplay-Bold";
+          font-size: 14px;
+          line-height: 1;
+          text-align: center;
+          color: #212995;
+        }
+        .tag2 {
+          font-family: "RedHatDisplay-Bold";
+          font-size: 30px;
+          line-height: 1;
+          text-align: center;
+          color: #212995;
+          width: 200px;
+          margin: 0 auto;
+        }
       }
     }
   }
