@@ -63,7 +63,8 @@
         <div class="text-sub3">Joy&Energy!</div>
       </div>
       <div class="unleash-text2">
-        With Gloripetgo™, you're not just filling their<br>bowls—you’re fueling their lives with irresistible, <br>nourishing meals. Plus, every bite helps pets beyond your<br> own, spreading happiness all around.
+        With Gloripetgo™, you're not just filling their<br>bowls—you’re fueling their lives with irresistible,
+        <br>nourishing meals. Plus, every bite helps pets beyond your<br> own, spreading happiness all around.
       </div>
     </section>
 
@@ -88,39 +89,77 @@
         </div>
       </div>
     </section>
-
+    <section class="brand-logo">
+      <div class="logo-list">
+        <img src="../assets/images/icon-MSC.svg" alt="">
+        <img src="../assets/images/icon-aafco.svg" alt="">
+        <img src="../assets/images/icon-Global-Animal.svg" alt="">
+        <img src="../assets/images/icon-FDA.svg" alt="">
+        <img src="../assets/images/icon-CFIA.svg" alt="">
+        <img src="../assets/images/icon-SQF.svg" alt="">
+      </div>
+    </section>
+    <SwiperComponent style="width: 100%;" />
     <!-- Philosophy -->
     <section class="philosophy">
-      <div class=" phil-inner">
-        <div class="phil-left">
-          <h3>Product Philosophy</h3>
-          <ul>
-            <li><strong>Natural</strong><br />Clean ingredients bring less allergy risks.</li>
-            <li><strong>Fresh</strong><br />Fresh raw materials to retain better nutrition.</li>
-            <li><strong>Health</strong><br />Defense: those meals a day reduce the risk of illness.</li>
-            <li><strong>Convenient</strong><br />Ready-to-use, easy to serve.</li>
-          </ul>
+      <img src="../assets/images/bg_14.jpg" alt="">
+      <img src="../assets/images/bg_15.jpg" alt="">
+      <img src="../assets/images/bg_16.jpg" alt="">
+      <img src="../assets/images/bg_17.jpg" alt="">
+      <div class="phil-text1">Product</div>
+      <div class="phil-text2">Philosophy</div>
+      <div class="phil-items">
+        <div class="phil-item">
+          <div class="phil-left">
+            <img src="../assets/images/icon-Natural.svg" alt="">
+          </div>
+          <div class="phil-right">
+            <div class="phil-right-text1">Natural</div>
+            <div class="phil-right-text2">Chemical elements bring too many allergy risks.</div>
+          </div>
         </div>
-        <div class="phil-right">
-          <img :src="philoImage" alt="cats & owner" />
+        <div class="phil-item">
+          <div class="phil-left">
+            <img src="../assets/images/icon-health.svg" alt="">
+          </div>
+          <div class="phil-right">
+            <div class="phil-right-text1">Health</div>
+            <div class="phil-right-text2">Defense Three meals a day reduce the risk of illness.</div>
+          </div>
+        </div>
+        <div class="phil-item">
+          <div class="phil-left">
+            <img src="../assets/images/icon-fresh.svg" alt="">
+          </div>
+          <div class="phil-right">
+            <div class="phil-right-text1">Fresh</div>
+            <div class="phil-right-text2">Freshness from the original material to the whole processing of the product.
+            </div>
+          </div>
+        </div>
+        <div class="phil-item">
+          <div class="phil-left">
+            <img src="../assets/images/icon-convenient.svg" alt="">
+          </div>
+          <div class="phil-right">
+            <div class="phil-right-text1">Convenient</div>
+            <div class="phil-right-text2">Keep food fresh high-cost & highly effective Easy Lock ensures freshness.
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Testimonials + CTA -->
-    <section class="cta ">
-      <div class="reviews">
-        <div class="review" v-for="n in 4" :key="n">
-          <div class="thumb"></div>
-          <h5>Lorem Ipsum</h5>
-          <p>Short testimonial about the product and how it helped my pet.</p>
-        </div>
+    <section class="cta">
+      <div class="cta-left">
+        <SwiperComponent />
       </div>
-      <div class="signup">
-        <h4>Sign up for pet news, offers and more!</h4>
-        <div class="signup-form">
-          <input placeholder="Enter your email" />
-          <button class="btn">Sign up</button>
+      <div class="cta-right">
+        <img src="../assets/images/icon-talk.svg" alt="">
+        <div class="cta-text1">The Truth <br>
+          Behind<br>
+          <span>the Taste</span>
         </div>
       </div>
     </section>
@@ -141,6 +180,7 @@
 
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from "vue";
+import SwiperComponent from "@/components/SwiperComponent.vue";
 const boxRef = ref(null);
 const show = ref(false);
 let observer;
@@ -180,6 +220,7 @@ onBeforeUnmount(() => {
   width: 100%;
   min-width: 1200px;
   background: #e8e8e8;
+
   .topnav {
     width: 100%;
     height: 80px;
@@ -337,17 +378,19 @@ onBeforeUnmount(() => {
         color: #a1a1a1;
       }
     }
+
     .unleash-text2 {
       position: absolute;
       bottom: 20%;
-      right: 6%;
+      right: 3%;
       color: #212995;
       font-family: "Oswald-Regular";
-      font-size: 20px;
+      font-size: 18px;
       line-height: 1;
       text-align: center;
     }
   }
+
   .products {
     .products-text1 {
       font-family: "RedHatDisplay-Regular";
@@ -357,44 +400,193 @@ onBeforeUnmount(() => {
       color: #212995;
       padding: 50px 0;
       margin: 0;
+
       .sub1 {
         font-family: "RedHatDisplay-Black";
         font-weight: bold;
       }
+
       .sub2 {
         font-family: "RedHatDisplay-Bold";
         font-weight: bold;
       }
     }
+
     .product-grid {
       display: flex;
       justify-content: space-between;
       align-items: center;
       width: 90%;
       margin: 0 auto;
+
       .product-card {
         cursor: pointer;
         width: 30%;
         height: auto;
+
         img {
           width: 100%;
           max-width: 350px;
+
+          &:hover {
+            transform: scale(1.05);
+          }
         }
+
         .tag1 {
           font-family: "RedHatDisplay-Bold";
           font-size: 14px;
           line-height: 1;
           text-align: center;
           color: #212995;
+          height: 14px;
         }
+
         .tag2 {
           font-family: "RedHatDisplay-Bold";
           font-size: 30px;
           line-height: 1;
           text-align: center;
           color: #212995;
-          width: 200px;
+          width: 270px;
           margin: 0 auto;
+          height: 60px;
+        }
+      }
+    }
+  }
+
+  .brand-logo {
+    padding: 40px 0;
+
+    .logo-list {
+      box-sizing: border-box;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 90%;
+      margin: 0 auto;
+      padding: 30px 5%;
+      border-top: 1px solid #7c7c7c;
+      border-bottom: 1px solid #7c7c7c;
+
+      img {
+        cursor: pointer;
+        height: 40px;
+      }
+    }
+  }
+
+  .philosophy {
+    position: relative;
+    font-size: 0;
+    color: #fff;
+
+    img {
+      width: 100%;
+    }
+
+    .phil-text1 {
+      position: absolute;
+      font-family: 'RedHatDisplay-Regular';
+      font-size: 45px;
+      line-height: 1;
+      top: 40px;
+      left: 6%;
+    }
+
+    .phil-text2 {
+      position: absolute;
+      font-family: 'RedHatDisplay-Bold';
+      font-size: 60px;
+      line-height: 1;
+      top: 85px;
+      left: 6%;
+    }
+
+    .phil-items {
+      position: absolute;
+      font-size: 50px;
+      line-height: 1;
+      top: 195px;
+      left: 10%;
+      display: flex;
+      flex-wrap: wrap;
+      width: 520px;
+      justify-content: space-between;
+
+      .phil-item {
+        width: 230px;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 30px;
+
+        .phil-left {
+          width: 50px;
+
+          .img {
+            width: 100%;
+          }
+        }
+
+        .phil-right {
+          width: 170px;
+
+          .phil-right-text1 {
+            font-family: 'RedHatDisplay-Regular';
+            font-size: 38px;
+            line-height: 1;
+            text-align: left;
+          }
+
+          .phil-right-text2 {
+            font-family: 'Oswald-Regular';
+            font-size: 14px;
+            line-height: 1;
+            text-align: left;
+            margin-top: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  .cta {
+    background: #f25929;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 500px;
+
+    .cta-left {
+      width: 70%;
+    }
+
+    .cta-right {
+      position: relative;
+      width: 30%;
+      height: 100%;
+
+      img {
+        position: absolute;
+        top: 200px;
+        right: 12%;
+        width: 80px;
+      }
+
+      .cta-text1 {
+        position: absolute;
+        top: 280px;
+        right: 10%;
+        width: 200px;
+        font-family: "RedHatDisplay-Medium";
+        font-size: 40px;
+        line-height: 1;
+        text-align: right;
+        color: #212995;
+
+        span {
+          font-family: 'RedHatDisplay-Black';
         }
       }
     }
