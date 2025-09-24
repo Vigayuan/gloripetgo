@@ -89,6 +89,7 @@
         </div>
       </div>
     </section>
+
     <section class="brand-logo">
       <div class="logo-list">
         <img src="../assets/images/icon-MSC.svg" alt="">
@@ -99,7 +100,36 @@
         <img src="../assets/images/icon-SQF.svg" alt="">
       </div>
     </section>
-    <SwiperComponent style="width: 100%;" />
+
+    <div class="swiper-block">
+      <div class="swiper-block-text">
+        <div class="swiper-block-text1">The ingredients from</div>
+        <div class="swiper-block-text2">Arctic Glaciers Align</div>
+        <div class="swiper-block-text3">with natural nutrition.</div>
+      </div>
+      <Swiper :modules="modules" :slides-per-view="2" :loop="true" :pagination="{ clickable: true }" :navigation="true" class="swiper-box">
+        <SwiperSlide>
+          <div class="slide-item">
+            <img src="../assets/images/swiper-item-1.jpg" alt="">
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div class="slide-item">
+            <img src="../assets/images/swiper-item-2.jpg" alt="">
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div class="slide-item">
+            <img src="../assets/images/swiper-item-3.jpg" alt="">
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div class="slide-item">
+            <img src="../assets/images/swiper-item-4.jpg" alt="">
+          </div>
+        </SwiperSlide>
+      </Swiper>
+    </div>
     <!-- Philosophy -->
     <section class="philosophy">
       <img src="../assets/images/bg_14.jpg" alt="">
@@ -153,7 +183,6 @@
     <!-- Testimonials + CTA -->
     <section class="cta">
       <div class="cta-left">
-        <SwiperComponent />
       </div>
       <div class="cta-right">
         <img src="../assets/images/icon-talk.svg" alt="">
@@ -165,24 +194,43 @@
     </section>
 
     <footer class="footer">
-      <div class=" footer-inner">
-        <div class="brand">GloriPetgo</div>
-        <nav class="f-menu">
-          <a href="#">Products</a>
-          <a href="#">Why healthy</a>
-          <a href="#">Our story</a>
-          <a href="#">About us</a>
-        </nav>
+      <div class="footer-inner">
+        <div class="brand">
+          <img src="../assets/images/logo-blue-color.svg" alt="">
+        </div>
+        <div class="f-menu">
+          <div>Products</div>
+          <div>Why healthy</div>
+          <div>Our story</div>
+          <div>Support</div>
+        </div>
+        <div class="f-message">
+          <div class="f-message-text">@Gloripetgo</div>
+          <div class="logo">
+            <div class="icon">
+              <img src="../assets/images/icon-ins.svg" alt="">
+            </div>
+            <div class="icon">
+              <img src="../assets/images/icon-youtube.svg" alt="">
+            </div>
+            <div class="icon">
+              <img src="../assets/images/icon-facebook.svg" alt="">
+            </div>
+          </div>
+        </div>
       </div>
+      <div class="copyright">© 2025 “Gloripetgo” marks are trademarks of CANADA ANNOK PETFOODS INC. All Rights Reserved.</div>
     </footer>
   </div>
 </template>
 
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from "vue";
-import SwiperComponent from "@/components/SwiperComponent.vue";
+import { Swiper, SwiperSlide } from 'swiper/vue'
+import { Pagination, Navigation, Autoplay } from 'swiper/modules'
 const boxRef = ref(null);
 const show = ref(false);
+const modules = [Pagination, Navigation, Autoplay]
 let observer;
 
 onMounted(() => {
@@ -402,7 +450,7 @@ onBeforeUnmount(() => {
       margin: 0;
 
       .sub1 {
-        font-family: "RedHatDisplay-Black";
+        font-family: "RedHatDisplay-Bold";
         font-weight: bold;
       }
 
@@ -476,6 +524,62 @@ onBeforeUnmount(() => {
       }
     }
   }
+  .swiper-block {
+    .swiper-block-text {
+      width: 100%;
+      text-align: center;
+      color: #212995;
+      padding: 20px 0 30px;
+      .swiper-block-text1 {
+        font-family: "RedHatDisplay-Medium";
+        font-size: 22px;
+        line-height: 1;
+        font-style: italic;
+      }
+      .swiper-block-text2 {
+        font-family: "RedHatDisplay-Bold";
+        font-size: 40px;
+        line-height: 1.2;
+      }
+      .swiper-block-text3 {
+        font-family: "RedHatDisplay-Regular";
+        font-size: 32px;
+        line-height: 1;
+      }
+    }
+    .swiper-box {
+      :deep(.swiper-pagination) {
+        width: 200px;
+        height: 120px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin: 0 auto;
+        .swiper-pagination-bullet {
+          cursor: pointer;
+          display: block;
+          background: #505050;
+          border: 1px solid #505050;
+          opacity: 0.6;
+          width: 10px;
+          height: 10px;
+          border-radius: 10px;
+        }
+        .swiper-pagination-bullet-active {
+          background: #e8e8e8;
+          border: 1px solid #505050;
+          opacity: 1;
+        }
+      }
+
+      .slide-item {
+        width: 100%;
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
 
   .philosophy {
     position: relative;
@@ -488,7 +592,7 @@ onBeforeUnmount(() => {
 
     .phil-text1 {
       position: absolute;
-      font-family: 'RedHatDisplay-Regular';
+      font-family: "RedHatDisplay-Regular";
       font-size: 45px;
       line-height: 1;
       top: 40px;
@@ -497,7 +601,7 @@ onBeforeUnmount(() => {
 
     .phil-text2 {
       position: absolute;
-      font-family: 'RedHatDisplay-Bold';
+      font-family: "RedHatDisplay-Bold";
       font-size: 60px;
       line-height: 1;
       top: 85px;
@@ -533,14 +637,14 @@ onBeforeUnmount(() => {
           width: 170px;
 
           .phil-right-text1 {
-            font-family: 'RedHatDisplay-Regular';
+            font-family: "RedHatDisplay-Regular";
             font-size: 38px;
             line-height: 1;
             text-align: left;
           }
 
           .phil-right-text2 {
-            font-family: 'Oswald-Regular';
+            font-family: "Oswald-Regular";
             font-size: 14px;
             line-height: 1;
             text-align: left;
@@ -586,9 +690,68 @@ onBeforeUnmount(() => {
         color: #212995;
 
         span {
-          font-family: 'RedHatDisplay-Black';
+          font-family: "RedHatDisplay-Black";
         }
       }
+    }
+  }
+  .footer {
+    padding: 50px;
+    background: #fff;
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      .brand {
+        width: 150px;
+        img {
+          width: 100%;
+        }
+      }
+      .f-menu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 50%;
+        font-family: "Oswald-Medium";
+        font-size: 30px;
+        line-height: 1;
+        color: #212995;
+        padding-top: 35px;
+        div {
+          cursor: pointer;
+        }
+      }
+      .f-message {
+        width: 200px;
+        padding-top: 35px;
+        .f-message-text {
+          color: #212995;
+          font-family: "Oswald-Medium";
+          font-size: 30px;
+          line-height: 1;
+          margin-bottom: 15px;
+        }
+        .logo {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 100%;
+          .icon {
+            width: 35px;
+            img {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+    .copyright {
+      font-family: "Oswald-Regular";
+      font-size: 18px;
+      line-height: 1;
+      color: #212995;
+      margin-top: 50px;
     }
   }
 }
