@@ -4,7 +4,16 @@
     <header class="topnav">
       <div class=" nav-inner">
         <nav class="menu">
-          <div>Products</div>
+          <div class="product-block">
+            <div class="text">Products</div>
+            <img class="products-arrow" src="../assets/images/products-arrow.svg" alt="">
+            <div class="arrow-down-block">
+              <div>1</div>
+              <div>1</div>
+              <div>1</div>
+              <div>1</div>
+            </div>
+          </div>
           <div>Why healthy</div>
           <div>Our story</div>
           <div>About us</div>
@@ -107,7 +116,10 @@
         <div class="swiper-block-text2">Arctic Glaciers Align</div>
         <div class="swiper-block-text3">with natural nutrition.</div>
       </div>
-      <Swiper :modules="modules" :slides-per-view="2" :loop="true" :pagination="{ clickable: true }" :navigation="true" class="swiper-box">
+      <Swiper :modules="modules" :loop="true" :slides-per-view="2.5" :pagination="{ clickable: true }" :navigation="{
+        nextEl: '.custom-next',
+        prevEl: '.custom-prev'
+      }" class="swiper-box">
         <SwiperSlide>
           <div class="slide-item">
             <img src="../assets/images/swiper-item-1.jpg" alt="">
@@ -129,6 +141,12 @@
           </div>
         </SwiperSlide>
       </Swiper>
+      <div class="custom-prev">
+        <img src="../assets/images/icon-arrow.svg" alt="">
+      </div>
+      <div class="custom-next">
+        <img src="../assets/images/icon-arrow.svg" style="transform: rotate(180deg);" alt="">
+      </div>
     </div>
     <!-- Philosophy -->
     <section class="philosophy">
@@ -183,6 +201,31 @@
     <!-- Testimonials + CTA -->
     <section class="cta">
       <div class="cta-left">
+        <Swiper :modules="modules" :loop="true" :slides-per-view="3.5" :pagination="{ clickable: true }" :navigation="{
+          nextEl: '.custom-next',
+          prevEl: '.custom-prev'
+        }" class="swiper-box">
+          <SwiperSlide>
+            <div class="slide-item">
+              <img src="../assets/images/swiper-item-1.jpg" style="width:250px" alt="">
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div class="slide-item">
+              <img src="../assets/images/swiper-item-2.jpg" style="width:250px" alt="">
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div class="slide-item">
+              <img src="../assets/images/swiper-item-3.jpg" style="width:250px" alt="">
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div class="slide-item">
+              <img src="../assets/images/swiper-item-4.jpg" style="width:250px" alt="">
+            </div>
+          </SwiperSlide>
+        </Swiper>
       </div>
       <div class="cta-right">
         <img src="../assets/images/icon-talk.svg" alt="">
@@ -219,7 +262,8 @@
           </div>
         </div>
       </div>
-      <div class="copyright">© 2025 “Gloripetgo” marks are trademarks of CANADA ANNOK PETFOODS INC. All Rights Reserved.</div>
+      <div class="copyright">© 2025 “Gloripetgo” marks are trademarks of CANADA ANNOK PETFOODS INC. All Rights Reserved.
+      </div>
     </footer>
   </div>
 </template>
@@ -290,11 +334,46 @@ onBeforeUnmount(() => {
         color: #fff;
         font-family: "Oswald-SemiBold";
         font-size: 18px;
-        line-height: 1;
+        line-height: 80px;
+
+        .product-block {
+          position: relative;
+
+          .products-arrow {
+            position: absolute;
+            top: 39px;
+            right: 10px;
+            width: 13px;
+            cursor: pointer;
+          }
+
+          .arrow-down-block {
+            position: fixed;
+            top: 80px;
+            left: 0;
+            width: 100%;
+            height: 0;
+            /* 初始高度 0 */
+            overflow: hidden;
+            /* 超出部分隐藏 */
+            z-index: 100;
+            background: #fff;
+            transition: height 0.3s ease;
+            /* 过渡效果 */
+          }
+
+          &:hover {
+            .arrow-down-block {
+              height: 100px;
+              /* hover 时展开到 100px */
+            }
+          }
+
+        }
 
         div {
           cursor: pointer;
-          margin-right: 35px;
+          margin-right: 30px;
         }
       }
 
@@ -524,29 +603,79 @@ onBeforeUnmount(() => {
       }
     }
   }
+
   .swiper-block {
+    position: relative;
+
     .swiper-block-text {
       width: 100%;
       text-align: center;
       color: #212995;
       padding: 20px 0 30px;
+      overflow: visible;
+
       .swiper-block-text1 {
         font-family: "RedHatDisplay-Medium";
         font-size: 22px;
         line-height: 1;
         font-style: italic;
       }
+
       .swiper-block-text2 {
         font-family: "RedHatDisplay-Bold";
         font-size: 40px;
         line-height: 1.2;
       }
+
       .swiper-block-text3 {
         font-family: "RedHatDisplay-Regular";
         font-size: 32px;
         line-height: 1;
       }
     }
+
+    .custom-prev {
+      position: absolute;
+      top: 50%;
+      cursor: pointer;
+      left: 5%;
+      width: 40px;
+      height: 40px;
+      z-index: 100;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .custom-next {
+      position: absolute;
+      top: 50%;
+      cursor: pointer;
+      right: 5%;
+      width: 40px;
+      height: 40px;
+      z-index: 100;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    :deep(.swiper-box) {
+      .swiper-button-prev {
+        top: 40% !important;
+        left: 10%;
+        background-image: url(../assets/images/icon-arrow.svg);
+        background-repeat: no-repeat;
+      }
+
+      .swiper-button-next {
+        top: 40% !important;
+        right: 10%;
+      }
+    }
+
     .swiper-box {
       :deep(.swiper-pagination) {
         width: 200px;
@@ -555,6 +684,7 @@ onBeforeUnmount(() => {
         justify-content: space-around;
         align-items: center;
         margin: 0 auto;
+
         .swiper-pagination-bullet {
           cursor: pointer;
           display: block;
@@ -565,15 +695,18 @@ onBeforeUnmount(() => {
           height: 10px;
           border-radius: 10px;
         }
+
         .swiper-pagination-bullet-active {
           background: #e8e8e8;
           border: 1px solid #505050;
           opacity: 1;
         }
+
       }
 
       .slide-item {
         width: 100%;
+
         img {
           width: 100%;
         }
@@ -695,19 +828,24 @@ onBeforeUnmount(() => {
       }
     }
   }
+
   .footer {
     padding: 50px;
     background: #fff;
+
     .footer-inner {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
+
       .brand {
         width: 150px;
+
         img {
           width: 100%;
         }
       }
+
       .f-menu {
         display: flex;
         justify-content: space-between;
@@ -718,13 +856,16 @@ onBeforeUnmount(() => {
         line-height: 1;
         color: #212995;
         padding-top: 35px;
+
         div {
           cursor: pointer;
         }
       }
+
       .f-message {
-        width: 200px;
+        width: 140px;
         padding-top: 35px;
+
         .f-message-text {
           color: #212995;
           font-family: "Oswald-Medium";
@@ -732,13 +873,16 @@ onBeforeUnmount(() => {
           line-height: 1;
           margin-bottom: 15px;
         }
+
         .logo {
           display: flex;
           justify-content: space-between;
           align-items: center;
           width: 100%;
+
           .icon {
             width: 35px;
+
             img {
               width: 100%;
             }
@@ -746,6 +890,7 @@ onBeforeUnmount(() => {
         }
       }
     }
+
     .copyright {
       font-family: "Oswald-Regular";
       font-size: 18px;
