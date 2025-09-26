@@ -5,12 +5,13 @@
 
     <!-- Hero -->
     <section class="hero">
-      <img src="../assets/images/bg_01.jpg" alt="">
-      <img src="../assets/images/bg_02.jpg" alt="">
-      <img src="../assets/images/bg_03.jpg" alt="">
-      <img src="../assets/images/bg_04.jpg" alt="">
-      <img src="../assets/images/bg_05.jpg" alt="">
-      <img src="../assets/images/bg_06.jpg" alt="">
+      <img src="../assets/images/whyh_bg_02.jpg" alt="">
+      <img src="../assets/images/whyh_bg_03.jpg" alt="">
+      <img src="../assets/images/whyh_bg_04.jpg" alt="">
+      <img src="../assets/images/whyh_bg_05.jpg" alt="">
+      <img src="../assets/images/whyh_bg_06.jpg" alt="">
+      <img src="../assets/images/whyh_bg_07.jpg" alt="">
+      <img src="../assets/images/whyh_bg_08.jpg" alt="">
       <div class="title1">
         Daily <br>
         Defense <span class="title1-sub1">in</span> <span class="title1-sub2">Every Bite</span>
