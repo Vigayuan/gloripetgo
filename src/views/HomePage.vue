@@ -1,6 +1,6 @@
 <template>
   <div class="landing-page">
-    <!-- Header -->
+
     <HeaderPage />
 
     <!-- Hero -->
@@ -90,49 +90,21 @@
       }" class="swiper-box">
         <SwiperSlide>
           <div class="slide-item">
-            <div class="slide-item-title">
-              ARCTIC<br>
-              CHAR
-            </div>
-            <div class="slide-item-btn">
-              Learn more
-            </div>
             <img src="../assets/images/swiper-item-1.jpg" alt="">
           </div>
         </SwiperSlide>
         <SwiperSlide>
           <div class="slide-item">
-            <div class="slide-item-title">
-              ARCTIC<br>
-              CHAR
-            </div>
-            <div class="slide-item-btn">
-              Learn more
-            </div>
             <img src="../assets/images/swiper-item-2.jpg" alt="">
           </div>
         </SwiperSlide>
         <SwiperSlide>
           <div class="slide-item">
-            <div class="slide-item-title">
-              ARCTIC<br>
-              CHAR
-            </div>
-            <div class="slide-item-btn">
-              Learn more
-            </div>
             <img src="../assets/images/swiper-item-3.jpg" alt="">
           </div>
         </SwiperSlide>
         <SwiperSlide>
           <div class="slide-item">
-            <div class="slide-item-title">
-              ARCTIC<br>
-              CHAR
-            </div>
-            <div class="slide-item-btn">
-              Learn more
-            </div>
             <img src="../assets/images/swiper-item-4.jpg" alt="">
           </div>
         </SwiperSlide>
@@ -195,7 +167,7 @@
     </section>
 
     <!-- Testimonials + CTA -->
-    <!-- <section class="cta">
+    <section class="cta">
       <div class="cta-left">
         <Swiper :modules="modules" :loop="true" :slides-per-view="3.5" :pagination="{ clickable: true }" :navigation="{
           nextEl: '.custom-next',
@@ -230,9 +202,8 @@
           <span>the Taste</span>
         </div>
       </div>
-    </section> -->
+    </section>
 
-    <!-- Footer -->
     <FooterPage />
   </div>
 </template>
@@ -241,8 +212,8 @@
 import { ref, onMounted, onBeforeUnmount } from "vue";
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import { Pagination, Navigation, Autoplay } from 'swiper/modules'
-import HeaderPage from "@/components/HeaderPage.vue";
-import FooterPage from "@/components/FooterPage.vue";
+import HeaderPage from '@/components/HeaderPage.vue'
+import FooterPage from '@/components/FooterPage.vue'
 const boxRef = ref(null);
 const show = ref(false);
 const modules = [Pagination, Navigation, Autoplay]
@@ -284,7 +255,6 @@ onBeforeUnmount(() => {
   min-width: 1200px;
   background: #e8e8e8;
 
-
   .hero {
     position: relative;
     font-size: 0;
@@ -302,17 +272,12 @@ onBeforeUnmount(() => {
       font-size: 132px;
       line-height: 108px;
       text-align: left;
-      /* 动画设置 */
-      opacity: 0;
-      transform: translateY(-100px);
-      animation: dropIn 1s ease-out forwards;
 
       .title1-sub1 {
         display: inline-block;
         font-size: 55px;
         vertical-align: 10px;
         margin-left: -5px;
-
       }
 
       .title1-sub2 {
@@ -332,9 +297,6 @@ onBeforeUnmount(() => {
       line-height: 1.5;
       width: 322px;
       text-align: left;
-      /* 动画设置 */
-      opacity: 0;
-      animation: fadeIn 1s ease-out forwards;
     }
 
     .btn-leran-more {
@@ -349,31 +311,6 @@ onBeforeUnmount(() => {
       width: 130px;
       height: 32px;
       line-height: 32px;
-      /* 动画设置 */
-      opacity: 0;
-      animation: fadeIn 1s ease-out forwards;
-    }
-  }
-
-  @keyframes dropIn {
-    from {
-      opacity: 0;
-      transform: translateY(-100px);
-    }
-
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-
-    to {
-      opacity: 1;
     }
   }
 
@@ -561,7 +498,7 @@ onBeforeUnmount(() => {
       position: absolute;
       top: 50%;
       cursor: pointer;
-      left: 15%;
+      left: 5%;
       width: 40px;
       height: 40px;
       z-index: 100;
@@ -575,7 +512,7 @@ onBeforeUnmount(() => {
       position: absolute;
       top: 50%;
       cursor: pointer;
-      right: 15%;
+      right: 5%;
       width: 40px;
       height: 40px;
       z-index: 100;
@@ -586,9 +523,8 @@ onBeforeUnmount(() => {
     }
 
     :deep(.swiper-box) {
-      width: 140%;
-      margin-left: -20%;
-
+        width: 140%;
+        margin-left: -20%;
       .swiper-button-prev {
         top: 40% !important;
         left: 10%;
@@ -631,32 +567,7 @@ onBeforeUnmount(() => {
       }
 
       .slide-item {
-        position: relative;
         width: 100%;
-
-        .slide-item-title {
-          position: absolute;
-          top: 15%;
-          left: 9%;
-          font-family: "RedHatDisplay-Bold";
-          font-size: 40px;
-          line-height: 1;
-          color: #fff;
-          text-align: left;
-        }
-
-        .slide-item-btn {
-          cursor: pointer;
-          position: absolute;
-          top: 82%;
-          left: 9%;
-          font-family: "RedHatDisplay-Regular";
-          font-size: 16px;
-          line-height: 1;
-          padding-bottom: 5px;
-          color: #fff;
-          border-bottom: 3px solid #fff;
-        }
 
         img {
           width: 100%;
@@ -779,7 +690,6 @@ onBeforeUnmount(() => {
       }
     }
   }
-
 
 }
 
