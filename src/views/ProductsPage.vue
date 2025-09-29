@@ -89,64 +89,17 @@
 
     <div class="functionally-block">
       <div class="pic">
-        <img src="../assets/images/dog-pic-1.jpg" alt="">
+        <img class="pic-img" src="../assets/images/dog-pic-1.jpg" alt="">
+        <div class="text">
+          <div class="text-1"> Functionally<br>
+            Focused</div>
+          <div class="text-2">GloriPetgo’s Aurora Series is built on the foundational benefits of boosting immunity and supporting intestinal health, with a product philosophy centered on daily prevention to reduce the risk of illnesses.</div>
+          <div class="text-2">Meanwhile, each of the three products in the Aurora Series is designed to focus on a distinct, specialized benefit — for instance, Arctic Char Complete Cat Food prioritizes coat care as its core function.</div>
+        </div>
+        <img src="../assets/images/icon-Aurora.svg" alt="" class="icon-aurora">
+        <img src="../assets/images/icon-cq.png" alt="" class="icon-cq">
       </div>
-      <div class="text"></div>
-      <img src="../assets/images/icon-Aurora.svg" alt="" class="icon-aurora">
-      <img src="../assets/images/icon-cq.png" alt="" class="icon-cq">
     </div>
-
-    <!-- Philosophy -->
-    <section class="philosophy">
-      <img src="../assets/images/bg_14.jpg" alt="">
-      <img src="../assets/images/bg_15.jpg" alt="">
-      <img src="../assets/images/bg_16.jpg" alt="">
-      <img src="../assets/images/bg_17.jpg" alt="">
-      <div class="phil-text1">Product</div>
-      <div class="phil-text2">Philosophy</div>
-      <div class="phil-items">
-        <div class="phil-item">
-          <div class="phil-left">
-            <img src="../assets/images/icon-Natural.svg" alt="">
-          </div>
-          <div class="phil-right">
-            <div class="phil-right-text1">Natural</div>
-            <div class="phil-right-text2">Chemical elements bring too many allergy risks.</div>
-          </div>
-        </div>
-        <div class="phil-item">
-          <div class="phil-left">
-            <img src="../assets/images/icon-health.svg" alt="">
-          </div>
-          <div class="phil-right">
-            <div class="phil-right-text1">Health</div>
-            <div class="phil-right-text2">Defense Three meals a day reduce the risk of illness.</div>
-          </div>
-        </div>
-        <div class="phil-item">
-          <div class="phil-left">
-            <img src="../assets/images/icon-fresh.svg" alt="">
-          </div>
-          <div class="phil-right">
-            <div class="phil-right-text1">Fresh</div>
-            <div class="phil-right-text2">Freshness from the original material to the whole processing of
-              the product.
-            </div>
-          </div>
-        </div>
-        <div class="phil-item">
-          <div class="phil-left">
-            <img src="../assets/images/icon-convenient.svg" alt="">
-          </div>
-          <div class="phil-right">
-            <div class="phil-right-text1">Convenient</div>
-            <div class="phil-right-text2">Keep food fresh high-cost & highly effective Easy Lock ensures
-              freshness.
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <!-- Footer -->
     <FooterPage />
@@ -156,7 +109,7 @@
 <script setup>
 import HeaderPage from "@/components/HeaderPage.vue";
 import FooterPage from "@/components/FooterPage.vue";
-import { ref } from 'vue'
+import { onMounted, ref ,onBeforeUnmount} from 'vue'
 const slider = ref(null);
 const leftWidth = ref(200); // 左边默认宽度
 let isDragging = false;
@@ -166,7 +119,13 @@ const startDrag = () => {
   document.addEventListener("mousemove", onDrag);
   document.addEventListener("mouseup", stopDrag);
 };
-
+const onWindowResize = () => {
+  if (window.innerWidth > 1600) {
+    leftWidth.value = 300;
+  } else {
+    leftWidth.value = 200;
+  }
+}
 const onDrag = (e) => {
   if (!isDragging) return;
   const rect = slider.value.getBoundingClientRect();
@@ -181,6 +140,12 @@ const stopDrag = () => {
   document.removeEventListener("mousemove", onDrag);
   document.removeEventListener("mouseup", stopDrag);
 };
+onMounted(() => {
+  window.addEventListener("resize", onWindowResize);
+})
+onBeforeUnmount(() => {
+  window.removeEventListener("resize", onWindowResize);
+})
 </script>
 
 <style lang="scss" scoped>
@@ -298,16 +263,58 @@ const stopDrag = () => {
   }
 
   .functionally-block {
-    position: relative;
+    height: 800px;
     background: #fff;
-    .pic{
+    .pic {
+      position: relative;
+      width: 1200px;
+      height: 800px;
+      margin: 0 auto;
+      .pic-img {
         position: absolute;
-        top: 50px;
-        left: 50px;
-        width: 500px;
-        img{
-            width: 100%;
+        width: 800px;
+        right: 50px;
+        bottom: 100px;
+      }
+      .text {
+        box-sizing: border-box;
+        position: absolute;
+        width: 480px;
+        height: 65%;
+        left: 10%;
+        top: 100px;
+        padding: 40px;
+        border-radius: 20px;
+        background: #00d2ff;
+        text-align: left;
+        .text-1 {
+          font-family: "RedHatDisplay-Black";
+          font-size: 50px;
+          line-height: 1;
+          color: #212995;
         }
+        .text-2 {
+          font-family: "Oswald-Regular";
+          font-size: 18px;
+          line-height: 1.5;
+          color: #212995;
+          margin-top: 30px;
+        }
+      }
+      .icon-aurora {
+        position: absolute;
+        width: 200px;
+        top: 100px;
+        right: 50px;
+        margin-left: -100px;
+      }
+      .icon-cq {
+        position: absolute;
+        width: 80px;
+        top: 60%;
+        left: 50%;
+        margin-left: -40px;
+      }
     }
   }
 
@@ -578,6 +585,166 @@ const stopDrag = () => {
 
         span {
           font-family: "RedHatDisplay-Black";
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width: 1600px) {
+  .landing-page {
+    .slide-block {
+      position: relative;
+
+      background: #fff;
+
+      .slide-block-text {
+        width: 100%;
+        text-align: center;
+        color: #212995;
+        padding: 50px 0;
+        overflow: visible;
+
+        .slide-block-text1 {
+          font-family: "RedHatDisplay-Medium";
+          font-size: 68px;
+          line-height: 1.5;
+
+          span {
+            font-family: "RedHatDisplay-Black";
+          }
+        }
+
+        .slide-block-text2 {
+          font-family: "Oswald-Regular";
+          font-size: 22px;
+          line-height: 1.2;
+        }
+
+        .slide-block-text3 {
+          position: absolute;
+          top: 400px;
+          left: 200px;
+          font-family: "RedHatDisplay-Black";
+          font-size: 16px;
+          line-height: 1.2;
+        }
+
+        .slide-block-text4 {
+          position: absolute;
+          top: 400px;
+          right: 200px;
+          font-family: "RedHatDisplay-Black";
+          font-size: 16px;
+          line-height: 1.2;
+        }
+        .slide-block-text5 {
+          position: absolute;
+          top: 550px;
+          left: 200px;
+          font-family: "RedHatDisplay-Black";
+          font-size: 16px;
+          line-height: 1.2;
+        }
+        .slide-block-text6 {
+          position: absolute;
+          top: 550px;
+          right: 200px;
+          font-family: "RedHatDisplay-Black";
+          font-size: 16px;
+          line-height: 1.2;
+        }
+      }
+      .slide-wrapper {
+        height: 600px;
+        width: 600px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin: 0 auto;
+        overflow: hidden;
+        position: relative;
+
+        .img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          user-drag: none;
+          -webkit-user-drag: none;
+        }
+
+        .top-img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          overflow: hidden;
+          img {
+            width: 600px;
+          }
+        }
+
+        .divider {
+          position: absolute;
+          top: 0;
+          height: 100%;
+          width: 0; /* 只作为定位线 */
+        }
+
+        .handle {
+          position: absolute;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          background: white;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+          cursor: col-resize;
+        }
+
+        .arrow {
+          font-size: 14px;
+          color: #444;
+          user-select: none;
+        }
+      }
+    }
+    .functionally-block {
+      height: 1066px; /* 800 * 1.333 */
+      .pic {
+        width: 1600px; /* 1200 * 1.333 */
+        height: 1066px; /* 800 * 1.333 */
+        .pic-img {
+          width: 1066px; /* 800 * 1.333 */
+          right: 66px; /* 50 * 1.333 */
+          bottom: 133px; /* 100 * 1.333 */
+        }
+        .text {
+          width: 640px; /* 480 * 1.333 */
+          height: 750px; /* 65% * 1066 */
+          left: 10%; /* 10% * 1.333 → 约等于 13.3% */
+          top: 100px; /* 100 * 1.333 */
+          padding: 53px; /* 40 * 1.333 */
+          border-radius: 27px; /* 20 * 1.333 */
+        }
+        .text .text-1 {
+          font-size: 66px; /* 50 * 1.333 */
+        }
+        .text .text-2 {
+          font-size: 24px; /* 18 * 1.333 */
+          margin-top: 40px; /* 30 * 1.333 */
+        }
+        .icon-aurora {
+          width: 266px; /* 200 * 1.333 */
+          top: 133px; /* 100 * 1.333 */
+          right: 66px; /* 50 * 1.333 */
+          margin-left: -133px; /* -100 * 1.333 */
+        }
+        .icon-cq {
+          width: 106px; /* 80 * 1.333 */
+          margin-left: -53px; /* -40 * 1.333 */
         }
       }
     }
