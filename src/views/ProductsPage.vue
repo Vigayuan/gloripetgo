@@ -87,16 +87,14 @@
 
     <div class="transparent-block"></div>
 
-    <section class="brand-logo">
-      <div class="logo-list">
-        <img src="../assets/images/icon-MSC.svg" alt="">
-        <img src="../assets/images/icon-aafco.svg" alt="">
-        <img src="../assets/images/icon-Global-Animal.svg" alt="">
-        <img src="../assets/images/icon-FDA.svg" alt="">
-        <img src="../assets/images/icon-CFIA.svg" alt="">
-        <img src="../assets/images/icon-SQF.svg" alt="">
+    <div class="functionally-block">
+      <div class="pic">
+        <img src="../assets/images/dog-pic-1.jpg" alt="">
       </div>
-    </section>
+      <div class="text"></div>
+      <img src="../assets/images/icon-Aurora.svg" alt="" class="icon-aurora">
+      <img src="../assets/images/icon-cq.png" alt="" class="icon-cq">
+    </div>
 
     <!-- Philosophy -->
     <section class="philosophy">
@@ -299,25 +297,17 @@ const stopDrag = () => {
     background: transparent;
   }
 
-  .brand-logo {
+  .functionally-block {
+    position: relative;
     background: #fff;
-    padding: 40px 0;
-
-    .logo-list {
-      box-sizing: border-box;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 90%;
-      margin: 0 auto;
-      padding: 30px 5%;
-      border-top: 1px solid #7c7c7c;
-      border-bottom: 1px solid #7c7c7c;
-
-      img {
-        cursor: pointer;
-        height: 40px;
-      }
+    .pic{
+        position: absolute;
+        top: 50px;
+        left: 50px;
+        width: 500px;
+        img{
+            width: 100%;
+        }
     }
   }
 
