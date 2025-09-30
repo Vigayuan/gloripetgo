@@ -13,8 +13,8 @@
       <img src="../assets/images/whyh_bg_07.jpg" alt="">
       <img src="../assets/images/whyh_bg_08.jpg" alt="">
       <div class="title1">
-        Daily <br>
-        Defense <span class="title1-sub1">in</span> <span class="title1-sub2">Every Bite</span>
+        Ensuring Your Pet's<br>
+        <span class="title1-sub1">Health & Happiness</span>
       </div>
       <div class="title2">
         Ensure comprehensive nutrition and health protection for your pet with every delicious bite.
@@ -26,47 +26,31 @@
 
     <!-- Unleash energy -->
     <section class="unleash " ref="boxRef">
-      <img src="../assets/images/bg_07.jpg" alt="">
-      <img src="../assets/images/bg_08.jpg" alt="">
-      <img src="../assets/images/bg_09.jpg" alt="">
-      <img src="../assets/images/bg_10.jpg" alt="">
-      <img src="../assets/images/bg_11.jpg" alt="">
-      <img src="../assets/images/bg_12.jpg" alt="">
-      <div class="particle" :class="{ show }">
-        <img src="../assets/images/particle.png" alt="">
-      </div>
+      <img src="../assets/images/whyh_bg_09.jpg" alt="">
+      <img src="../assets/images/whyh_bg_10.jpg" alt="">
+      <img src="../assets/images/whyh_bg_11.jpg" alt="">
+      <img src="../assets/images/whyh_bg_12.jpg" alt="">
+      <img src="../assets/images/whyh_bg_13.jpg" alt="">
+      <img src="../assets/images/whyh_bg_14.jpg" alt="">
+      <img src="../assets/images/whyh_bg_15.jpg" alt="">
       <div class="unleash-text1">
-        <div class="text-sub1">Let your pets</div>
-        <div class="text-sub2">unleash their</div>
-        <div class="text-sub3">Joy&Energy!</div>
+        <div class="text-sub1">At GloriPetGo™, we are dedicated to ensuring that your <span>beloved pet receives nutrition, safety, and deliciousness,</span> all while building a solid health barrier. </div>
       </div>
       <div class="unleash-text2">
-        With Gloripetgo™, you're not just filling their<br>bowls—you’re fueling their lives with irresistible,
-        <br>nourishing meals. Plus, every bite helps pets beyond your<br> own, spreading happiness all around.
+        We advocate the philosophy of “prevention before illness” with scientifically formulated recipes designed to prevent diseases caused by improper daily diets, allowing your pet to live a healthier and worry-free life.
+      </div>
+      <div class="unleash-text3">
+        WE CARE FOR <span>PET HEALTH</span>
       </div>
     </section>
-
-    <!-- Products -->
-    <section id="products" class="products">
-      <h3 class="products-text1">Discover <span class="sub1">Our </span><span class="sub2">Products</span></h3>
-      <div class="product-grid">
-        <div class="product-card">
-          <img src="../assets/images/pd1.png" alt="">
-          <div class="tag1">IMMUNE SUPPORT</div>
-          <div class="tag2">JOINT CARE</div>
-        </div>
-        <div class="product-card">
-          <img src="../assets/images/pd2.png" alt="">
-          <div class="tag1">IMMUNE SUPPORT</div>
-          <div class="tag2">SKIN & COAT HEALTH</div>
-        </div>
-        <div class="product-card">
-          <img src="../assets/images/pd3.png" alt="">
-          <div class="tag1">IMMUNE SUPPORT</div>
-          <div class="tag2">URINARY HEALTH</div>
-        </div>
+    <div class="advance-block">
+      <div class="left">
+        <img src="../assets/images/salmon.jpg" alt="">
       </div>
-    </section>
+      <div class="right">
+        <img src="../assets/images/salmon.jpg" alt="">
+      </div>
+    </div>
 
     <section class="brand-logo">
       <div class="logo-list">
@@ -85,10 +69,7 @@
         <div class="swiper-block-text2">Arctic Glaciers Align</div>
         <div class="swiper-block-text3">with natural nutrition.</div>
       </div>
-      <Swiper :modules="modules" :loop="true" :slides-per-view="3" :pagination="{ clickable: true }" :navigation="{
-        nextEl: '.custom-next',
-        prevEl: '.custom-prev'
-      }" class="swiper-box">
+      <Swiper :modules="modules" :loop="true" :slides-per-view="3" :pagination="{ clickable: true }" :navigation="{nextEl: '.custom-next',prevEl: '.custom-prev'}" class="swiper-box">
         <SwiperSlide>
           <div class="slide-item">
             <div class="slide-item-title">
@@ -195,88 +176,17 @@
       </div>
     </section>
 
-    <!-- Testimonials + CTA -->
-    <!-- <section class="cta">
-      <div class="cta-left">
-        <Swiper :modules="modules" :loop="true" :slides-per-view="3.5" :pagination="{ clickable: true }" :navigation="{
-          nextEl: '.custom-next',
-          prevEl: '.custom-prev'
-        }" class="swiper-box">
-          <SwiperSlide>
-            <div class="slide-item">
-              <img src="../assets/images/swiper-item-1.jpg" style="width:250px" alt="">
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div class="slide-item">
-              <img src="../assets/images/swiper-item-2.jpg" style="width:250px" alt="">
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div class="slide-item">
-              <img src="../assets/images/swiper-item-3.jpg" style="width:250px" alt="">
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div class="slide-item">
-              <img src="../assets/images/swiper-item-4.jpg" style="width:250px" alt="">
-            </div>
-          </SwiperSlide>
-        </Swiper>
-      </div>
-      <div class="cta-right">
-        <img src="../assets/images/icon-talk.svg" alt="">
-        <div class="cta-text1">The Truth <br>
-          Behind<br>
-          <span>the Taste</span>
-        </div>
-      </div>
-    </section> -->
-
     <!-- Footer -->
     <FooterPage />
   </div>
 </template>
 
 <script setup>
-import { ref, onMounted, onBeforeUnmount } from "vue";
-import { Swiper, SwiperSlide } from 'swiper/vue'
 import { Pagination, Navigation, Autoplay } from 'swiper/modules'
+import { Swiper, SwiperSlide } from 'swiper/vue'
 import HeaderPage from "@/components/HeaderPage.vue";
 import FooterPage from "@/components/FooterPage.vue";
-const boxRef = ref(null);
-const show = ref(false);
 const modules = [Pagination, Navigation, Autoplay]
-let observer;
-
-onMounted(() => {
-  observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          console.log(entry.target, entry.boundingClientRect, entry.isIntersecting);
-          show.value = true; // 进入视口时触发动画
-        } else {
-          show.value = false;
-        }
-      });
-    },
-    {
-      threshold: 0,             // 只要有一点进入就检测
-      rootMargin: "0px 0px -30% 0px"
-    }
-  );
-
-  if (boxRef.value) {
-    observer.observe(boxRef.value);
-  }
-});
-
-onBeforeUnmount(() => {
-  if (observer && boxRef.value) {
-    observer.unobserve(boxRef.value);
-  }
-});
 </script>
 
 <style lang="scss" scoped>
@@ -284,7 +194,6 @@ onBeforeUnmount(() => {
   width: 100%;
   min-width: 1200px;
   background: #e8e8e8;
-
 
   .hero {
     position: relative;
@@ -297,62 +206,22 @@ onBeforeUnmount(() => {
 
     .title1 {
       position: absolute;
-      bottom: 7%;
-      left: 4%;
-      font-family: "RedHatDisplay-Bold";
-      font-size: 132px;
-      line-height: 108px;
-      text-align: left;
+      top: 35%;
+      left: 10%;
+      font-family: "RedHatDisplay-Medium";
+      font-size: 60px;
+      line-height: 1;
+      text-align: center;
+      width: 80%;
       /* 动画设置 */
       opacity: 0;
       transform: translateY(-100px);
       animation: dropIn 1s ease-out forwards;
 
       .title1-sub1 {
-        display: inline-block;
-        font-size: 55px;
-        vertical-align: 10px;
-        margin-left: -5px;
-
+        font-family: "RedHatDisplay-black";
+        font-size: 66px;
       }
-
-      .title1-sub2 {
-        font-family: "RedHatDisplay-Regular";
-        font-size: 55px;
-        vertical-align: 10px;
-        margin-left: -15px;
-      }
-    }
-
-    .title2 {
-      position: absolute;
-      bottom: 30%;
-      right: 63px;
-      font-family: "Oswald-Regular";
-      font-size: 16px;
-      line-height: 1.5;
-      width: 322px;
-      text-align: left;
-      /* 动画设置 */
-      opacity: 0;
-      animation: fadeIn 1s ease-out forwards;
-    }
-
-    .btn-leran-more {
-      cursor: pointer;
-      position: absolute;
-      bottom: 19%;
-      right: 75px;
-      font-family: "RedHatDisplay-Bold";
-      border: 3px solid #fff;
-      border-radius: 25px;
-      font-size: 16px;
-      width: 130px;
-      height: 32px;
-      line-height: 32px;
-      /* 动画设置 */
-      opacity: 0;
-      animation: fadeIn 1s ease-out forwards;
     }
   }
 
@@ -386,31 +255,22 @@ onBeforeUnmount(() => {
       width: 100%;
     }
 
-    .particle {
-      position: absolute;
-      top: 45px;
-      left: 0;
-      opacity: 0;
-      transform: translateY(150px);
-      transition: all 0.8s ease-out;
-    }
-
-    .particle.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
     .unleash-text1 {
       position: absolute;
-      top: 24%;
-      left: 11%;
-      color: #212995;
+      top: 50px;
+      width: 70%;
+      left: 15%;
 
       .text-sub1 {
-        font-family: "RedHatDisplay-Bold";
-        font-size: 40px;
+        font-family: "RedHatDisplay-Regular";
+        font-size: 50px;
         line-height: 1;
         text-align: left;
+        color: #9f9f9f;
+        span {
+          color: #212995;
+          font-family: "RedHatDisplay-Bold";
+        }
       }
 
       .text-sub2 {
@@ -431,77 +291,50 @@ onBeforeUnmount(() => {
 
     .unleash-text2 {
       position: absolute;
+      width: 35%;
       bottom: 20%;
-      right: 3%;
+      right: 15%;
       color: #212995;
       font-family: "Oswald-Regular";
-      font-size: 18px;
+      font-size: 22px;
+      line-height: 1;
+      text-align: left;
+    }
+    .unleash-text3 {
+      position: absolute;
+      width: 80%;
+      bottom: -10px;
+      left: 10%;
+      color: #212995;
+      font-family: "RedHatDisplay-Regular";
+      font-size: 70px;
       line-height: 1;
       text-align: center;
+      span {
+        display: inline-block;
+        font-family: "RedHatDisplay-black";
+      }
     }
   }
-
-  .products {
-    .products-text1 {
-      font-family: "RedHatDisplay-Regular";
-      font-size: 30px;
-      line-height: 1;
-      text-align: center;
-      color: #212995;
-      padding: 50px 0;
-      margin: 0;
-
-      .sub1 {
-        font-family: "RedHatDisplay-Bold";
-        font-weight: bold;
-      }
-
-      .sub2 {
-        font-family: "RedHatDisplay-Bold";
-        font-weight: bold;
+  .advance-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    .left {
+      line-height: 0;
+      width: 50%;
+      background: #f25929;
+      img {
+        opacity: 0;
+        width: 100%;
       }
     }
-
-    .product-grid {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 90%;
-      margin: 0 auto;
-
-      .product-card {
-        cursor: pointer;
-        width: 30%;
-        height: auto;
-
-        img {
-          width: 100%;
-          max-width: 350px;
-
-          &:hover {
-            transform: scale(1.05);
-          }
-        }
-
-        .tag1 {
-          font-family: "RedHatDisplay-Bold";
-          font-size: 14px;
-          line-height: 1;
-          text-align: center;
-          color: #212995;
-          height: 14px;
-        }
-
-        .tag2 {
-          font-family: "RedHatDisplay-Bold";
-          font-size: 30px;
-          line-height: 1;
-          text-align: center;
-          color: #212995;
-          width: 270px;
-          margin: 0 auto;
-          height: 60px;
-        }
+    .right {
+      width: 50%;
+      font-size: 0;
+      img {
+        width: 100%;
       }
     }
   }
@@ -628,7 +461,6 @@ onBeforeUnmount(() => {
           border: 1px solid #505050;
           opacity: 1;
         }
-
       }
 
       .slide-item {
@@ -780,8 +612,6 @@ onBeforeUnmount(() => {
       }
     }
   }
-
-
 }
 
 // 媒体查询

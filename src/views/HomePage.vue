@@ -84,10 +84,7 @@
         <div class="swiper-block-text2">Arctic Glaciers Align</div>
         <div class="swiper-block-text3">with natural nutrition.</div>
       </div>
-      <Swiper :modules="modules" :loop="true" :slides-per-view="3" :pagination="{ clickable: true }" :navigation="{
-        nextEl: '.custom-next',
-        prevEl: '.custom-prev'
-      }" class="swiper-box">
+      <Swiper :modules="modules" :loop="true" :slides-per-view="3" :pagination="{ clickable: true }" :navigation="{nextEl: '.custom-next',prevEl: '.custom-prev'}" class="swiper-box">
         <SwiperSlide>
           <div class="slide-item">
             <img src="../assets/images/swiper-item-1.jpg" alt="">
@@ -166,13 +163,9 @@
       </div>
     </section>
 
-    <!-- Testimonials + CTA -->
-    <section class="cta">
+    <!-- <section class="cta">
       <div class="cta-left">
-        <Swiper :modules="modules" :loop="true" :slides-per-view="3.5" :pagination="{ clickable: true }" :navigation="{
-          nextEl: '.custom-next',
-          prevEl: '.custom-prev'
-        }" class="swiper-box">
+        <Swiper :modules="modules" :loop="true" :slides-per-view="3.5" :pagination="{ clickable: true }" :navigation="{nextEl: '.custom-next',prevEl: '.custom-prev'}" class="swiper-box">
           <SwiperSlide>
             <div class="slide-item">
               <img src="../assets/images/swiper-item-1.jpg" style="width:250px" alt="">
@@ -202,7 +195,7 @@
           <span>the Taste</span>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <FooterPage />
   </div>
