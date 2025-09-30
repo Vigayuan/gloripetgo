@@ -34,10 +34,12 @@
       <img src="../assets/images/whyh_bg_14.jpg" alt="">
       <img src="../assets/images/whyh_bg_15.jpg" alt="">
       <div class="unleash-text1">
-        <div class="text-sub1">At GloriPetGo™, we are dedicated to ensuring that your <span>beloved pet receives nutrition, safety, and deliciousness,</span> all while building a solid health barrier. </div>
+        <div class="text-sub1">At GloriPetGo™, we are dedicated to ensuring that your <span>beloved pet receives
+            nutrition, safety, and deliciousness,</span> all while building a solid health barrier. </div>
       </div>
       <div class="unleash-text2">
-        We advocate the philosophy of “prevention before illness” with scientifically formulated recipes designed to prevent diseases caused by improper daily diets, allowing your pet to live a healthier and worry-free life.
+        We advocate the philosophy of “prevention before illness” with scientifically formulated recipes designed to
+        prevent diseases caused by improper daily diets, allowing your pet to live a healthier and worry-free life.
       </div>
       <div class="unleash-text3">
         WE CARE FOR <span>PET HEALTH</span>
@@ -45,13 +47,100 @@
     </section>
     <div class="advance-block">
       <div class="left">
+        <div class="text-block">
+          <div class="text-1">
+            <div class="text-left">01</div>
+            <div class="text-right">Premium<br>
+              Ingredients </div>
+          </div>
+          <div class="line"></div>
+          <div class="text-1">
+            <div class="text-left">02</div>
+            <div class="text-right">Advanced<br>
+              Manufacturing<br>
+              Techniques</div>
+          </div>
+          <div class="line"></div>
+          <div class="text-1">
+            <div class="text-left">03</div>
+            <div class="text-right">Scientific<br>
+              feeding<br>
+              guide</div>
+          </div>
+        </div>
         <img src="../assets/images/salmon.jpg" alt="">
       </div>
       <div class="right">
         <img src="../assets/images/salmon.jpg" alt="">
       </div>
     </div>
-
+    <div class="good-taste-block">
+      <div class="left">
+        <div class="text">
+          THE INGREDIENTS FROM <br><span>ARCTIC GLACIERS ALIGN</span><br>WITH NATURAL NUTRITION.
+        </div>
+      </div>
+      <div class="right">
+        <img src="../assets/images/icon-taste.png" alt="">
+      </div>
+    </div>
+    <div class="nutrition-block">
+      <img src="../assets/images/nutrition_bg_02.jpg" alt="">
+      <img src="../assets/images/nutrition_bg_03.jpg" alt="">
+      <img src="../assets/images/nutrition_bg_04.jpg" alt="">
+      <img src="../assets/images/nutrition_bg_05.jpg" alt="">
+      <img src="../assets/images/nutrition_bg_06.jpg" alt="">
+      <img src="../assets/images/nutrition_bg_07.jpg" alt="">
+      <img src="../assets/images/nutrition_bg_08.jpg" alt="">
+      <img src="../assets/images/nutrition_bg_09.jpg" alt="">
+      <img src="../assets/images/nutrition_bg_10.jpg" alt="">
+    </div>
+    <div class="swiper-block">
+      <Swiper :modules="modules" space-between="30" :loop="true" :slides-per-view="3"   class="swiper-box">
+        <SwiperSlide>
+          <div class="slide-item" style="background: #3dd8d0;">
+            <div class="slide-item-left">
+              ARCTIC<br>
+              CHAR
+            </div>
+            <div class="slide-item-right">
+              Sourced from the icy waters near the arctic circle, our slow-growing arctic char boasts a delicate flavor
+              and is naturally rich in omega-3 fatty acids (EPA & DHA) to nourish your cat’s coat into silky smoothness.
+              Its premium, easily digestible protein is gentle on sensitive stomachs, making it ideal for cats with
+              dietary sensitivities.
+            </div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div class="slide-item" style="background: #fc8686;">
+            <div class="slide-item-left">
+              ARCTIC<br>
+              CHAR
+            </div>
+            <div class="slide-item-right">
+              Sourced from the icy waters near the arctic circle, our slow-growing arctic char boasts a delicate flavor
+              and is naturally rich in omega-3 fatty acids (EPA & DHA) to nourish your cat’s coat into silky smoothness.
+              Its premium, easily digestible protein is gentle on sensitive stomachs, making it ideal for cats with
+              dietary sensitivities.
+            </div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div class="slide-item" style="background: #8acc63;">
+            <div class="slide-item-left">
+              ARCTIC<br>
+              CHAR
+            </div>
+            <div class="slide-item-right">
+              Sourced from the icy waters near the arctic circle, our slow-growing arctic char boasts a delicate flavor
+              and is naturally rich in omega-3 fatty acids (EPA & DHA) to nourish your cat’s coat into silky smoothness.
+              Its premium, easily digestible protein is gentle on sensitive stomachs, making it ideal for cats with
+              dietary sensitivities.
+            </div>
+          </div>
+        </SwiperSlide>
+      </Swiper>
+    </div>
     <section class="brand-logo">
       <div class="logo-list">
         <img src="../assets/images/icon-MSC.svg" alt="">
@@ -63,69 +152,7 @@
       </div>
     </section>
 
-    <div class="swiper-block">
-      <div class="swiper-block-text">
-        <div class="swiper-block-text1">The ingredients from</div>
-        <div class="swiper-block-text2">Arctic Glaciers Align</div>
-        <div class="swiper-block-text3">with natural nutrition.</div>
-      </div>
-      <Swiper :modules="modules" :loop="true" :slides-per-view="3" :pagination="{ clickable: true }" :navigation="{nextEl: '.custom-next',prevEl: '.custom-prev'}" class="swiper-box">
-        <SwiperSlide>
-          <div class="slide-item">
-            <div class="slide-item-title">
-              ARCTIC<br>
-              CHAR
-            </div>
-            <div class="slide-item-btn">
-              Learn more
-            </div>
-            <img src="../assets/images/swiper-item-1.jpg" alt="">
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div class="slide-item">
-            <div class="slide-item-title">
-              ARCTIC<br>
-              CHAR
-            </div>
-            <div class="slide-item-btn">
-              Learn more
-            </div>
-            <img src="../assets/images/swiper-item-2.jpg" alt="">
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div class="slide-item">
-            <div class="slide-item-title">
-              ARCTIC<br>
-              CHAR
-            </div>
-            <div class="slide-item-btn">
-              Learn more
-            </div>
-            <img src="../assets/images/swiper-item-3.jpg" alt="">
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div class="slide-item">
-            <div class="slide-item-title">
-              ARCTIC<br>
-              CHAR
-            </div>
-            <div class="slide-item-btn">
-              Learn more
-            </div>
-            <img src="../assets/images/swiper-item-4.jpg" alt="">
-          </div>
-        </SwiperSlide>
-      </Swiper>
-      <div class="custom-prev">
-        <img src="../assets/images/icon-arrow.svg" alt="">
-      </div>
-      <div class="custom-next">
-        <img src="../assets/images/icon-arrow.svg" style="transform: rotate(180deg);" alt="">
-      </div>
-    </div>
+
     <!-- Philosophy -->
     <section class="philosophy">
       <img src="../assets/images/bg_14.jpg" alt="">
@@ -182,11 +209,11 @@
 </template>
 
 <script setup>
-import { Pagination, Navigation, Autoplay } from 'swiper/modules'
+import {  Autoplay } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import HeaderPage from "@/components/HeaderPage.vue";
 import FooterPage from "@/components/FooterPage.vue";
-const modules = [Pagination, Navigation, Autoplay]
+const modules = [ Autoplay]
 </script>
 
 <style lang="scss" scoped>
@@ -267,6 +294,7 @@ const modules = [Pagination, Navigation, Autoplay]
         line-height: 1;
         text-align: left;
         color: #9f9f9f;
+
         span {
           color: #212995;
           font-family: "RedHatDisplay-Bold";
@@ -300,6 +328,7 @@ const modules = [Pagination, Navigation, Autoplay]
       line-height: 1;
       text-align: left;
     }
+
     .unleash-text3 {
       position: absolute;
       width: 80%;
@@ -310,32 +339,124 @@ const modules = [Pagination, Navigation, Autoplay]
       font-size: 70px;
       line-height: 1;
       text-align: center;
+
       span {
         display: inline-block;
         font-family: "RedHatDisplay-black";
       }
     }
   }
+
   .advance-block {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
+
     .left {
+      position: relative;
       line-height: 0;
       width: 50%;
       background: #f25929;
+
       img {
         opacity: 0;
         width: 100%;
       }
+
+      .text-block {
+        position: absolute;
+        top: 25px;
+        left: 25%;
+        width: 300px;
+        z-index: 100;
+
+        .text-1 {
+          cursor: pointer;
+          width: 100%;
+          display: flex;
+          font-family: 'Oswald-Regular';
+          font-size: 35px;
+          line-height: 1;
+          text-align: left;
+          color: #fff;
+          margin: 20px 0;
+          padding-left: 10px;
+
+          .text-left {
+            width: 30px;
+            font-family: 'Oswald-Regular';
+            font-size: 25px;
+            margin-right: 12px;
+            margin-top: 1px;
+          }
+
+          &.active {
+            color: #212995;
+          }
+
+          &:hover {
+            color: #212995;
+          }
+        }
+
+        .line {
+          width: 300px;
+          height: 3px;
+          border-radius: 2px;
+          background-color: #8f8f8f;
+        }
+      }
     }
+
     .right {
       width: 50%;
       font-size: 0;
+
       img {
         width: 100%;
       }
+    }
+  }
+
+  .good-taste-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 10% 0;
+    background: #fff;
+
+    .left {
+      text-align: left;
+      color: #11196c;
+
+      .text {
+        font-family: "RedHatDisplay-Medium";
+        font-size: 35px;
+        line-height: 1;
+
+        span {
+          display: inline-block;
+          font-family: "RedHatDisplay-black";
+          font-size: 50px;
+          line-height: 1;
+        }
+      }
+    }
+
+    .right {
+      img {
+        width: 120px;
+      }
+    }
+  }
+
+  .nutrition-block {
+    width: 100%;
+    line-height: 0;
+
+    img {
+      width: 100%;
     }
   }
 
@@ -363,61 +484,8 @@ const modules = [Pagination, Navigation, Autoplay]
   .swiper-block {
     position: relative;
     overflow: hidden;
+    background: #fff;
 
-    .swiper-block-text {
-      width: 100%;
-      text-align: center;
-      color: #212995;
-      padding: 20px 0 30px;
-      overflow: visible;
-
-      .swiper-block-text1 {
-        font-family: "RedHatDisplay-Medium";
-        font-size: 22px;
-        line-height: 1;
-        font-style: italic;
-      }
-
-      .swiper-block-text2 {
-        font-family: "RedHatDisplay-Bold";
-        font-size: 40px;
-        line-height: 1.2;
-      }
-
-      .swiper-block-text3 {
-        font-family: "RedHatDisplay-Regular";
-        font-size: 32px;
-        line-height: 1;
-      }
-    }
-
-    .custom-prev {
-      position: absolute;
-      top: 50%;
-      cursor: pointer;
-      left: 15%;
-      width: 40px;
-      height: 40px;
-      z-index: 100;
-
-      img {
-        width: 100%;
-      }
-    }
-
-    .custom-next {
-      position: absolute;
-      top: 50%;
-      cursor: pointer;
-      right: 15%;
-      width: 40px;
-      height: 40px;
-      z-index: 100;
-
-      img {
-        width: 100%;
-      }
-    }
 
     :deep(.swiper-box) {
       width: 140%;
@@ -466,34 +534,29 @@ const modules = [Pagination, Navigation, Autoplay]
       .slide-item {
         position: relative;
         width: 100%;
+        display: flex;
+        border-radius: 20px;
+        padding: 20px 30px 20px 40px;
+        box-sizing: border-box;
+        color: #11196c;
 
-        .slide-item-title {
-          position: absolute;
-          top: 15%;
-          left: 9%;
+        .slide-item-left {
+          width: 100px;
           font-family: "RedHatDisplay-Bold";
-          font-size: 40px;
+          font-size: 30px;
           line-height: 1;
-          color: #fff;
           text-align: left;
+          margin-right: 50px;
         }
 
-        .slide-item-btn {
-          cursor: pointer;
-          position: absolute;
-          top: 82%;
-          left: 9%;
+        .slide-item-right {
           font-family: "RedHatDisplay-Regular";
           font-size: 16px;
           line-height: 1;
-          padding-bottom: 5px;
-          color: #fff;
-          border-bottom: 3px solid #fff;
+          text-align: left;
+          word-break: break-word;
         }
 
-        img {
-          width: 100%;
-        }
       }
     }
   }

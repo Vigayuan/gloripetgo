@@ -11,7 +11,7 @@
           <div>Support</div>
         </div>
         <div class="f-message">
-          <div class="f-message-text">@Gloripetgo</div>
+          <div class="f-message-text">@GloriPetGo</div>
           <div class="logo">
             <div class="icon">
               <img src="../assets/images/icon-ins.svg" alt="">
@@ -25,7 +25,7 @@
           </div>
         </div>
       </div>
-      <div class="copyright">© 2025 “Gloripetgo” marks are trademarks of CANADA ANNOK PETFOODS INC. All Rights Reserved.
+      <div class="copyright">© 2025 “GloriPetGo” marks are trademarks of CANADA ANNOK PETFOODS INC. All Rights Reserved.
       </div>
     </footer>
 

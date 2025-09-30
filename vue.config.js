@@ -15,7 +15,7 @@ module.exports = defineConfig({
         config.resolve.alias.set('@', resolve('src'))
         // 设置 htmlWebpackPlugin 的标题
         config.plugin('html').tap(args => {
-            args[0].title = 'Gloripetgo' // 替换为您想要的标题
+            args[0].title = 'GloriPetGo' // 替换为您想要的标题
             return args
         })
     }

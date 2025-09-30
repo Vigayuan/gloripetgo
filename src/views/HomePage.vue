@@ -40,7 +40,7 @@
         <div class="text-sub3">Joy&Energy!</div>
       </div>
       <div class="unleash-text2">
-        With Gloripetgo™, you're not just filling their<br>bowls—you’re fueling their lives with irresistible,
+        With GloriPetGo™, you're not just filling their<br>bowls—you’re fueling their lives with irresistible,
         <br>nourishing meals. Plus, every bite helps pets beyond your<br> own, spreading happiness all around.
       </div>
     </section>
