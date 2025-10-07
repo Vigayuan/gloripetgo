@@ -479,7 +479,7 @@ const toggleShowQA = (index) => {
 
         .phil-block {
             position: absolute;
-            top: 100px;
+            top: 80px;
             left: 50%;
             width: 35%;
 
@@ -522,6 +522,7 @@ const toggleShowQA = (index) => {
                         line-height: 1.5;
                         text-align: left;
                         color: #7e7e7e;
+                        padding: 15px 0;
                     }
                 }
             }

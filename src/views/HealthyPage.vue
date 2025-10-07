@@ -5,13 +5,15 @@
 
     <!-- Hero -->
     <section class="hero">
-      <img src="../assets/images/whyh_bg_02.jpg" alt="">
-      <img src="../assets/images/whyh_bg_03.jpg" alt="">
-      <img src="../assets/images/whyh_bg_04.jpg" alt="">
-      <img src="../assets/images/whyh_bg_05.jpg" alt="">
-      <img src="../assets/images/whyh_bg_06.jpg" alt="">
-      <img src="../assets/images/whyh_bg_07.jpg" alt="">
-      <img src="../assets/images/whyh_bg_08.jpg" alt="">
+      <div class="hero-bg">
+        <img src="../assets/images/whyh_bg_02.jpg" alt="">
+        <img src="../assets/images/whyh_bg_03.jpg" alt="">
+        <img src="../assets/images/whyh_bg_04.jpg" alt="">
+        <img src="../assets/images/whyh_bg_05.jpg" alt="">
+        <img src="../assets/images/whyh_bg_06.jpg" alt="">
+        <img src="../assets/images/whyh_bg_07.jpg" alt="">
+        <img src="../assets/images/whyh_bg_08.jpg" alt="">
+      </div>
       <div class="title1">
         Ensuring Your Pet's<br>
         <span class="title1-sub1">Health & Happiness</span>
@@ -233,8 +235,21 @@ onMounted(() => {
     font-size: 0;
     color: #fff;
 
-    img {
-      width: 100%;
+    .hero-bg {
+      height: 400px;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        transform: translateY(0) scale(1.05);
+        animation: moveUp 5s ease-out 0.5s forwards;
+      }
+    }
+
+    @keyframes moveUp {
+      to {
+        transform: translateY(-20px) scale(1.05);
+      }
     }
 
     .title1 {
@@ -612,7 +627,7 @@ onMounted(() => {
       font-size: 22px;
       line-height: 1.2;
       text-align: center;
-      padding:20px 40px;
+      padding: 20px 40px;
 
       div {
         margin: 30px 0;
