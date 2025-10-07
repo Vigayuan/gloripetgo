@@ -145,7 +145,7 @@ const onLeave = () => {
       .icon {
         cursor: pointer;
         margin-left: 20px;
-        width: 40px;
+        width: 30px;
       }
     }
   }

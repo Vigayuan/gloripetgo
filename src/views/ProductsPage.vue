@@ -36,19 +36,36 @@
       <div class="slide-block-text">
         <div class="slide-block-text1">Nature’s <span>Pledge</span></div>
         <div class="slide-block-text2">The Ingredients Your Pet Deserves</div>
-        <div class="slide-block-text3">Only humanely raised, <br>
-          responsibly sourced meats.</div>
-        <div class="slide-block-text4">High-end nutrition, <br>
-          100% traceable ingredients.</div>
-        <div class="slide-block-text5">Expertly crafted, <br>
-          delivered to your pet.</div>
-        <div class="slide-block-text6">Verified by leading authorities <br>
-          for complete confidence</div>
+        <transition name="fade-slide" mode="out-in">
+          <div v-if="leftWidth > 200">
+            <div class="slide-block-text3">Only humanely raised, <br>
+              responsibly sourced meats.</div>
+            <div class="slide-block-text4">High-end nutrition, <br>
+              100% traceable ingredients.</div>
+            <div class="slide-block-text5">Expertly crafted, <br>
+              delivered to your pet.</div>
+            <div class="slide-block-text6">Verified by leading authorities <br>
+              for complete confidence</div>
+          </div>
+          <div v-else>
+            <div class="slide-block-text3">Crafted without corn,wheat,<br>
+              soy, or syntheticadditives <br>
+              for pure nutrition.</div>
+            <div class="slide-block-text4">Sourced from animals raised<br>
+              free of antibioticsand<br>
+              added hormones..</div>
+            <div class="slide-block-text5">Ethically procured<br>
+              seafood in every blend.</div>
+            <div class="slide-block-text6">Enriched with non-GMO <br>
+              fruits and vegetables.</div>
+          </div>
+        </transition>
       </div>
       <div class="slide-wrapper" ref="slider">
         <img class="img" src="../assets/images/drag-circle-bg-2.png" alt="">
         <div class="top-img" :style="{ width: leftWidth + 'px' }">
-          <img src="../assets/images/drag-circle-bg-1.png" alt="">
+          <img src="../assets/images/drag-circle-bg-1.png" alt=""
+            style="transform: scale(1.05);transform-origin: center;">
         </div>
         <div class="divider" :style="{ left: leftWidth + 'px' }">
           <div class="handle" @mousedown.prevent="startDrag">
@@ -69,32 +86,43 @@
       <div class="product-grid">
         <div class="product-card">
           <img src="../assets/images/pd1.png" alt="">
-          <div class="tag1">IMMUNE SUPPORT</div>
-          <div class="tag2">JOINT CARE</div>
+          <div class="tag1">ICE LAKE <br>
+            FREE-RANGE DUCK<br>
+            <div class="tag2">Complete Dog Food</div>
+          </div>
+          <div class="tag3">LEARN MORE</div>
         </div>
         <div class="product-card">
           <img src="../assets/images/pd2.png" alt="">
-          <div class="tag1">IMMUNE SUPPORT</div>
-          <div class="tag2">SKIN & COAT HEALTH</div>
+          <div class="tag1">Arctic CHAR<br>
+            <div class="tag2">Complete Cat Food</div>
+          </div>
+          <div class="tag3">LEARN MORE</div>
         </div>
         <div class="product-card">
           <img src="../assets/images/pd3.png" alt="">
-          <div class="tag1">IMMUNE SUPPORT</div>
-          <div class="tag2">URINARY HEALTH</div>
+          <div class="tag1">Free-Range Chicken<br>
+            <div class="tag2">Complete Cat Food</div>
+          </div>
+          <div class="tag3">LEARN MORE</div>
         </div>
       </div>
     </section>
 
     <div class="transparent-block"></div>
 
-    <div class="functionally-block">
+    <div class="functionally-block" ref="boxRef">
       <div class="pic">
-        <img class="pic-img" src="../assets/images/dog-pic-1.jpg" alt="">
+        <img class="pic-img" :class="{ show }" src="../assets/images/dog-pic-1.jpg" alt="">
         <div class="text">
           <div class="text-1"> Functionally<br>
             Focused</div>
-          <div class="text-2">GloriPetgo’s Aurora Series is built on the foundational benefits of boosting immunity and supporting intestinal health, with a product philosophy centered on daily prevention to reduce the risk of illnesses.</div>
-          <div class="text-2">Meanwhile, each of the three products in the Aurora Series is designed to focus on a distinct, specialized benefit — for instance, Arctic Char Complete Cat Food prioritizes coat care as its core function.</div>
+          <div class="text-2">GloriPetgo’s Aurora Series is built on the foundational benefits of boosting immunity and
+            supporting intestinal health, with a product philosophy centered on daily prevention to reduce the risk of
+            illnesses.</div>
+          <div class="text-2">Meanwhile, each of the three products in the Aurora Series is designed to focus on a
+            distinct, specialized benefit — for instance, Arctic Char Complete Cat Food prioritizes coat care as its
+            core function.</div>
         </div>
         <img src="../assets/images/icon-Aurora.svg" alt="" class="icon-aurora">
         <img src="../assets/images/icon-cq.png" alt="" class="icon-cq">
@@ -109,11 +137,13 @@
 <script setup>
 import HeaderPage from "@/components/HeaderPage.vue";
 import FooterPage from "@/components/FooterPage.vue";
-import { onMounted, ref ,onBeforeUnmount} from 'vue'
+import { onMounted, ref, onBeforeUnmount } from 'vue'
 const slider = ref(null);
 const leftWidth = ref(200); // 左边默认宽度
 let isDragging = false;
-
+const boxRef = ref(null)
+const show = ref(false);
+let observer;
 const startDrag = () => {
   isDragging = true;
   document.addEventListener("mousemove", onDrag);
@@ -140,12 +170,37 @@ const stopDrag = () => {
   document.removeEventListener("mousemove", onDrag);
   document.removeEventListener("mouseup", stopDrag);
 };
+
+
 onMounted(() => {
   window.addEventListener("resize", onWindowResize);
+  observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          console.log(entry.target, entry.boundingClientRect, entry.isIntersecting);
+          show.value = true; // 进入视口时触发动画
+        } else {
+          show.value = false;
+        }
+      });
+    },
+    {
+      threshold: 0,             // 只要有一点进入就检测
+      rootMargin: "0px 0px -30% 0px"
+    }
+  );
+
+  if (boxRef.value) {
+    observer.observe(boxRef.value);
+  }
 })
 
 onBeforeUnmount(() => {
   window.removeEventListener("resize", onWindowResize);
+  if (observer && boxRef.value) {
+    observer.unobserve(boxRef.value);
+  }
 })
 </script>
 
@@ -154,8 +209,10 @@ onBeforeUnmount(() => {
   width: 100%;
   min-width: 1200px;
   background: transparent;
+
   img {
-    user-drag: none; /* 禁止图片拖动 */
+    user-drag: none;
+    /* 禁止图片拖动 */
     -webkit-user-drag: none;
   }
 
@@ -215,16 +272,16 @@ onBeforeUnmount(() => {
       margin: 0 auto;
       background: #212995;
       border-radius: 25px;
-      padding: 20px;
+      padding: 40px 10%;
 
       .product-card {
         cursor: pointer;
-        width: 30%;
+        width: 25%;
         height: auto;
 
         img {
           width: 100%;
-          max-width: 350px;
+          max-width: 250px;
 
           &:hover {
             transform: scale(1.05);
@@ -233,22 +290,33 @@ onBeforeUnmount(() => {
 
         .tag1 {
           font-family: "RedHatDisplay-Bold";
-          font-size: 14px;
+          font-size: 22px;
           line-height: 1;
           text-align: center;
-          color: #fff;
-          height: 14px;
+          color: #00d2ff;
+          height: 80px;
+
+          .tag2 {
+            font-family: "RedHatDisplay-Regular";
+            font-size: 22px;
+            line-height: 1;
+            text-align: center;
+            color: #fff;
+          }
         }
 
-        .tag2 {
+
+        .tag3 {
+          width: 120px;
+          height: 30px;
           font-family: "RedHatDisplay-Bold";
-          font-size: 30px;
-          line-height: 1;
+          font-size: 14px;
+          line-height: 30px;
           text-align: center;
-          color: #fff;
-          width: 270px;
+          color: #00d2ff;
+          border: 1px solid #00d2ff;
+          border-radius: 20px;
           margin: 0 auto;
-          height: 60px;
         }
       }
     }
@@ -266,17 +334,28 @@ onBeforeUnmount(() => {
   .functionally-block {
     height: 800px;
     background: #fff;
+
     .pic {
       position: relative;
       width: 1200px;
       height: 800px;
       margin: 0 auto;
+
       .pic-img {
         position: absolute;
         width: 800px;
         right: 50px;
         bottom: 100px;
+        opacity: 0;
+        transform: translateX(500px);
+        transition: all 0.8s ease-out;
+
+        &.show {
+          opacity: 1;
+          transform: translateX(0);
+        }
       }
+
       .text {
         box-sizing: border-box;
         position: absolute;
@@ -288,12 +367,14 @@ onBeforeUnmount(() => {
         border-radius: 20px;
         background: #00d2ff;
         text-align: left;
+
         .text-1 {
           font-family: "RedHatDisplay-Black";
           font-size: 50px;
           line-height: 1;
           color: #212995;
         }
+
         .text-2 {
           font-family: "Oswald-Regular";
           font-size: 18px;
@@ -302,6 +383,7 @@ onBeforeUnmount(() => {
           margin-top: 30px;
         }
       }
+
       .icon-aurora {
         position: absolute;
         width: 200px;
@@ -309,20 +391,47 @@ onBeforeUnmount(() => {
         right: 50px;
         margin-left: -100px;
       }
+
       .icon-cq {
         position: absolute;
         width: 80px;
         top: 60%;
         left: 50%;
         margin-left: -40px;
+        animation: spin 4s linear infinite;
       }
+
+      @keyframes spin {
+        from {
+          transform: rotate(0deg);
+        }
+
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
     }
   }
 
   .slide-block {
     position: relative;
-
     background: #fff;
+
+    .fade-slide-enter-active,
+    .fade-slide-leave-active {
+      transition: opacity 0.2s ease;
+    }
+
+    .fade-slide-enter-from,
+    .fade-slide-leave-to {
+      opacity: 0;
+    }
+
+    .fade-slide-enter-to,
+    .fade-slide-leave-from {
+      opacity: 1;
+    }
 
     .slide-block-text {
       width: 100%;
@@ -364,6 +473,7 @@ onBeforeUnmount(() => {
         font-size: 16px;
         line-height: 1.2;
       }
+
       .slide-block-text5 {
         position: absolute;
         top: 450px;
@@ -372,6 +482,7 @@ onBeforeUnmount(() => {
         font-size: 16px;
         line-height: 1.2;
       }
+
       .slide-block-text6 {
         position: absolute;
         top: 450px;
@@ -381,6 +492,7 @@ onBeforeUnmount(() => {
         line-height: 1.2;
       }
     }
+
     .slide-wrapper {
       height: 400px;
       width: 400px;
@@ -404,6 +516,7 @@ onBeforeUnmount(() => {
         left: 0;
         height: 100%;
         overflow: hidden;
+
         img {
           width: 400px;
         }
@@ -413,7 +526,8 @@ onBeforeUnmount(() => {
         position: absolute;
         top: 0;
         height: 100%;
-        width: 0; /* 只作为定位线 */
+        width: 0;
+        /* 只作为定位线 */
       }
 
       .handle {
@@ -591,6 +705,7 @@ onBeforeUnmount(() => {
     }
   }
 }
+
 @media screen and (min-width: 1600px) {
   .landing-page {
     .slide-block {
@@ -638,6 +753,7 @@ onBeforeUnmount(() => {
           font-size: 16px;
           line-height: 1.2;
         }
+
         .slide-block-text5 {
           position: absolute;
           top: 550px;
@@ -646,6 +762,7 @@ onBeforeUnmount(() => {
           font-size: 16px;
           line-height: 1.2;
         }
+
         .slide-block-text6 {
           position: absolute;
           top: 550px;
@@ -655,6 +772,7 @@ onBeforeUnmount(() => {
           line-height: 1.2;
         }
       }
+
       .slide-wrapper {
         height: 600px;
         width: 600px;
@@ -678,6 +796,7 @@ onBeforeUnmount(() => {
           left: 0;
           height: 100%;
           overflow: hidden;
+
           img {
             width: 600px;
           }
@@ -687,7 +806,8 @@ onBeforeUnmount(() => {
           position: absolute;
           top: 0;
           height: 100%;
-          width: 0; /* 只作为定位线 */
+          width: 0;
+          /* 只作为定位线 */
         }
 
         .handle {
@@ -712,40 +832,69 @@ onBeforeUnmount(() => {
         }
       }
     }
+
     .functionally-block {
-      height: 1066px; /* 800 * 1.333 */
+      height: 1066px;
+
+      /* 800 * 1.333 */
       .pic {
-        width: 1600px; /* 1200 * 1.333 */
-        height: 1066px; /* 800 * 1.333 */
+        width: 1600px;
+        /* 1200 * 1.333 */
+        height: 1066px;
+
+        /* 800 * 1.333 */
         .pic-img {
-          width: 1066px; /* 800 * 1.333 */
-          right: 66px; /* 50 * 1.333 */
-          bottom: 133px; /* 100 * 1.333 */
+          width: 1066px;
+          /* 800 * 1.333 */
+          right: 66px;
+          /* 50 * 1.333 */
+          bottom: 133px;
+          /* 100 * 1.333 */
         }
+
         .text {
-          width: 640px; /* 480 * 1.333 */
-          height: 750px; /* 65% * 1066 */
-          left: 10%; /* 10% * 1.333 → 约等于 13.3% */
-          top: 100px; /* 100 * 1.333 */
-          padding: 53px; /* 40 * 1.333 */
-          border-radius: 27px; /* 20 * 1.333 */
+          width: 640px;
+          /* 480 * 1.333 */
+          height: 750px;
+          /* 65% * 1066 */
+          left: 10%;
+          /* 10% * 1.333 → 约等于 13.3% */
+          top: 100px;
+          /* 100 * 1.333 */
+          padding: 53px;
+          /* 40 * 1.333 */
+          border-radius: 27px;
+          /* 20 * 1.333 */
         }
+
         .text .text-1 {
-          font-size: 66px; /* 50 * 1.333 */
+          font-size: 66px;
+          /* 50 * 1.333 */
         }
+
         .text .text-2 {
-          font-size: 24px; /* 18 * 1.333 */
-          margin-top: 40px; /* 30 * 1.333 */
+          font-size: 24px;
+          /* 18 * 1.333 */
+          margin-top: 40px;
+          /* 30 * 1.333 */
         }
+
         .icon-aurora {
-          width: 266px; /* 200 * 1.333 */
-          top: 133px; /* 100 * 1.333 */
-          right: 66px; /* 50 * 1.333 */
-          margin-left: -133px; /* -100 * 1.333 */
+          width: 266px;
+          /* 200 * 1.333 */
+          top: 133px;
+          /* 100 * 1.333 */
+          right: 66px;
+          /* 50 * 1.333 */
+          margin-left: -133px;
+          /* -100 * 1.333 */
         }
+
         .icon-cq {
-          width: 106px; /* 80 * 1.333 */
-          margin-left: -53px; /* -40 * 1.333 */
+          width: 106px;
+          /* 80 * 1.333 */
+          margin-left: -53px;
+          /* -40 * 1.333 */
         }
       }
     }

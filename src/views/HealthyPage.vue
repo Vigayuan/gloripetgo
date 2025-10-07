@@ -195,7 +195,7 @@ import { Autoplay } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import HeaderPage from "@/components/HeaderPage.vue";
 import FooterPage from "@/components/FooterPage.vue";
-import { ref,onMounted,nextTick } from 'vue'
+import { ref, onMounted, nextTick } from 'vue'
 const modules = [Autoplay]
 import { useRouter } from "vue-router";
 const router = useRouter()
@@ -329,9 +329,9 @@ onMounted(() => {
       bottom: 20%;
       right: 15%;
       color: #212995;
-      font-family: "Oswald-Regular";
-      font-size: 22px;
-      line-height: 1;
+      font-family: "RedHatDisplay-Regular";
+      font-size: 20px;
+      line-height: 1.2;
       text-align: left;
     }
 
@@ -547,6 +547,7 @@ onMounted(() => {
         box-sizing: border-box;
         color: #11196c;
         box-sizing: border-box;
+
         .slide-item-left {
           width: 100px;
           font-family: "RedHatDisplay-Bold";
@@ -611,7 +612,7 @@ onMounted(() => {
       font-size: 22px;
       line-height: 1.2;
       text-align: center;
-      padding: 0 30px;
+      padding:20px 40px;
 
       div {
         margin: 30px 0;

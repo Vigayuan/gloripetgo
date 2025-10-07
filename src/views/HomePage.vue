@@ -50,7 +50,7 @@
       <h3 class="products-text1">Discover <span class="sub1">Our </span><span class="sub2">Products</span></h3>
       <div class="product-grid">
         <div class="product-card">
-          <img src="../assets/images/pd1.png" alt="">
+          <img style="margin-left: -35px;" src="../assets/images/pd1.png" alt="">
           <div class="tag1">IMMUNE SUPPORT</div>
           <div class="tag2">JOINT CARE</div>
         </div>
@@ -130,14 +130,14 @@
       </div>
     </div>
     <!-- Philosophy -->
-    <section class="philosophy">
+    <section class="philosophy"  ref="philRef">
       <img src="../assets/images/bg_14.jpg" alt="">
       <img src="../assets/images/bg_15.jpg" alt="">
       <img src="../assets/images/bg_16.jpg" alt="">
       <img src="../assets/images/bg_17.jpg" alt="">
-      <div class="phil-text1">Product</div>
-      <div class="phil-text2">Philosophy</div>
-      <div class="phil-items">
+      <div class="phil-text1" :class="{ show }">Product</div>
+      <div class="phil-text2" :class="{ show }">Philosophy</div>
+      <div class="phil-items" :class="{ show }">
         <div class="phil-item">
           <div class="phil-left">
             <img src="../assets/images/icon-Natural.svg" alt="">
@@ -226,6 +226,7 @@ import FooterPage from '@/components/FooterPage.vue'
 import { useRouter } from "vue-router";
 const router = useRouter()
 const boxRef = ref(null);
+const philRef = ref(null);
 const show = ref(false);
 const modules = [Pagination, Navigation, Autoplay]
 let observer;
@@ -252,12 +253,16 @@ onMounted(() => {
 
   if (boxRef.value) {
     observer.observe(boxRef.value);
+    observer.observe(philRef.value);
   }
 });
 
 onBeforeUnmount(() => {
   if (observer && boxRef.value) {
     observer.unobserve(boxRef.value);
+  }
+  if (observer && philRef.value) {
+    observer.unobserve(philRef.value);
   }
 });
 </script>
@@ -285,6 +290,9 @@ onBeforeUnmount(() => {
       font-size: 132px;
       line-height: 108px;
       text-align: left;
+      opacity: 0;
+      transform: translateY(-100px);
+      animation: fadeDown 0.8s ease-out 0.5s forwards;
 
       .title1-sub1 {
         display: inline-block;
@@ -310,6 +318,9 @@ onBeforeUnmount(() => {
       line-height: 1.5;
       width: 322px;
       text-align: left;
+      opacity: 0;
+      transform: translateY(-100px);
+      animation: fadeDown 0.8s ease-out 0.5s forwards;
     }
 
     .btn-leran-more {
@@ -324,6 +335,22 @@ onBeforeUnmount(() => {
       width: 130px;
       height: 32px;
       line-height: 32px;
+      opacity: 0;
+      transform: translateY(-100px);
+      animation: fadeDown 0.8s ease-out 0.5s forwards;
+    }
+
+  }
+
+  @keyframes fadeDown {
+    0% {
+      opacity: 0;
+      transform: translateY(-100px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0);
     }
   }
 
@@ -420,15 +447,16 @@ onBeforeUnmount(() => {
 
       .product-card {
         cursor: pointer;
-        width: 30%;
+        width: 25%;
         height: auto;
 
         img {
           width: 100%;
-          max-width: 350px;
+          max-width: 250px;
+          margin-left: -50px;
 
           &:hover {
-            transform: scale(1.05);
+            animation: hoverUp 0.3s ease-out forwards;
           }
         }
 
@@ -452,6 +480,16 @@ onBeforeUnmount(() => {
           height: 60px;
         }
       }
+    }
+  }
+
+  @keyframes hoverUp {
+    0% {
+      transform: scale(1);
+    }
+
+    100% {
+      transform: scale(1.05);
     }
   }
 
@@ -630,6 +668,15 @@ onBeforeUnmount(() => {
       line-height: 1;
       top: 40px;
       left: 6%;
+      opacity: 0;
+      transform: translateY(150px);
+      transition: all 0.8s ease-out;
+    }
+
+
+    .phil-text1.show {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     .phil-text2 {
@@ -639,6 +686,15 @@ onBeforeUnmount(() => {
       line-height: 1;
       top: 85px;
       left: 6%;
+      opacity: 0;
+      transform: translateY(150px);
+      transition: all 0.8s ease-out;
+    }
+
+
+    .phil-text2.show {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     .phil-items {
@@ -651,6 +707,15 @@ onBeforeUnmount(() => {
       flex-wrap: wrap;
       width: 520px;
       justify-content: space-between;
+      opacity: 0;
+      transform: translateY(150px);
+      transition: all 0.8s ease-out;
+
+
+      &.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
 
       .phil-item {
         width: 230px;
@@ -687,6 +752,7 @@ onBeforeUnmount(() => {
       }
     }
   }
+
 
   .cta {
     background: #f25929;
