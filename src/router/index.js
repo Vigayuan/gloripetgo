@@ -6,14 +6,28 @@
  */
 import { createRouter, createWebHistory } from 'vue-router'
 import HomePage from '@/views/HomePage.vue'
-
 const router = createRouter({
   history: createWebHistory(),
   routes: [
     {
-      path: '/',
+      path: '/home',
       name: 'Home',
       component: HomePage
+    },
+    {
+      path: '/homeMP',
+      name: 'HomeMP',
+      component: () => import('@/views/HomeMPage.vue')
+    },
+    {
+      path: '/healthyMP',
+      name: 'HealthyMP',
+      component: () => import('@/views/HealthyMPage.vue')
+    },
+    {
+      path: '/',
+      name: 'Coming',
+      component: () => import('@/views/ComingPage.vue')
     },
     {
       path: '/healthy',
@@ -24,6 +38,22 @@ const router = createRouter({
       path: '/products',
       name: 'Products',
       component: () => import('@/views/ProductsPage.vue')
+    },
+    {
+      path: '/productDetail',
+      name: 'ProductDetail',
+      component: () => import('@/views/ProductDetail.vue')
+    },
+    {
+      path: '/products',
+      name: 'Products',
+      component: () => import('@/views/ProductsPage.vue')
+    },
+    
+    {
+      path: '/about',
+      name: 'About',
+      component: () => import('@/views/AboutPage.vue')
     },
   ]
 })

@@ -4,24 +4,24 @@
     <div class="nav-inner">
       <nav class="menu">
         <div class="product-block" @mouseenter="onEnter" @mouseleave="onLeave">
-          <div class="text">Products</div>
+          <div @click="goPd" class="text">Products</div>
           <img class="products-arrow" src="../assets/images/products-arrow.svg" alt="" />
         </div>
-        <div>Why healthy</div>
-        <div>Our story</div>
-        <div>About us</div>
+        <div @click="goWhy">Why healthy</div>
+        <div @click="goStory">Our story</div>
+        <div @click="goAbout">About us</div>
       </nav>
       <div class="logo">
         <img src="../assets/images/Icon-Gloripetgo-logo.svg" alt="">
       </div>
       <div class="icons-list">
-        <div class="icon">
+        <div @click="openWindow(1)" class="icon">
           <img src="../assets/images/icon-facebook.svg" alt="">
         </div>
-        <div class="icon">
+        <div @click="openWindow(2)" class="icon">
           <img src="../assets/images/icon-youtube.svg" alt="">
         </div>
-        <div class="icon">
+        <div @click="openWindow(3)" class="icon">
           <img src="../assets/images/icon-ins.svg" alt="">
         </div>
       </div>
@@ -32,7 +32,7 @@
         <div class="text-2">Excellent<br>
           Furry<br>
           Products</div>
-        <div class="text-3">Learn More</div>
+        <div @click="goPd" class="text-3">Learn More</div>
       </div>
       <div class="right">
         <div class="product">
@@ -54,9 +54,32 @@
 </template>
 <script setup>
 import { ref } from "vue";
-
 const showArrowBlock = ref(false);
-
+import { useRouter } from "vue-router";
+const router = useRouter();
+const goPd = () => {
+  router.push({ name: 'Products' })
+}
+const goWhy = () => {
+  router.push({ name: 'Healthy' });
+}
+const goStory = () => {
+  router.push({ name: 'Home' });
+}
+const goAbout = () => {
+  router.push({ name: 'About' });
+}
+const openWindow = (index) => {
+  if (index == 1) {
+    window.open('https://www.facebook.com/profile.php?id=61577967892785', "_blank")
+  }
+  else if (index == 2) {
+    window.open('https://www.youtube.com/@GloriPetgo', "_blank")
+  }
+  else {
+    window.open('https://www.instagram.com/', "_blank")
+  }
+}
 // 鼠标进入/离开时切换状态
 const onEnter = () => {
   showArrowBlock.value = true;
@@ -126,6 +149,7 @@ const onLeave = () => {
       }
     }
   }
+
   .arrow-down-block {
     position: absolute;
     display: flex;
@@ -140,24 +164,29 @@ const onLeave = () => {
     background: linear-gradient(to bottom, #e4edf9, #fbfcfe);
     transition: height 0.3s ease;
     padding: 0 5%;
+
     &.show {
       height: 400px;
     }
+
     .left {
       width: 30%;
       color: #a3a9f5;
       text-align: left;
       margin-top: 50px;
+
       .text-1 {
         font-family: "RedHatDisplay-Regular";
         font-size: 50px;
         line-height: 1;
       }
+
       .text-2 {
         font-family: "RedHatDisplay-black";
         font-size: 50px;
         line-height: 1;
       }
+
       .text-3 {
         cursor: pointer;
         font-family: "RedHatDisplay-Medium";
@@ -172,25 +201,31 @@ const onLeave = () => {
         margin: 20px 0 0 10px;
       }
     }
+
     .right {
       display: flex;
       width: 60%;
       margin-top: 50px;
+
       .product {
         height: 300px;
         margin-right: 0;
+
         .pd-img {
           display: flex;
           justify-content: center;
           align-items: center;
+
           img {
             cursor: pointer;
             width: 250px;
+
             &:hover {
               transform: scale(1.1);
             }
           }
         }
+
         .text {
           font-family: "RedHatDisplay-Medium";
           font-size: 18px;

@@ -93,7 +93,7 @@
         <div class="text">
           <div class="text-1"> Functionally<br>
             Focused</div>
-          <div class="text-2">GloriPetGo’s Aurora Series is built on the foundational benefits of boosting immunity and supporting intestinal health, with a product philosophy centered on daily prevention to reduce the risk of illnesses.</div>
+          <div class="text-2">GloriPetgo’s Aurora Series is built on the foundational benefits of boosting immunity and supporting intestinal health, with a product philosophy centered on daily prevention to reduce the risk of illnesses.</div>
           <div class="text-2">Meanwhile, each of the three products in the Aurora Series is designed to focus on a distinct, specialized benefit — for instance, Arctic Char Complete Cat Food prioritizes coat care as its core function.</div>
         </div>
         <img src="../assets/images/icon-Aurora.svg" alt="" class="icon-aurora">
@@ -143,6 +143,7 @@ const stopDrag = () => {
 onMounted(() => {
   window.addEventListener("resize", onWindowResize);
 })
+
 onBeforeUnmount(() => {
   window.removeEventListener("resize", onWindowResize);
 })

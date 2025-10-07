@@ -1,7 +1,7 @@
 <template>
   <div class="landing-page">
     <!-- Header -->
-    <HeaderPage />
+    <HeaderMPage />
 
     <!-- Hero -->
     <section class="hero">
@@ -49,31 +49,30 @@
       <div class="left">
         <div class="text-block">
           <div @mouseover="showPic(1)" :class="picIndex == 1 ? 'text-1 active' : 'text-1'">
-            <div class="text-left">01</div>
+            <!-- <div class="text-left">01</div> -->
             <div class="text-right">Premium<br>
               Ingredients </div>
           </div>
           <div class="line"></div>
           <div @mouseover="showPic(2)" :class="picIndex == 2 ? 'text-1 active' : 'text-1'">
-            <div class="text-left">02</div>
+            <!-- <div class="text-left">02</div> -->
             <div class="text-right">Advanced<br>
               Manufacturing<br>
               Techniques</div>
           </div>
           <div class="line"></div>
           <div @mouseover="showPic(3)" :class="picIndex == 3 ? 'text-1 active' : 'text-1'">
-            <div class="text-left">03</div>
+            <!-- <div class="text-left">03</div> -->
             <div class="text-right">Scientific<br>
               feeding<br>
               guide</div>
           </div>
         </div>
-        <img src="../assets/images/salmon.jpg" alt="">
       </div>
       <div class="right">
-        <img v-show="picIndex == 2" src="../assets/images/food.jpg" alt="">
-        <img v-show="picIndex == 3" src="../assets/images/cat.jpg" alt="">
-        <img v-show="picIndex == 1" src="../assets/images/salmon.jpg" alt="">
+        <img v-show="picIndex == 1" src="../assets/images/food.jpg" alt="">
+        <img v-show="picIndex == 2" src="../assets/images/cat.jpg" alt="">
+        <img v-show="picIndex == 3" src="../assets/images/salmon.jpg" alt="">
       </div>
     </div>
     <div class="good-taste-block">
@@ -98,7 +97,7 @@
       <img src="../assets/images/nutrition_bg_10.jpg" alt="">
     </div>
     <div class="swiper-block">
-      <Swiper :modules="modules" :loop="true" :slides-per-view="3" :space-between="30" :autoplay="{
+      <Swiper :modules="modules" :loop="true" :slides-per-view="1" :space-between="30" :autoplay="{
         delay: 3000,
         disableOnInteraction: false
       }" class="swiper-box">
@@ -186,16 +185,16 @@
       </div>
     </section>
     <!-- Footer -->
-    <FooterPage />
+    <FooterMPage />
   </div>
 </template>
 
 <script setup>
 import { Autoplay } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/vue'
-import HeaderPage from "@/components/HeaderPage.vue";
-import FooterPage from "@/components/FooterPage.vue";
-import { ref,onMounted,nextTick } from 'vue'
+import HeaderMPage from "@/components/HeaderMPage.vue";
+import FooterMPage from "@/components/FooterMPage.vue";
+import { ref, onMounted, nextTick } from 'vue'
 const modules = [Autoplay]
 import { useRouter } from "vue-router";
 const router = useRouter()
@@ -225,8 +224,13 @@ onMounted(() => {
 <style lang="scss" scoped>
 .landing-page {
   width: 100%;
-  min-width: 1200px;
-  background: #e8e8e8;
+  background: #f5f5f5;
+  overflow-x: hidden;
+
+  img {
+    transform: scale(1.05);
+    transform-origin: center center;
+  }
 
   .hero {
     position: relative;
@@ -235,33 +239,60 @@ onMounted(() => {
 
     img {
       width: 100%;
+      display: block;
     }
 
     .title1 {
       position: absolute;
-      top: 35%;
-      left: 10%;
+      top: 20px;
+      left: 5%;
+      width: 90%;
       font-family: "RedHatDisplay-Medium";
-      font-size: 60px;
-      line-height: 1;
-      text-align: center;
-      width: 80%;
-      /* 动画设置 */
+      font-size: 24px;
+      line-height: 1.2;
+      text-align: left;
       opacity: 0;
-      transform: translateY(-100px);
+      transform: translateY(-50px);
       animation: dropIn 1s ease-out forwards;
 
       .title1-sub1 {
-        font-family: "RedHatDisplay-black";
-        font-size: 66px;
+        font-family: "RedHatDisplay-Black";
+        font-size: 26px;
+        display: block;
       }
+    }
+
+    .title2 {
+      position: absolute;
+      bottom: 44px;
+      left: 5%;
+      width: 60%;
+      font-size: 12px;
+      line-height: 1.4;
+      font-family: "Oswald-Regular";
+      color: #fff;
+      text-align: left;
+    }
+
+    .btn-leran-more {
+      position: absolute;
+      bottom: 20px;
+      right: 10px;
+      background: #212995;
+      color: #fff;
+      border-radius: 24px;
+      height: 25px;
+      width: 100px;
+      line-height: 25px;
+      font-size: 10px;
+      letter-spacing: 1px;
     }
   }
 
   @keyframes dropIn {
     from {
       opacity: 0;
-      transform: translateY(-100px);
+      transform: translateY(-50px);
     }
 
     to {
@@ -270,35 +301,27 @@ onMounted(() => {
     }
   }
 
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-
-    to {
-      opacity: 1;
-    }
-  }
-
+  /* Unleash */
   .unleash {
     position: relative;
     font-size: 0;
 
     img {
-      width: 100%;
+      width: 126%;
+      display: block;
+      margin-left: -13%;
     }
 
     .unleash-text1 {
       position: absolute;
-      top: 50px;
-      width: 70%;
-      left: 15%;
+      top: 20px;
+      left: 5%;
+      width: 90%;
 
       .text-sub1 {
         font-family: "RedHatDisplay-Regular";
-        font-size: 50px;
-        line-height: 1;
-        text-align: left;
+        font-size: 17px;
+        line-height: 1.3;
         color: #9f9f9f;
 
         span {
@@ -306,290 +329,171 @@ onMounted(() => {
           font-family: "RedHatDisplay-Bold";
         }
       }
-
-      .text-sub2 {
-        font-family: "RedHatDisplay-Bold";
-        font-size: 45px;
-        line-height: 1;
-        text-align: left;
-      }
-
-      .text-sub3 {
-        font-family: "Khalila";
-        font-size: 65px;
-        line-height: 1;
-        text-align: left;
-        color: #a1a1a1;
-      }
     }
 
     .unleash-text2 {
       position: absolute;
-      width: 35%;
-      bottom: 20%;
-      right: 15%;
+      bottom: 30px;
+      right: 5%;
+      width: 50%;
       color: #212995;
       font-family: "Oswald-Regular";
-      font-size: 22px;
-      line-height: 1;
+      font-size: 12px;
+      line-height: 1.4;
       text-align: left;
     }
 
     .unleash-text3 {
       position: absolute;
-      width: 80%;
-      bottom: -10px;
-      left: 10%;
-      color: #212995;
-      font-family: "RedHatDisplay-Regular";
-      font-size: 70px;
-      line-height: 1;
+      bottom: -3px;
+      left: 5%;
+      width: 90%;
       text-align: center;
+      line-height: 1;
+      font-size: 22px;
+      color: #212995;
 
       span {
-        display: inline-block;
-        font-family: "RedHatDisplay-black";
+        font-family: "RedHatDisplay-Black";
       }
     }
   }
 
+  /* Advance block */
   .advance-block {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
+    flex-direction: column;
+    background: #fff;
+
+    .left,
+    .right {
+      width: 100%;
+    }
 
     .left {
       position: relative;
-      line-height: 0;
-      width: 50%;
       background: #f25929;
-
-      img {
-        opacity: 0;
-        width: 100%;
-      }
+      padding: 30px 0;
 
       .text-block {
-        position: absolute;
-        top: 25px;
-        left: 25%;
-        width: 300px;
-        z-index: 100;
+        width: 90%;
+        margin: 0 auto;
 
         .text-1 {
-          cursor: pointer;
-          width: 100%;
-          display: flex;
-          font-family: 'Oswald-Regular';
-          font-size: 35px;
-          line-height: 1;
-          text-align: left;
+          text-align: center;
+          font-size: 20px;
           color: #fff;
-          margin: 20px 0;
-          padding-left: 10px;
+          margin: 12px 0;
+          line-height: 1.2;
 
           .text-left {
-            width: 30px;
-            font-family: 'Oswald-Regular';
-            font-size: 25px;
-            margin-right: 12px;
-            margin-top: 1px;
+            font-size: 16px;
+            margin-right: 8px;
           }
 
-          &.active {
-            color: #212995;
-          }
-
+          &.active,
           &:hover {
             color: #212995;
           }
         }
 
         .line {
-          width: 300px;
-          height: 3px;
-          border-radius: 2px;
-          background-color: #8f8f8f;
+          width: 100%;
+          height: 2px;
+          background: rgba(255, 255, 255, 0.4);
+          margin: 8px 0;
         }
       }
     }
 
     .right {
-      width: 50%;
-      font-size: 0;
-
       img {
         width: 100%;
+        display: block;
       }
     }
   }
 
+  /* Taste */
   .good-taste-block {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 60px 10% 0;
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 20px;
     background: #fff;
 
-    .left {
-      text-align: left;
+    .text {
       color: #11196c;
+      font-family: "RedHatDisplay-Medium";
+      font-size: 20px;
+      line-height: 1.3;
 
-      .text {
-        font-family: "RedHatDisplay-Medium";
-        font-size: 35px;
-        line-height: 1;
-
-        span {
-          display: inline-block;
-          font-family: "RedHatDisplay-black";
-          font-size: 50px;
-          line-height: 1;
-        }
+      span {
+        display: block;
+        font-size: 28px;
+        font-family: "RedHatDisplay-Black";
       }
     }
-
-    .right {
-      img {
-        width: 120px;
-      }
-    }
-  }
-
-  .nutrition-block {
-    width: 100%;
-    line-height: 0;
 
     img {
+      width: 80px;
+      margin-top: 20px;
+    }
+  }
+
+  /* Nutrition images */
+  .nutrition-block {
+    img {
       width: 100%;
+      display: block;
     }
   }
 
-  .brand-logo {
-    padding: 40px 0;
-    background-color: #fff;
-
-    .logo-list {
-      box-sizing: border-box;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 90%;
-      margin: 0 auto;
-      padding: 30px 5%;
-      background-color: #e8e8e8;
-      border-radius: 200px;
-
-      img {
-        cursor: pointer;
-        height: 40px;
-      }
-    }
-  }
-
+  /* Swiper */
   .swiper-block {
-    position: relative;
-    overflow: hidden;
     background: #fff;
-
+    padding: 20px 0;
 
     :deep(.swiper-box) {
-      width: 140%;
-      margin-left: -20%;
-
-      .swiper-button-prev {
-        top: 40% !important;
-        left: 10%;
-        background-image: url(../assets/images/icon-arrow.svg);
-        background-repeat: no-repeat;
-      }
-
-      .swiper-button-next {
-        top: 40% !important;
-        right: 10%;
-      }
-    }
-
-    .swiper-box {
-      :deep(.swiper-pagination) {
-        width: 200px;
-        height: 120px;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        margin: 0 auto;
-
-        .swiper-pagination-bullet {
-          cursor: pointer;
-          display: block;
-          background: #505050;
-          border: 1px solid #505050;
-          opacity: 0.6;
-          width: 10px;
-          height: 10px;
-          border-radius: 10px;
-        }
-
-        .swiper-pagination-bullet-active {
-          background: #e8e8e8;
-          border: 1px solid #505050;
-          opacity: 1;
-        }
-      }
+      width: 90%;
+      margin: 0 auto;
 
       .slide-item {
-        position: relative;
-        width: 100%;
-        display: flex;
-        border-radius: 20px;
-        padding: 20px 30px 20px 40px;
-        box-sizing: border-box;
-        color: #11196c;
-        box-sizing: border-box;
+        flex-direction: column;
+        padding: 20px;
+        border-radius: 12px;
+        font-size: 14px;
+
         .slide-item-left {
-          width: 100px;
-          font-family: "RedHatDisplay-Bold";
-          font-size: 30px;
-          line-height: 1;
-          text-align: left;
-          margin-right: 50px;
+          font-size: 18px;
+          margin-bottom: 10px;
         }
 
         .slide-item-right {
-          font-family: "RedHatDisplay-Regular";
-          font-size: 16px;
-          line-height: 1;
-          text-align: left;
-          word-break: break-word;
+          font-size: 13px;
+          line-height: 1.4;
         }
-
       }
     }
   }
 
+  /* Manufacturing */
   .Manufacturing {
-    position: relative;
-    font-size: 0;
-    padding: 280px 0;
+    padding: 120px 0 30px;
     background: #fff;
+    position: relative;
 
     .Manufacturing-bg {
-      width: 80%;
-      margin: 0 auto;
+      width: 100%;
     }
 
     .Manufacturing-text1 {
       position: absolute;
-      top: 100px;
-      width: 70%;
-      left: 15%;
+      top: 20px;
+      width: 100%;
+      text-align: center;
 
       .text-sub1 {
-        font-family: "RedHatDisplay-Regular";
-        font-size: 50px;
-        line-height: 1;
-        text-align: center;
+        font-size: 22px;
         color: #9f9f9f;
 
         span {
@@ -600,54 +504,54 @@ onMounted(() => {
     }
 
     .Manufacturing-text2 {
-      box-sizing: border-box;
-      position: absolute;
-      width: 60%;
-      bottom: 80px;
-      left: 20%;
-      color: #fff;
+      width: 90%;
+      position: relative;
+      font-size: 14px;
+      line-height: 1.5;
+      padding: 20px;
       background: #212995;
-      font-family: "Oswald-Regular";
-      font-size: 22px;
-      line-height: 1.2;
-      text-align: center;
-      padding: 0 30px;
+      color: #fff;
+      border-radius: 12px;
+      box-sizing: border-box;
+      margin: -30px auto 0;
+      z-index: 1000;
 
       div {
-        margin: 30px 0;
+        margin-bottom: 12px;
       }
     }
   }
 
+  /* Brand logo */
+  .brand-logo {
+    background: #fff;
+    padding: 20px 0;
 
-}
+    .logo-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      justify-items: center;
+      width: 90%;
+      margin: 0 auto;
 
-// 媒体查询
-@media (min-width: 1600px) {
-  .landing-page {
-    .topnav {
-      .nav-inner {
-        max-width: 1400px;
-      }
-    }
-  }
-}
-
-@media (min-width: 1920px) {
-  .landing-page {
-    .topnav {
-      .nav-inner {
-        max-width: 1720px;
+      img {
+        height: 30px;
       }
     }
   }
 }
 
-@media (min-width: 2560px) {
+/* 让字体在超小设备上自动缩放 */
+@media (max-width: 400px) {
   .landing-page {
-    .topnav {
-      .nav-inner {
-        max-width: 1600px;
+    font-size: 14px;
+
+    .hero .title1 {
+      font-size: 20px;
+
+      .title1-sub1 {
+        font-size: 22px;
       }
     }
   }

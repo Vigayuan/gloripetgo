@@ -18,7 +18,7 @@
       <div class="title2">
         Ensure comprehensive nutrition and health protection for your pet with every delicious bite.
       </div>
-      <div class="btn-leran-more">
+      <div @click="goWhy" class="btn-leran-more">
         LEARN MORE
       </div>
     </section>
@@ -40,7 +40,7 @@
         <div class="text-sub3">Joy&Energy!</div>
       </div>
       <div class="unleash-text2">
-        With GloriPetGo™, you're not just filling their<br>bowls—you’re fueling their lives with irresistible,
+        With GloriPetgo™, you're not just filling their<br>bowls—you’re fueling their lives with irresistible,
         <br>nourishing meals. Plus, every bite helps pets beyond your<br> own, spreading happiness all around.
       </div>
     </section>
@@ -84,24 +84,40 @@
         <div class="swiper-block-text2">Arctic Glaciers Align</div>
         <div class="swiper-block-text3">with natural nutrition.</div>
       </div>
-      <Swiper :modules="modules" :loop="true" :slides-per-view="3" :pagination="{ clickable: true }" :navigation="{nextEl: '.custom-next',prevEl: '.custom-prev'}" class="swiper-box">
+      <Swiper :modules="modules" :loop="true" :slides-per-view="3" :pagination="{ clickable: true }"
+        :navigation="{ nextEl: '.custom-next', prevEl: '.custom-prev' }" class="swiper-box">
         <SwiperSlide>
           <div class="slide-item">
+            <div class="slide-item-text1">Free-
+              Range<br>
+              Chicken</div>
+            <div class="slide-item-text2">Learn more</div>
             <img src="../assets/images/swiper-item-1.jpg" alt="">
           </div>
         </SwiperSlide>
         <SwiperSlide>
           <div class="slide-item">
+            <div class="slide-item-text1">ICE LAKE<br>
+              FREE-RANGE<br>
+              DUCK
+            </div>
+            <div class="slide-item-text2">Learn more</div>
             <img src="../assets/images/swiper-item-2.jpg" alt="">
           </div>
         </SwiperSlide>
         <SwiperSlide>
           <div class="slide-item">
+            <div class="slide-item-text1">ARCTIC<br>
+              CHAR</div>
+            <div class="slide-item-text2">Learn more</div>
             <img src="../assets/images/swiper-item-3.jpg" alt="">
           </div>
         </SwiperSlide>
         <SwiperSlide>
           <div class="slide-item">
+            <div class="slide-item-text1">ARCTIC<br>
+              CHAR</div>
+            <div class="slide-item-text2">Learn more</div>
             <img src="../assets/images/swiper-item-4.jpg" alt="">
           </div>
         </SwiperSlide>
@@ -207,11 +223,15 @@ import { Swiper, SwiperSlide } from 'swiper/vue'
 import { Pagination, Navigation, Autoplay } from 'swiper/modules'
 import HeaderPage from '@/components/HeaderPage.vue'
 import FooterPage from '@/components/FooterPage.vue'
+import { useRouter } from "vue-router";
+const router = useRouter()
 const boxRef = ref(null);
 const show = ref(false);
 const modules = [Pagination, Navigation, Autoplay]
 let observer;
-
+const goWhy = () => {
+  router.push({ name: 'Healthy' });
+}
 onMounted(() => {
   observer = new IntersectionObserver(
     (entries) => {
@@ -516,8 +536,9 @@ onBeforeUnmount(() => {
     }
 
     :deep(.swiper-box) {
-        width: 140%;
-        margin-left: -20%;
+      width: 140%;
+      margin-left: -20%;
+
       .swiper-button-prev {
         top: 40% !important;
         left: 10%;
@@ -560,7 +581,31 @@ onBeforeUnmount(() => {
       }
 
       .slide-item {
+        position: relative;
         width: 100%;
+        color: #fff;
+
+        .slide-item-text1 {
+          position: absolute;
+          top: 15%;
+          left: 8%;
+          font-family: "RedHatDisplay-Bold";
+          font-size: 30px;
+          line-height: 1;
+          text-align: left;
+        }
+
+        .slide-item-text2 {
+          position: absolute;
+          bottom: 15%;
+          left: 8%;
+          font-family: "RedHatDisplay-Regular";
+          font-size: 15px;
+          line-height: 1;
+          border-bottom: 2px solid #fff;
+          padding-bottom: 4px;
+          cursor: pointer;
+        }
 
         img {
           width: 100%;
