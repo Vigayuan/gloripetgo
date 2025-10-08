@@ -86,7 +86,6 @@
       </div>
     </div>
     <div class="nutrition-block">
-      <img src="../assets/images/nutrition_bg_02.jpg" alt="">
       <img src="../assets/images/nutrition_bg_03.jpg" alt="">
       <img src="../assets/images/nutrition_bg_04.jpg" alt="">
       <img src="../assets/images/nutrition_bg_05.jpg" alt="">
@@ -170,7 +169,7 @@
 
         <div>This process allows our products to be stored and transported at ambient temperatures, significantly
           extending
-          their shelf life. Our offerings remain natural, fresh, wholesome, and easy to use. GloripetgoTM consistently
+          their shelf life. Our offerings remain natural, fresh, wholesome, and easy to use. GloriPetgo™ consistently
           prioritizes our customers, adapting and innovating to meet their evolving needs</div>
       </div>
     </section>

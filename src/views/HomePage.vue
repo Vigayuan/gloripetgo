@@ -18,7 +18,7 @@
       <div class="title2">
         Ensure comprehensive nutrition and health protection for your pet with every delicious bite.
       </div>
-      <div @click="goWhy" class="btn-leran-more">
+      <div @click="goProduct" class="btn-leran-more">
         LEARN MORE
       </div>
     </section>
@@ -49,17 +49,17 @@
     <section id="products" class="products">
       <h3 class="products-text1">Discover <span class="sub1">Our </span><span class="sub2">Products</span></h3>
       <div class="product-grid">
-        <div class="product-card">
+        <div @click="goProductDetail(1)" class="product-card">
           <img style="margin-left: -35px;" src="../assets/images/pd1.png" alt="">
           <div class="tag1">IMMUNE SUPPORT</div>
           <div class="tag2">JOINT CARE</div>
         </div>
-        <div class="product-card">
+        <div @click="goProductDetail(2)" class="product-card">
           <img src="../assets/images/pd2.png" alt="">
           <div class="tag1">IMMUNE SUPPORT</div>
           <div class="tag2">SKIN & COAT HEALTH</div>
         </div>
-        <div class="product-card">
+        <div @click="goProductDetail(3)" class="product-card">
           <img src="../assets/images/pd3.png" alt="">
           <div class="tag1">IMMUNE SUPPORT</div>
           <div class="tag2">URINARY HEALTH</div>
@@ -91,7 +91,7 @@
             <div class="slide-item-text1">Free-
               Range<br>
               Chicken</div>
-            <div class="slide-item-text2">Learn more</div>
+            <div @click="goWhy" class="slide-item-text2">Learn more</div>
             <img src="../assets/images/swiper-item-1.jpg" alt="">
           </div>
         </SwiperSlide>
@@ -101,7 +101,7 @@
               FREE-RANGE<br>
               DUCK
             </div>
-            <div class="slide-item-text2">Learn more</div>
+            <div @click="goWhy" class="slide-item-text2">Learn more</div>
             <img src="../assets/images/swiper-item-2.jpg" alt="">
           </div>
         </SwiperSlide>
@@ -109,7 +109,7 @@
           <div class="slide-item">
             <div class="slide-item-text1">ARCTIC<br>
               CHAR</div>
-            <div class="slide-item-text2">Learn more</div>
+            <div @click="goWhy" class="slide-item-text2">Learn more</div>
             <img src="../assets/images/swiper-item-3.jpg" alt="">
           </div>
         </SwiperSlide>
@@ -117,7 +117,7 @@
           <div class="slide-item">
             <div class="slide-item-text1">ARCTIC<br>
               CHAR</div>
-            <div class="slide-item-text2">Learn more</div>
+            <div @click="goWhy" class="slide-item-text2">Learn more</div>
             <img src="../assets/images/swiper-item-4.jpg" alt="">
           </div>
         </SwiperSlide>
@@ -130,7 +130,7 @@
       </div>
     </div>
     <!-- Philosophy -->
-    <section class="philosophy"  ref="philRef">
+    <section class="philosophy" ref="philRef">
       <img src="../assets/images/bg_14.jpg" alt="">
       <img src="../assets/images/bg_15.jpg" alt="">
       <img src="../assets/images/bg_16.jpg" alt="">
@@ -232,6 +232,12 @@ const modules = [Pagination, Navigation, Autoplay]
 let observer;
 const goWhy = () => {
   router.push({ name: 'Healthy' });
+}
+const goProductDetail = (id) => {
+  router.push({ name: 'ProductDetail', query: { id } });
+}
+const goProduct = () => {
+  router.push({ name: 'Products' });
 }
 onMounted(() => {
   observer = new IntersectionObserver(

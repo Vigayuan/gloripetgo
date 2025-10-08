@@ -4,7 +4,7 @@
     <div class="nav-inner">
       <nav class="menu">
         <div class="product-block" @mouseenter="onEnter" @mouseleave="onLeave">
-          <div @click="goPd" class="text">Products</div>
+          <div @click="goHome" class="text">Products</div>
           <img class="products-arrow" src="../assets/images/products-arrow.svg" alt="" />
         </div>
         <div @click="goWhy">Why healthy</div>
@@ -37,14 +37,14 @@
       <div class="right">
         <div class="product">
           <div class="pd-img">
-            <img src="../assets/images/pd1.png" alt="" />
+            <img @click="goProductDetail(1)" src="../assets/images/pd1.png" alt="" />
           </div>
           <div class="text">For Dog</div>
         </div>
         <div class="product">
           <div class="pd-img">
-            <img src="../assets/images/pd2.png" alt="" />
-            <img src="../assets/images/pd3.png" alt="" />
+            <img @click="goProductDetail(2)" src="../assets/images/pd2.png" alt="" />
+            <img @click="goProductDetail(3)" src="../assets/images/pd3.png" alt="" />
           </div>
           <div class="text">For Cat</div>
         </div>
@@ -57,14 +57,20 @@ import { ref } from "vue";
 const showArrowBlock = ref(false);
 import { useRouter } from "vue-router";
 const router = useRouter();
+const goProductDetail = (id) => {
+  router.push({ name: 'ProductDetail', query: { id } });
+}
 const goPd = () => {
   router.push({ name: 'Products' })
+}
+const goHome = () => {
+  router.push({ name: 'Home' });
 }
 const goWhy = () => {
   router.push({ name: 'Healthy' });
 }
 const goStory = () => {
-  router.push({ name: 'Home' });
+  router.push({ name: 'Story' });
 }
 const goAbout = () => {
   router.push({ name: 'About' });
@@ -221,7 +227,8 @@ const onLeave = () => {
             width: 250px;
 
             &:hover {
-              transform: scale(1.1);
+              transform: scale(1.05);
+              animation: scaleUp 0.5s linear;
             }
           }
         }
@@ -235,6 +242,14 @@ const onLeave = () => {
         }
       }
     }
+  }
+}
+@keyframes scaleUp {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.05);
   }
 }
 </style>

@@ -90,21 +90,21 @@
             FREE-RANGE DUCK<br>
             <div class="tag2">Complete Dog Food</div>
           </div>
-          <div class="tag3">LEARN MORE</div>
+          <div @click="goProductDetail(1)" class="tag3">LEARN MORE</div>
         </div>
         <div class="product-card">
           <img src="../assets/images/pd2.png" alt="">
           <div class="tag1">Arctic CHAR<br>
             <div class="tag2">Complete Cat Food</div>
           </div>
-          <div class="tag3">LEARN MORE</div>
+          <div @click="goProductDetail(2)" class="tag3">LEARN MORE</div>
         </div>
         <div class="product-card">
           <img src="../assets/images/pd3.png" alt="">
           <div class="tag1">Free-Range Chicken<br>
             <div class="tag2">Complete Cat Food</div>
           </div>
-          <div class="tag3">LEARN MORE</div>
+          <div @click="goProductDetail(3)" class="tag3">LEARN MORE</div>
         </div>
       </div>
     </section>
@@ -138,6 +138,8 @@
 import HeaderPage from "@/components/HeaderPage.vue";
 import FooterPage from "@/components/FooterPage.vue";
 import { onMounted, ref, onBeforeUnmount } from 'vue'
+import { useRouter } from "vue-router";
+const router = useRouter();
 const slider = ref(null);
 const leftWidth = ref(200); // 左边默认宽度
 let isDragging = false;
@@ -149,6 +151,9 @@ const startDrag = () => {
   document.addEventListener("mousemove", onDrag);
   document.addEventListener("mouseup", stopDrag);
 };
+const goProductDetail = (id)=>{
+  router.push({ name: 'ProductDetail', query: { id } });
+}
 const onWindowResize = () => {
   if (window.innerWidth > 1600) {
     leftWidth.value = 300;

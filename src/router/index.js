@@ -25,6 +25,11 @@ const router = createRouter({
       component: () => import('@/views/HealthyMPage.vue')
     },
     {
+      path: '/story',
+      name: 'Story',
+      component: () => import('@/views/OurstoryPage.vue')
+    },
+    {
       path: '/',
       name: 'Coming',
       component: () => import('@/views/ComingPage.vue')
@@ -44,18 +49,23 @@ const router = createRouter({
       name: 'ProductDetail',
       component: () => import('@/views/ProductDetail.vue')
     },
-    {
-      path: '/products',
-      name: 'Products',
-      component: () => import('@/views/ProductsPage.vue')
-    },
     
     {
       path: '/about',
       name: 'About',
       component: () => import('@/views/AboutPage.vue')
     },
-  ]
+  ],
+  // 👇 关键：添加 scrollBehavior
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      // 如果使用浏览器前进/后退按钮，保留上次滚动位置
+      return savedPosition
+    } else {
+      // 否则页面跳转时滚动到顶部
+      return { top: 0, left: 0 }
+    }
+  }
 })
 
 export default router

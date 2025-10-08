@@ -27,7 +27,7 @@
     </section>
 
     <!-- Unleash energy -->
-    <section class="unleash " ref="boxRef">
+    <section class="unleash" ref="boxRef">
       <img src="../assets/images/whyh_bg_09.jpg" alt="">
       <img src="../assets/images/whyh_bg_10.jpg" alt="">
       <img src="../assets/images/whyh_bg_11.jpg" alt="">
@@ -35,15 +35,15 @@
       <img src="../assets/images/whyh_bg_13.jpg" alt="">
       <img src="../assets/images/whyh_bg_14.jpg" alt="">
       <img src="../assets/images/whyh_bg_15.jpg" alt="">
-      <div class="unleash-text1">
+      <div class="unleash-text1" :class="{ show }">
         <div class="text-sub1">At GloriPetgo™, we are dedicated to ensuring that your <span>beloved pet receives
             nutrition, safety, and deliciousness,</span> all while building a solid health barrier. </div>
       </div>
-      <div class="unleash-text2">
+      <div class="unleash-text2" :class="{ show }">
         We advocate the philosophy of “prevention before illness” with scientifically formulated recipes designed to
         prevent diseases caused by improper daily diets, allowing your pet to live a healthier and worry-free life.
       </div>
-      <div class="unleash-text3">
+      <div class="unleash-text3" :class="{ show }">
         WE CARE FOR <span>PET HEALTH</span>
       </div>
     </section>
@@ -89,7 +89,6 @@
       </div>
     </div>
     <div class="nutrition-block">
-      <img src="../assets/images/nutrition_bg_02.jpg" alt="">
       <img src="../assets/images/nutrition_bg_03.jpg" alt="">
       <img src="../assets/images/nutrition_bg_04.jpg" alt="">
       <img src="../assets/images/nutrition_bg_05.jpg" alt="">
@@ -98,9 +97,14 @@
       <img src="../assets/images/nutrition_bg_08.jpg" alt="">
       <img src="../assets/images/nutrition_bg_09.jpg" alt="">
       <img src="../assets/images/nutrition_bg_10.jpg" alt="">
+      <img @click="goToSlide(3)" src="../assets/images/moss.png" alt="" class="moss">
+      <img @click="goToSlide(1)" src="../assets/images/chicken.png" alt="" class="chicken">
+      <img @click="goToSlide(2)" src="../assets/images/duck.png" alt="" class="duck">
+      <img @click="goToSlide(4)" src="../assets/images/salmon.png" alt="" class="salmon">
+      <img src="../assets/images/cranberry.png" alt="" class="cranberry">
     </div>
     <div class="swiper-block">
-      <Swiper :modules="modules" :loop="true" :slides-per-view="3" :space-between="30" :autoplay="{
+      <Swiper :modules="modules" :loop="true" :slides-per-view="3" :space-between="30" @swiper="onSwiper" :autoplay="{
         delay: 3000,
         disableOnInteraction: false
       }" class="swiper-box">
@@ -108,23 +112,20 @@
           <div class="slide-item" style="background: #3dd8d0;">
             <div class="slide-item-left">ARCTIC<br />CHAR</div>
             <div class="slide-item-right">
-              Sourced from the icy waters near the arctic circle, our slow-growing arctic char boasts a delicate flavor
-              and is naturally rich in omega-3 fatty acids (EPA & DHA) to nourish your cat’s coat into silky smoothness.
-              Its premium, easily digestible protein is gentle on sensitive stomachs, making it ideal for cats with
-              dietary sensitivities.
+              From the cold Arctic waters, this fish offers a delicate taste and is rich in omega‑3s to keep your cat’s
+              coat soft and shiny. Gentle protein makes it ideal for sensitive stomachs.
             </div>
           </div>
         </SwiperSlide>
 
         <SwiperSlide>
           <div class="slide-item" style="background: #fc8686;">
-            <div class="slide-item-left">Free-
-              Range
+            <div class="slide-item-left">Free-<br>
+              Range<br>
               CHicken</div>
             <div class="slide-item-right">
-              Featuring our nomadic grazing technique, Starbro broiler chickens roam freely across pastures, resulting
-              in firm, nutrient-rich meat. Naturally high in protein and vitamin D with low fat content, our
-              hormone-free chicken delivers authentic flavor and optimal digestibility for cats' sensitive stomachs.
+              Raised freely on open pastures, our Starbro chickens deliver lean, protein-rich meat that’s low in fat and
+              hormone‑free—perfect for cats with delicate digestion.
             </div>
           </div>
         </SwiperSlide>
@@ -132,48 +133,41 @@
         <SwiperSlide>
           <div class="slide-item" style="background: #8acc63;">
             <div class="slide-item-left">
-              Icelake
-              Free-range
+              Icelake<br>
+              Free-range<br>
               Duck</div>
             <div class="slide-item-right">
-
-              Raised in the pristine high-latitude waters of north america, our ducks thrive in glacial meltwater and
-              boreal wetland ecosystems. They forage freely on aquatic plants, insects, and small fish, yielding lean,
-              nutrient-dense meat rich in high-quality protein and essential amino acids to support your dog’s vitality
-              and growth.
+              From the pristine northern waters of North America, our ducks produce lean, nutrient‑dense meat loaded
+              with protein and essential amino acids to support your dog’s health and growth.
             </div>
           </div>
         </SwiperSlide>
         <SwiperSlide>
           <div class="slide-item" style="background: #1c1c1c;color:#c4c4c4">
-            <div class="slide-item-left">Icefield
+            <div class="slide-item-left">Icefield<br>
               Moss</div>
             <div class="slide-item-right">
-              Canadian arctic moss is naturally rich in polyphenolic compounds (e.g. flavonoids, catechins) and
-              high-molecular polysaccharides including β-glucans & mannans. Phenolic compounds suppress pro-inflammatory
-              cytokines (TNF-α, IL-6) to reduce inflammation, inhibit pathogenic bacteria like E. coli for healthier
-              digestion, and neutralize UV-induced damage to prevent hair breakage. Polysaccharides activate lymphocytes
-              & macrophages for immune support, act as prebiotics to boost bifidobacterium growth for gut health, while
-              supporting sebaceous gland function to enhance skin resilience.
+              Canadian Arctic moss is packed with antioxidants and prebiotics to aid digestion, boost immunity, and
+              protect skin and coat.
             </div>
           </div>
         </SwiperSlide>
 
       </Swiper>
     </div>
-    <section class="Manufacturing " ref="boxRef">
+    <section class="Manufacturing " ref="manuRef">
       <img class="Manufacturing-bg" src="../assets/images/Manufacturing.jpg" alt="">
       <div class="Manufacturing-text1">
         <div class="text-sub1">Advanced <br><span>Manufacturing Techniques</span></div>
       </div>
-      <div class="Manufacturing-text2">
+      <div class="Manufacturing-text2" :class="{ show }">
         <div>Our dehydration technique, inspired by the methods used to prepare astronaut meals, is one of the finest
           available today. By removing only the water from raw ingredients at low temperatures, we are able to preserve
           their authentic flavor, taste, and nutritional content.</div>
 
         <div>This process allows our products to be stored and transported at ambient temperatures, significantly
           extending
-          their shelf life. Our offerings remain natural, fresh, wholesome, and easy to use. GloripetgoTM consistently
+          their shelf life. Our offerings remain natural, fresh, wholesome, and easy to use. GloriPetgo™ consistently
           prioritizes our customers, adapting and innovating to meet their evolving needs</div>
       </div>
     </section>
@@ -197,7 +191,7 @@ import { Autoplay } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import HeaderPage from "@/components/HeaderPage.vue";
 import FooterPage from "@/components/FooterPage.vue";
-import { ref, onMounted, nextTick } from 'vue'
+import { ref, onMounted, nextTick, onBeforeUnmount } from 'vue'
 const modules = [Autoplay]
 import { useRouter } from "vue-router";
 const router = useRouter()
@@ -208,7 +202,44 @@ const picIndex = ref(1)
 const showPic = (val) => {
   picIndex.value = val
 }
+const swiperRef = ref(null)
+
+const onSwiper = (swiper) => {
+  swiperRef.value = swiper
+}
+const goToSlide = (index) => {
+  console.log(index)
+  if (swiperRef.value) {
+    swiperRef.value.slideToLoop(index - 1, 500)
+  }
+}
+const manuRef = ref(null)
+const boxRef = ref(null)
+const show = ref(false)
+let observer;
+
 onMounted(() => {
+  observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          console.log(entry.target, entry.boundingClientRect, entry.isIntersecting);
+          show.value = true; // 进入视口时触发动画
+        } else {
+          show.value = false;
+        }
+      });
+    },
+    {
+      threshold: 0,             // 只要有一点进入就检测
+      rootMargin: "0px 0px -40% 0px"
+    }
+  );
+
+  if (boxRef.value) {
+    observer.observe(boxRef.value);
+    observer.observe(manuRef.value);
+  }
   nextTick(() => {
     const slides = document.querySelectorAll(".slide-item");
     let maxHeight = 0;
@@ -221,6 +252,14 @@ onMounted(() => {
       slide.style.height = maxHeight + "px";
     });
   });
+});
+onBeforeUnmount(() => {
+  if (observer && boxRef.value) {
+    observer.unobserve(boxRef.value);
+  }
+  if (observer && manuRef.value) {
+    observer.unobserve(manuRef.value);
+  }
 });
 </script>
 
@@ -308,6 +347,12 @@ onMounted(() => {
       top: 50px;
       width: 70%;
       left: 15%;
+      opacity: 0;
+      transition: all 0.8s ease-out;
+
+      &.show {
+        opacity: 1;
+      }
 
       .text-sub1 {
         font-family: "RedHatDisplay-Regular";
@@ -348,6 +393,12 @@ onMounted(() => {
       font-size: 20px;
       line-height: 1.2;
       text-align: left;
+      opacity: 0;
+      transition: all 0.8s ease-out;
+
+      &.show {
+        opacity: 1;
+      }
     }
 
     .unleash-text3 {
@@ -360,6 +411,12 @@ onMounted(() => {
       font-size: 70px;
       line-height: 1;
       text-align: center;
+      opacity: 0;
+      transition: all 0.8s ease-out;
+
+      &.show {
+        opacity: 1;
+      }
 
       span {
         display: inline-block;
@@ -473,11 +530,83 @@ onMounted(() => {
   }
 
   .nutrition-block {
+    position: relative;
     width: 100%;
     line-height: 0;
+    padding: 35px 0;
+    background-color: #fff;
 
     img {
       width: 100%;
+    }
+
+    .moss {
+      position: absolute;
+      top: 19%;
+      left: 24%;
+      width: 11%;
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.05);
+        animation: scaleUp 0.5s linear;
+      }
+    }
+
+    .salmon {
+      position: absolute;
+      top: 30%;
+      left: 42.5%;
+      width: 18%;
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.05);
+        animation: scaleUp 0.5s linear;
+      }
+    }
+
+    .duck {
+      position: absolute;
+      top: 4%;
+      right: 7%;
+      width: 20%;
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.05);
+        animation: scaleUp 0.5s linear;
+      }
+    }
+
+    .cranberry {
+      position: absolute;
+      top: 67%;
+      right: 23%;
+      width: 8%;
+    }
+
+    .chicken {
+      position: absolute;
+      top: 58%;
+      left: 7%;
+      width: 20%;
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.05);
+        animation: scaleUp 0.5s linear;
+      }
+    }
+  }
+
+  @keyframes scaleUp {
+    0% {
+      transform: scale(1);
+    }
+
+    100% {
+      transform: scale(1.05);
     }
   }
 
@@ -628,6 +757,12 @@ onMounted(() => {
       line-height: 1.2;
       text-align: center;
       padding: 20px 40px;
+      opacity: 0;
+      transition: all 0.8s 1s ease-out;
+
+      &.show {
+        opacity: 1;
+      }
 
       div {
         margin: 30px 0;

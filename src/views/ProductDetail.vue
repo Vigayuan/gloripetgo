@@ -52,11 +52,11 @@
 
                 <div class="info">
                     <div class="info-detail"><span>{{ pdInfo.pdDetail[0].title }}</span><br>{{ pdInfo.pdDetail[0].desc
-                        }}</div>
+                    }}</div>
                     <div class="info-detail"><span>{{ pdInfo.pdDetail[1].title }}</span><br>{{ pdInfo.pdDetail[1].desc
-                        }}</div>
+                    }}</div>
                     <div class="info-detail"><span>{{ pdInfo.pdDetail[2].title }}</span><br>{{ pdInfo.pdDetail[2].desc
-                        }}</div>
+                    }}</div>
                 </div>
 
                 <ul class="features">
@@ -319,8 +319,9 @@ const catPageInfo = {
 }
 const dogPageInfo = {
     pdImgList: [
-        new URL("@/assets/pdimg/pd-cat-1.jpg", import.meta.url).href,
-        new URL("@/assets/pdimg/pd-cat-2.jpg", import.meta.url).href,
+        new URL("@/assets/pdimg/pd-dog-1.jpg", import.meta.url).href,
+        new URL("@/assets/pdimg/pd-dog-2.jpg", import.meta.url).href,
+        new URL("@/assets/pdimg/pd-dog-3.jpg", import.meta.url).href,
     ],
     title1: "Ice Lake Free-Range Duck Recipe ",
     title2: "Complete Dog Food",
@@ -477,11 +478,11 @@ const pdInfo = reactive({
 })
 if (route.query && route.query.id == 1) {
     Object.keys(pdInfo).forEach(key => {
-        pdInfo[key] = catPageInfo[key]
+        pdInfo[key] = dogPageInfo[key]
     })
 } else {
     Object.keys(pdInfo).forEach(key => {
-        pdInfo[key] = dogPageInfo[key]
+        pdInfo[key] = catPageInfo[key]
     })
 }
 </script>
@@ -490,7 +491,7 @@ if (route.query && route.query.id == 1) {
 .product-page {
     font-family: "Segoe UI", sans-serif;
     color: #333;
-    background: #f4f4f4;
+    background: #fff;
     min-width: 1200px;
 
     .product-detail {
@@ -499,7 +500,7 @@ if (route.query && route.query.id == 1) {
         display: flex;
         gap: 40px;
         padding: 60px 50px;
-        background: #f4f4f4;
+        background: #fff;
         margin: 0 auto;
 
         .left {
