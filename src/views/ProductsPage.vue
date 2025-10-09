@@ -64,8 +64,9 @@
       <div class="slide-wrapper" ref="slider">
         <img class="img" src="../assets/images/drag-circle-bg-2.png" alt="">
         <div class="top-img" :style="{ width: leftWidth + 'px' }">
-          <img src="../assets/images/drag-circle-bg-1.png" alt="" style="transform: scale(1.05);transform-origin: center;">
-        </div>
+          <img src="../assets/images/drag-circle-bg-1.png" alt=""
+            style="transform: scale(1.01);transform-origin: center;">
+        </div>png
         <div class="divider" :style="{ left: leftWidth + 'px' }">
           <div class="handle" @mousedown.prevent="startDrag">
             <img src="../assets/images/drag-circle.svg" alt="">
@@ -85,15 +86,15 @@
       <div class="product-grid">
         <div class="product-card">
           <img src="../assets/images/pd1.png" alt="">
-          <div class="tag1">ICE LAKE <br>
-            FREE-RANGE DUCK<br>
+          <div class="tag1">Ice Lake <br>
+            Free-Range Duck<br>
             <div class="tag2">Complete Dog Food</div>
           </div>
           <div @click="goProductDetail(1)" class="tag3">LEARN MORE</div>
         </div>
         <div class="product-card">
           <img src="../assets/images/pd2.png" alt="">
-          <div class="tag1">Arctic CHAR<br>
+          <div class="tag1">Arctic Char <br>
             <div class="tag2">Complete Cat Food</div>
           </div>
           <div @click="goProductDetail(2)" class="tag3">LEARN MORE</div>
@@ -113,7 +114,7 @@
     <div class="functionally-block" ref="boxRef">
       <div class="pic">
         <div class="pic-block" :class="{ show }">
-          <img class="pic-img"  src="../assets/images/dog-pic-1.jpg" alt="">
+          <img class="pic-img" src="../assets/images/dog-pic-1.jpg" alt="">
         </div>
         <div class="text">
           <div class="text-1"> Functionally<br>
@@ -215,6 +216,7 @@ onBeforeUnmount(() => {
   width: 100%;
   min-width: 1200px;
   background: transparent;
+  overflow: hidden;
 
   img {
     user-drag: none;
@@ -274,11 +276,11 @@ onBeforeUnmount(() => {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      width: 90%;
+      width: 1000px;
       margin: 0 auto;
       background: #212995;
       border-radius: 25px;
-      padding: 40px 10%;
+      padding: 40px 100px;
 
       .product-card {
         cursor: pointer;
@@ -288,9 +290,10 @@ onBeforeUnmount(() => {
         img {
           width: 100%;
           max-width: 250px;
+          margin-left: -30px;
 
           &:hover {
-            transform: scale(1.05);
+            animation: scaleUp 1s ease-in-out;
           }
         }
 
@@ -301,6 +304,7 @@ onBeforeUnmount(() => {
           text-align: center;
           color: #00d2ff;
           height: 80px;
+          margin-top: 15px;
 
           .tag2 {
             font-family: "RedHatDisplay-Regular";
@@ -345,6 +349,7 @@ onBeforeUnmount(() => {
       width: 1200px;
       height: 800px;
       margin: 0 auto;
+
       .pic-block {
         position: absolute;
         width: 800px;
@@ -353,13 +358,20 @@ onBeforeUnmount(() => {
         opacity: 0;
         transform: translateX(500px);
         transition: all 0.8s ease-out;
+        overflow: hidden;
+        border-radius: 15px;
 
         &.show {
           opacity: 1;
           transform: translateX(0);
         }
+
         .pic-img {
           width: 100%;
+
+          &:hover {
+            animation: scaleUp 2s ease-in-out;
+          }
         }
       }
 
@@ -603,6 +615,10 @@ onBeforeUnmount(() => {
 
     img {
       width: 100%;
+
+      &:hover {
+        animation: scaleUp 1s ease-in-out;
+      }
     }
 
     .phil-text1 {
@@ -709,6 +725,20 @@ onBeforeUnmount(() => {
         }
       }
     }
+  }
+}
+
+@keyframes scaleUp {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(1);
   }
 }
 

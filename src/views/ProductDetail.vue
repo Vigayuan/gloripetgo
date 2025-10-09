@@ -61,18 +61,16 @@
 
                 <ul class="features">
                     <li>
-                        <img src="../assets/pdimg/pd-tag1.png" alt="">
-                        <div class="text">Carefully selected antibiotic-free poultry and pollution-free herbal
-                            ingredients</div>
+                        <img :src="pdInfo.features[0].url" alt="">
+                        <div class="text">{{ pdInfo.features[0].desc }}</div>
                     </li>
                     <li>
-                        <img src="../assets/pdimg/pd-tag2.png" alt="">
-                        <div class="text">No artificial preservatives, chemical flavor enhancers, or coloring agents.
-                        </div>
+                        <img :src="pdInfo.features[1].url" alt="">
+                        <div class="text">{{ pdInfo.features[1].desc }}</div>
                     </li>
                     <li>
-                        <img src="../assets/pdimg/pd-tag3.png" alt="">
-                        <div class="text">No corn, wheat, oats, or other cereal ingredients are added.</div>
+                        <img :src="pdInfo.features[2].url" alt="">
+                        <div class="text">{{ pdInfo.features[2].desc }}</div>
                     </li>
                 </ul>
             </div>
@@ -114,6 +112,12 @@
                             {{ pdInfo.Ingredients[4].text1 }}<br>
                             <span>{{ pdInfo.Ingredients[4].text2 }}</span>
                         </div>
+                        <div v-show="pdTypeIndex == 2">Herring<br>
+                            <span>5%</span>
+                        </div>
+                        <div v-show="pdTypeIndex == 2">Fresh chicken liver<br>
+                            <span>3%</span>
+                        </div>
                     </div>
                     <div class="right">{{ pdInfo.Ingredients[5].text1 }}</div>
                 </div>
@@ -128,13 +132,13 @@
                                     Crude protein
                                 </div>
                                 <div class="table-item-title">
-                                    ≥ 40.0%
+                                    {{ pdInfo.analysisList[0] }}
                                 </div>
                                 <div class="table-item-title">
                                     Phosphorus
                                 </div>
                                 <div class="table-item-title">
-                                    ≥ 0.8%
+                                    {{ pdInfo.analysisList[1] }}
                                 </div>
                             </div>
                             <div class="table-item">
@@ -142,14 +146,14 @@
                                     Crude fat
                                 </div>
                                 <div class="table-item-title">
-                                    ≥ 15.0%
+                                    {{ pdInfo.analysisList[2] }}
 
                                 </div>
                                 <div class="table-item-title">
                                     Taurine
                                 </div>
                                 <div class="table-item-title">
-                                    ≥ 0.2%
+                                    {{ pdInfo.analysisList[3] }}
                                 </div>
                             </div>
                             <div class="table-item">
@@ -157,14 +161,14 @@
                                     Crude fiber
                                 </div>
                                 <div class="table-item-title">
-                                    ≤ 5.0%
+                                    {{ pdInfo.analysisList[4] }}
 
                                 </div>
                                 <div class="table-item-title">
                                     Omega-3*
                                 </div>
                                 <div class="table-item-title">
-                                    ≥ 0.85%
+                                    {{ pdInfo.analysisList[5] }}
                                 </div>
                             </div>
                             <div class="table-item">
@@ -172,13 +176,13 @@
                                     Moisture
                                 </div>
                                 <div class="table-item-title">
-                                    ≤ 10.0%
+                                    {{ pdInfo.analysisList[6] }}
                                 </div>
                                 <div class="table-item-title">
                                     Omega-6*
                                 </div>
                                 <div class="table-item-title">
-                                    ≥ 2.6%
+                                    {{ pdInfo.analysisList[7] }}
                                 </div>
                             </div>
                             <div class="table-item">
@@ -186,7 +190,7 @@
                                     Calcium
                                 </div>
                                 <div class="table-item-title">
-                                    ≥ 1.0%
+                                    {{ pdInfo.analysisList[8] }}
 
                                 </div>
                                 <div class="table-item-title">
@@ -208,7 +212,21 @@
             </div>
         </div>
         <div class="cat-desc">
-            <img v-for="item in pdInfo.catDescList" :key="item" :src="item" alt="">
+            <div class="cat-desc-1">
+                <img :src="pdInfo.catDescList[0]" alt="">
+            </div>
+            <div class="cat-desc-2">
+                <img :src="pdInfo.catDescList[1]" alt="">
+            </div>
+            <div class="cat-desc-3">
+                <img :src="pdInfo.catDescList[2]" alt="">
+            </div>
+            <div class="cat-desc-4">
+                <img :src="pdInfo.catDescList[3]" alt="">
+            </div>
+            <div class="cat-desc-5">
+                <img :src="pdInfo.catDescList[4]" alt="">
+            </div>
         </div>
         <section class="brand-logo">
             <div class="logo-list">
@@ -229,6 +247,7 @@ import HeaderPage from '@/components/HeaderPage.vue';
 import FooterPage from '@/components/FooterPage.vue';
 import { ref, reactive } from 'vue'
 import { useRoute } from 'vue-router';
+import { catPageInfo1, catPageInfo2, dogPageInfo } from '@/views/pdInfo.js'
 const showTabIndex = ref(1)
 const showPdIndex = ref(1)
 const handleTagChange = (index) => {
@@ -238,246 +257,7 @@ const route = useRoute();
 const showPD = (index) => {
     showPdIndex.value = index
 }
-const catPageInfo1 = {
-    pdImgList: [
-        new URL("@/assets/pdimg/pd-cat-1.jpg", import.meta.url).href,
-        new URL("@/assets/pdimg/pd-cat-2.jpg", import.meta.url).href,
-        new URL("@/assets/pdimg/pd-cat-3.jpg", import.meta.url).href,
-    ],
-    title1: "Free-Range Chicken Recipe",
-    title2: "Complete Cat Food",
-    desc: "Uses low-magnesium and low-calcium ingredients as primary components, incorporating natural acidifiers to maintain a slightly acidic urine environment in cats, reducing urinary stone risk. Dandelion flavonoids boost urine flow and hydration.Cranberries add PACs to curb bacterial adhesion, aiding daily urinary health.",
-    tagList: [
-        new URL("@/assets/pdimg/icon-urinary.png", import.meta.url).href,
-        new URL("@/assets/pdimg/icon-immune.png", import.meta.url).href,
-        new URL("@/assets/pdimg/icon-micro.png", import.meta.url).href,
-    ],
-    pdDetail: [
-        {
-            title: "Food Form",
-            desc: "Dry Food"
-        },
-        {
-            title: "Net Wt.",
-            desc: "3 lb (1.36 kg)"
-        },
-        {
-            title: "Age Range",
-            desc: "All life stages"
-        }
-    ],
-    Ingredients: [
-        {
-            text1: 'Attrictive daily meal = ',
-            text2: '85%',
-            text3: 'raw meat based on',
-        },
-        {
-            text1: 'Fresh free-range',
-            text2: 'chicken',
-            text3: '36%',
-        },
-        {
-            text1: 'Fresh turkey',
-            text2: '28%',
-        },
-        {
-            text1: 'Fresh boneless',
-            text2: 'duck',
-            text3: '18%',
-        },
-        {
-            text1: 'Fresh chicken liver',
-            text2: '3%',
-        },
-        {
-            text1: 'Fresh free range chicken (36%), fresh turkey (28%), fresh boneless duck (18%), fresh chicken liver (3%), potato flour, dried sweet potato, chicken fat, deep sea fish oil, egg yolk powder, pumpkin, broccoli, carrot, papaya, dried cranberry (1.5%), dandelion granules (1%), alfalfa meal, chicory root powder, yucca powder, ice field moss extract (0.8%), natural lactic acid, fructooligosaccharides, chondroitin sulfate, lecithin, L-carnitine, sodium chloride, choline chloride, taurine, vitamin E, L-ascorbate-2-phosphate, niacin, vitamin A, thiamine mononitrate, D-calcium pantothenate, riboflavin, pyridoxine hydrochloride, cyanocobalamin, folic acid, vitamin D3, D-biotin, iron proteinate, copper proteinate, manganese proteinate, zinc proteinate, calcium iodate, sodium selenite, potassium chloride, Bacillus subtilis, rosemary extract.',
-        },
-    ],
-    GuidImg: new URL("@/assets/pdimg/pd-tab-bg.jpg", import.meta.url).href,
-    catBgList: [
-        new URL("@/assets/pdimg/cat_bg_02.jpg", import.meta.url).href,
-        new URL("@/assets/pdimg/cat_bg_03.jpg", import.meta.url).href,
-        new URL("@/assets/pdimg/cat_bg_04.jpg", import.meta.url).href,
-    ],
-    catDescList: [
-        new URL("@/assets/pdimg/cat_desc_01.png", import.meta.url).href,
-        new URL("@/assets/pdimg/cat_desc_02.png", import.meta.url).href,
-        new URL("@/assets/pdimg/cat_desc_03.png", import.meta.url).href,
-        new URL("@/assets/pdimg/cat_desc_04.png", import.meta.url).href,
-        new URL("@/assets/pdimg/cat_desc_05.png", import.meta.url).href,
-        new URL("@/assets/pdimg/cat_desc_06.png", import.meta.url).href,
-        new URL("@/assets/pdimg/cat_desc_07.png", import.meta.url).href,
-        new URL("@/assets/pdimg/cat_desc_08.png", import.meta.url).href,
-        new URL("@/assets/pdimg/cat_desc_09.png", import.meta.url).href,
-        new URL("@/assets/pdimg/cat_desc_10.png", import.meta.url).href,
-        new URL("@/assets/pdimg/cat_desc_11.png", import.meta.url).href,
-        new URL("@/assets/pdimg/cat_desc_12.png", import.meta.url).href,
-        new URL("@/assets/pdimg/cat_desc_13.png", import.meta.url).href,
-        new URL("@/assets/pdimg/cat_desc_14.png", import.meta.url).href,
-        new URL("@/assets/pdimg/cat_desc_15.jpg", import.meta.url).href,
-    ]
-}
-const catPageInfo2 = {
-    pdImgList: [
-        new URL("@/assets/pdimg/pd-cat-1.jpg", import.meta.url).href,
-        new URL("@/assets/pdimg/pd-cat-2.jpg", import.meta.url).href,
-        new URL("@/assets/pdimg/pd-cat-3.jpg", import.meta.url).href,
-    ],
-    title1: "Free-Range Chicken Recipe",
-    title2: "Complete Cat Food",
-    desc: "Uses low-magnesium and low-calcium ingredients as primary components, incorporating natural acidifiers to maintain a slightly acidic urine environment in cats, reducing urinary stone risk. Dandelion flavonoids boost urine flow and hydration.Cranberries add PACs to curb bacterial adhesion, aiding daily urinary health.",
-    tagList: [
-        new URL("@/assets/pdimg/icon-urinary.png", import.meta.url).href,
-        new URL("@/assets/pdimg/icon-immune.png", import.meta.url).href,
-        new URL("@/assets/pdimg/icon-micro.png", import.meta.url).href,
-    ],
-    pdDetail: [
-        {
-            title: "Food Form",
-            desc: "Dry Food"
-        },
-        {
-            title: "Net Wt.",
-            desc: "3 lb (1.36 kg)"
-        },
-        {
-            title: "Age Range",
-            desc: "All life stages"
-        }
-    ],
-    Ingredients: [
-        {
-            text1: 'Attrictive daily meal = ',
-            text2: '85%',
-            text3: 'raw meat based on',
-        },
-        {
-            text1: 'Fresh free-range',
-            text2: 'chicken',
-            text3: '36%',
-        },
-        {
-            text1: 'Fresh turkey',
-            text2: '28%',
-        },
-        {
-            text1: 'Fresh boneless',
-            text2: 'duck',
-            text3: '18%',
-        },
-        {
-            text1: 'Fresh chicken liver',
-            text2: '3%',
-        },
-        {
-            text1: 'Fresh free range chicken (36%), fresh turkey (28%), fresh boneless duck (18%), fresh chicken liver (3%), potato flour, dried sweet potato, chicken fat, deep sea fish oil, egg yolk powder, pumpkin, broccoli, carrot, papaya, dried cranberry (1.5%), dandelion granules (1%), alfalfa meal, chicory root powder, yucca powder, ice field moss extract (0.8%), natural lactic acid, fructooligosaccharides, chondroitin sulfate, lecithin, L-carnitine, sodium chloride, choline chloride, taurine, vitamin E, L-ascorbate-2-phosphate, niacin, vitamin A, thiamine mononitrate, D-calcium pantothenate, riboflavin, pyridoxine hydrochloride, cyanocobalamin, folic acid, vitamin D3, D-biotin, iron proteinate, copper proteinate, manganese proteinate, zinc proteinate, calcium iodate, sodium selenite, potassium chloride, Bacillus subtilis, rosemary extract.',
-        },
-    ],
-    GuidImg: new URL("@/assets/pdimg/pd-tab-bg.jpg", import.meta.url).href,
-    catBgList: [
-        new URL("@/assets/pdimg/cat_bg_02.jpg", import.meta.url).href,
-        new URL("@/assets/pdimg/cat_bg_03.jpg", import.meta.url).href,
-        new URL("@/assets/pdimg/cat_bg_04.jpg", import.meta.url).href,
-    ],
-    catDescList: [
-        new URL("@/assets/pdimg/cat_desc_01.png", import.meta.url).href,
-        new URL("@/assets/pdimg/cat_desc_02.png", import.meta.url).href,
-        new URL("@/assets/pdimg/cat_desc_03.png", import.meta.url).href,
-        new URL("@/assets/pdimg/cat_desc_04.png", import.meta.url).href,
-        new URL("@/assets/pdimg/cat_desc_05.png", import.meta.url).href,
-        new URL("@/assets/pdimg/cat_desc_06.png", import.meta.url).href,
-        new URL("@/assets/pdimg/cat_desc_07.png", import.meta.url).href,
-        new URL("@/assets/pdimg/cat_desc_08.png", import.meta.url).href,
-        new URL("@/assets/pdimg/cat_desc_09.png", import.meta.url).href,
-        new URL("@/assets/pdimg/cat_desc_10.png", import.meta.url).href,
-        new URL("@/assets/pdimg/cat_desc_11.png", import.meta.url).href,
-        new URL("@/assets/pdimg/cat_desc_12.png", import.meta.url).href,
-        new URL("@/assets/pdimg/cat_desc_13.png", import.meta.url).href,
-        new URL("@/assets/pdimg/cat_desc_14.png", import.meta.url).href,
-        new URL("@/assets/pdimg/cat_desc_15.jpg", import.meta.url).href,
-    ]
-}
-const dogPageInfo = {
-    pdImgList: [
-        new URL("@/assets/pdimg/pd-dog-1.jpg", import.meta.url).href,
-        new URL("@/assets/pdimg/pd-dog-2.jpg", import.meta.url).href,
-        new URL("@/assets/pdimg/pd-dog-3.jpg", import.meta.url).href,
-    ],
-    title1: "Ice Lake Free-Range Duck Recipe ",
-    title2: "Complete Dog Food",
-    desc: "Enriched with glucosamine to enhance bone and cartilage metabolism, paired with MSM and chondroitin to promote cartilage repair, improve ligament elasticity, and boost joint fluid production, reducing discomfort from exercise. Features an optimal calcium-phosphorus ratio and vitamin D to strengthen bone density. Comprehensive care for your dog’s joint health.",
-    tagList: [
-        new URL("@/assets/pdimg/icon-urinary.png", import.meta.url).href,
-        new URL("@/assets/pdimg/icon-immune.png", import.meta.url).href,
-        new URL("@/assets/pdimg/icon-micro.png", import.meta.url).href,
-    ],
-    pdDetail: [
-        {
-            title: "Food Form",
-            desc: "Dry Food"
-        },
-        {
-            title: "Net Wt.",
-            desc: "3 lb (1.36 kg)"
-        },
-        {
-            title: "Age Range",
-            desc: "All life stages"
-        }
-    ],
-    Ingredients: [
-        {
-            text1: 'Attrictive daily meal = ',
-            text2: '70%',
-            text3: 'raw meat based on',
-        },
-        {
-            text1: 'Frostbound lake free-',
-            text2: 'range duck meat',
-            text3: '36%',
-        },
-        {
-            text1: 'Fresh chicken',
-            text2: '18%',
-        },
-        {
-            text1: 'Fresh turkey',
-            text2: '',
-            text3: '13%',
-        },
-        {
-            text1: 'Fresh chicken liver',
-            text2: '3%',
-        },
-        {
-            text1: 'Fresh free range chicken (36%), fresh turkey (28%), fresh boneless duck (18%), fresh chicken liver (3%), potato flour, dried sweet potato, chicken fat, deep sea fish oil, egg yolk powder, pumpkin, broccoli, carrot, papaya, dried cranberry (1.5%), dandelion granules (1%), alfalfa meal, chicory root powder, yucca powder, ice field moss extract (0.8%), natural lactic acid, fructooligosaccharides, chondroitin sulfate, lecithin, L-carnitine, sodium chloride, choline chloride, taurine, vitamin E, L-ascorbate-2-phosphate, niacin, vitamin A, thiamine mononitrate, D-calcium pantothenate, riboflavin, pyridoxine hydrochloride, cyanocobalamin, folic acid, vitamin D3, D-biotin, iron proteinate, copper proteinate, manganese proteinate, zinc proteinate, calcium iodate, sodium selenite, potassium chloride, Bacillus subtilis, rosemary extract.',
-        },
-    ],
-    GuidImg: new URL("@/assets/pdimg/pd-tab-dog-bg.jpg", import.meta.url).href,
-    catBgList: [
-        new URL("@/assets/pdimg/dog_bg_02.jpg", import.meta.url).href,
-        new URL("@/assets/pdimg/dog_bg_03.jpg", import.meta.url).href,
-        new URL("@/assets/pdimg/dog_bg_04.jpg", import.meta.url).href,
-    ],
-    catDescList: [
-        new URL("@/assets/pdimg/dog_desc_01.jpg", import.meta.url).href,
-        new URL("@/assets/pdimg/dog_desc_02.jpg", import.meta.url).href,
-        new URL("@/assets/pdimg/dog_desc_03.jpg", import.meta.url).href,
-        new URL("@/assets/pdimg/dog_desc_04.jpg", import.meta.url).href,
-        new URL("@/assets/pdimg/dog_desc_05.jpg", import.meta.url).href,
-        new URL("@/assets/pdimg/dog_desc_06.jpg", import.meta.url).href,
-        new URL("@/assets/pdimg/dog_desc_07.jpg", import.meta.url).href,
-        new URL("@/assets/pdimg/dog_desc_08.jpg", import.meta.url).href,
-        new URL("@/assets/pdimg/dog_desc_09.jpg", import.meta.url).href,
-        new URL("@/assets/pdimg/dog_desc_10.jpg", import.meta.url).href,
-        new URL("@/assets/pdimg/dog_desc_11.jpg", import.meta.url).href,
-        new URL("@/assets/pdimg/dog_desc_12.jpg", import.meta.url).href,
-        new URL("@/assets/pdimg/dog_desc_13.jpg", import.meta.url).href,
-        new URL("@/assets/pdimg/dog_desc_14.jpg", import.meta.url).href,
-        new URL("@/assets/pdimg/dog_desc_15.jpg", import.meta.url).href,
-    ]
-}
+const pdTypeIndex = ref(route.query.id)
 const pdInfo = reactive({
     pdImgList: [
         new URL("@/assets/pdimg/pd-cat-1.jpg", import.meta.url).href,
@@ -486,10 +266,25 @@ const pdInfo = reactive({
     title1: "Free-Range Chicken Recipe",
     title2: "Complete Cat Food",
     desc: "Uses low-magnesium and low-calcium ingredients as primary components, incorporating natural acidifiers to maintain a slightly acidic urine environment in cats, reducing urinary stone risk. Dandelion flavonoids boost urine flow and hydration.Cranberries add PACs to curb bacterial adhesion, aiding daily urinary health.",
+    analysisList: ['≥ 40.0%', '≥ 0.8%', '≥ 16.0%', '≥ 0.2%', '≤ 5.0% ', '≥ 0.85%', '≤ 10.0%', '≥ 2.6', '≥ 1.0%'],
     tagList: [
         new URL("@/assets/pdimg/icon-urinary.png", import.meta.url).href,
         new URL("@/assets/pdimg/icon-immune.png", import.meta.url).href,
         new URL("@/assets/pdimg/icon-micro.png", import.meta.url).href,
+    ],
+    features: [
+        {
+            url: new URL("@/assets/pdimg/pd-tag1.png", import.meta.url).href,
+            desc: "Carefully selected antibiotic-free poultry and pollution-free herbal ingredients"
+        },
+        {
+            url: new URL("@/assets/pdimg/pd-tag2.png", import.meta.url).href,
+            desc: "No artificial preservatives, chemical flavor enhancers, or coloring agents. "
+        },
+        {
+            url: new URL("@/assets/pdimg/pd-tag3.png", import.meta.url).href,
+            desc: "No corn, wheat, oats, or other cereal ingredients are added."
+        }
     ],
     pdDetail: [
         {
@@ -540,21 +335,11 @@ const pdInfo = reactive({
         new URL("@/assets/pdimg/cat_bg_04.jpg", import.meta.url).href,
     ],
     catDescList: [
-        new URL("@/assets/pdimg/cat_desc_01.png", import.meta.url).href,
-        new URL("@/assets/pdimg/cat_desc_02.png", import.meta.url).href,
-        new URL("@/assets/pdimg/cat_desc_03.png", import.meta.url).href,
-        new URL("@/assets/pdimg/cat_desc_04.png", import.meta.url).href,
-        new URL("@/assets/pdimg/cat_desc_05.png", import.meta.url).href,
-        new URL("@/assets/pdimg/cat_desc_06.png", import.meta.url).href,
-        new URL("@/assets/pdimg/cat_desc_07.png", import.meta.url).href,
-        new URL("@/assets/pdimg/cat_desc_08.png", import.meta.url).href,
-        new URL("@/assets/pdimg/cat_desc_09.png", import.meta.url).href,
-        new URL("@/assets/pdimg/cat_desc_10.png", import.meta.url).href,
-        new URL("@/assets/pdimg/cat_desc_11.png", import.meta.url).href,
-        new URL("@/assets/pdimg/cat_desc_12.png", import.meta.url).href,
-        new URL("@/assets/pdimg/cat_desc_13.png", import.meta.url).href,
-        new URL("@/assets/pdimg/cat_desc_14.png", import.meta.url).href,
-        new URL("@/assets/pdimg/cat_desc_15.jpg", import.meta.url).href,
+        new URL("@/assets/pdimg/pd-cat-1-desc_07.png", import.meta.url).href,
+        new URL("@/assets/pdimg/pd-cat-1-desc_09.png", import.meta.url).href,
+        new URL("@/assets/pdimg/pd-cat-1-desc_16.png", import.meta.url).href,
+        new URL("@/assets/pdimg/pd-cat-1-desc_25.png", import.meta.url).href,
+        new URL("@/assets/pdimg/pd-cat-1-desc_27.png", import.meta.url).href,
     ]
 })
 if (route.query && route.query.id == 1) {
@@ -565,7 +350,7 @@ if (route.query && route.query.id == 1) {
     Object.keys(pdInfo).forEach(key => {
         pdInfo[key] = catPageInfo2[key]
     })
-}else{
+} else {
     Object.keys(pdInfo).forEach(key => {
         pdInfo[key] = catPageInfo1[key]
     })
@@ -918,9 +703,46 @@ if (route.query && route.query.id == 1) {
         width: 1000px;
         margin: 50px auto;
         font-size: 0;
-
+        position: relative;
+        height: 800px;
+        div{
+            position: absolute;
+            width: 493px;
+            overflow: hidden;
+            border-radius: 18px;
+        }
         img {
+            cursor: pointer;
             width: 100%;
+            &:hover{
+                transform: scale(1.05);
+                animation: scaleUp 0.5s linear;
+            }
+        }
+
+        .cat-desc-1 {
+            top: 0;
+            left: 0;
+        }
+
+        .cat-desc-2 {
+            top: 0;
+            right: 0;
+        }
+
+        .cat-desc-3 {
+            top: 274px;
+            left: 0;
+        }
+
+        .cat-desc-4 {
+            top: 548px;
+            left: 0;
+        }
+
+        .cat-desc-5 {
+            top: 548px;
+            right: 0;
         }
     }
 
@@ -945,5 +767,13 @@ if (route.query && route.query.id == 1) {
         }
     }
 
+}
+@keyframes scaleUp {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.05);
+    }
 }
 </style>

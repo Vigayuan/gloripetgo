@@ -4,12 +4,13 @@
     <div class="nav-inner">
       <nav class="menu">
         <div class="product-block" @mouseenter="onEnter" @mouseleave="onLeave">
-          <div @click="goPd" class="text">Products</div>
-          <img class="products-arrow" :class="{ rotate: showArrowBlock }" src="../assets/images/products-arrow.svg" alt="" />
+          <div @click="goPd" class="text nav-text" :class="{ active: activeName === 'Products' }">Products</div>
+          <img class="products-arrow" :class="{ rotate: showArrowBlock }" src="../assets/images/products-arrow.svg"
+            alt="" />
         </div>
-        <div @click="goWhy">Why healthy</div>
-        <div @click="goStory">Our story</div>
-        <div @click="goAbout">About us</div>
+        <div @click="goWhy" class="nav-text" :class="{ active: activeName === 'Healthy' }">Why healthy</div>
+        <div @click="goStory" class="nav-text" :class="{ active: activeName === 'Story' }">Our story</div>
+        <div @click="goSupport" class="nav-text" :class="{ active: activeName === 'Support' }">Support</div>
       </nav>
       <div @click="goHome" class="logo">
         <img src="../assets/images/Icon-Gloripetgo-logo.svg" alt="">
@@ -39,7 +40,7 @@
           <div class="pd-img">
             <img @click="goProductDetail(1)" src="../assets/images/pd1.png" alt="" />
           </div>
-          <div class="text">For Dog</div>
+          <div class="text" style="padding-left: 35px;">For Dog</div>
         </div>
         <div class="product">
           <div class="pd-img">
@@ -54,10 +55,22 @@
   </header>
 </template>
 <script setup>
-import { ref } from "vue";
+import { ref, watch } from "vue";
 const showArrowBlock = ref(false);
-import { useRouter } from "vue-router";
+import { useRouter, useRoute } from "vue-router";
 const router = useRouter();
+const route = useRoute();
+const activeName = ref(route.name || '');
+watch(
+  () => route.name,
+  (newName, oldName) => {
+    if (newName && newName !== oldName) {
+      activeName.value = newName;
+      console.log('Route name changed:', newName);
+    }
+  },
+  { immediate: true }
+);
 const goProductDetail = (id) => {
   router.push({ name: 'ProductDetail', query: { id } });
 }
@@ -73,7 +86,7 @@ const goWhy = () => {
 const goStory = () => {
   router.push({ name: 'Story' });
 }
-const goAbout = () => {
+const goSupport = () => {
   router.push({ name: 'Support' });
 }
 const openWindow = (index) => {
@@ -94,6 +107,7 @@ const onEnter = () => {
 const onLeave = () => {
   showArrowBlock.value = false;
 };
+
 </script>
 
 <style lang="scss" scoped>
@@ -102,6 +116,7 @@ const onLeave = () => {
   width: 100%;
   height: 80px;
   background: #212995;
+
   .nav-inner {
     position: relative;
     box-sizing: border-box;
@@ -113,6 +128,7 @@ const onLeave = () => {
     padding: 0 50px;
     margin: 0 auto;
     z-index: 100;
+    background: #212995;
 
     .menu {
       width: 40%;
@@ -121,6 +137,20 @@ const onLeave = () => {
       font-family: "Oswald-SemiBold";
       font-size: 18px;
       line-height: 80px;
+
+      .active {
+        position: relative;
+
+        &::after {
+          position: absolute;
+          content: "";
+          width: 100%;
+          height: 3px;
+          background: #fff;
+          bottom: 17px;
+          left: 0;
+        }
+      }
 
       .product-block {
         position: relative;
@@ -132,7 +162,8 @@ const onLeave = () => {
           width: 13px;
           cursor: pointer;
         }
-        .rotate{
+
+        .rotate {
           transform: rotate(180deg);
         }
       }
@@ -249,6 +280,7 @@ const onLeave = () => {
       }
     }
   }
+
   .mask {
     display: none;
     position: fixed;
@@ -258,15 +290,18 @@ const onLeave = () => {
     height: 100vh;
     background: rgba(0, 0, 0, 0.5);
     z-index: 80;
+
     &.show {
       display: block;
     }
   }
 }
+
 @keyframes scaleUp {
   0% {
     transform: scale(1);
   }
+
   100% {
     transform: scale(1.05);
   }
