@@ -50,12 +50,12 @@
                     </div>
                     <div class="email">E-MAIL*</div>
                     <div class="email-input">
-                        <input type="text" id="email" v-model="email" placeholder="email" />
+                        <input type="text" id="email" v-model="email" placeholder="Email" />
                     </div>
                     <div class="message">MESSAGE*</div>
                     <div class="message-input">
-                        <textarea type="text" id="message" v-model="message" placeholder="First Name" />
-                    </div>
+                        <textarea type="text" id="message" v-model="message" placeholder="Message" />
+                    </div> 
                 </div>
                 <div class="btn-group">
                     <div class="btn-block">
@@ -84,12 +84,12 @@
             <div class="phil-block">
                 <div class="phil-text1">Frequently <br> Asked Questions</div>
                 <div class="phil-items">
-                    <div class="phil-item">
+                    <div @click="toggleShowQA(1)" class="phil-item">
                         <div class="phil-item-top">
                             <div class="phil-item-top-text">
                                 Are GloriPetgo pet food safe?
                             </div>
-                            <div @click="toggleShowQA(1)" class="control-btn">
+                            <div  class="control-btn">
                                 <div v-show="showQAIndex != 1">+</div>
                                 <div v-show="showQAIndex == 1">-</div>
                             </div>
@@ -107,12 +107,12 @@
                             </div>
                         </div>
                     </div>
-                    <div class="phil-item">
+                    <div @click="toggleShowQA(2)" class="phil-item">
                         <div class="phil-item-top">
                             <div class="phil-item-top-text">
                                 How do I keep my pet happy and healthy?
                             </div>
-                            <div @click="toggleShowQA(2)" class="control-btn">
+                            <div  class="control-btn">
                                 <div v-show="showQAIndex != 2">+</div>
                                 <div v-show="showQAIndex == 2">-</div>
                             </div>
@@ -129,13 +129,13 @@
                             </div>
                         </div>
                     </div>
-                    <div class="phil-item">
+                    <div @click="toggleShowQA(3)" class="phil-item">
                         <div class="phil-item-top">
                             <div class="phil-item-top-text">
                                 What key factors should I consider
                                 when selecting a pet food?
                             </div>
-                            <div @click="toggleShowQA(3)" class="control-btn">
+                            <div  class="control-btn">
                                 <div v-show="showQAIndex != 3">+</div>
                                 <div v-show="showQAIndex == 3">-</div>
                             </div>
@@ -152,13 +152,13 @@
                             </div>
                         </div>
                     </div>
-                    <div class="phil-item">
+                    <div @click="toggleShowQA(4)" class="phil-item">
                         <div class="phil-item-top">
                             <div class="phil-item-top-text">
                                 What does "Cruelty Free" mean
                                 to GloriPetgo?
                             </div>
-                            <div @click="toggleShowQA(4)" class="control-btn">
+                            <div  class="control-btn">
                                 <div v-show="showQAIndex != 4">+</div>
                                 <div v-show="showQAIndex == 4">-</div>
                             </div>
@@ -497,6 +497,7 @@ const toggleShowQA = (index) => {
                 line-height: 1;
 
                 .phil-item {
+                    cursor: pointer;
                     padding: 20px 0 10px;
                     border-bottom: 2px solid #7e7e7e;
 

@@ -64,8 +64,7 @@
       <div class="slide-wrapper" ref="slider">
         <img class="img" src="../assets/images/drag-circle-bg-2.png" alt="">
         <div class="top-img" :style="{ width: leftWidth + 'px' }">
-          <img src="../assets/images/drag-circle-bg-1.png" alt=""
-            style="transform: scale(1.05);transform-origin: center;">
+          <img src="../assets/images/drag-circle-bg-1.png" alt="" style="transform: scale(1.05);transform-origin: center;">
         </div>
         <div class="divider" :style="{ left: leftWidth + 'px' }">
           <div class="handle" @mousedown.prevent="startDrag">
@@ -113,7 +112,9 @@
 
     <div class="functionally-block" ref="boxRef">
       <div class="pic">
-        <img class="pic-img" :class="{ show }" src="../assets/images/dog-pic-1.jpg" alt="">
+        <div class="pic-block" :class="{ show }">
+          <img class="pic-img"  src="../assets/images/dog-pic-1.jpg" alt="">
+        </div>
         <div class="text">
           <div class="text-1"> Functionally<br>
             Focused</div>
@@ -125,7 +126,7 @@
             core function.</div>
         </div>
         <img src="../assets/images/icon-Aurora.svg" alt="" class="icon-aurora">
-        <img src="../assets/images/icon-cq.png" alt="" class="icon-cq">
+        <img src="../assets/images/icon-cq.svg" alt="" class="icon-cq">
       </div>
     </div>
 
@@ -151,7 +152,7 @@ const startDrag = () => {
   document.addEventListener("mousemove", onDrag);
   document.addEventListener("mouseup", stopDrag);
 };
-const goProductDetail = (id)=>{
+const goProductDetail = (id) => {
   router.push({ name: 'ProductDetail', query: { id } });
 }
 const onWindowResize = () => {
@@ -310,7 +311,6 @@ onBeforeUnmount(() => {
           }
         }
 
-
         .tag3 {
           width: 120px;
           height: 30px;
@@ -345,8 +345,7 @@ onBeforeUnmount(() => {
       width: 1200px;
       height: 800px;
       margin: 0 auto;
-
-      .pic-img {
+      .pic-block {
         position: absolute;
         width: 800px;
         right: 50px;
@@ -358,6 +357,9 @@ onBeforeUnmount(() => {
         &.show {
           opacity: 1;
           transform: translateX(0);
+        }
+        .pic-img {
+          width: 100%;
         }
       }
 
@@ -403,7 +405,7 @@ onBeforeUnmount(() => {
         top: 60%;
         left: 50%;
         margin-left: -40px;
-        animation: spin 4s linear infinite;
+        animation: spin 8s linear infinite;
       }
 
       @keyframes spin {
@@ -415,7 +417,6 @@ onBeforeUnmount(() => {
           transform: rotate(360deg);
         }
       }
-
     }
   }
 

@@ -88,9 +88,9 @@
         :navigation="{ nextEl: '.custom-next', prevEl: '.custom-prev' }" class="swiper-box">
         <SwiperSlide>
           <div class="slide-item">
-            <div class="slide-item-text1">Free-
-              Range<br>
-              Chicken</div>
+            <div class="slide-item-text1">FREE-
+              RANGE<br>
+              CHICKEN</div>
             <div @click="goWhy" class="slide-item-text2">Learn more</div>
             <img src="../assets/images/swiper-item-1.jpg" alt="">
           </div>
@@ -113,7 +113,7 @@
             <img src="../assets/images/swiper-item-3.jpg" alt="">
           </div>
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide>   
           <div class="slide-item">
             <div class="slide-item-text1">ARCTIC<br>
               CHAR</div>

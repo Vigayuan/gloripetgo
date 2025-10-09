@@ -43,7 +43,7 @@ const goStory = () => {
   router.push({ name: 'Home' });
 }
 const goAbout = () => {
-  router.push({ name: 'About' });
+  router.push({ name: 'Support' });
 }
 const openWindow = (index) => {
   if (index == 1) {

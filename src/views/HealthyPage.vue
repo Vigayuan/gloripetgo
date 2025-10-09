@@ -35,39 +35,41 @@
       <img src="../assets/images/whyh_bg_13.jpg" alt="">
       <img src="../assets/images/whyh_bg_14.jpg" alt="">
       <img src="../assets/images/whyh_bg_15.jpg" alt="">
-      <div class="unleash-text1" :class="{ show }">
+      <div class="unleash-text1" :class="{ showBox }">
         <div class="text-sub1">At GloriPetgo™, we are dedicated to ensuring that your <span>beloved pet receives
             nutrition, safety, and deliciousness,</span> all while building a solid health barrier. </div>
       </div>
-      <div class="unleash-text2" :class="{ show }">
+      <div class="unleash-text2" :class="{ showBox }">
         We advocate the philosophy of “prevention before illness” with scientifically formulated recipes designed to
         prevent diseases caused by improper daily diets, allowing your pet to live a healthier and worry-free life.
       </div>
-      <div class="unleash-text3" :class="{ show }">
+      <div class="unleash-text3" :class="{ showBox }">
         WE CARE FOR <span>PET HEALTH</span>
       </div>
     </section>
     <div class="advance-block">
       <div class="left">
-        <div class="text-block">
-          <div @mouseover="showPic(1)" :class="picIndex == 1 ? 'text-1 active' : 'text-1'">
-            <div class="text-left">01</div>
-            <div class="text-right">Premium<br>
-              Ingredients </div>
-          </div>
-          <div class="line"></div>
-          <div @mouseover="showPic(2)" :class="picIndex == 2 ? 'text-1 active' : 'text-1'">
-            <div class="text-left">02</div>
-            <div class="text-right">Advanced<br>
-              Manufacturing<br>
-              Techniques</div>
-          </div>
-          <div class="line"></div>
-          <div @mouseover="showPic(3)" :class="picIndex == 3 ? 'text-1 active' : 'text-1'">
-            <div class="text-left">03</div>
-            <div class="text-right">Scientific<br>
-              feeding<br>
-              guide</div>
+        <div class="text-wrapper">
+          <div class="text-block">
+            <div @mouseover="showPic(1)" :class="picIndex == 1 ? 'text-1 active' : 'text-1'">
+              <div class="text-left">01</div>
+              <div class="text-right">Premium<br>
+                Ingredients </div>
+            </div>
+            <div class="line"></div>
+            <div @mouseover="showPic(2)" :class="picIndex == 2 ? 'text-1 active' : 'text-1'">
+              <div class="text-left">02</div>
+              <div class="text-right">Advanced<br>
+                Manufacturing<br>
+                Techniques</div>
+            </div>
+            <div class="line"></div>
+            <div @mouseover="showPic(3)" :class="picIndex == 3 ? 'text-1 active' : 'text-1'">
+              <div class="text-left">03</div>
+              <div class="text-right">Scientific<br>
+                feeding<br>
+                guide</div>
+            </div>
           </div>
         </div>
         <img src="../assets/images/salmon.jpg" alt="">
@@ -160,7 +162,7 @@
       <div class="Manufacturing-text1">
         <div class="text-sub1">Advanced <br><span>Manufacturing Techniques</span></div>
       </div>
-      <div class="Manufacturing-text2" :class="{ show }">
+      <div class="Manufacturing-text2" :class="{ showManu }">
         <div>Our dehydration technique, inspired by the methods used to prepare astronaut meals, is one of the finest
           available today. By removing only the water from raw ingredients at low temperatures, we are able to preserve
           their authentic flavor, taste, and nutritional content.</div>
@@ -215,31 +217,33 @@ const goToSlide = (index) => {
 }
 const manuRef = ref(null)
 const boxRef = ref(null)
-const show = ref(false)
-let observer;
+const showBox = ref(false)
+const showManu = ref(false)
+let observers = [];
 
 onMounted(() => {
-  observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          console.log(entry.target, entry.boundingClientRect, entry.isIntersecting);
-          show.value = true; // 进入视口时触发动画
-        } else {
-          show.value = false;
-        }
-      });
+  const observer1 = new IntersectionObserver(
+    ([entry]) => {
+      showBox.value = entry.isIntersecting;
     },
     {
-      threshold: 0,             // 只要有一点进入就检测
-      rootMargin: "0px 0px -40% 0px"
+      threshold: 0.1, // 进入 10% 可视区域时触发
+      rootMargin: "0px 0px -30% 0px", // 提前 30% 触发
     }
   );
-
-  if (boxRef.value) {
-    observer.observe(boxRef.value);
-    observer.observe(manuRef.value);
-  }
+  if (boxRef.value) observer1.observe(boxRef.value);
+  observers.push(observer1);
+  const observer2 = new IntersectionObserver(
+    ([entry]) => {
+      showManu.value = entry.isIntersecting;
+    },
+    {
+      threshold: 0.1, // 进入 10% 可视区域时触发
+      rootMargin: "0px 0px -30% 0px", // 提前 30% 触发
+    }
+  );
+  if (manuRef.value) observer2.observe(manuRef.value);
+  observers.push(observer2);
   nextTick(() => {
     const slides = document.querySelectorAll(".slide-item");
     let maxHeight = 0;
@@ -254,12 +258,7 @@ onMounted(() => {
   });
 });
 onBeforeUnmount(() => {
-  if (observer && boxRef.value) {
-    observer.unobserve(boxRef.value);
-  }
-  if (observer && manuRef.value) {
-    observer.unobserve(manuRef.value);
-  }
+  observers.forEach((o) => o.disconnect())
 });
 </script>
 
@@ -345,13 +344,16 @@ onBeforeUnmount(() => {
     .unleash-text1 {
       position: absolute;
       top: 50px;
-      width: 70%;
-      left: 15%;
+      width: 1000px;
+      left: 50%;
+      margin-left: -500px;
       opacity: 0;
-      transition: all 0.8s ease-out;
+    //   transform: translateY(-100px);
+      transition: all 0.8s 0.8s ease-out;
 
-      &.show {
+      &.showBox {
         opacity: 1;
+        // transform: translateY(0);
       }
 
       .text-sub1 {
@@ -396,16 +398,17 @@ onBeforeUnmount(() => {
       opacity: 0;
       transition: all 0.8s ease-out;
 
-      &.show {
+      &.showBox {
         opacity: 1;
       }
     }
 
     .unleash-text3 {
       position: absolute;
-      width: 80%;
+      width: 1000px;
       bottom: -10px;
-      left: 10%;
+      left: 50%;
+      margin-left: -500px;
       color: #212995;
       font-family: "RedHatDisplay-Regular";
       font-size: 70px;
@@ -414,7 +417,7 @@ onBeforeUnmount(() => {
       opacity: 0;
       transition: all 0.8s ease-out;
 
-      &.show {
+      &.showBox {
         opacity: 1;
       }
 
@@ -441,48 +444,54 @@ onBeforeUnmount(() => {
         opacity: 0;
         width: 100%;
       }
-
-      .text-block {
+      .text-wrapper {
         position: absolute;
-        top: 25px;
-        left: 25%;
-        width: 300px;
-        z-index: 100;
-
-        .text-1 {
-          cursor: pointer;
-          width: 100%;
-          display: flex;
-          font-family: 'Oswald-Regular';
-          font-size: 35px;
-          line-height: 1;
-          text-align: left;
-          color: #fff;
-          margin: 20px 0;
-          padding-left: 10px;
-
-          .text-left {
-            width: 30px;
-            font-family: 'Oswald-Regular';
-            font-size: 25px;
-            margin-right: 12px;
-            margin-top: 1px;
-          }
-
-          &.active {
-            color: #212995;
-          }
-
-          &:hover {
-            color: #212995;
-          }
-        }
-
-        .line {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .text-block {
           width: 300px;
-          height: 3px;
-          border-radius: 2px;
-          background-color: #8f8f8f;
+          z-index: 100;
+
+          .text-1 {
+            cursor: pointer;
+            width: 100%;
+            display: flex;
+            font-family: "Oswald-Regular";
+            font-size: 35px;
+            line-height: 1;
+            text-align: left;
+            color: #fff;
+            margin: 20px 0;
+            padding-left: 10px;
+
+            .text-left {
+              width: 30px;
+              font-family: "Oswald-Regular";
+              font-size: 25px;
+              margin-right: 12px;
+              margin-top: 1px;
+            }
+
+            &.active {
+              color: #212995;
+            }
+
+            &:hover {
+              color: #212995;
+            }
+          }
+
+          .line {
+            width: 300px;
+            height: 3px;
+            border-radius: 2px;
+            background-color: #8f8f8f;
+          }
         }
       }
     }
@@ -637,7 +646,6 @@ onBeforeUnmount(() => {
     overflow: hidden;
     background: #fff;
 
-
     :deep(.swiper-box) {
       width: 140%;
       margin-left: -20%;
@@ -708,7 +716,6 @@ onBeforeUnmount(() => {
           text-align: left;
           word-break: break-word;
         }
-
       }
     }
   }
@@ -760,7 +767,7 @@ onBeforeUnmount(() => {
       opacity: 0;
       transition: all 0.8s 1s ease-out;
 
-      &.show {
+      &.showManu {
         opacity: 1;
       }
 
@@ -769,8 +776,6 @@ onBeforeUnmount(() => {
       }
     }
   }
-
-
 }
 
 // 媒体查询

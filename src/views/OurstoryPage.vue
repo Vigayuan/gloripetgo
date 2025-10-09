@@ -2,7 +2,37 @@
   <div class="landing-page">
     <!-- Header -->
     <HeaderPage />
-
+    <div class="fix-bg">
+      <img src="../assets/images/mission_bg_01.jpg" alt="">
+      <img src="../assets/images/mission_bg_02.jpg" alt="">
+      <img src="../assets/images/mission_bg_03.jpg" alt="">
+      <img src="../assets/images/mission_bg_04.jpg" alt="">
+      <img src="../assets/images/mission_bg_05.jpg" alt="">
+      <img src="../assets/images/mission_bg_06.jpg" alt="">
+      <img src="../assets/images/mission_bg_07.jpg" alt="">
+      <img src="../assets/images/mission_bg_08.jpg" alt="">
+      <img src="../assets/images/mission_bg_09.jpg" alt="">
+      <img src="../assets/images/mission_bg_10.jpg" alt="">
+      <img src="../assets/images/mission_bg_11.jpg" alt="">
+      <img src="../assets/images/mission_bg_12.jpg" alt="">
+      <img src="../assets/images/mission_bg_13.jpg" alt="">
+      <img src="../assets/images/mission_bg_14.jpg" alt="">
+      <img src="../assets/images/mission_bg_15.jpg" alt="">
+      <img src="../assets/images/mission_bg_16.jpg" alt="">
+      <img src="../assets/images/mission_bg_17.jpg" alt="">
+      <img src="../assets/images/mission_bg_18.jpg" alt="">
+      <img src="../assets/images/mission_bg_19.jpg" alt="">
+      <img src="../assets/images/mission_bg_20.jpg" alt="">
+      <img src="../assets/images/mission_bg_21.jpg" alt="">
+      <img src="../assets/images/mission_bg_22.jpg" alt="">
+      <img src="../assets/images/mission_bg_23.jpg" alt="">
+      <img src="../assets/images/mission_bg_24.jpg" alt="">
+      <img src="../assets/images/mission_bg_25.jpg" alt="">
+      <img src="../assets/images/mission_bg_26.jpg" alt="">
+      <img src="../assets/images/mission_bg_27.jpg" alt="">
+      <img src="../assets/images/mission_bg_28.jpg" alt="">
+      <img src="../assets/images/mission_bg_29.jpg" alt="">
+    </div>
     <!-- Hero -->
     <section class="hero">
       <div class="hero-bg">
@@ -35,10 +65,10 @@
           SPIRIT
         </div>
       </div>
-      <div class="unleash-text2" :class="{ show }">
+      <div class="unleash-text2" :class="{ showBox }">
         In 1998
       </div>
-      <div class="unleash-text3" :class="{ show }">
+      <div class="unleash-text3" :class="{ showBox }">
         under the shimmering auroras of Canada's Yukon, <span>Dr. Ethan Frost</span> - a veterinarian and polar explorer
         - joined an
         Arctic expedition. He witnessed local Inuit communities caring for their sled dogs through the harshest winters.
@@ -51,13 +81,9 @@
     <div class="our-mission" ref="missionRef">
       <div class="img-block">
         <img src="../assets/images/story_bg_10.jpg" alt="">
-        <img src="../assets/images/story_bg_11.jpg" alt="">
-        <img src="../assets/images/story_bg_12.jpg" alt="">
-        <img src="../assets/images/story_bg_13.jpg" alt="">
-        <img src="../assets/images/story_bg_14.jpg" alt="">
       </div>
-      <div class="text-1" :class="{ show }">Our mission</div>
-      <div class="text-2" :class="{ show }">help pets live healthier, longer lives through nature-powered, preventive
+      <div class="text-1" :class="{ showMission }">Our mission</div>
+      <div class="text-2" :class="{ showMission }">help pets live healthier, longer lives through nature-powered, preventive
         nutrition.</div>
     </div>
     <div class="his-2005">
@@ -116,7 +142,7 @@
         <img src="../assets/images/story_bg_37.jpg" alt="">
         <img src="../assets/images/story_bg_38.jpg" alt="">
       </div>
-      <div class="text-1" :class="{ show }">Our Commitment <br>to <span>Sustainability</span>
+      <div class="text-1" :class="{ showCommitment }">Our Commitment <br>to <span>Sustainability</span>
       </div>
     </div>
     <div class="four-re">
@@ -170,51 +196,56 @@ const router = useRouter()
 const boxRef = ref(null)
 const missionRef = ref(null)
 const commitmentRef = ref(null)
-const show = ref(false)
+const showBox = ref(false);
+const showMission = ref(false);
+const showCommitment = ref(false);
 const goWhy = () => {
   router.push({ name: 'Healthy' });
 }
-let observer = null
+let observers = []
 onMounted(() => {
-  observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          console.log(entry.target, entry.boundingClientRect, entry.isIntersecting);
-          show.value = true; // 进入视口时触发动画
-        } else {
-          show.value = false;
-        }
-      });
+  const observer1 = new IntersectionObserver(
+    ([entry]) => {
+      showBox.value = entry.isIntersecting;
     },
     {
-      threshold: 0,             // 只要有一点进入就检测
-      rootMargin: "0px 0px -50% 0px"
+      threshold: 0.3, // 进入 10% 可视区域时触发
+      rootMargin: "0px 0px -30% 0px", // 提前 30% 触发
     }
   );
+  if (boxRef.value) observer1.observe(boxRef.value);
+  observers.push(observer1);
 
-  if (boxRef.value) {
-    observer.observe(boxRef.value);
-  }
-  if (missionRef.value) {
-    observer.observe(missionRef.value);
-  }
-  if (commitmentRef.value) {
-    observer.observe(commitmentRef.value);
-  }
+  // 2️⃣ mission
+  const observer2 = new IntersectionObserver(
+    ([entry]) => {
+      showMission.value = entry.isIntersecting;
+    },
+    {
+      threshold: 0,
+      rootMargin: "0px 0px -50% 0px", // 比 box 晚一点触发
+    }
+  );
+  if (missionRef.value) observer2.observe(missionRef.value);
+  observers.push(observer2);
+
+  // 3️⃣ commitment
+  const observer3 = new IntersectionObserver(
+    ([entry]) => {
+      showCommitment.value = entry.isIntersecting;
+    },
+    {
+      threshold: 0.2,
+      rootMargin: "0px 0px -20% 0px",
+    }
+  );
+  if (commitmentRef.value) observer3.observe(commitmentRef.value);
+  observers.push(observer3);
 });
 
 
 onBeforeUnmount(() => {
-  if (observer && boxRef.value) {
-    observer.unobserve(boxRef.value);
-  }
-  if (missionRef.value) {
-    observer.unobserve(missionRef.value);
-  }
-  if (commitmentRef.value) {
-    observer.unobserve(commitmentRef.value);
-  }
+  observers.forEach((o) => o.disconnect())
 });
 </script>
 
@@ -222,7 +253,19 @@ onBeforeUnmount(() => {
 .landing-page {
   width: 100%;
   min-width: 1200px;
+  .fix-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    line-height: 0;
+    z-index: -1;
 
+    img {
+      width: 100%;
+    }
+  }
   .hero {
     position: relative;
     font-size: 0;
@@ -345,7 +388,7 @@ onBeforeUnmount(() => {
       transform: translateY(1000);
       transition: all 0.8s ease-out;
 
-      &.show {
+      &.showBox {
         opacity: 1;
         transform: translateX(0);
       }
@@ -365,7 +408,7 @@ onBeforeUnmount(() => {
       transform: translateY(1000);
       transition: all 0.8s ease-out;
 
-      &.show {
+      &.showBox {
         opacity: 1;
         transform: translateX(0);
       }
@@ -382,21 +425,22 @@ onBeforeUnmount(() => {
     width: 100%;
     height: 300px;
     overflow: hidden;
-
+    img {
+      width: 100%;
+    }
     .img-block {
       width: 100%;
       line-height: 0;
-
-      img {
-        width: 100%;
-      }
+      height: 300px;
+      background: transparent;
     }
 
     .text-1 {
       position: absolute;
       top: 60px;
-      left: 15%;
-      width: 70%;
+      left: 50%;
+      width: 600px;
+      margin-left: -300px;
       font-family: "RedHatDisplay-black";
       font-size: 50px;
       line-height: 1;
@@ -405,8 +449,9 @@ onBeforeUnmount(() => {
       opacity: 0;
       transform: translateY(1000);
       transition: all 0.8s ease-out;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 
-      &.show {
+      &.showMission {
         opacity: 1;
         transform: translateX(0);
       }
@@ -416,8 +461,9 @@ onBeforeUnmount(() => {
       font-family: "RedHatDisplay-Regular";
       position: absolute;
       top: 130px;
-      left: 25%;
-      width: 50%;
+      left: 50%;
+      width: 600px;
+      margin-left: -300px;
       font-size: 25px;
       line-height: 1.5;
       text-align: center;
@@ -425,8 +471,9 @@ onBeforeUnmount(() => {
       opacity: 0;
       transform: translateY(1000);
       transition: all 0.8s ease-out;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 
-      &.show {
+      &.showMission {
         opacity: 1;
         transform: translateX(0);
       }
@@ -478,7 +525,6 @@ onBeforeUnmount(() => {
         }
       }
     }
-
   }
 
   .his-2022 {
@@ -526,7 +572,6 @@ onBeforeUnmount(() => {
         }
       }
     }
-
   }
 
   .our-commitment {
@@ -546,8 +591,9 @@ onBeforeUnmount(() => {
     .text-1 {
       position: absolute;
       top: 160px;
-      left: 15%;
-      width: 70%;
+      left: 50%;
+      width: 600px;
+      margin-left: -300px;
       font-family: "RedHatDisplay-Medium";
       font-size: 50px;
       line-height: 1.2;
@@ -557,7 +603,7 @@ onBeforeUnmount(() => {
       transform: translateY(1000);
       transition: all 0.8s ease-out;
 
-      &.show {
+      &.showCommitment {
         opacity: 1;
         transform: translateX(0);
       }
@@ -574,7 +620,7 @@ onBeforeUnmount(() => {
     color: #212995;
     text-align: left;
     justify-content: space-between;
-
+    background: #fff;
     .item {
       width: 200px;
 
@@ -610,8 +656,9 @@ onBeforeUnmount(() => {
     .text-1 {
       position: absolute;
       top: 30%;
-      left: 28%;
-      width: 44%;
+      left: 50%;
+      width: 600px;
+      margin-left: -300px;
       font-family: "RedHatDisplay-Medium";
       font-size: 22px;
       line-height: 1.2;

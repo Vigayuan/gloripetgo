@@ -4,14 +4,14 @@
     <div class="nav-inner">
       <nav class="menu">
         <div class="product-block" @mouseenter="onEnter" @mouseleave="onLeave">
-          <div @click="goHome" class="text">Products</div>
-          <img class="products-arrow" src="../assets/images/products-arrow.svg" alt="" />
+          <div @click="goPd" class="text">Products</div>
+          <img class="products-arrow" :class="{ rotate: showArrowBlock }" src="../assets/images/products-arrow.svg" alt="" />
         </div>
         <div @click="goWhy">Why healthy</div>
         <div @click="goStory">Our story</div>
         <div @click="goAbout">About us</div>
       </nav>
-      <div class="logo">
+      <div @click="goHome" class="logo">
         <img src="../assets/images/Icon-Gloripetgo-logo.svg" alt="">
       </div>
       <div class="icons-list">
@@ -50,6 +50,7 @@
         </div>
       </div>
     </div>
+    <div class="mask" :class="{ show: showArrowBlock }"></div>
   </header>
 </template>
 <script setup>
@@ -73,7 +74,7 @@ const goStory = () => {
   router.push({ name: 'Story' });
 }
 const goAbout = () => {
-  router.push({ name: 'About' });
+  router.push({ name: 'Support' });
 }
 const openWindow = (index) => {
   if (index == 1) {
@@ -101,8 +102,8 @@ const onLeave = () => {
   width: 100%;
   height: 80px;
   background: #212995;
-
   .nav-inner {
+    position: relative;
     box-sizing: border-box;
     display: flex;
     height: 80px;
@@ -111,6 +112,7 @@ const onLeave = () => {
     width: 100%;
     padding: 0 50px;
     margin: 0 auto;
+    z-index: 100;
 
     .menu {
       width: 40%;
@@ -130,6 +132,9 @@ const onLeave = () => {
           width: 13px;
           cursor: pointer;
         }
+        .rotate{
+          transform: rotate(180deg);
+        }
       }
 
       div {
@@ -139,6 +144,7 @@ const onLeave = () => {
     }
 
     .logo {
+      cursor: pointer;
       width: 70px;
       height: auto;
     }
@@ -241,6 +247,19 @@ const onLeave = () => {
           margin-top: 20px;
         }
       }
+    }
+  }
+  .mask {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 80;
+    &.show {
+      display: block;
     }
   }
 }
