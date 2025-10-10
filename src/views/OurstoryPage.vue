@@ -2,37 +2,6 @@
   <div class="landing-page">
     <!-- Header -->
     <HeaderPage />
-    <div class="fix-bg">
-      <img src="../assets/images/mission_bg_01.jpg" alt="">
-      <img src="../assets/images/mission_bg_02.jpg" alt="">
-      <img src="../assets/images/mission_bg_03.jpg" alt="">
-      <img src="../assets/images/mission_bg_04.jpg" alt="">
-      <img src="../assets/images/mission_bg_05.jpg" alt="">
-      <img src="../assets/images/mission_bg_06.jpg" alt="">
-      <img src="../assets/images/mission_bg_07.jpg" alt="">
-      <img src="../assets/images/mission_bg_08.jpg" alt="">
-      <img src="../assets/images/mission_bg_09.jpg" alt="">
-      <img src="../assets/images/mission_bg_10.jpg" alt="">
-      <img src="../assets/images/mission_bg_11.jpg" alt="">
-      <img src="../assets/images/mission_bg_12.jpg" alt="">
-      <img src="../assets/images/mission_bg_13.jpg" alt="">
-      <img src="../assets/images/mission_bg_14.jpg" alt="">
-      <img src="../assets/images/mission_bg_15.jpg" alt="">
-      <img src="../assets/images/mission_bg_16.jpg" alt="">
-      <img src="../assets/images/mission_bg_17.jpg" alt="">
-      <img src="../assets/images/mission_bg_18.jpg" alt="">
-      <img src="../assets/images/mission_bg_19.jpg" alt="">
-      <img src="../assets/images/mission_bg_20.jpg" alt="">
-      <img src="../assets/images/mission_bg_21.jpg" alt="">
-      <img src="../assets/images/mission_bg_22.jpg" alt="">
-      <img src="../assets/images/mission_bg_23.jpg" alt="">
-      <img src="../assets/images/mission_bg_24.jpg" alt="">
-      <img src="../assets/images/mission_bg_25.jpg" alt="">
-      <img src="../assets/images/mission_bg_26.jpg" alt="">
-      <img src="../assets/images/mission_bg_27.jpg" alt="">
-      <img src="../assets/images/mission_bg_28.jpg" alt="">
-      <img src="../assets/images/mission_bg_29.jpg" alt="">
-    </div>
     <!-- Hero -->
     <section class="hero">
       <div class="hero-bg">
@@ -69,21 +38,37 @@
         In 1998
       </div>
       <div class="unleash-text3" :class="{ showBox }">
-        under the shimmering auroras of Canada's Yukon, <span>Dr. Ethan Frost</span> - a veterinarian and polar explorer
-        - joined an
-        Arctic expedition. He witnessed local Inuit communities caring for their sled dogs through the harshest winters.
+        under the shimmering auroras of Canada's Yukon, <span>Dr. Ethan Frost</span>, a veterinarian and polar explorer, joined an Arctic expedition. He witnessed local Inuit communities caring for their sled dogs through the harshest winters.
         <br><br>
         These incredible dogs thrived on wild, hunted meats, cold-water fish, and herbs shaped by the frozen land. The
         strength in their eyes sparked Ethan's question: Could the wisdom of polar survival become everyday protection
         for our pets at home?
       </div>
     </section>
+    <div style="font-size: 0;width: 100%;">
+      <img style="width: 100%;" src="../assets/images/story_bg_10.jpg" alt="">
+    </div>
     <div class="our-mission" ref="missionRef">
-      <div class="img-block">
-        <img src="../assets/images/story_bg_10.jpg" alt="">
+      <div class="img-block" >
+        <div class="img-scroll" ref="imgBlockRef">
+          <img src="../assets/images/mission_bg_08.jpg" alt="">
+          <img src="../assets/images/mission_bg_09.jpg" alt="">
+          <img src="../assets/images/mission_bg_10.jpg" alt="">
+          <img src="../assets/images/mission_bg_11.jpg" alt="">
+          <img src="../assets/images/mission_bg_12.jpg" alt="">
+          <img src="../assets/images/mission_bg_13.jpg" alt="">
+          <img src="../assets/images/mission_bg_14.jpg" alt="">
+          <img src="../assets/images/mission_bg_15.jpg" alt="">
+          <img src="../assets/images/mission_bg_16.jpg" alt="">
+          <img src="../assets/images/mission_bg_17.jpg" alt="">
+          <img src="../assets/images/mission_bg_18.jpg" alt="">
+          <img src="../assets/images/mission_bg_19.jpg" alt="">
+          <img src="../assets/images/mission_bg_20.jpg" alt="">
+        </div>
       </div>
       <div class="text-1" :class="{ showMission }">Our mission</div>
-      <div class="text-2" :class="{ showMission }">help pets live healthier, longer lives through nature-powered, preventive
+      <div class="text-2" :class="{ showMission }">help pets live healthier, longer lives through nature-powered,
+        preventive
         nutrition.</div>
     </div>
     <div class="his-2005">
@@ -102,7 +87,7 @@
         </div>
         <div class="text-2">
           Ethan teamed up with nutritionists in Quebec to create <span class="text-sub-1">GloriPetgo™</span> — a brand
-          built on the belief of <span class="text-sub-2">“Daily Defense in Every Bite.”</span> Our mission was simple
+          built on the belief of <span class="text-sub-2">“Daily Defense in Every Bite.”</span> Our mission is simple
           yet powerful: help pets live healthier, longer lives through
           nature-powered, preventive nutrition.
         </div>
@@ -199,11 +184,29 @@ const commitmentRef = ref(null)
 const showBox = ref(false);
 const showMission = ref(false);
 const showCommitment = ref(false);
+const imgBlockRef = ref(null)
 const goWhy = () => {
   router.push({ name: 'Healthy' });
 }
 let observers = []
+
+const handleScroll = () => {
+  if (!missionRef.value || !imgBlockRef.value) return;
+
+  const rect = missionRef.value.getBoundingClientRect();
+  const windowHeight = window.innerHeight;
+
+  // 只有当元素出现在视口中时才开始视差
+  if (rect.top < windowHeight && rect.bottom > 0) {
+    const scrollRatio = rect.top / windowHeight;
+    const translateY = scrollRatio * -200; // 可调整：控制偏移力度
+    imgBlockRef.value.style.top = `${translateY - 110}px`; // 滚动速度为 1/10
+  }
+};
+
 onMounted(() => {
+  // 1️⃣ box
+  window.addEventListener("scroll", handleScroll);
   const observer1 = new IntersectionObserver(
     ([entry]) => {
       showBox.value = entry.isIntersecting;
@@ -245,6 +248,7 @@ onMounted(() => {
 
 
 onBeforeUnmount(() => {
+  window.removeEventListener("scroll", handleScroll);
   observers.forEach((o) => o.disconnect())
 });
 </script>
@@ -253,19 +257,7 @@ onBeforeUnmount(() => {
 .landing-page {
   width: 100%;
   min-width: 1200px;
-  .fix-bg {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    line-height: 0;
-    z-index: -1;
 
-    img {
-      width: 100%;
-    }
-  }
   .hero {
     position: relative;
     font-size: 0;
@@ -425,14 +417,24 @@ onBeforeUnmount(() => {
     width: 100%;
     height: 300px;
     overflow: hidden;
+
     img {
       width: 100%;
     }
+
     .img-block {
+      position: relative;
       width: 100%;
       line-height: 0;
       height: 300px;
-      background: transparent;
+
+      .img-scroll {
+        position: absolute;
+        top: -110px;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
     }
 
     .text-1 {
@@ -621,6 +623,7 @@ onBeforeUnmount(() => {
     text-align: left;
     justify-content: space-between;
     background: #fff;
+
     .item {
       width: 200px;
 

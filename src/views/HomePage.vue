@@ -750,7 +750,7 @@ onBeforeUnmount(() => {
           .phil-right-text2 {
             font-family: "Oswald-Regular";
             font-size: 14px;
-            line-height: 1;
+            line-height: 1.3;
             text-align: left;
             margin-top: 10px;
           }

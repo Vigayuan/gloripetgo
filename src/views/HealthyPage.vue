@@ -112,7 +112,7 @@
       }" class="swiper-box">
         <SwiperSlide>
           <div class="slide-item" style="background: #3dd8d0;">
-            <div class="slide-item-left">ARCTIC<br />CHAR</div>
+            <div class="slide-item-left">Arctic<br />Char</div>
             <div class="slide-item-right">
               From the cold Arctic waters, this fish offers a delicate taste and is rich in omega‑3s to keep your cat’s
               coat soft and shiny. Gentle protein makes it ideal for sensitive stomachs.
@@ -124,7 +124,7 @@
           <div class="slide-item" style="background: #fc8686;">
             <div class="slide-item-left">Free-<br>
               Range<br>
-              CHicken</div>
+              Chicken</div>
             <div class="slide-item-right">
               Raised freely on open pastures, our Starbro chickens deliver lean, protein-rich meat that’s low in fat and
               hormone‑free—perfect for cats with delicate digestion.

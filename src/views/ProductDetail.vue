@@ -28,10 +28,13 @@
                     <div class="title">{{ pdInfo.title1 }}<br>{{ pdInfo.title2 }}</div>
                 </div>
 
-                <div class="desc">
+                <div v-show="!showAllDesc" class="desc-2">
                     {{ pdInfo.desc }}
                 </div>
-                <div class="read-more">
+                <div v-show="showAllDesc" class="desc">
+                    {{ pdInfo.desc }}
+                </div>
+                <div v-show="!showAllDesc" @click="toggleDesc" class="read-more">
                     READ MORE
                 </div>
                 <div class="daily-meal">
@@ -52,11 +55,11 @@
 
                 <div class="info">
                     <div class="info-detail"><span>{{ pdInfo.pdDetail[0].title }}</span><br>{{ pdInfo.pdDetail[0].desc
-                    }}</div>
+                        }}</div>
                     <div class="info-detail"><span>{{ pdInfo.pdDetail[1].title }}</span><br>{{ pdInfo.pdDetail[1].desc
-                    }}</div>
+                        }}</div>
                     <div class="info-detail"><span>{{ pdInfo.pdDetail[2].title }}</span><br>{{ pdInfo.pdDetail[2].desc
-                    }}</div>
+                        }}</div>
                 </div>
 
                 <ul class="features">
@@ -245,7 +248,7 @@
 <script setup>
 import HeaderPage from '@/components/HeaderPage.vue';
 import FooterPage from '@/components/FooterPage.vue';
-import { ref, reactive } from 'vue'
+import { ref, reactive, watch } from 'vue'
 import { useRoute } from 'vue-router';
 import { catPageInfo1, catPageInfo2, dogPageInfo } from '@/views/pdInfo.js'
 const showTabIndex = ref(1)
@@ -256,6 +259,10 @@ const handleTagChange = (index) => {
 const route = useRoute();
 const showPD = (index) => {
     showPdIndex.value = index
+}
+const showAllDesc = ref(false)
+const toggleDesc = () => {
+    showAllDesc.value = !showAllDesc.value
 }
 const pdTypeIndex = ref(route.query.id)
 const pdInfo = reactive({
@@ -342,19 +349,29 @@ const pdInfo = reactive({
         new URL("@/assets/pdimg/pd-cat-1-desc_27.png", import.meta.url).href,
     ]
 })
-if (route.query && route.query.id == 1) {
-    Object.keys(pdInfo).forEach(key => {
-        pdInfo[key] = dogPageInfo[key]
-    })
-} else if (route.query.id == 2) {
-    Object.keys(pdInfo).forEach(key => {
-        pdInfo[key] = catPageInfo2[key]
-    })
-} else {
-    Object.keys(pdInfo).forEach(key => {
-        pdInfo[key] = catPageInfo1[key]
-    })
-}
+watch(
+    () => route.query.id,
+    (newId, oldId) => {
+        if (newId && newId !== oldId) {
+            pdTypeIndex.value = newId;
+            console.log('Route Id changed:', newId);
+            if (newId == 1) {
+                Object.keys(pdInfo).forEach(key => {
+                    pdInfo[key] = dogPageInfo[key]
+                })
+            } else if (newId == 2) {
+                Object.keys(pdInfo).forEach(key => {
+                    pdInfo[key] = catPageInfo2[key]
+                })
+            } else {
+                Object.keys(pdInfo).forEach(key => {
+                    pdInfo[key] = catPageInfo1[key]
+                })
+            }
+        }
+    },
+    { immediate: true }
+);
 </script>
 
 <style scoped lang="scss">
@@ -458,6 +475,21 @@ if (route.query && route.query.id == 1) {
                 margin-bottom: 16px;
             }
 
+            .desc-2 {
+                font-family: 'RedHatDisplay-Regular';
+                color: #231f20;
+                font-size: 14px;
+                line-height: 1.2;
+                margin-bottom: 16px;
+
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                /* 限制显示2行 */
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
             .read-more {
                 cursor: pointer;
                 font-family: "RedHatDisplay-Blod";
@@ -468,7 +500,8 @@ if (route.query && route.query.id == 1) {
                 line-height: 1;
                 padding-bottom: 2px;
                 border-bottom: 1px solid #212995;
-                width: 88px;
+                width: 90px;
+                text-align: center;
             }
 
             .daily-meal {
@@ -705,16 +738,19 @@ if (route.query && route.query.id == 1) {
         font-size: 0;
         position: relative;
         height: 800px;
-        div{
+
+        div {
             position: absolute;
             width: 493px;
             overflow: hidden;
             border-radius: 18px;
         }
+
         img {
             cursor: pointer;
             width: 100%;
-            &:hover{
+
+            &:hover {
                 transform: scale(1.05);
                 animation: scaleUp 0.5s linear;
             }
@@ -768,10 +804,12 @@ if (route.query && route.query.id == 1) {
     }
 
 }
+
 @keyframes scaleUp {
     0% {
         transform: scale(1);
     }
+
     100% {
         transform: scale(1.05);
     }

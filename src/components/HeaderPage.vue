@@ -33,7 +33,7 @@
         <div class="text-2">Excellent<br>
           Furry<br>
           Products</div>
-        <div @click="goPd" class="text-3">Learn More</div>
+        <!-- <div @click="goPd" class="text-3">Learn More</div> -->
       </div>
       <div class="right">
         <div class="product">
@@ -97,7 +97,7 @@ const openWindow = (index) => {
     window.open('https://www.youtube.com/@GloriPetgo', "_blank")
   }
   else {
-    window.open('https://www.instagram.com/', "_blank")
+    window.open('https://www.instagram.com/glori.petgo?igsh=ajc5bmZuNWJ2MWY4&utm_source=qr', "_blank")
   }
 }
 // 鼠标进入/离开时切换状态

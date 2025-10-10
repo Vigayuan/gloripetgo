@@ -53,7 +53,7 @@ const openWindow = (index) => {
     window.open('https://www.youtube.com/@GloriPetgo', "_blank")
   }
   else {
-    window.open('https://www.instagram.com/', "_blank")
+    window.open('https://www.instagram.com/glori.petgo?igsh=ajc5bmZuNWJ2MWY4&utm_source=qr', "_blank")
   }
 }
 </script>
