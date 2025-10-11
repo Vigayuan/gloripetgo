@@ -481,6 +481,8 @@ onBeforeUnmount(() => {
         font-family: "RedHatDisplay-Black";
         font-size: 16px;
         line-height: 1.2;
+        width: 300px;
+        text-align: center;
       }
 
       .slide-block-text4 {
@@ -490,6 +492,8 @@ onBeforeUnmount(() => {
         font-family: "RedHatDisplay-Black";
         font-size: 16px;
         line-height: 1.2;
+        width: 300px;
+        text-align: center;
       }
 
       .slide-block-text5 {
@@ -499,6 +503,8 @@ onBeforeUnmount(() => {
         font-family: "RedHatDisplay-Black";
         font-size: 16px;
         line-height: 1.2;
+        width: 300px;
+        text-align: center;
       }
 
       .slide-block-text6 {
@@ -508,6 +514,8 @@ onBeforeUnmount(() => {
         font-family: "RedHatDisplay-Black";
         font-size: 16px;
         line-height: 1.2;
+        width: 300px;
+        text-align: center;
       }
     }
 

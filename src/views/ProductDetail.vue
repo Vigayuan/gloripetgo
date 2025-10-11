@@ -55,11 +55,11 @@
 
                 <div class="info">
                     <div class="info-detail"><span>{{ pdInfo.pdDetail[0].title }}</span><br>{{ pdInfo.pdDetail[0].desc
-                        }}</div>
+                    }}</div>
                     <div class="info-detail"><span>{{ pdInfo.pdDetail[1].title }}</span><br>{{ pdInfo.pdDetail[1].desc
-                        }}</div>
+                    }}</div>
                     <div class="info-detail"><span>{{ pdInfo.pdDetail[2].title }}</span><br>{{ pdInfo.pdDetail[2].desc
-                        }}</div>
+                    }}</div>
                 </div>
 
                 <ul class="features">
@@ -206,10 +206,12 @@
                 </div>
             </div>
         </div>
-        <div class="cat-bg-block">
-            <img :src="pdInfo.catBgList[0]" alt="">
-            <img :src="pdInfo.catBgList[1]" alt="">
-            <img :src="pdInfo.catBgList[2]" alt="">
+        <div class="cat-bg-block" ref="missionRef">
+            <div class="img-block">
+                <div class="img-scroll" ref="imgBlockRef">
+                    <img v-for="(item, index) in pdInfo.catBgList" :key="index" :src="item" alt="">
+                </div>
+            </div>
             <div class="text">
                 <span>Daily Defense</span> in Every Bite
             </div>
@@ -248,7 +250,7 @@
 <script setup>
 import HeaderPage from '@/components/HeaderPage.vue';
 import FooterPage from '@/components/FooterPage.vue';
-import { ref, reactive, watch } from 'vue'
+import { ref, reactive, watch, onMounted, onBeforeUnmount } from 'vue'
 import { useRoute } from 'vue-router';
 import { catPageInfo1, catPageInfo2, dogPageInfo } from '@/views/pdInfo.js'
 const showTabIndex = ref(1)
@@ -337,9 +339,17 @@ const pdInfo = reactive({
     ],
     GuidImg: new URL("@/assets/pdimg/pd-tab-bg.jpg", import.meta.url).href,
     catBgList: [
-        new URL("@/assets/pdimg/cat_bg_02.jpg", import.meta.url).href,
-        new URL("@/assets/pdimg/cat_bg_03.jpg", import.meta.url).href,
-        new URL("@/assets/pdimg/cat_bg_04.jpg", import.meta.url).href,
+        new URL("@/assets/pdimg/scroll_cat_bg_02.jpg", import.meta.url).href,
+        new URL("@/assets/pdimg/scroll_cat_bg_03.jpg", import.meta.url).href,
+        new URL("@/assets/pdimg/scroll_cat_bg_04.jpg", import.meta.url).href,
+        new URL("@/assets/pdimg/scroll_cat_bg_05.jpg", import.meta.url).href,
+        new URL("@/assets/pdimg/scroll_cat_bg_06.jpg", import.meta.url).href,
+        new URL("@/assets/pdimg/scroll_cat_bg_07.jpg", import.meta.url).href,
+        new URL("@/assets/pdimg/scroll_cat_bg_08.jpg", import.meta.url).href,
+        new URL("@/assets/pdimg/scroll_cat_bg_09.jpg", import.meta.url).href,
+        new URL("@/assets/pdimg/scroll_cat_bg_10.jpg", import.meta.url).href,
+        new URL("@/assets/pdimg/scroll_cat_bg_11.jpg", import.meta.url).href,
+        new URL("@/assets/pdimg/scroll_cat_bg_12.jpg", import.meta.url).href,
     ],
     catDescList: [
         new URL("@/assets/pdimg/pd-cat-1-desc_07.png", import.meta.url).href,
@@ -349,6 +359,32 @@ const pdInfo = reactive({
         new URL("@/assets/pdimg/pd-cat-1-desc_27.png", import.meta.url).href,
     ]
 })
+
+const missionRef = ref(null)
+const imgBlockRef = ref(null)
+const handleScroll = () => {
+    if (!missionRef.value || !imgBlockRef.value) return;
+
+    const rect = missionRef.value.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
+
+    // 只有当元素出现在视口中时才开始视差
+    if (rect.top < windowHeight && rect.bottom > 0) {
+        const scrollRatio = rect.top / windowHeight;
+        const translateY = scrollRatio * -200; // 可调整：控制偏移力度
+        imgBlockRef.value.style.top = `${translateY - 110}px`; // 滚动速度为 1/10
+    }
+};
+
+onMounted(() => {
+    // 1️⃣ box
+    window.addEventListener("scroll", handleScroll);
+});
+
+
+onBeforeUnmount(() => {
+    window.removeEventListener("scroll", handleScroll);
+});
 watch(
     () => route.query.id,
     (newId, oldId) => {
@@ -710,8 +746,23 @@ watch(
         font-size: 0;
         margin-top: 50px;
 
-        img {
+        .img-block {
+            position: relative;
             width: 100%;
+            line-height: 0;
+            height: 300px;
+
+            .img-scroll {
+                position: absolute;
+                top: -100px;
+                left: 0;
+                width: 100%;
+                height: 100%;
+
+                img {
+                    width: 100%;
+                }
+            }
         }
 
         .text {

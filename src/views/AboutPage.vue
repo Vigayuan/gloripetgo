@@ -5,16 +5,17 @@
 
         <!-- Hero -->
         <section class="hero">
-            <img src="../assets/images/about_bg_02.jpg" alt="">
-            <img src="../assets/images/about_bg_03.jpg" alt="">
-            <img src="../assets/images/about_bg_04.jpg" alt="">
-            <img src="../assets/images/about_bg_05.jpg" alt="">
-            <img src="../assets/images/about_bg_06.jpg" alt="">
-            <img src="../assets/images/about_bg_07.jpg" alt="">
-            <img src="../assets/images/about_bg_08.jpg" alt="">
-            <img src="../assets/images/about_bg_09.jpg" alt="">
-            <img src="../assets/images/about_bg_10.jpg" alt="">
-            <img src="../assets/images/about_bg_11.jpg" alt="">
+            <div class="hero-bg">
+                <img src="../assets/images/about_bg_02.jpg" alt="">
+                <img src="../assets/images/about_bg_03.jpg" alt="">
+                <img src="../assets/images/about_bg_04.jpg" alt="">
+                <img src="../assets/images/about_bg_05.jpg" alt="">
+                <img src="../assets/images/about_bg_06.jpg" alt="">
+                <img src="../assets/images/about_bg_07.jpg" alt="">
+                <img src="../assets/images/about_bg_08.jpg" alt="">
+                <img src="../assets/images/about_bg_09.jpg" alt="">
+                <img src="../assets/images/about_bg_10.jpg" alt="">
+            </div>
             <div class="hero-text-block">
                 <div class="title1">
                     GET IN <br>
@@ -28,6 +29,7 @@
 
         <!-- Unleash energy -->
         <section class="unleash " ref="boxRef">
+            <img src="../assets/images/about_bg_11.jpg" alt="">
             <img src="../assets/images/about_bg_12.jpg" alt="">
             <img src="../assets/images/about_bg_13.jpg" alt="">
             <img src="../assets/images/about_bg_14.jpg" alt="">
@@ -55,7 +57,7 @@
                     <div class="message">MESSAGE*</div>
                     <div class="message-input">
                         <textarea type="text" id="message" v-model="message" placeholder="Message" />
-                    </div> 
+                    </div>
                 </div>
                 <div class="btn-group">
                     <div class="btn-block">
@@ -89,7 +91,7 @@
                             <div class="phil-item-top-text">
                                 Are GloriPetgo pet food safe?
                             </div>
-                            <div  class="control-btn">
+                            <div class="control-btn">
                                 <div v-show="showQAIndex != 1">+</div>
                                 <div v-show="showQAIndex == 1">-</div>
                             </div>
@@ -112,7 +114,7 @@
                             <div class="phil-item-top-text">
                                 How do I keep my pet happy and healthy?
                             </div>
-                            <div  class="control-btn">
+                            <div class="control-btn">
                                 <div v-show="showQAIndex != 2">+</div>
                                 <div v-show="showQAIndex == 2">-</div>
                             </div>
@@ -135,7 +137,7 @@
                                 What key factors should I consider
                                 when selecting a pet food?
                             </div>
-                            <div  class="control-btn">
+                            <div class="control-btn">
                                 <div v-show="showQAIndex != 3">+</div>
                                 <div v-show="showQAIndex == 3">-</div>
                             </div>
@@ -158,7 +160,7 @@
                                 What does "Cruelty Free" mean
                                 to GloriPetgo?
                             </div>
-                            <div  class="control-btn">
+                            <div class="control-btn">
                                 <div v-show="showQAIndex != 4">+</div>
                                 <div v-show="showQAIndex == 4">-</div>
                             </div>
@@ -195,15 +197,15 @@ const showQAIndex = ref(-1);
 import emailjs from "emailjs-com"
 
 const openWindow = (index) => {
-  if (index == 1) {
-    window.open('https://www.facebook.com/profile.php?id=61577967892785', "_blank")
-  }
-  else if (index == 2) {
-    window.open('https://www.youtube.com/@GloriPetgo', "_blank")
-  }
-  else {
-    window.open('https://www.instagram.com/', "_blank")
-  }
+    if (index == 1) {
+        window.open('https://www.facebook.com/profile.php?id=61577967892785', "_blank")
+    }
+    else if (index == 2) {
+        window.open('https://www.youtube.com/@GloriPetgo', "_blank")
+    }
+    else {
+        window.open('https://www.instagram.com/', "_blank")
+    }
 }
 const sendMail = () => {
     emailjs.send(
@@ -253,8 +255,22 @@ const toggleShowQA = (index) => {
         font-size: 0;
         color: #fff;
 
-        img {
-            width: 100%;
+
+        .hero-bg {
+            height: 450px;
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                transform: translateY(0) scale(1.05);
+                animation: moveUp 8s ease-out 0.5s forwards;
+            }
+        }
+
+        @keyframes moveUp {
+            to {
+                transform: translateY(-50px) scale(1.05);
+            }
         }
 
         .hero-text-block {
@@ -506,10 +522,13 @@ const toggleShowQA = (index) => {
                         justify-content: space-between;
                         color: #212995;
                         align-items: center;
-                        .phil-item-top-text{
+
+                        .phil-item-top-text {
                             width: 80%;
-                            text-align: left;line-height: 20px;
+                            text-align: left;
+                            line-height: 20px;
                         }
+
                         .control-btn {
                             font-size: 40px;
                             color: #7e7e7e;

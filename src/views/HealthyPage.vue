@@ -183,6 +183,19 @@
         <img src="../assets/images/icon-SQF.svg" alt="">
       </div>
     </section>
+
+    <section class="feed-guide " ref="feedRef">
+      <img class="feed-guide-bg" src="../assets/images/feed_guide.jpg" alt="">
+      <div class="feed-guide-text1" :class="{ showFeed }">
+        <div class="text-sub1">Daily defense <span>in every bite</span></div>
+        <div class="text-sub2">Scientific<br><span>Feeding Guide</span></div>
+      </div>
+      <div class="feed-guide-text2" :class="{ showFeed }">
+        <div>GloriPetgo™ is committed to creating a scientifically designed feeding guide for your beloved pets. With
+          tailored recommendations, we help pet owners make feeding more accurate, balanced, and healthy so every meal
+          supports your pet’s well-being and happiness.</div>
+      </div>
+    </section>
     <!-- Footer -->
     <FooterPage />
   </div>
@@ -219,6 +232,9 @@ const manuRef = ref(null)
 const boxRef = ref(null)
 const showBox = ref(false)
 const showManu = ref(false)
+const feedRef = ref(null)
+const showFeed = ref(false)
+
 let observers = [];
 
 onMounted(() => {
@@ -244,6 +260,17 @@ onMounted(() => {
   );
   if (manuRef.value) observer2.observe(manuRef.value);
   observers.push(observer2);
+  const observer3 = new IntersectionObserver(
+    ([entry]) => {
+      showFeed.value = entry.isIntersecting;
+    },
+    {
+      threshold: 0.1, // 进入 10% 可视区域时触发
+      rootMargin: "0px 0px -30% 0px", // 提前 30% 触发
+    }
+  );
+  if (feedRef.value) observer3.observe(feedRef.value);
+  observers.push(observer3);
   nextTick(() => {
     const slides = document.querySelectorAll(".slide-item");
     let maxHeight = 0;
@@ -348,7 +375,7 @@ onBeforeUnmount(() => {
       left: 50%;
       margin-left: -500px;
       opacity: 0;
-    //   transform: translateY(-100px);
+      //   transform: translateY(-100px);
       transition: all 0.8s 0.8s ease-out;
 
       &.showBox {
@@ -444,6 +471,7 @@ onBeforeUnmount(() => {
         opacity: 0;
         width: 100%;
       }
+
       .text-wrapper {
         position: absolute;
         top: 0;
@@ -453,6 +481,7 @@ onBeforeUnmount(() => {
         display: flex;
         justify-content: center;
         align-items: center;
+
         .text-block {
           width: 300px;
           z-index: 100;
@@ -768,6 +797,82 @@ onBeforeUnmount(() => {
       transition: all 0.8s 1s ease-out;
 
       &.showManu {
+        opacity: 1;
+      }
+
+      div {
+        margin: 30px 0;
+      }
+    }
+  }
+
+  .feed-guide {
+    position: relative;
+    font-size: 0;
+    padding: 20px 0;
+    background: #fff;
+
+    .feed-guide-bg {
+      width: 90%;
+      margin: 0 auto;
+      border-radius: 20px;
+    }
+
+    .feed-guide-text1 {
+      position: absolute;
+      top: 120px;
+      width: 500px;
+      left: 50%;
+      margin-left: -250px;
+      color: #000;
+      opacity: 0;
+      transition: all 0.8s  ease-out;
+
+      &.showFeed {
+        opacity: 1;
+      }
+
+      .text-sub1 {
+        font-family: "RedHatDisplay-Black";
+        font-size: 23px;
+        line-height: 1;
+        text-align: center;
+
+        span {
+          font-family: "RedHatDisplay-Regular";
+        }
+      }
+
+      .text-sub2 {
+        font-family: "RedHatDisplay-Regular";
+        font-size: 50px;
+        line-height: 1;
+        text-align: center;
+        color: #fff;
+        margin-top: 31px;
+
+        span {
+          font-family: "RedHatDisplay-Black";
+        }
+      }
+    }
+
+    .feed-guide-text2 {
+      box-sizing: border-box;
+      position: absolute;
+      bottom: 90px;
+      width: 500px;
+      left: 50%;
+      margin-left: -250px;
+      color: #000;
+      font-family: "RedHatDisplay-Regular";
+      font-size: 19px;
+      line-height: 1.8;
+      text-align: center;
+      opacity: 0;
+      transition: all 0.8s ease-out;
+
+      &.showFeed {
         opacity: 1;
       }
 

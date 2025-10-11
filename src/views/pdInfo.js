@@ -71,9 +71,12 @@
     GuidImg: new URL("@/assets/pdimg/pd-tab-bg.jpg", import.meta.url).href,
     analysisList:['≥ 40.0%','≥ 0.8%','≥ 15.0%','≥ 0.2%','≤ 5.0% ','≥ 0.85%','≤ 10.0%','≥ 2.6','≥ 1.0%'],
     catBgList: [
-        new URL("@/assets/pdimg/cat_bg_02.jpg", import.meta.url).href,
-        new URL("@/assets/pdimg/cat_bg_03.jpg", import.meta.url).href,
-        new URL("@/assets/pdimg/cat_bg_04.jpg", import.meta.url).href,
+        new URL("@/assets/pdimg/scroll_cat_bg_02.jpg", import.meta.url).href,
+        new URL("@/assets/pdimg/scroll_cat_bg_03.jpg", import.meta.url).href,
+        new URL("@/assets/pdimg/scroll_cat_bg_04.jpg", import.meta.url).href,
+        new URL("@/assets/pdimg/scroll_cat_bg_05.jpg", import.meta.url).href,
+        new URL("@/assets/pdimg/scroll_cat_bg_06.jpg", import.meta.url).href,
+        new URL("@/assets/pdimg/scroll_cat_bg_07.jpg", import.meta.url).href,
     ],
     catDescList: [
         new URL("@/assets/pdimg/pd-cat-1-desc_07.png", import.meta.url).href,
@@ -156,9 +159,12 @@ const catPageInfo2 = {
     GuidImg: new URL("@/assets/pdimg/pd-tab-cat2-bg.jpg", import.meta.url).href,
     analysisList:['≥ 40.0%','≥ 0.8%','≥ 16.0%','≥ 0.2%','≤ 5.0% ','≥ 0.85%','≤ 10.0%','≥ 2.6','≥ 1.0%'],
     catBgList: [
-        new URL("@/assets/pdimg/cat_bg_02.jpg", import.meta.url).href,
-        new URL("@/assets/pdimg/cat_bg_03.jpg", import.meta.url).href,
-        new URL("@/assets/pdimg/cat_bg_04.jpg", import.meta.url).href,
+        new URL("@/assets/pdimg/scroll_cat_bg_02.jpg", import.meta.url).href,
+        new URL("@/assets/pdimg/scroll_cat_bg_03.jpg", import.meta.url).href,
+        new URL("@/assets/pdimg/scroll_cat_bg_04.jpg", import.meta.url).href,
+        new URL("@/assets/pdimg/scroll_cat_bg_05.jpg", import.meta.url).href,
+        new URL("@/assets/pdimg/scroll_cat_bg_06.jpg", import.meta.url).href,
+        new URL("@/assets/pdimg/scroll_cat_bg_07.jpg", import.meta.url).href,
     ],
     catDescList: [
         new URL("@/assets/pdimg/pd-cat-2-desc_07.png", import.meta.url).href,
@@ -241,9 +247,12 @@ const dogPageInfo = {
     GuidImg: new URL("@/assets/pdimg/pd-tab-dog-bg.jpg", import.meta.url).href,
     analysisList:['≥ 40.0%','≥ 0.8%','≥ 15.0%','≥ 0.2%','≤ 5.0% ','≥ 0.85%','≤ 10.0%','≥ 2.6','≥ 1.0%'],
     catBgList: [
-        new URL("@/assets/pdimg/dog_bg_02.jpg", import.meta.url).href,
-        new URL("@/assets/pdimg/dog_bg_03.jpg", import.meta.url).href,
-        new URL("@/assets/pdimg/dog_bg_04.jpg", import.meta.url).href,
+        new URL("@/assets/pdimg/scroll_dog_bg_02.jpg", import.meta.url).href,
+        new URL("@/assets/pdimg/scroll_dog_bg_03.jpg", import.meta.url).href,
+        new URL("@/assets/pdimg/scroll_dog_bg_04.jpg", import.meta.url).href,
+        new URL("@/assets/pdimg/scroll_dog_bg_05.jpg", import.meta.url).href,
+        new URL("@/assets/pdimg/scroll_dog_bg_06.jpg", import.meta.url).href,
+        new URL("@/assets/pdimg/scroll_dog_bg_07.jpg", import.meta.url).href,
     ],
     catDescList: [
         new URL("@/assets/pdimg/pd-dog-1-desc_07.png", import.meta.url).href,
