@@ -6,15 +6,7 @@
         <!-- Hero -->
         <section class="hero">
             <div class="hero-bg">
-                <img src="../assets/images/about_bg_02.jpg" alt="">
-                <img src="../assets/images/about_bg_03.jpg" alt="">
-                <img src="../assets/images/about_bg_04.jpg" alt="">
-                <img src="../assets/images/about_bg_05.jpg" alt="">
-                <img src="../assets/images/about_bg_06.jpg" alt="">
-                <img src="../assets/images/about_bg_07.jpg" alt="">
-                <img src="../assets/images/about_bg_08.jpg" alt="">
-                <img src="../assets/images/about_bg_09.jpg" alt="">
-                <img src="../assets/images/about_bg_10.jpg" alt="">
+                <img src="../assets/images/about_bg_01.jpg" alt="">
             </div>
             <div class="hero-text-block">
                 <div class="title1">
@@ -56,7 +48,7 @@
                     </div>
                     <div class="message">MESSAGE*</div>
                     <div class="message-input">
-                        <textarea type="text" id="message" v-model="message" placeholder="Message" />
+                        <textarea type="text" id="message" v-model="messageContent" placeholder="Message" />
                     </div>
                 </div>
                 <div class="btn-group">
@@ -188,11 +180,12 @@
 <script setup>
 import HeaderPage from "@/components/HeaderPage.vue";
 import FooterPage from "@/components/FooterPage.vue";
+import { message } from 'ant-design-vue';
 import { ref } from "vue";
 const firstName = ref("");
 const lastName = ref("");
 const email = ref("");
-const message = ref("");
+const messageContent = ref("");
 const showQAIndex = ref(-1);
 import emailjs from "emailjs-com"
 
@@ -212,21 +205,22 @@ const sendMail = () => {
         "service_85ubcj6",     // 你的服务ID
         "template_5o5qhj7",    // 邮件模板ID
         {
-            to_name: "gloripetgo@gmail.com",
+            to_email: "gloripetgo@gmail.com",
             user_name: `${firstName.value} ${lastName.value}`,
-            message: `${message.value}`,
+            message: `${messageContent.value}`,
             user_email: `${email.value}`
         },
         "WjproCWEzSMb7p60H"         // public key
     ).then(() => {
-        alert("邮件发送成功")
+        message.info('Eamil sent successfully');
     }).catch(err => {
-        alert("发送失败: " + err.text)
+        console.log(err);
+        message.info('Email sent failed');
     })
 }
 
 const sendForm = () => {
-    if (!firstName.value || !lastName.value || !email.value || !message.value) {
+    if (!firstName.value || !lastName.value || !email.value || !messageContent.value) {
         alert("请填写完整信息");
         return;
     }
@@ -237,7 +231,7 @@ const clearForm = () => {
     firstName.value = "";
     lastName.value = "";
     email.value = "";
-    message.value = "";
+    messageContent.value = "";
 };
 const toggleShowQA = (index) => {
     showQAIndex.value = showQAIndex.value === index ? -1 : index;
@@ -262,14 +256,14 @@ const toggleShowQA = (index) => {
 
             img {
                 width: 100%;
-                transform: translateY(0) scale(1.05);
-                animation: moveUp 8s ease-out 0.5s forwards;
+                transform: translateY(-40);
+                animation: moveUp 10s ease-out 0.5s forwards;
             }
         }
 
         @keyframes moveUp {
             to {
-                transform: translateY(-50px) scale(1.05);
+                transform: translateY(-140px);
             }
         }
 

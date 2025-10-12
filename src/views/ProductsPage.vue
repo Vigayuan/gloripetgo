@@ -79,6 +79,9 @@
         <div><span>Daily Guard</span> Feast</div>
         <div><span>Daily Guard</span> Feast</div>
         <div><span>Daily Guard</span> Feast</div>
+        <div><span>Daily Guard</span> Feast</div>
+        <div><span>Daily Guard</span> Feast</div>
+        <div><span>Daily Guard</span> Feast</div>
       </div>
     </div>
     <!-- Products -->
@@ -588,7 +591,7 @@ onBeforeUnmount(() => {
 
     .marquee-content {
       display: inline-block;
-      animation: marquee 24s linear infinite;
+      animation: marquee 35s linear infinite;
 
       div {
         font-family: "RedHatDisplay-Medium";

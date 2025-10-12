@@ -72,6 +72,7 @@ watch(
   { immediate: true }
 );
 const goProductDetail = (id) => {
+  onLeave()
   router.push({ name: 'ProductDetail', query: { id } });
 }
 const goPd = () => {

@@ -339,17 +339,9 @@ const pdInfo = reactive({
     ],
     GuidImg: new URL("@/assets/pdimg/pd-tab-bg.jpg", import.meta.url).href,
     catBgList: [
+        new URL("@/assets/pdimg/scroll_cat_bg_01.jpg", import.meta.url).href,
         new URL("@/assets/pdimg/scroll_cat_bg_02.jpg", import.meta.url).href,
         new URL("@/assets/pdimg/scroll_cat_bg_03.jpg", import.meta.url).href,
-        new URL("@/assets/pdimg/scroll_cat_bg_04.jpg", import.meta.url).href,
-        new URL("@/assets/pdimg/scroll_cat_bg_05.jpg", import.meta.url).href,
-        new URL("@/assets/pdimg/scroll_cat_bg_06.jpg", import.meta.url).href,
-        new URL("@/assets/pdimg/scroll_cat_bg_07.jpg", import.meta.url).href,
-        new URL("@/assets/pdimg/scroll_cat_bg_08.jpg", import.meta.url).href,
-        new URL("@/assets/pdimg/scroll_cat_bg_09.jpg", import.meta.url).href,
-        new URL("@/assets/pdimg/scroll_cat_bg_10.jpg", import.meta.url).href,
-        new URL("@/assets/pdimg/scroll_cat_bg_11.jpg", import.meta.url).href,
-        new URL("@/assets/pdimg/scroll_cat_bg_12.jpg", import.meta.url).href,
     ],
     catDescList: [
         new URL("@/assets/pdimg/pd-cat-1-desc_07.png", import.meta.url).href,

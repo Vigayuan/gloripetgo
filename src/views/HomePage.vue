@@ -107,8 +107,8 @@
         </SwiperSlide>
         <SwiperSlide>
           <div class="slide-item">
-            <div class="slide-item-text1">ARCTIC<br>
-              CHAR</div>
+            <div class="slide-item-text1">ICEFIELD<br>
+              MOSS</div>
             <div @click="goWhy" class="slide-item-text2">Learn more</div>
             <img src="../assets/images/swiper-item-3.jpg" alt="">
           </div>

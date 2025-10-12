@@ -5,13 +5,7 @@
     <!-- Hero -->
     <section class="hero">
       <div class="hero-bg">
-        <img src="../assets/images/story_bg_02.jpg" alt="">
-        <img src="../assets/images/story_bg_03.jpg" alt="">
-        <img src="../assets/images/story_bg_04.jpg" alt="">
-        <img src="../assets/images/story_bg_05.jpg" alt="">
-        <img src="../assets/images/story_bg_06.jpg" alt="">
-        <img src="../assets/images/story_bg_07.jpg" alt="">
-        <img src="../assets/images/story_bg_08.jpg" alt="">
+        <img src="../assets/images/story_bg_01.jpg" alt="">
       </div>
       <div class="title1">
         OUR<br>
@@ -51,19 +45,9 @@
     <div class="our-mission" ref="missionRef">
       <div class="img-block" >
         <div class="img-scroll" ref="imgBlockRef">
-          <img src="../assets/images/mission_bg_08.jpg" alt="">
-          <img src="../assets/images/mission_bg_09.jpg" alt="">
-          <img src="../assets/images/mission_bg_10.jpg" alt="">
-          <img src="../assets/images/mission_bg_11.jpg" alt="">
-          <img src="../assets/images/mission_bg_12.jpg" alt="">
-          <img src="../assets/images/mission_bg_13.jpg" alt="">
-          <img src="../assets/images/mission_bg_14.jpg" alt="">
-          <img src="../assets/images/mission_bg_15.jpg" alt="">
-          <img src="../assets/images/mission_bg_16.jpg" alt="">
-          <img src="../assets/images/mission_bg_17.jpg" alt="">
-          <img src="../assets/images/mission_bg_18.jpg" alt="">
-          <img src="../assets/images/mission_bg_19.jpg" alt="">
-          <img src="../assets/images/mission_bg_20.jpg" alt="">
+          <img src="../assets/images/mission_bg_01.jpg" alt="">
+          <img src="../assets/images/mission_bg_02.jpg" alt="">
+          <img src="../assets/images/mission_bg_03.jpg" alt="">
         </div>
       </div>
       <div class="text-1" :class="{ showMission }">Our mission</div>
@@ -269,14 +253,14 @@ onBeforeUnmount(() => {
 
       img {
         width: 100%;
-        transform: translateY(0) scale(1.05);
-        animation: moveUp 5s ease-out 0.5s forwards;
+        transform: translateY(-40px);
+        animation: moveUp 10s ease-out 0.5s forwards;
       }
     }
 
     @keyframes moveUp {
       to {
-        transform: translateY(-20px) scale(1.05);
+        transform: translateY(-140px);
       }
     }
 

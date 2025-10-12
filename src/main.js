@@ -10,5 +10,7 @@ import router from './router'
 import './assets/style.css'
 import "swiper/css"
 import "swiper/css/navigation"
+import Antd from 'ant-design-vue';
+import 'ant-design-vue/dist/reset.css';
 
-createApp(App).use(router).mount('#app')
+createApp(App).use(router).use(Antd).mount('#app')
