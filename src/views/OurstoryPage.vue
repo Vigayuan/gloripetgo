@@ -58,12 +58,6 @@
     <div class="his-2005">
       <div class="img-block">
         <img src="../assets/images/story_bg_17.jpg" alt="">
-        <img src="../assets/images/story_bg_18.jpg" alt="">
-        <img src="../assets/images/story_bg_19.jpg" alt="">
-        <img src="../assets/images/story_bg_20.jpg" alt="">
-        <img src="../assets/images/story_bg_21.jpg" alt="">
-        <img src="../assets/images/story_bg_22.jpg" alt="">
-        <img src="../assets/images/story_bg_23.jpg" alt="">
       </div>
       <div class="his-content">
         <div class="text-1">
@@ -80,12 +74,6 @@
     <div class="his-2022">
       <div class="img-block">
         <img src="../assets/images/story_bg_24.jpg" alt="">
-        <img src="../assets/images/story_bg_25.jpg" alt="">
-        <img src="../assets/images/story_bg_26.jpg" alt="">
-        <img src="../assets/images/story_bg_27.jpg" alt="">
-        <img src="../assets/images/story_bg_28.jpg" alt="">
-        <img src="../assets/images/story_bg_29.jpg" alt="">
-        <img src="../assets/images/story_bg_30.jpg" alt="">
       </div>
       <div class="his-content">
         <div class="text-1">
@@ -102,14 +90,7 @@
     </div>
     <div class="our-commitment" ref="commitmentRef">
       <div class="img-block">
-        <img src="../assets/images/story_bg_31.jpg" alt="">
-        <img src="../assets/images/story_bg_32.jpg" alt="">
-        <img src="../assets/images/story_bg_33.jpg" alt="">
-        <img src="../assets/images/story_bg_34.jpg" alt="">
-        <img src="../assets/images/story_bg_35.jpg" alt="">
-        <img src="../assets/images/story_bg_36.jpg" alt="">
-        <img src="../assets/images/story_bg_37.jpg" alt="">
-        <img src="../assets/images/story_bg_38.jpg" alt="">
+        <img src="../assets/images/story_bg_30.jpg" alt="">
       </div>
       <div class="text-1" :class="{ showCommitment }">Our Commitment <br>to <span>Sustainability</span>
       </div>
@@ -145,9 +126,6 @@
     <div class="final-tag">
       <div class="img-block">
         <img src="../assets/images/story_bg_40.jpg" alt="">
-        <img src="../assets/images/story_bg_41.jpg" alt="">
-        <img src="../assets/images/story_bg_42.jpg" alt="">
-        <img src="../assets/images/story_bg_43.jpg" alt="">
       </div>
       <div class="text-1">GloriPetgo™ is dedicated to creating products that care for pets—and the planet.</div>
     </div>

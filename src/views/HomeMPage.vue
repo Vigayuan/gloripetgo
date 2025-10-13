@@ -6,11 +6,6 @@
         <!-- Hero -->
         <section class="hero">
             <img src="../assets/images/bg_01.jpg" alt="">
-            <img src="../assets/images/bg_02.jpg" alt="">
-            <img src="../assets/images/bg_03.jpg" alt="">
-            <img src="../assets/images/bg_04.jpg" alt="">
-            <img src="../assets/images/bg_05.jpg" alt="">
-            <img src="../assets/images/bg_06.jpg" alt="">
             <div class="title1">
                 Daily <br>
                 Defense <br><span class="title1-sub1">in Every Bite</span>
@@ -25,12 +20,7 @@
 
         <!-- Unleash energy -->
         <section class="unleash " ref="boxRef">
-            <img src="../assets/images/bg_07.jpg" alt="">
-            <img src="../assets/images/bg_08.jpg" alt="">
-            <img src="../assets/images/bg_09.jpg" alt="">
-            <img src="../assets/images/bg_10.jpg" alt="">
-            <img src="../assets/images/bg_11.jpg" alt="">
-            <img src="../assets/images/bg_12.jpg" alt="">
+            <img src="../assets/images/bg_02.jpg" alt="">
             <div class="particle" :class="{ show }">
                 <img src="../assets/images/particle.png" alt="">
             </div>
@@ -117,10 +107,7 @@
         </div>
         <!-- Philosophy -->
         <section class="philosophy">
-            <img src="../assets/images/bg_14.jpg" alt="">
-            <img src="../assets/images/bg_15.jpg" alt="">
-            <img src="../assets/images/bg_16.jpg" alt="">
-            <img src="../assets/images/bg_17.jpg" alt="">
+            <img src="../assets/images/bg_04.jpg" alt="">
             <div class="phil-text1">Product</div>
             <div class="phil-text2">Philosophy</div>
             <div class="phil-items">

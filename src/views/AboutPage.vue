@@ -22,13 +22,6 @@
         <!-- Unleash energy -->
         <section class="unleash " ref="boxRef">
             <img src="../assets/images/about_bg_11.jpg" alt="">
-            <img src="../assets/images/about_bg_12.jpg" alt="">
-            <img src="../assets/images/about_bg_13.jpg" alt="">
-            <img src="../assets/images/about_bg_14.jpg" alt="">
-            <img src="../assets/images/about_bg_15.jpg" alt="">
-            <img src="../assets/images/about_bg_16.jpg" alt="">
-            <img src="../assets/images/about_bg_17.jpg" alt="">
-            <img src="../assets/images/about_bg_18.jpg" alt="">
             <div class="input-block">
                 <div class="inner-input-block">
                     <div class="name">NAME*</div>
@@ -67,14 +60,6 @@
         <!-- Philosophy -->
         <section class="philosophy">
             <img src="../assets/images/about_bg_19.jpg" alt="">
-            <img src="../assets/images/about_bg_20.jpg" alt="">
-            <img src="../assets/images/about_bg_21.jpg" alt="">
-            <img src="../assets/images/about_bg_22.jpg" alt="">
-            <img src="../assets/images/about_bg_23.jpg" alt="">
-            <img src="../assets/images/about_bg_24.jpg" alt="">
-            <img src="../assets/images/about_bg_25.jpg" alt="">
-            <img src="../assets/images/about_bg_26.jpg" alt="">
-            <img src="../assets/images/about_bg_27.jpg" alt="">
             <div class="phil-block">
                 <div class="phil-text1">Frequently <br> Asked Questions</div>
                 <div class="phil-items">

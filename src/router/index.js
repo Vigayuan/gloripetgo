@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: Viga
  * @Date: 2025-09-17 14:22:34
- * @LastEditTime: 2025-10-09 11:09:21
+ * @LastEditTime: 2025-10-13 11:30:05
  */
 import { createRouter, createWebHistory } from 'vue-router'
 import HomePage from '@/views/HomePage.vue'
@@ -18,11 +18,6 @@ const router = createRouter({
       path: '/homeMP',
       name: 'HomeMP',
       component: () => import('@/views/HomeMPage.vue')
-    },
-    {
-      path: '/healthyMP',
-      name: 'HealthyMP',
-      component: () => import('@/views/HealthyMPage.vue')
     },
     {
       path: '/story',

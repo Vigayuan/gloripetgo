@@ -6,13 +6,7 @@
     <!-- Hero -->
     <section class="hero">
       <div class="hero-bg">
-        <img src="../assets/images/whyh_bg_02.jpg" alt="">
-        <img src="../assets/images/whyh_bg_03.jpg" alt="">
-        <img src="../assets/images/whyh_bg_04.jpg" alt="">
-        <img src="../assets/images/whyh_bg_05.jpg" alt="">
-        <img src="../assets/images/whyh_bg_06.jpg" alt="">
-        <img src="../assets/images/whyh_bg_07.jpg" alt="">
-        <img src="../assets/images/whyh_bg_08.jpg" alt="">
+      <img src="../assets/images/why-healthy_02.jpg" alt="">
       </div>
       <div class="title1">
         Ensuring Your Pet's<br>
@@ -28,13 +22,7 @@
 
     <!-- Unleash energy -->
     <section class="unleash" ref="boxRef">
-      <img src="../assets/images/whyh_bg_09.jpg" alt="">
-      <img src="../assets/images/whyh_bg_10.jpg" alt="">
-      <img src="../assets/images/whyh_bg_11.jpg" alt="">
-      <img src="../assets/images/whyh_bg_12.jpg" alt="">
-      <img src="../assets/images/whyh_bg_13.jpg" alt="">
-      <img src="../assets/images/whyh_bg_14.jpg" alt="">
-      <img src="../assets/images/whyh_bg_15.jpg" alt="">
+      <img src="../assets/images/why-healthy_04.jpg" alt="">
       <div class="unleash-text1" :class="{ showBox }">
         <div class="text-sub1">At GloriPetgo™, we are dedicated to ensuring that your <span>beloved pet receives
             nutrition, safety, and deliciousness,</span> all while building a solid health barrier. </div>
@@ -91,14 +79,7 @@
       </div>
     </div>
     <div class="nutrition-block">
-      <img src="../assets/images/nutrition_bg_03.jpg" alt="">
-      <img src="../assets/images/nutrition_bg_04.jpg" alt="">
-      <img src="../assets/images/nutrition_bg_05.jpg" alt="">
-      <img src="../assets/images/nutrition_bg_06.jpg" alt="">
-      <img src="../assets/images/nutrition_bg_07.jpg" alt="">
-      <img src="../assets/images/nutrition_bg_08.jpg" alt="">
-      <img src="../assets/images/nutrition_bg_09.jpg" alt="">
-      <img src="../assets/images/nutrition_bg_10.jpg" alt="">
+      <img src="../assets/images/why-healthy_06.jpg" alt="">
       <img @click="goToSlide(3)" src="../assets/images/moss.png" alt="" class="moss">
       <img @click="goToSlide(1)" src="../assets/images/chicken.png" alt="" class="chicken">
       <img @click="goToSlide(2)" src="../assets/images/duck.png" alt="" class="duck">

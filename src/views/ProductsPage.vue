@@ -4,84 +4,62 @@
     <HeaderPage />
     <div class="fix-bg">
       <img src="../assets/images/fix_bg_01.jpg" alt="">
-      <img src="../assets/images/fix_bg_02.jpg" alt="">
-      <img src="../assets/images/fix_bg_03.jpg" alt="">
-      <img src="../assets/images/fix_bg_04.jpg" alt="">
-      <img src="../assets/images/fix_bg_05.jpg" alt="">
-      <img src="../assets/images/fix_bg_06.jpg" alt="">
-      <img src="../assets/images/fix_bg_07.jpg" alt="">
-      <img src="../assets/images/fix_bg_08.jpg" alt="">
-      <img src="../assets/images/fix_bg_09.jpg" alt="">
-      <img src="../assets/images/fix_bg_10.jpg" alt="">
-      <img src="../assets/images/fix_bg_11.jpg" alt="">
-      <img src="../assets/images/fix_bg_12.jpg" alt="">
-      <img src="../assets/images/fix_bg_13.jpg" alt="">
-      <img src="../assets/images/fix_bg_14.jpg" alt="">
-      <img src="../assets/images/fix_bg_15.jpg" alt="">
-      <img src="../assets/images/fix_bg_16.jpg" alt="">
-      <img src="../assets/images/fix_bg_17.jpg" alt="">
-      <img src="../assets/images/fix_bg_18.jpg" alt="">
     </div>
     <!-- Hero -->
     <section class="hero">
       <img src="../assets/images/pds_bg_02.jpg" alt="">
-      <img src="../assets/images/pds_bg_03.jpg" alt="">
-      <img src="../assets/images/pds_bg_04.jpg" alt="">
-      <img src="../assets/images/pds_bg_05.jpg" alt="">
-      <img src="../assets/images/pds_bg_06.jpg" alt="">
-      <img src="../assets/images/pds_bg_07.jpg" alt="">
-      <img src="../assets/images/pds_bg_08.jpg" alt="">
     </section>
-    <div class="slide-block">
-      <div class="slide-block-text">
-        <div class="slide-block-text1">Nature’s <span>Pledge</span></div>
-        <div class="slide-block-text2">The Ingredients Your Pet Deserves</div>
-        <transition name="fade-slide" mode="out-in">
-          <div v-if="leftWidth > 200">
-            <div class="slide-block-text3">Only humanely raised, <br>
-              responsibly sourced meats.</div>
-            <div class="slide-block-text4">High-end nutrition, <br>
-              100% traceable ingredients.</div>
-            <div class="slide-block-text5">Expertly crafted, <br>
-              delivered to your pet.</div>
-            <div class="slide-block-text6">Verified by leading authorities <br>
-              for complete confidence</div>
-          </div>
-          <div v-else>
-            <div class="slide-block-text3">Crafted without corn,wheat,<br>
-              soy, or syntheticadditives <br>
-              for pure nutrition.</div>
-            <div class="slide-block-text4">Sourced from animals raised<br>
-              free of antibioticsand<br>
-              added hormones..</div>
-            <div class="slide-block-text5">Ethically procured<br>
-              seafood in every blend.</div>
-            <div class="slide-block-text6">Enriched with non-GMO <br>
-              fruits and vegetables.</div>
-          </div>
-        </transition>
-      </div>
-      <div class="slide-wrapper" ref="slider">
-        <img class="img" src="../assets/images/drag-circle-bg-2.png" alt="">
-        <div class="top-img" :style="{ width: leftWidth + 'px' }">
-          <img src="../assets/images/drag-circle-bg-1.png" alt=""
-            style="transform: scale(1.01);transform-origin: center;">
-        </div>png
-        <div class="divider" :style="{ left: leftWidth + 'px' }">
-          <div class="handle" @mousedown.prevent="startDrag">
-            <img src="../assets/images/drag-circle.svg" alt="">
+    <div style="background-color: #fff;">
+      <div class="slide-block">
+        <div class="slide-block-text">
+          <div class="slide-block-text1">Nature’s <span>Pledge</span></div>
+          <div class="slide-block-text2">The Ingredients Your Pet Deserves</div>
+          <transition name="fade-slide" mode="out-in">
+            <div v-if="leftWidth > 200">
+              <div class="slide-block-text3">Only humanely raised, <br>
+                responsibly sourced meats.</div>
+              <div class="slide-block-text4">High-end nutrition, <br>
+                100% traceable ingredients.</div>
+              <div class="slide-block-text5">Expertly crafted, <br>
+                delivered to your pet.</div>
+              <div class="slide-block-text6">Verified by leading authorities <br>
+                for complete confidence</div>
+            </div>
+            <div v-else>
+              <div class="slide-block-text3">Crafted without corn,wheat,<br>
+                soy, or syntheticadditives <br>
+                for pure nutrition.</div>
+              <div class="slide-block-text4">Sourced from animals raised<br>
+                free of antibioticsand<br>
+                added hormones..</div>
+              <div class="slide-block-text5">Ethically procured<br>
+                seafood in every blend.</div>
+              <div class="slide-block-text6">Enriched with non-GMO <br>
+                fruits and vegetables.</div>
+            </div>
+          </transition>
+        </div>
+        <div class="slide-wrapper" ref="slider">
+          <img class="img" src="../assets/images/drag-circle-bg-2.png" alt="">
+          <div class="top-img" :style="{ width: leftWidth + 'px' }">
+            <img src="../assets/images/drag-circle-bg-1.png" alt="" style="transform: scale(1.01);transform-origin: center;">
+          </div>png
+          <div class="divider" :style="{ left: leftWidth + 'px' }">
+            <div class="handle" @mousedown.prevent="startDrag">
+              <img src="../assets/images/drag-circle.svg" alt="">
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="marquee">
-      <div class="marquee-content">
-        <div><span>Daily Guard</span> Feast</div>
-        <div><span>Daily Guard</span> Feast</div>
-        <div><span>Daily Guard</span> Feast</div>
-        <div><span>Daily Guard</span> Feast</div>
-        <div><span>Daily Guard</span> Feast</div>
-        <div><span>Daily Guard</span> Feast</div>
+      <div class="marquee">
+        <div class="marquee-content">
+          <div><span>Daily Guard</span> Feast</div>
+          <div><span>Daily Guard</span> Feast</div>
+          <div><span>Daily Guard</span> Feast</div>
+          <div><span>Daily Guard</span> Feast</div>
+          <div><span>Daily Guard</span> Feast</div>
+          <div><span>Daily Guard</span> Feast</div>
+        </div>
       </div>
     </div>
     <!-- Products -->
@@ -254,7 +232,7 @@ onBeforeUnmount(() => {
 
   .products {
     background: #fff;
-
+    padding-bottom: 20px;
     .products-text1 {
       font-family: "RedHatDisplay-Regular";
       font-size: 30px;
@@ -337,7 +315,6 @@ onBeforeUnmount(() => {
   .transparent-block {
     width: 100%;
     height: 300px;
-    border: 20px solid #fff;
     border-right: none;
     border-left: none;
     background: transparent;
@@ -523,7 +500,7 @@ onBeforeUnmount(() => {
     }
 
     .slide-wrapper {
-      height: 400px;
+      height: 402px;
       width: 400px;
       border-radius: 50%;
       overflow: hidden;
