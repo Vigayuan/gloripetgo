@@ -161,6 +161,7 @@ const stopDrag = () => {
 
 
 onMounted(() => {
+  onWindowResize()
   window.addEventListener("resize", onWindowResize);
   observer = new IntersectionObserver(
     (entries) => {
