@@ -275,7 +275,7 @@ const pdInfo = reactive({
     title1: "Free-Range Chicken Recipe",
     title2: "Complete Cat Food",
     desc: "Uses low-magnesium and low-calcium ingredients as primary components, incorporating natural acidifiers to maintain a slightly acidic urine environment in cats, reducing urinary stone risk. Dandelion flavonoids boost urine flow and hydration.Cranberries add PACs to curb bacterial adhesion, aiding daily urinary health.",
-    analysisList: ['≥ 40.0%', '≥ 0.8%', '≥ 16.0%', '≥ 0.2%', '≤ 5.0% ', '≥ 0.85%', '≤ 10.0%', '≥ 2.6', '≥ 1.0%'],
+    analysisList: ['≥ 40.0%', '≥ 0.8%', '≥ 16.0%', '≥ 0.2%', '≤ 5.0% ', '≥ 0.85%', '≤ 10.0%', '≥ 2.6%', '≥ 1.0%'],
     tagList: [
         new URL("@/assets/pdimg/icon-urinary.png", import.meta.url).href,
         new URL("@/assets/pdimg/icon-immune.png", import.meta.url).href,
