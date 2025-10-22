@@ -60,12 +60,28 @@
 
     <section class="brand-logo">
       <div class="logo-list">
-        <img src="../assets/images/icon-MSC.svg" alt="">
-        <img src="../assets/images/icon-aafco.svg" alt="">
-        <img src="../assets/images/icon-Global-Animal.svg" alt="">
-        <img src="../assets/images/icon-FDA.svg" alt="">
-        <img src="../assets/images/icon-CFIA.svg" alt="">
-        <img src="../assets/images/icon-SQF.svg" alt="">
+        <div class="logo-list-line">
+          <div class="logo-item">
+            <img src="../assets/images/icon-MSC.svg" alt="">
+          </div>
+          <div class="logo-item">
+            <img src="../assets/images/icon-aafco.svg" alt="">
+          </div>
+          <div class="logo-item">
+            <img src="../assets/images/icon-Global-Animal.svg" alt="">
+          </div>
+        </div>
+        <div class="logo-list-line">
+          <div class="logo-item">
+            <img src="../assets/images/icon-SQF.svg" alt="">
+          </div>
+          <div class="logo-item">
+            <img src="../assets/images/icon-CFIA.svg" alt="">
+          </div>
+          <div class="logo-item">
+            <img src="../assets/images/icon-FDA.svg" alt="">
+          </div>
+        </div>
       </div>
     </section>
 
@@ -75,24 +91,39 @@
         <div class="swiper-block-text2">Arctic Glaciers Align</div>
         <div class="swiper-block-text3">with natural nutrition.</div>
       </div>
-      <Swiper :modules="modules" :loop="true" :slides-per-view="2" :pagination="{ clickable: true }" :navigation="{ nextEl: '.custom-next', prevEl: '.custom-prev' }" class="swiper-box">
+      <Swiper :modules="modules" :loop="true" :slides-per-view="3" :pagination="{ clickable: true }" :autoplay="{delay: 4000,disableOnInteraction: false}" :navigation="{ nextEl: '.custom-next', prevEl: '.custom-prev' }" class="swiper-box">
         <SwiperSlide>
           <div class="slide-item">
+            <div class="slide-item-text1">FREE-
+              RANGE<br>
+              CHICKEN</div>
+            <div @click="goWhy" class="slide-item-text2">Learn more</div>
             <img src="../assets/images/swiper-item-1.jpg" alt="">
           </div>
         </SwiperSlide>
         <SwiperSlide>
           <div class="slide-item">
+            <div class="slide-item-text1">ICE LAKE<br>
+              FREE-RANGE<br>
+              DUCK
+            </div>
+            <div @click="goWhy" class="slide-item-text2">Learn more</div>
             <img src="../assets/images/swiper-item-2.jpg" alt="">
           </div>
         </SwiperSlide>
         <SwiperSlide>
           <div class="slide-item">
+            <div class="slide-item-text1">ICEFIELD<br>
+              MOSS</div>
+            <div @click="goWhy" class="slide-item-text2">Learn more</div>
             <img src="../assets/images/swiper-item-3.jpg" alt="">
           </div>
         </SwiperSlide>
         <SwiperSlide>
           <div class="slide-item">
+            <div class="slide-item-text1">ARCTIC<br>
+              CHAR</div>
+            <div @click="goWhy" class="slide-item-text2">Learn more</div>
             <img src="../assets/images/swiper-item-4.jpg" alt="">
           </div>
         </SwiperSlide>
@@ -428,11 +459,27 @@ onBeforeUnmount(() => {
   }
 
   .brand-logo {
-    padding: 40px 0;
+    padding: 20px 0;
 
     .logo-list {
+      width: 90%;
+      margin: 0 auto;
       border-top: 1px solid #7c7c7c;
       border-bottom: 1px solid #7c7c7c;
+      padding: 15px 0;
+      .logo-list-line {
+        display: flex;
+        justify-content: space-between;
+        margin: 10px 0;
+        .logo-item {
+          height: 25px;
+          flex: 1;
+          text-align: center;
+          img {
+            height: 25px;
+          }
+        }
+      }
     }
   }
 
@@ -444,25 +491,25 @@ onBeforeUnmount(() => {
       width: 100%;
       text-align: center;
       color: #212995;
-      padding: 20px 0 30px;
+      padding: 10px 0 30px;
       overflow: visible;
 
       .swiper-block-text1 {
         font-family: "RedHatDisplay-Medium";
-        font-size: 22px;
+        font-size: 14px;
         line-height: 1;
         font-style: italic;
       }
 
       .swiper-block-text2 {
         font-family: "RedHatDisplay-Bold";
-        font-size: 40px;
+        font-size: 24px;
         line-height: 1.2;
       }
 
       .swiper-block-text3 {
         font-family: "RedHatDisplay-Regular";
-        font-size: 32px;
+        font-size: 20px;
         line-height: 1;
       }
     }
@@ -540,7 +587,31 @@ onBeforeUnmount(() => {
       }
 
       .slide-item {
+        position: relative;
         width: 100%;
+        color: #fff;
+
+        .slide-item-text1 {
+          position: absolute;
+          top: 15%;
+          left: 8%;
+          font-family: "RedHatDisplay-Bold";
+          font-size: 30px;
+          line-height: 1;
+          text-align: left;
+        }
+
+        .slide-item-text2 {
+          position: absolute;
+          bottom: 15%;
+          left: 8%;
+          font-family: "RedHatDisplay-Regular";
+          font-size: 15px;
+          line-height: 1;
+          border-bottom: 2px solid #fff;
+          padding-bottom: 4px;
+          cursor: pointer;
+        }
 
         img {
           width: 100%;
