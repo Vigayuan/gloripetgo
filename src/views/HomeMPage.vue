@@ -31,7 +31,7 @@
       </div>
       <div class="unleash-text2">
         With GloriPetgo™, you're not just filling their bowls—you’re fueling their lives with
-        irresistible,nourishing meals.<br><br><br><br> Plus, every bite helps pets beyond your own, spreading
+        irresistible,nourishing meals. Plus, every bite helps pets beyond your own, spreading
         happiness all around.
       </div>
     </section>
@@ -308,7 +308,7 @@ onBeforeUnmount(() => {
 
     .particle {
       position: absolute;
-      top: 20px;
+      top: 0;
       left: 0;
       opacity: 0;
       transform: translateY(150px);
@@ -322,27 +322,27 @@ onBeforeUnmount(() => {
 
     .unleash-text1 {
       position: absolute;
-      top: 24%;
-      left: 11%;
+      top: 40px;
+      left: 30px;
       color: #212995;
 
       .text-sub1 {
         font-family: "RedHatDisplay-Bold";
-        font-size: 40px;
+        font-size: 30px;
         line-height: 1;
         text-align: left;
       }
 
       .text-sub2 {
         font-family: "RedHatDisplay-Bold";
-        font-size: 45px;
+        font-size: 35px;
         line-height: 1;
         text-align: left;
       }
 
       .text-sub3 {
         font-family: "Khalila";
-        font-size: 65px;
+        font-size: 45px;
         line-height: 1;
         text-align: left;
         color: #a1a1a1;
@@ -351,12 +351,13 @@ onBeforeUnmount(() => {
 
     .unleash-text2 {
       position: absolute;
-      bottom: 20%;
-      right: 3%;
+      bottom: 85px;
+      width: 86%;
+      right: 7%;
       color: #212995;
       font-family: "Oswald-Regular";
-      font-size: 18px;
-      line-height: 1;
+      font-size: 16px;
+      line-height: 1.2;
       text-align: center;
     }
   }

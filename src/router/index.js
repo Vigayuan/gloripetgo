@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: Viga
  * @Date: 2025-09-17 14:22:34
- * @LastEditTime: 2025-10-13 15:47:46
+ * @LastEditTime: 2025-10-22 15:55:11
  */
 import { createRouter, createWebHistory } from 'vue-router'
 import HomePage from '@/views/HomePage.vue'
@@ -19,8 +19,8 @@ const router = createRouter({
             redirect: '/'
         },
         {
-            path: '/homeMP',
-            name: 'HomeMP',
+            path: '/m/home', 
+            name: 'mHome',
             component: () => import('@/views/HomeMPage.vue')
         },
         {
