@@ -91,7 +91,9 @@
         <div class="swiper-block-text2">Arctic Glaciers Align</div>
         <div class="swiper-block-text3">with natural nutrition.</div>
       </div>
-      <Swiper :modules="modules" :loop="true" :slides-per-view="3" :pagination="{ clickable: true }" :autoplay="{delay: 4000,disableOnInteraction: false}" :navigation="{ nextEl: '.custom-next', prevEl: '.custom-prev' }" class="swiper-box">
+      <Swiper :modules="modules" :loop="true" :slides-per-view="3" :pagination="{ clickable: true }"
+        :autoplay="{ delay: 4000, disableOnInteraction: false }"
+        :navigation="{ nextEl: '.custom-next', prevEl: '.custom-prev' }" class="swiper-box">
         <SwiperSlide>
           <div class="slide-item">
             <div class="slide-item-text1">FREE-
@@ -137,7 +139,6 @@
     </div>
     <!-- Philosophy -->
     <section class="philosophy">
-      <img src="../assets/mimgs/m_home_bg_03.jpg" alt="">
       <div class="phil-text1">Product</div>
       <div class="phil-text2">Philosophy</div>
       <div class="phil-items">
@@ -182,6 +183,7 @@
           </div>
         </div>
       </div>
+      <img src="../assets/mimgs/m_home_bg_03.jpg" alt="">
     </section>
 
     <!-- <section class="cta">
@@ -270,7 +272,7 @@ onBeforeUnmount(() => {
 <style lang="scss" scoped>
 .landing-page {
   width: 100%;
-  background: #e8e8e8;
+  background: #fff;
   overflow: hidden;
 
   .hero {
@@ -467,14 +469,17 @@ onBeforeUnmount(() => {
       border-top: 1px solid #7c7c7c;
       border-bottom: 1px solid #7c7c7c;
       padding: 15px 0;
+
       .logo-list-line {
         display: flex;
         justify-content: space-between;
         margin: 10px 0;
+
         .logo-item {
           height: 25px;
           flex: 1;
           text-align: center;
+
           img {
             height: 25px;
           }
@@ -562,7 +567,7 @@ onBeforeUnmount(() => {
     .swiper-box {
       :deep(.swiper-pagination) {
         width: 200px;
-        height: 120px;
+        height: 80px;
         display: flex;
         justify-content: space-around;
         align-items: center;
@@ -623,43 +628,38 @@ onBeforeUnmount(() => {
   .philosophy {
     position: relative;
     font-size: 0;
-    color: #fff;
+    color: #212995;
+      text-align: left;
 
     img {
       width: 100%;
     }
 
     .phil-text1 {
-      position: absolute;
       font-family: "RedHatDisplay-Regular";
       font-size: 45px;
       line-height: 1;
-      top: 40px;
-      left: 6%;
+      padding-left: 40px;
     }
 
     .phil-text2 {
-      position: absolute;
       font-family: "RedHatDisplay-Bold";
       font-size: 60px;
       line-height: 1;
-      top: 85px;
-      left: 6%;
+      padding-left: 40px;
     }
 
     .phil-items {
-      position: absolute;
       font-size: 50px;
       line-height: 1;
-      top: 195px;
-      left: 10%;
+      padding-left: 40px;
       display: flex;
       flex-wrap: wrap;
-      width: 520px;
-      justify-content: space-between;
+      width: 100%;
+      justify-content: left;
 
       .phil-item {
-        width: 230px;
+        width: 40%;
         display: flex;
         justify-content: space-between;
         margin-bottom: 30px;
