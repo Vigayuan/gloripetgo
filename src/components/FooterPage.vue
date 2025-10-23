@@ -94,7 +94,6 @@ const openWindow = (index) => {
     .f-message {
       width: 140px;
       padding-top: 35px;
-
       .f-message-text {
         color: #212995;
         font-family: "Oswald-Medium";

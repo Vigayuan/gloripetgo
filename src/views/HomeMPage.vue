@@ -38,27 +38,29 @@
 
     <!-- Products -->
     <section id="products" class="products">
-      <h3 class="products-text1">Discover <span class="sub1">Our </span><span class="sub2">Products</span></h3>
-      <Swiper :modules="modules" :loop="true" :slides-per-view="1" :space-between="20" :pagination="{ clickable: true }" :autoplay="{delay: 4000,disableOnInteraction: false}" :navigation="{ nextEl: '.custom-pd-next', prevEl: '.custom-pd-prev' }" class="swiper-box">
+      <h3 class="products-text1">Discover <br><span class="sub1">Our </span><span class="sub2">Products</span></h3>
+      <Swiper :modules="modules" :loop="true" :slides-per-view="1" :pagination="{ clickable: true }"
+        :autoplay="{ delay: 4000, disableOnInteraction: false }"
+        :navigation="{ nextEl: '.custom-pd-next', prevEl: '.custom-pd-prev' }" class="pd-swiper-box">
         <SwiperSlide>
-          <div class="slide-item">
+          <div class="pd-slide-item">
             <img src="../assets/images/pd1.png" alt="">
-            <div class="tag1">IMMUNE SUPPORT</div>
-            <div class="tag2">JOINT CARE</div>
+            <div class="pd-tag1">IMMUNE SUPPORT</div>
+            <div class="pd-tag2">JOINT CARE</div>
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div class="slide-item">
+          <div class="pd-slide-item">
             <img src="../assets/images/pd2.png" alt="">
-            <div class="tag1">IMMUNE SUPPORT</div>
-            <div class="tag2">SKIN & COAT HEALTH</div>
+            <div class="pd-tag1">IMMUNE SUPPORT</div>
+            <div class="pd-tag2">SKIN & COAT HEALTH</div>
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div class="slide-item">
+          <div class="pd-slide-item">
             <img src="../assets/images/pd3.png" alt="">
-            <div class="tag1">IMMUNE SUPPORT</div>
-            <div class="tag2">URINARY HEALTH</div>
+            <div class="pd-tag1">IMMUNE SUPPORT</div>
+            <div class="pd-tag2">URINARY HEALTH</div>
           </div>
         </SwiperSlide>
       </Swiper>
@@ -103,7 +105,9 @@
         <div class="swiper-block-text2">Arctic Glaciers Align</div>
         <div class="swiper-block-text3">with natural nutrition.</div>
       </div>
-      <Swiper :modules="modules" :loop="true" :slides-per-view="3" :space-between="20" :pagination="{ clickable: true }" :autoplay="{delay: 4000,disableOnInteraction: false}" :navigation="{ nextEl: '.custom-next', prevEl: '.custom-prev' }" class="swiper-box">
+      <Swiper :modules="modules" :loop="true" :slides-per-view="3" :space-between="20" :pagination="{ clickable: true }"
+        :autoplay="{ delay: 4000, disableOnInteraction: false }"
+        :navigation="{ nextEl: '.custom-next', prevEl: '.custom-prev' }" class="swiper-box">
         <SwiperSlide>
           <div class="slide-item">
             <div class="slide-item-text1">FREE-
@@ -154,7 +158,7 @@
       <div class="phil-items">
         <div class="phil-item">
           <div class="phil-left">
-            <img src="../assets/images/icon-Natural.svg" alt="">
+            <img src="../assets/mimgs/icon-Natural.svg" alt="">
           </div>
           <div class="phil-right">
             <div class="phil-right-text1">Natural</div>
@@ -163,7 +167,7 @@
         </div>
         <div class="phil-item">
           <div class="phil-left">
-            <img src="../assets/images/icon-health.svg" alt="">
+            <img src="../assets/mimgs/icon-health.svg" alt="">
           </div>
           <div class="phil-right">
             <div class="phil-right-text1">Health</div>
@@ -172,7 +176,7 @@
         </div>
         <div class="phil-item">
           <div class="phil-left">
-            <img src="../assets/images/icon-fresh.svg" alt="">
+            <img src="../assets/mimgs/icon-fresh.svg" alt="">
           </div>
           <div class="phil-right">
             <div class="phil-right-text1">Fresh</div>
@@ -183,7 +187,7 @@
         </div>
         <div class="phil-item">
           <div class="phil-left">
-            <img src="../assets/images/icon-convenient.svg" alt="">
+            <img src="../assets/mimgs/icon-convenient.svg" alt="">
           </div>
           <div class="phil-right">
             <div class="phil-right-text1">Convenient</div>
@@ -406,6 +410,8 @@ onBeforeUnmount(() => {
   }
 
   .products {
+    position: relative;
+
     .products-text1 {
       font-family: "RedHatDisplay-Regular";
       font-size: 30px;
@@ -426,37 +432,25 @@ onBeforeUnmount(() => {
       }
     }
 
-    .product-grid {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 90%;
-      margin: 0 auto;
+    .pd-swiper-box {
+      position: relative;
 
-      .product-card {
-        cursor: pointer;
-        width: 30%;
-        height: auto;
-
+      .pd-slide-item {
         img {
-          width: 100%;
-          max-width: 350px;
-
-          &:hover {
-            transform: scale(1.05);
-          }
+          width: 60%;
         }
 
-        .tag1 {
+        .pd-tag1 {
           font-family: "RedHatDisplay-Bold";
           font-size: 14px;
           line-height: 1;
           text-align: center;
           color: #212995;
           height: 14px;
+          margin-top: 20px;
         }
 
-        .tag2 {
+        .pd-tag2 {
           font-family: "RedHatDisplay-Bold";
           font-size: 30px;
           line-height: 1;
@@ -466,6 +460,34 @@ onBeforeUnmount(() => {
           margin: 0 auto;
           height: 60px;
         }
+      }
+    }
+
+    .custom-pd-prev {
+      position: absolute;
+      top: 50%;
+      cursor: pointer;
+      left: 10%;
+      width: 30px;
+      height: 30px;
+      z-index: 100;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .custom-pd-next {
+      position: absolute;
+      top: 50%;
+      cursor: pointer;
+      right: 10%;
+      width: 30px;
+      height: 30px;
+      z-index: 100;
+
+      img {
+        width: 100%;
       }
     }
   }
@@ -606,6 +628,10 @@ onBeforeUnmount(() => {
         width: 100%;
         color: #fff;
 
+        img {
+          width: 80px;
+        }
+
         .slide-item-text1 {
           position: absolute;
           top: 15%;
@@ -667,16 +693,17 @@ onBeforeUnmount(() => {
       flex-wrap: wrap;
       width: 100%;
       justify-content: left;
-
+      margin-top: 20px;
       .phil-item {
-        width: 40%;
+        width: 45%;
         display: flex;
         justify-content: space-between;
         margin-bottom: 30px;
 
         .phil-left {
           width: 50px;
-
+          margin-right: 8px;
+          line-height: 0;
           .img {
             width: 100%;
           }
@@ -687,7 +714,7 @@ onBeforeUnmount(() => {
 
           .phil-right-text1 {
             font-family: "RedHatDisplay-Regular";
-            font-size: 38px;
+            font-size: 22px;
             line-height: 1;
             text-align: left;
           }
@@ -697,7 +724,7 @@ onBeforeUnmount(() => {
             font-size: 14px;
             line-height: 1;
             text-align: left;
-            margin-top: 10px;
+            margin-top: 5px;
           }
         }
       }

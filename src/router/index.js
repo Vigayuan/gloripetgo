@@ -24,9 +24,14 @@ const router = createRouter({
             component: () => import('@/views/HomeMPage.vue')
         },
         {
-            path: '/story',
-            name: 'Story',
-            component: () => import('@/views/OurstoryPage.vue')
+            path: '/m/healthy',
+            name: 'mHealthy',
+            component: () => import('@/views/HealthyMPage.vue')
+        },
+        {
+            path: '/m/ourstory',
+            name: 'mOurstory',
+            component: () => import('@/views/OurstoryMPage.vue')
         },
         {
             path: '/healthy',

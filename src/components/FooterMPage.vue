@@ -13,6 +13,7 @@
       </div>
 
       <div class="f-message">
+        <div class="line"></div>
         <div class="f-message-text">@GloriPetgo</div>
         <div class="logo">
           <div @click="openWindow(3)" class="icon">
@@ -94,6 +95,14 @@ const openWindow = (index) => {
     .f-message {
       width: 140px;
       padding-top: 35px;
+
+      .line {
+        width: 70%;
+        height: 2px;
+        background: #212995;
+        margin-bottom: 25px;
+        margin-left: 15%;
+      }
 
       .f-message-text {
         color: #212995;
