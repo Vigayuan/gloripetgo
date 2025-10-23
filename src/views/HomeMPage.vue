@@ -39,22 +39,34 @@
     <!-- Products -->
     <section id="products" class="products">
       <h3 class="products-text1">Discover <span class="sub1">Our </span><span class="sub2">Products</span></h3>
-      <div class="product-grid">
-        <div class="product-card">
-          <img src="../assets/images/pd1.png" alt="">
-          <div class="tag1">IMMUNE SUPPORT</div>
-          <div class="tag2">JOINT CARE</div>
-        </div>
-        <div class="product-card">
-          <img src="../assets/images/pd2.png" alt="">
-          <div class="tag1">IMMUNE SUPPORT</div>
-          <div class="tag2">SKIN & COAT HEALTH</div>
-        </div>
-        <div class="product-card">
-          <img src="../assets/images/pd3.png" alt="">
-          <div class="tag1">IMMUNE SUPPORT</div>
-          <div class="tag2">URINARY HEALTH</div>
-        </div>
+      <Swiper :modules="modules" :loop="true" :slides-per-view="1" :space-between="20" :pagination="{ clickable: true }" :autoplay="{delay: 4000,disableOnInteraction: false}" :navigation="{ nextEl: '.custom-pd-next', prevEl: '.custom-pd-prev' }" class="swiper-box">
+        <SwiperSlide>
+          <div class="slide-item">
+            <img src="../assets/images/pd1.png" alt="">
+            <div class="tag1">IMMUNE SUPPORT</div>
+            <div class="tag2">JOINT CARE</div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div class="slide-item">
+            <img src="../assets/images/pd2.png" alt="">
+            <div class="tag1">IMMUNE SUPPORT</div>
+            <div class="tag2">SKIN & COAT HEALTH</div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div class="slide-item">
+            <img src="../assets/images/pd3.png" alt="">
+            <div class="tag1">IMMUNE SUPPORT</div>
+            <div class="tag2">URINARY HEALTH</div>
+          </div>
+        </SwiperSlide>
+      </Swiper>
+      <div class="custom-pd-prev">
+        <img src="../assets/images/icon-arrow.svg" alt="">
+      </div>
+      <div class="custom-pd-next">
+        <img src="../assets/images/icon-arrow.svg" style="transform: rotate(180deg);" alt="">
       </div>
     </section>
 
@@ -627,7 +639,7 @@ onBeforeUnmount(() => {
     position: relative;
     font-size: 0;
     color: #212995;
-      text-align: left;
+    text-align: left;
 
     img {
       width: 100%;
