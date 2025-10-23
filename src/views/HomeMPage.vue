@@ -91,16 +91,14 @@
         <div class="swiper-block-text2">Arctic Glaciers Align</div>
         <div class="swiper-block-text3">with natural nutrition.</div>
       </div>
-      <Swiper :modules="modules" :loop="true" :slides-per-view="3" :pagination="{ clickable: true }"
-        :autoplay="{ delay: 4000, disableOnInteraction: false }"
-        :navigation="{ nextEl: '.custom-next', prevEl: '.custom-prev' }" class="swiper-box">
+      <Swiper :modules="modules" :loop="true" :slides-per-view="3" :space-between="20" :pagination="{ clickable: true }" :autoplay="{delay: 4000,disableOnInteraction: false}" :navigation="{ nextEl: '.custom-next', prevEl: '.custom-prev' }" class="swiper-box">
         <SwiperSlide>
           <div class="slide-item">
             <div class="slide-item-text1">FREE-
               RANGE<br>
               CHICKEN</div>
             <div @click="goWhy" class="slide-item-text2">Learn more</div>
-            <img src="../assets/images/swiper-item-1.jpg" alt="">
+            <img src="../assets/mimgs/swiper-item-1.jpg" alt="">
           </div>
         </SwiperSlide>
         <SwiperSlide>
@@ -110,7 +108,7 @@
               DUCK
             </div>
             <div @click="goWhy" class="slide-item-text2">Learn more</div>
-            <img src="../assets/images/swiper-item-2.jpg" alt="">
+            <img src="../assets/mimgs/swiper-item-2.jpg" alt="">
           </div>
         </SwiperSlide>
         <SwiperSlide>
@@ -118,7 +116,7 @@
             <div class="slide-item-text1">ICEFIELD<br>
               MOSS</div>
             <div @click="goWhy" class="slide-item-text2">Learn more</div>
-            <img src="../assets/images/swiper-item-3.jpg" alt="">
+            <img src="../assets/mimgs/swiper-item-3.jpg" alt="">
           </div>
         </SwiperSlide>
         <SwiperSlide>
@@ -126,7 +124,7 @@
             <div class="slide-item-text1">ARCTIC<br>
               CHAR</div>
             <div @click="goWhy" class="slide-item-text2">Learn more</div>
-            <img src="../assets/images/swiper-item-4.jpg" alt="">
+            <img src="../assets/mimgs/swiper-item-4.jpg" alt="">
           </div>
         </SwiperSlide>
       </Swiper>
@@ -524,8 +522,8 @@ onBeforeUnmount(() => {
       top: 50%;
       cursor: pointer;
       left: 5%;
-      width: 40px;
-      height: 40px;
+      width: 30px;
+      height: 30px;
       z-index: 100;
 
       img {
@@ -538,8 +536,8 @@ onBeforeUnmount(() => {
       top: 50%;
       cursor: pointer;
       right: 5%;
-      width: 40px;
-      height: 40px;
+      width: 30px;
+      height: 30px;
       z-index: 100;
 
       img {
