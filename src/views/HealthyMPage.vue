@@ -6,7 +6,7 @@
     <!-- Hero -->
     <section class="hero">
       <div class="hero-bg">
-      <img src="../assets/mimgs/healthy_bg_02.jpg" alt="">
+        <img src="../assets/mimgs/healthy_bg_02.jpg" alt="">
       </div>
       <div class="title1">
         Ensuring Your Pet's<br>
@@ -22,7 +22,7 @@
 
     <!-- Unleash energy -->
     <section class="unleash" ref="boxRef">
-      <img src="../assets/images/why-healthy_04.jpg" alt="">
+      <img src="../assets/mimgs/healthy_bg_03.jpg" alt="">
       <div class="unleash-text1" :class="{ showBox }">
         <div class="text-sub1">At GloriPetgo™, we are dedicated to ensuring that your <span>beloved pet receives
             nutrition, safety, and deliciousness,</span> all while building a solid health barrier. </div>
@@ -36,36 +36,39 @@
       </div>
     </section>
     <div class="advance-block">
-      <div class="left">
-        <div class="text-wrapper">
-          <div class="text-block">
-            <div @mouseover="showPic(1)" :class="picIndex == 1 ? 'text-1 active' : 'text-1'">
-              <div class="text-left">01</div>
-              <div class="text-right">Premium<br>
-                Ingredients </div>
-            </div>
-            <div class="line"></div>
-            <div @mouseover="showPic(2)" :class="picIndex == 2 ? 'text-1 active' : 'text-1'">
-              <div class="text-left">02</div>
-              <div class="text-right">Advanced<br>
-                Manufacturing<br>
-                Techniques</div>
-            </div>
-            <div class="line"></div>
-            <div @mouseover="showPic(3)" :class="picIndex == 3 ? 'text-1 active' : 'text-1'">
-              <div class="text-left">03</div>
-              <div class="text-right">Scientific<br>
-                feeding<br>
-                guide</div>
-            </div>
+      <Swiper :modules="modules" :loop="true" :slides-per-view="1" :pagination="{ clickable: true }" :autoplay="{ delay: 4000, disableOnInteraction: false }" :navigation="{ nextEl: '.custom-pd-next', prevEl: '.custom-pd-prev' }" class="pd-swiper-box">
+        <SwiperSlide>
+          <div class="pd-slide-item">
+            <img src="../assets/mimgs/why-health-1.jpg" alt="">
+            <div class="text-left">01</div>
+            <div class="text-right">Premium<br>
+              Ingredients </div>
           </div>
-        </div>
-        <img src="../assets/images/salmon.jpg" alt="">
+        </SwiperSlide>
+        <SwiperSlide>
+          <div class="pd-slide-item">
+            <img src="../assets/mimgs/why-health-2.jpg" alt="">
+            <div class="text-left">02</div>
+            <div class="text-right">Advanced<br>
+              Manufacturing<br>
+              Techniques</div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div class="pd-slide-item">
+            <img src="../assets/mimgs/why-health-3.jpg" alt="">
+            <div class="text-left">03</div>
+            <div class="text-right">Scientific<br>
+              feeding<br>
+              guide</div>
+          </div>
+        </SwiperSlide>
+      </Swiper>
+      <div class="custom-pd-prev">
+        <img src="../assets/images/icon-arrow.svg" alt="">
       </div>
-      <div class="right">
-        <img v-show="picIndex == 2" src="../assets/images/food.jpg" alt="">
-        <img v-show="picIndex == 3" src="../assets/images/cat.jpg" alt="">
-        <img v-show="picIndex == 1" src="../assets/images/salmon.jpg" alt="">
+      <div class="custom-pd-next">
+        <img src="../assets/images/icon-arrow.svg" style="transform: rotate(180deg);" alt="">
       </div>
     </div>
     <div class="good-taste-block">
@@ -135,7 +138,6 @@
             </div>
           </div>
         </SwiperSlide>
-
       </Swiper>
     </div>
     <section class="Manufacturing " ref="manuRef">
@@ -178,7 +180,7 @@
       </div>
     </section>
     <!-- Footer -->
-        <FooterMPage />
+    <FooterMPage />
   </div>
 </template>
 
@@ -194,10 +196,7 @@ const router = useRouter()
 const goWhy = () => {
   router.push({ name: 'Healthy' });
 }
-const picIndex = ref(1)
-const showPic = (val) => {
-  picIndex.value = val
-}
+
 const swiperRef = ref(null)
 
 const onSwiper = (swiper) => {
@@ -273,7 +272,7 @@ onBeforeUnmount(() => {
 <style lang="scss" scoped>
 .landing-page {
   width: 100%;
-  background: #e8e8e8;
+  background: #fff;
 
   .hero {
     position: relative;
@@ -302,7 +301,7 @@ onBeforeUnmount(() => {
       top: 35%;
       left: 10%;
       font-family: "RedHatDisplay-Medium";
-      font-size: 60px;
+      font-size: 28px;
       line-height: 1;
       text-align: center;
       width: 80%;
@@ -313,7 +312,7 @@ onBeforeUnmount(() => {
 
       .title1-sub1 {
         font-family: "RedHatDisplay-black";
-        font-size: 66px;
+        font-size: 30px;
       }
     }
   }
@@ -350,10 +349,9 @@ onBeforeUnmount(() => {
 
     .unleash-text1 {
       position: absolute;
-      top: 50px;
-      width: 1000px;
-      left: 50%;
-      margin-left: -500px;
+      top: 20px;
+      width: 80%;
+      left: 10%;
       opacity: 0;
       //   transform: translateY(-100px);
       transition: all 0.8s 0.8s ease-out;
@@ -365,7 +363,7 @@ onBeforeUnmount(() => {
 
       .text-sub1 {
         font-family: "RedHatDisplay-Regular";
-        font-size: 50px;
+        font-size: 26px;
         line-height: 1;
         text-align: left;
         color: #9f9f9f;
@@ -394,12 +392,12 @@ onBeforeUnmount(() => {
 
     .unleash-text2 {
       position: absolute;
-      width: 35%;
-      bottom: 20%;
-      right: 15%;
+      width: 44%;
+      bottom: 160px;
+      left: 50%;
       color: #212995;
       font-family: "RedHatDisplay-Regular";
-      font-size: 20px;
+      font-size: 14px;
       line-height: 1.2;
       text-align: left;
       opacity: 0;
@@ -412,13 +410,13 @@ onBeforeUnmount(() => {
 
     .unleash-text3 {
       position: absolute;
-      width: 1000px;
-      bottom: -10px;
-      left: 50%;
-      margin-left: -500px;
+      width: 80%;
+      bottom: -7px;
+      left: 10%;
+      /* margin-left: -500px; */
       color: #212995;
       font-family: "RedHatDisplay-Regular";
-      font-size: 70px;
+      font-size: 45px;
       line-height: 1;
       text-align: center;
       opacity: 0;
@@ -436,81 +434,33 @@ onBeforeUnmount(() => {
   }
 
   .advance-block {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     width: 100%;
-
-    .left {
-      position: relative;
-      line-height: 0;
-      width: 50%;
-      background: #f25929;
-
-      img {
-        opacity: 0;
-        width: 100%;
-      }
-
-      .text-wrapper {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        .text-block {
-          width: 300px;
-          z-index: 100;
-
-          .text-1 {
-            cursor: pointer;
-            width: 100%;
-            display: flex;
-            font-family: "Oswald-Regular";
-            font-size: 35px;
-            line-height: 1;
-            text-align: left;
-            color: #fff;
-            margin: 20px 0;
-            padding-left: 10px;
-
-            .text-left {
-              width: 30px;
-              font-family: "Oswald-Regular";
-              font-size: 25px;
-              margin-right: 12px;
-              margin-top: 1px;
-            }
-
-            &.active {
-              color: #212995;
-            }
-
-            &:hover {
-              color: #212995;
-            }
-          }
-
-          .line {
-            width: 300px;
-            height: 3px;
-            border-radius: 2px;
-            background-color: #8f8f8f;
-          }
-        }
-      }
+    img {
+      width: 100%;
     }
-
-    .right {
-      width: 50%;
-      font-size: 0;
-
-      img {
+    .pd-swiper-box {
+      width: 100%;
+      .pd-slide-item {
         width: 100%;
+        position: relative;
+        text-align: left;
+        color: #212995;
+        .text-left {
+          position: absolute;
+          top: 230px;
+          left: 35px;
+          font-family: "Oswald-Regular";
+          font-size: 20px;
+          line-height: 1.2;
+        }
+        .text-right {
+          position: absolute;
+          top: 230px;
+          left: 70px;
+          font-family: "Oswald-Regular";
+          font-size: 20px;
+          line-height: 1.2;
+        }
       }
     }
   }
@@ -806,7 +756,7 @@ onBeforeUnmount(() => {
       margin-left: -250px;
       color: #000;
       opacity: 0;
-      transition: all 0.8s  ease-out;
+      transition: all 0.8s ease-out;
 
       &.showFeed {
         opacity: 1;
@@ -862,5 +812,4 @@ onBeforeUnmount(() => {
     }
   }
 }
-
 </style>
