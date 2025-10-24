@@ -36,7 +36,9 @@
       </div>
     </section>
     <div class="advance-block">
-      <Swiper :modules="modules" :loop="true" :slides-per-view="1" :pagination="{ clickable: true }" :autoplay="{ delay: 4000, disableOnInteraction: false }" :navigation="{ nextEl: '.custom-pd-next', prevEl: '.custom-pd-prev' }" class="pd-swiper-box">
+      <Swiper :modules="modules" :loop="true" :slides-per-view="1" :pagination="{ clickable: true }"
+        :autoplay="{ delay: 4000, disableOnInteraction: false }"
+        :navigation="{ nextEl: '.custom-pd-next', prevEl: '.custom-pd-prev' }" class="pd-swiper-box">
         <SwiperSlide>
           <div class="pd-slide-item">
             <img src="../assets/mimgs/why-health-1.jpg" alt="">
@@ -190,7 +192,8 @@ import { Swiper, SwiperSlide } from 'swiper/vue'
 import HeaderMPage from "@/components/HeaderMPage.vue";
 import FooterMPage from "@/components/FooterMPage.vue";
 import { ref, onMounted, nextTick, onBeforeUnmount } from 'vue'
-const modules = [Autoplay]
+import { Pagination, Navigation } from 'swiper/modules'
+const modules = [Pagination, Navigation, Autoplay]
 import { useRouter } from "vue-router";
 const router = useRouter()
 const goWhy = () => {
@@ -435,16 +438,20 @@ onBeforeUnmount(() => {
 
   .advance-block {
     width: 100%;
+    position: relative;
     img {
       width: 100%;
     }
+
     .pd-swiper-box {
       width: 100%;
+
       .pd-slide-item {
         width: 100%;
         position: relative;
         text-align: left;
         color: #212995;
+
         .text-left {
           position: absolute;
           top: 230px;
@@ -453,6 +460,7 @@ onBeforeUnmount(() => {
           font-size: 20px;
           line-height: 1.2;
         }
+
         .text-right {
           position: absolute;
           top: 230px;
@@ -461,6 +469,34 @@ onBeforeUnmount(() => {
           font-size: 20px;
           line-height: 1.2;
         }
+      }
+    }
+
+    .custom-pd-prev {
+      position: absolute;
+      top: 35%;
+      cursor: pointer;
+      left: 10%;
+      width: 30px;
+      height: 30px;
+      z-index: 100;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .custom-pd-next {
+      position: absolute;
+      top: 35%;
+      cursor: pointer;
+      right: 10%;
+      width: 30px;
+      height: 30px;
+      z-index: 100;
+
+      img {
+        width: 100%;
       }
     }
   }
