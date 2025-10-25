@@ -21,7 +21,7 @@
       <div @click="goPd">Products</div>
       <div @click="goWhy">Why healthy</div>
       <div @click="goStory">Our story</div>
-      <div @click="goAbout">About us</div>
+      <div @click="goSupport">Support</div>
     </nav>
   </header>
 </template>
@@ -34,10 +34,19 @@ const router = useRouter();
 const showArrowBlock = ref(false);
 const showMenu = ref(false);
 
-const goPd = () => router.push({ name: "Products" });
-const goWhy = () => router.push({ name: "Healthy" });
-const goStory = () => router.push({ name: "Home" });
-const goAbout = () => router.push({ name: "Support" });
+const goPd = () => {
+  router.push({ name: 'mProducts' })
+}
+
+const goWhy = () => {
+  router.push({ name: 'mHealthy' });
+}
+const goStory = () => {
+  router.push({ name: 'mStory' });
+}
+const goSupport = () => {
+  router.push({ name: 'mSupport' });
+}
 
 
 
@@ -104,7 +113,7 @@ const toggleMenu = () => (showMenu.value = !showMenu.value);
     background: #212995;
     height: 60px;
     transition: all 0.3s ease;
-
+    padding-bottom: 10px;
     div {
       cursor: pointer;
       margin: 0 20px;

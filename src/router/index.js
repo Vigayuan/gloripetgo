@@ -34,9 +34,9 @@ const router = createRouter({
             component: () => import('@/views/OurstoryMPage.vue')
         },
         {
-            path: '/m/about',
-            name: 'mAbout',
-            component: () => import('@/views/AboutMPage.vue')
+            path: '/m/support',
+            name: 'mSupport',
+            component: () => import('@/views/SupportMPage.vue')
         },
         {
             path: '/healthy',
@@ -57,7 +57,7 @@ const router = createRouter({
         {
             path: '/support',
             name: 'Support',
-            component: () => import('@/views/AboutPage.vue')
+            component: () => import('@/views/SupportPage.vue')
         },
     ],
     // 👇 关键：添加 scrollBehavior

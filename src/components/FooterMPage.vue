@@ -40,10 +40,20 @@
 import { useRouter } from "vue-router";
 const router = useRouter();
 
-const goPd = () => router.push({ name: "Products" });
-const goWhy = () => router.push({ name: "Healthy" });
-const goStory = () => router.push({ name: "Home" });
-const goAbout = () => router.push({ name: "Support" });
+const goPd = () => {
+  router.push({ name: 'mProducts' })
+}
+
+const goWhy = () => {
+  router.push({ name: 'mHealthy' });
+}
+const goStory = () => {
+  router.push({ name: 'mStory' });
+}
+const goAbout = () => {
+  router.push({ name: 'mSupport' });
+}
+
 
 const openWindow = (index) => {
   const urls = [

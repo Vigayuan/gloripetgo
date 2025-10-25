@@ -143,7 +143,7 @@
       </Swiper>
     </div>
     <section class="Manufacturing " ref="manuRef">
-      <img class="Manufacturing-bg" src="../assets/images/Manufacturing.jpg" alt="">
+      <img src="../assets/mimgs/healthy_bg_05.jpg" alt="">
       <div class="Manufacturing-text1">
         <div class="text-sub1">Advanced <br><span>Manufacturing Techniques</span></div>
       </div>
@@ -160,17 +160,33 @@
     </section>
     <section class="brand-logo">
       <div class="logo-list">
-        <img src="../assets/images/icon-MSC.svg" alt="">
-        <img src="../assets/images/icon-aafco.svg" alt="">
-        <img src="../assets/images/icon-Global-Animal.svg" alt="">
-        <img src="../assets/images/icon-FDA.svg" alt="">
-        <img src="../assets/images/icon-CFIA.svg" alt="">
-        <img src="../assets/images/icon-SQF.svg" alt="">
+        <div class="logo-list-line">
+          <div class="logo-item">
+            <img src="../assets/images/icon-MSC.svg" alt="">
+          </div>
+          <div class="logo-item">
+            <img src="../assets/images/icon-aafco.svg" alt="">
+          </div>
+          <div class="logo-item">
+            <img src="../assets/images/icon-Global-Animal.svg" alt="">
+          </div>
+        </div>
+        <div class="logo-list-line">
+          <div class="logo-item">
+            <img src="../assets/images/icon-SQF.svg" alt="">
+          </div>
+          <div class="logo-item">
+            <img src="../assets/images/icon-CFIA.svg" alt="">
+          </div>
+          <div class="logo-item">
+            <img src="../assets/images/icon-FDA.svg" alt="">
+          </div>
+        </div>
       </div>
     </section>
 
     <section class="feed-guide " ref="feedRef">
-      <img class="feed-guide-bg" src="../assets/images/feed_guide.jpg" alt="">
+      <img src="../assets/mimgs/healthy_bg_07.jpg" alt="">
       <div class="feed-guide-text1" :class="{ showFeed }">
         <div class="text-sub1">Daily defense <span>in every bite</span></div>
         <div class="text-sub2">Scientific<br><span>Feeding Guide</span></div>
@@ -439,6 +455,7 @@ onBeforeUnmount(() => {
   .advance-block {
     width: 100%;
     position: relative;
+
     img {
       width: 100%;
     }
@@ -502,10 +519,7 @@ onBeforeUnmount(() => {
   }
 
   .good-taste-block {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 60px 10% 0;
+    padding: 40px 35px 0;
     background: #fff;
 
     .left {
@@ -514,21 +528,23 @@ onBeforeUnmount(() => {
 
       .text {
         font-family: "RedHatDisplay-Medium";
-        font-size: 35px;
+        font-size: 16px;
         line-height: 1;
 
         span {
           display: inline-block;
           font-family: "RedHatDisplay-black";
-          font-size: 50px;
+          font-size: 24px;
           line-height: 1;
         }
       }
     }
 
     .right {
+      text-align: right;
+
       img {
-        width: 120px;
+        width: 60px;
       }
     }
   }
@@ -615,26 +631,33 @@ onBeforeUnmount(() => {
   }
 
   .brand-logo {
-    padding: 40px 0;
-    background-color: #fff;
+    padding: 20px 0;
 
     .logo-list {
-      box-sizing: border-box;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
       width: 90%;
       margin: 0 auto;
-      padding: 30px 5%;
-      background-color: #e8e8e8;
-      border-radius: 200px;
+      border-top: 1px solid #7c7c7c;
+      border-bottom: 1px solid #7c7c7c;
+      padding: 15px 0;
 
-      img {
-        cursor: pointer;
-        height: 40px;
+      .logo-list-line {
+        display: flex;
+        justify-content: space-between;
+        margin: 10px 0;
+
+        .logo-item {
+          height: 25px;
+          flex: 1;
+          text-align: center;
+
+          img {
+            height: 25px;
+          }
+        }
       }
     }
   }
+
 
   .swiper-block {
     position: relative;
@@ -718,23 +741,22 @@ onBeforeUnmount(() => {
   .Manufacturing {
     position: relative;
     font-size: 0;
-    padding: 280px 0;
+    padding: 180px 0 30px;
     background: #fff;
 
-    .Manufacturing-bg {
-      width: 80%;
-      margin: 0 auto;
+    img {
+      width: 100%;
     }
 
     .Manufacturing-text1 {
       position: absolute;
-      top: 100px;
-      width: 70%;
-      left: 15%;
+      top: 50px;
+      width: 80%;
+      left: 10%;
 
       .text-sub1 {
         font-family: "RedHatDisplay-Regular";
-        font-size: 50px;
+        font-size: 34px;
         line-height: 1;
         text-align: center;
         color: #9f9f9f;
@@ -748,14 +770,11 @@ onBeforeUnmount(() => {
 
     .Manufacturing-text2 {
       box-sizing: border-box;
-      position: absolute;
-      width: 60%;
-      bottom: 80px;
-      left: 20%;
+      width: 100%;
       color: #fff;
       background: #212995;
       font-family: "Oswald-Regular";
-      font-size: 22px;
+      font-size: 18px;
       line-height: 1.2;
       text-align: center;
       padding: 20px 40px;
@@ -778,15 +797,13 @@ onBeforeUnmount(() => {
     padding: 20px 0;
     background: #fff;
 
-    .feed-guide-bg {
-      width: 90%;
-      margin: 0 auto;
-      border-radius: 20px;
+    img {
+      width: 100%;
     }
 
     .feed-guide-text1 {
       position: absolute;
-      top: 120px;
+      top: 65px;
       width: 500px;
       left: 50%;
       margin-left: -250px;
@@ -800,7 +817,7 @@ onBeforeUnmount(() => {
 
       .text-sub1 {
         font-family: "RedHatDisplay-Black";
-        font-size: 23px;
+        font-size: 14px;
         line-height: 1;
         text-align: center;
 
@@ -811,7 +828,7 @@ onBeforeUnmount(() => {
 
       .text-sub2 {
         font-family: "RedHatDisplay-Regular";
-        font-size: 50px;
+        font-size: 38px;
         line-height: 1;
         text-align: center;
         color: #fff;
@@ -824,19 +841,20 @@ onBeforeUnmount(() => {
     }
 
     .feed-guide-text2 {
-      box-sizing: border-box;
-      position: absolute;
-      bottom: 90px;
-      width: 500px;
-      left: 50%;
-      margin-left: -250px;
-      color: #000;
-      font-family: "RedHatDisplay-Regular";
-      font-size: 19px;
-      line-height: 1.8;
-      text-align: center;
-      opacity: 0;
-      transition: all 0.8s ease-out;
+box-sizing: border-box;
+    position: absolute;
+    top: 204px;
+    width: 70%;
+    left: 15%;
+    /* margin-left: -250px; */
+    color: #000;
+    font-family: "RedHatDisplay-Regular";
+    font-size: 16px;
+    /* line-height: 1.8; */
+    text-align: center;
+    opacity: 0;
+    transition: all 0.8s 
+ease-out;
 
       &.showFeed {
         opacity: 1;
