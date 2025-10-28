@@ -36,9 +36,7 @@
       </div>
     </section>
     <div class="advance-block">
-      <Swiper :modules="modules" :loop="true" :slides-per-view="1" :pagination="{ clickable: true }"
-        :autoplay="{ delay: 4000, disableOnInteraction: false }"
-        :navigation="{ nextEl: '.custom-pd-next', prevEl: '.custom-pd-prev' }" class="pd-swiper-box">
+      <Swiper :modules="modules" :loop="true" :slides-per-view="1" :pagination="{ clickable: true }" :autoplay="{ delay: 4000, disableOnInteraction: false }" :navigation="{ nextEl: '.custom-pd-next', prevEl: '.custom-pd-prev' }" class="pd-swiper-box">
         <SwiperSlide>
           <div class="pd-slide-item">
             <img src="../assets/mimgs/why-health-1.jpg" alt="">
@@ -84,21 +82,21 @@
       </div>
     </div>
     <div class="nutrition-block">
-      <img src="../assets/images/why-healthy_06.jpg" alt="">
-      <img @click="goToSlide(3)" src="../assets/images/moss.png" alt="" class="moss">
-      <img @click="goToSlide(1)" src="../assets/images/chicken.png" alt="" class="chicken">
-      <img @click="goToSlide(2)" src="../assets/images/duck.png" alt="" class="duck">
-      <img @click="goToSlide(4)" src="../assets/images/salmon.png" alt="" class="salmon">
-      <img src="../assets/images/cranberry.png" alt="" class="cranberry">
+      <div class="text-block">
+        <div @click="changeSwiperIndex(1)" class="text1" :class="{ active: swiperIndex === 1 }">Arctic<br />Char</div>
+        <div @click="changeSwiperIndex(2)" class="text2" :class="{ active: swiperIndex === 2 }">Free-<br>Range<br>Chicken</div>
+        <div @click="changeSwiperIndex(3)" class="text3" :class="{ active: swiperIndex === 3 }"> Icelake<br>Free-range<br>Duck</div>
+        <div @click="changeSwiperIndex(4)" class="text4" :class="{ active: swiperIndex === 4 }">Icefield<br>Moss</div>
+      </div>
+      <img v-show="swiperIndex === 1" src="../assets/mimgs/food_1.png" alt="">
+      <img v-show="swiperIndex === 2" src="../assets/mimgs/food_2.png" alt="">
+      <img v-show="swiperIndex === 3" src="../assets/mimgs/food_3.png" alt="">
+      <img v-show="swiperIndex === 4" src="../assets/mimgs/food_4.png" alt="">
     </div>
     <div class="swiper-block">
-      <Swiper :modules="modules" :loop="true" :slides-per-view="3" :space-between="30" @swiper="onSwiper" :autoplay="{
-        delay: 3000,
-        disableOnInteraction: false
-      }" class="swiper-box">
+      <Swiper :modules="modules" :slides-per-view="1" @swiper="onSwiper" class="swiper-box">
         <SwiperSlide>
           <div class="slide-item" style="background: #3dd8d0;">
-            <div class="slide-item-left">Arctic<br />Char</div>
             <div class="slide-item-right">
               From the cold Arctic waters, this fish offers a delicate taste and is rich in omega‑3s to keep your cat’s
               coat soft and shiny. Gentle protein makes it ideal for sensitive stomachs.
@@ -108,9 +106,6 @@
 
         <SwiperSlide>
           <div class="slide-item" style="background: #fc8686;">
-            <div class="slide-item-left">Free-<br>
-              Range<br>
-              Chicken</div>
             <div class="slide-item-right">
               Raised freely on open pastures, our Starbro chickens deliver lean, protein-rich meat that’s low in fat and
               hormone‑free—perfect for cats with delicate digestion.
@@ -120,10 +115,6 @@
 
         <SwiperSlide>
           <div class="slide-item" style="background: #8acc63;">
-            <div class="slide-item-left">
-              Icelake<br>
-              Free-range<br>
-              Duck</div>
             <div class="slide-item-right">
               From the pristine northern waters of North America, our ducks produce lean, nutrient‑dense meat loaded
               with protein and essential amino acids to support your dog’s health and growth.
@@ -132,8 +123,6 @@
         </SwiperSlide>
         <SwiperSlide>
           <div class="slide-item" style="background: #1c1c1c;color:#c4c4c4">
-            <div class="slide-item-left">Icefield<br>
-              Moss</div>
             <div class="slide-item-right">
               Canadian Arctic moss is packed with antioxidants and prebiotics to aid digestion, boost immunity, and
               protect skin and coat.
@@ -217,12 +206,13 @@ const goWhy = () => {
 }
 
 const swiperRef = ref(null)
-
+const swiperIndex = ref(1)
 const onSwiper = (swiper) => {
   swiperRef.value = swiper
 }
-const goToSlide = (index) => {
+const changeSwiperIndex = (index) => {
   console.log(index)
+  swiperIndex.value = index
   if (swiperRef.value) {
     swiperRef.value.slideToLoop(index - 1, 500)
   }
@@ -559,63 +549,32 @@ onBeforeUnmount(() => {
     img {
       width: 100%;
     }
-
-    .moss {
+    .text-block {
       position: absolute;
-      top: 19%;
-      left: 24%;
-      width: 11%;
-      cursor: pointer;
-
-      &:hover {
-        transform: scale(1.05);
-        animation: scaleUp 0.5s linear;
-      }
-    }
-
-    .salmon {
-      position: absolute;
-      top: 30%;
-      left: 42.5%;
-      width: 18%;
-      cursor: pointer;
-
-      &:hover {
-        transform: scale(1.05);
-        animation: scaleUp 0.5s linear;
-      }
-    }
-
-    .duck {
-      position: absolute;
-      top: 4%;
-      right: 7%;
-      width: 20%;
-      cursor: pointer;
-
-      &:hover {
-        transform: scale(1.05);
-        animation: scaleUp 0.5s linear;
-      }
-    }
-
-    .cranberry {
-      position: absolute;
-      top: 67%;
-      right: 23%;
-      width: 8%;
-    }
-
-    .chicken {
-      position: absolute;
-      top: 58%;
-      left: 7%;
-      width: 20%;
-      cursor: pointer;
-
-      &:hover {
-        transform: scale(1.05);
-        animation: scaleUp 0.5s linear;
+      top: 0;
+      left: 35px;
+      width: 200px;
+      div {
+        font-family: "RedHatDisplay-Regular";
+        font-size: 30px;
+        line-height: 1;
+        text-align: left;
+        margin-bottom: 15px;
+        padding-left: 10px;
+        &.active {
+          position: relative;
+          font-family: "RedHatDisplay-Bold";
+          color: #212995;
+          &:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: #212995;
+          }
+        }
       }
     }
   }
@@ -658,15 +617,13 @@ onBeforeUnmount(() => {
     }
   }
 
-
   .swiper-block {
     position: relative;
     overflow: hidden;
     background: #fff;
 
     :deep(.swiper-box) {
-      width: 140%;
-      margin-left: -20%;
+      width: 100%;
 
       .swiper-button-prev {
         top: 40% !important;
@@ -712,7 +669,6 @@ onBeforeUnmount(() => {
         position: relative;
         width: 100%;
         display: flex;
-        border-radius: 20px;
         padding: 20px 30px 20px 40px;
         box-sizing: border-box;
         color: #11196c;
@@ -841,20 +797,19 @@ onBeforeUnmount(() => {
     }
 
     .feed-guide-text2 {
-box-sizing: border-box;
-    position: absolute;
-    top: 204px;
-    width: 70%;
-    left: 15%;
-    /* margin-left: -250px; */
-    color: #000;
-    font-family: "RedHatDisplay-Regular";
-    font-size: 16px;
-    /* line-height: 1.8; */
-    text-align: center;
-    opacity: 0;
-    transition: all 0.8s 
-ease-out;
+      box-sizing: border-box;
+      position: absolute;
+      top: 204px;
+      width: 70%;
+      left: 15%;
+      /* margin-left: -250px; */
+      color: #000;
+      font-family: "RedHatDisplay-Regular";
+      font-size: 16px;
+      /* line-height: 1.8; */
+      text-align: center;
+      opacity: 0;
+      transition: all 0.8s ease-out;
 
       &.showFeed {
         opacity: 1;
