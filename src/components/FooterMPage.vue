@@ -48,7 +48,7 @@ const goWhy = () => {
   router.push({ name: 'mHealthy' });
 }
 const goStory = () => {
-  router.push({ name: 'mStory' });
+  router.push({ name: 'mOurstory' });
 }
 const goAbout = () => {
   router.push({ name: 'mSupport' });

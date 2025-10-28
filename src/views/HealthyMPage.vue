@@ -196,7 +196,7 @@ import { Autoplay } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import HeaderMPage from "@/components/HeaderMPage.vue";
 import FooterMPage from "@/components/FooterMPage.vue";
-import { ref, onMounted, nextTick, onBeforeUnmount } from 'vue'
+import { ref, onMounted, onBeforeUnmount } from 'vue'
 import { Pagination, Navigation } from 'swiper/modules'
 const modules = [Pagination, Navigation, Autoplay]
 import { useRouter } from "vue-router";
@@ -260,18 +260,18 @@ onMounted(() => {
   );
   if (feedRef.value) observer3.observe(feedRef.value);
   observers.push(observer3);
-  nextTick(() => {
-    const slides = document.querySelectorAll(".slide-item");
-    let maxHeight = 0;
+  //   nextTick(() => {
+  //     const slides = document.querySelectorAll(".slide-item");
+  //     let maxHeight = 0;
 
-    slides.forEach(slide => {
-      maxHeight = Math.max(maxHeight, slide.offsetHeight);
-    });
+  //     slides.forEach(slide => {
+  //       maxHeight = Math.max(maxHeight, slide.offsetHeight);
+  //     });
 
-    slides.forEach(slide => {
-      slide.style.height = maxHeight + "px";
-    });
-  });
+  //     slides.forEach(slide => {
+  //       slide.style.height = maxHeight + "px";
+  //     });
+  //   });
 });
 onBeforeUnmount(() => {
   observers.forEach((o) => o.disconnect())
@@ -668,6 +668,7 @@ onBeforeUnmount(() => {
       .slide-item {
         position: relative;
         width: 100%;
+        height: 160px;
         display: flex;
         padding: 20px 30px 20px 40px;
         box-sizing: border-box;
@@ -686,7 +687,7 @@ onBeforeUnmount(() => {
         .slide-item-right {
           font-family: "RedHatDisplay-Regular";
           font-size: 16px;
-          line-height: 1;
+          line-height: 1.5;
           text-align: left;
           word-break: break-word;
         }
