@@ -43,21 +43,21 @@
         :autoplay="{ delay: 4000, disableOnInteraction: false }"
         :navigation="{ nextEl: '.custom-pd-next', prevEl: '.custom-pd-prev' }" class="pd-swiper-box">
         <SwiperSlide>
-          <div class="pd-slide-item">
+          <div  @click="goProductDetail(1)" class="pd-slide-item">
             <img src="../assets/images/pd1.png" alt="">
             <div class="pd-tag1">IMMUNE SUPPORT</div>
             <div class="pd-tag2">JOINT CARE</div>
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div class="pd-slide-item">
+          <div @click="goProductDetail(2)" class="pd-slide-item">
             <img src="../assets/images/pd2.png" alt="">
             <div class="pd-tag1">IMMUNE SUPPORT</div>
             <div class="pd-tag2">SKIN & COAT HEALTH</div>
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div class="pd-slide-item">
+          <div @click="goProductDetail(3)" class="pd-slide-item">
             <img src="../assets/images/pd3.png" alt="">
             <div class="pd-tag1">IMMUNE SUPPORT</div>
             <div class="pd-tag2">URINARY HEALTH</div>
@@ -251,7 +251,10 @@ const show = ref(false);
 const modules = [Pagination, Navigation, Autoplay]
 let observer;
 const goWhy = () => {
-  router.push({ name: 'Healthy' });
+  router.push({ name: 'mHealthy' });
+}
+const goProductDetail = (id) => {
+  router.push({ name: 'mProductDetail', query: { id } });
 }
 onMounted(() => {
   observer = new IntersectionObserver(
@@ -694,6 +697,7 @@ onBeforeUnmount(() => {
       width: 100%;
       justify-content: left;
       margin-top: 20px;
+
       .phil-item {
         width: 45%;
         display: flex;
@@ -704,6 +708,7 @@ onBeforeUnmount(() => {
           width: 50px;
           margin-right: 8px;
           line-height: 0;
+
           .img {
             width: 100%;
           }

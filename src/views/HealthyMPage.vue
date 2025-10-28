@@ -202,7 +202,7 @@ const modules = [Pagination, Navigation, Autoplay]
 import { useRouter } from "vue-router";
 const router = useRouter()
 const goWhy = () => {
-  router.push({ name: 'Healthy' });
+  router.push({ name: 'mHealthy' });
 }
 
 const swiperRef = ref(null)

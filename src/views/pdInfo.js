@@ -76,11 +76,11 @@
         new URL("@/assets/pdimg/scroll_cat_bg_03.jpg", import.meta.url).href,
     ],
     catDescList: [
-        new URL("@/assets/pdimg/pd-cat-1-desc_07.png", import.meta.url).href,
-        new URL("@/assets/pdimg/pd-cat-1-desc_09.png", import.meta.url).href,
-        new URL("@/assets/pdimg/pd-cat-1-desc_16.png", import.meta.url).href,
-        new URL("@/assets/pdimg/pd-cat-1-desc_25.png", import.meta.url).href,
-        new URL("@/assets/pdimg/pd-cat-1-desc_27.png", import.meta.url).href,
+        new URL("@/assets/mimgs/cat_pd_2_1.png", import.meta.url).href,
+        new URL("@/assets/mimgs/cat_pd_2_2.png", import.meta.url).href,
+        new URL("@/assets/mimgs/cat_pd_2_3.png", import.meta.url).href,
+        new URL("@/assets/mimgs/cat_pd_2_4.png", import.meta.url).href,
+        new URL("@/assets/mimgs/cat_pd_2_5.png", import.meta.url).href,
     ]
 }
 const catPageInfo2 = {
@@ -160,12 +160,12 @@ const catPageInfo2 = {
         new URL("@/assets/pdimg/scroll_cat_bg_02.jpg", import.meta.url).href,
         new URL("@/assets/pdimg/scroll_cat_bg_03.jpg", import.meta.url).href,
     ],
-    catDescList: [
-        new URL("@/assets/pdimg/pd-cat-2-desc_07.png", import.meta.url).href,
-        new URL("@/assets/pdimg/pd-cat-2-desc_09.png", import.meta.url).href,
-        new URL("@/assets/pdimg/pd-cat-2-desc_16.png", import.meta.url).href,
-        new URL("@/assets/pdimg/pd-cat-2-desc_25.png", import.meta.url).href,
-        new URL("@/assets/pdimg/pd-cat-2-desc_27.png", import.meta.url).href,
+    catDescList: [        
+        new URL("@/assets/mimgs/cat_pd_1_1.png", import.meta.url).href,
+        new URL("@/assets/mimgs/cat_pd_1_2.png", import.meta.url).href,
+        new URL("@/assets/mimgs/cat_pd_1_3.png", import.meta.url).href,
+        new URL("@/assets/mimgs/cat_pd_1_4.png", import.meta.url).href,
+        new URL("@/assets/mimgs/cat_pd_1_5.png", import.meta.url).href,
     ]
 }
 const dogPageInfo = {
@@ -246,11 +246,11 @@ const dogPageInfo = {
         new URL("@/assets/pdimg/scroll_dog_bg_03.jpg", import.meta.url).href,
     ],
     catDescList: [
-        new URL("@/assets/pdimg/pd-dog-1-desc_07.png", import.meta.url).href,
-        new URL("@/assets/pdimg/pd-dog-1-desc_09.png", import.meta.url).href,
-        new URL("@/assets/pdimg/pd-dog-1-desc_16.png", import.meta.url).href,
-        new URL("@/assets/pdimg/pd-dog-1-desc_25.png", import.meta.url).href,
-        new URL("@/assets/pdimg/pd-dog-1-desc_27.png", import.meta.url).href,
+        new URL("@/assets/mimgs/dog_pd_1_1.png", import.meta.url).href,
+        new URL("@/assets/mimgs/dog_pd_1_2.png", import.meta.url).href,
+        new URL("@/assets/mimgs/dog_pd_1_3.png", import.meta.url).href,
+        new URL("@/assets/mimgs/dog_pd_1_4.png", import.meta.url).href,
+        new URL("@/assets/mimgs/dog_pd_1_5.png", import.meta.url).href,
     ]
 }
 

@@ -3,7 +3,7 @@
     <!-- Header -->
     <HeaderMPage />
     <div class="fix-bg">
-      <img src="../assets/images/fix_bg_01.jpg" alt="">
+      <img src="../assets/mimgs/fix_bg_01.jpg" alt="">
     </div>
     <!-- Hero -->
     <section class="hero">
@@ -42,7 +42,8 @@
         <div class="slide-wrapper" ref="slider">
           <img class="img" src="../assets/images/drag-circle-bg-2.png" alt="">
           <div class="top-img" :style="{ width: leftWidth + 'px' }">
-            <img src="../assets/images/drag-circle-bg-1.png" alt="" style="transform: scale(1.01);transform-origin: center;">
+            <img src="../assets/images/drag-circle-bg-1.png" alt=""
+              style="transform: scale(1.01);transform-origin: center;">
           </div>
           <div class="divider" :style="{ left: leftWidth + 'px' }">
             <div class="handle" @touchstart.prevent="startDrag">
@@ -63,48 +64,52 @@
       </div>
     </div>
     <!-- Products -->
-    <section id="products" class="products">
-      <Swiper :modules="modules" :loop="true" :slides-per-view="1" :pagination="{ clickable: true }" :autoplay="{ delay: 4000, disableOnInteraction: false }" :navigation="{ nextEl: '.custom-pd-next', prevEl: '.custom-pd-prev' }" class="pd-swiper-box">
-        <SwiperSlide>
-          <div class="pd-slide-item">
-            <div class="product-card">
-              <img src="../assets/images/pd1.png" alt="">
-              <div class="tag1">Ice Lake <br>
-                Free-Range Duck<br>
-                <div class="tag2">Complete Dog Food</div>
+    <section id="products" class="products-box">
+      <div class="products">
+        <Swiper :modules="modules" :loop="true" :slides-per-view="1" :pagination="{ clickable: true }"
+          :autoplay="{ delay: 4000, disableOnInteraction: false }"
+          :navigation="{ nextEl: '.custom-pd-next', prevEl: '.custom-pd-prev' }" class="pd-swiper-box">
+          <SwiperSlide>
+            <div class="pd-slide-item">
+              <div class="product-card">
+                <img src="../assets/images/pd1.png" alt="">
+                <div class="tag1">Ice Lake <br>
+                  Free-Range Duck<br>
+                  <div class="tag2">Complete Dog Food</div>
+                </div>
+                <div @click="goProductDetail(1)" class="tag3">LEARN MORE</div>
               </div>
-              <div @click="goProductDetail(1)" class="tag3">LEARN MORE</div>
             </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div class="pd-slide-item">
-            <div class="product-card">
-              <img src="../assets/images/pd2.png" alt="">
-              <div class="tag1">Arctic Char <br>
-                <div class="tag2">Complete Cat Food</div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div class="pd-slide-item">
+              <div class="product-card">
+                <img src="../assets/images/pd2.png" alt="">
+                <div class="tag1">Arctic Char <br>
+                  <div class="tag2">Complete Cat Food</div>
+                </div>
+                <div @click="goProductDetail(2)" class="tag3">LEARN MORE</div>
               </div>
-              <div @click="goProductDetail(2)" class="tag3">LEARN MORE</div>
             </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div class="pd-slide-item">
-            <div class="product-card">
-              <img src="../assets/images/pd3.png" alt="">
-              <div class="tag1">Free-Range Chicken<br>
-                <div class="tag2">Complete Cat Food</div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div class="pd-slide-item">
+              <div class="product-card">
+                <img src="../assets/images/pd3.png" alt="">
+                <div class="tag1">Free-Range Chicken<br>
+                  <div class="tag2">Complete Cat Food</div>
+                </div>
+                <div @click="goProductDetail(3)" class="tag3">LEARN MORE</div>
               </div>
-              <div @click="goProductDetail(3)" class="tag3">LEARN MORE</div>
             </div>
-          </div>
-        </SwiperSlide>
-      </Swiper>
-      <div class="custom-pd-prev">
-        <img src="../assets/images/icon-arrow.svg" alt="">
-      </div>
-      <div class="custom-pd-next">
-        <img src="../assets/images/icon-arrow.svg" style="transform: rotate(180deg);" alt="">
+          </SwiperSlide>
+        </Swiper>
+        <div class="custom-pd-prev">
+          <img src="../assets/images/icon-arrow.svg" alt="">
+        </div>
+        <div class="custom-pd-next">
+          <img src="../assets/images/icon-arrow.svg" style="transform: rotate(180deg);" alt="">
+        </div>
       </div>
     </section>
 
@@ -242,136 +247,146 @@ onBeforeUnmount(() => {
     }
   }
 
-  .products {
-    background: #212995;
-    padding-bottom: 20px;
-    width: 94%;
-    margin: 0 auto;
-    border-radius: 20px;
-    .products-text1 {
-      font-family: "RedHatDisplay-Regular";
-      font-size: 30px;
-      line-height: 1;
-      text-align: center;
-      color: #212995;
-      padding: 50px 0;
-      margin: 0;
+  .products-box {
+    width: 100%;
+    padding-bottom: 30px;
+    background-color: #fff;
 
-      .sub1 {
-        font-family: "RedHatDisplay-Bold";
-        font-weight: bold;
-      }
+    .products {
+      position: relative;
+      background: #212995;
+      width: 94%;
+      margin: 0 auto;
+      border-radius: 20px;
 
-      .sub2 {
-        font-family: "RedHatDisplay-Bold";
-        font-weight: bold;
-      }
-    }
+      .products-text1 {
+        font-family: "RedHatDisplay-Regular";
+        font-size: 30px;
+        line-height: 1;
+        text-align: center;
+        color: #212995;
+        padding: 50px 0;
+        margin: 0;
 
-    .product-card {
-      cursor: pointer;
-      width: 100%;
-      height: auto;
+        .sub1 {
+          font-family: "RedHatDisplay-Bold";
+          font-weight: bold;
+        }
 
-      img {
-        width: 100%;
-        max-width: 250px;
-        margin-left: -30px;
-
-        &:hover {
-          animation: scaleUp 1s ease-in-out;
+        .sub2 {
+          font-family: "RedHatDisplay-Bold";
+          font-weight: bold;
         }
       }
 
-      .tag1 {
-        font-family: "RedHatDisplay-Bold";
-        font-size: 22px;
-        line-height: 1;
+      .product-card {
+        cursor: pointer;
+        width: 100%;
+        height: auto;
         text-align: center;
-        color: #00d2ff;
-        height: 80px;
-        margin-top: 15px;
 
-        .tag2 {
-          font-family: "RedHatDisplay-Regular";
+        img {
+          width: 220px;
+          margin-left: -30px;
+
+          &:hover {
+            animation: scaleUp 1s ease-in-out;
+          }
+        }
+
+        .tag1 {
+          font-family: "RedHatDisplay-Bold";
           font-size: 22px;
           line-height: 1;
           text-align: center;
-          color: #fff;
+          color: #00d2ff;
+          height: 80px;
+          margin-top: 15px;
+
+          .tag2 {
+            font-family: "RedHatDisplay-Regular";
+            font-size: 22px;
+            line-height: 1;
+            text-align: center;
+            color: #fff;
+          }
+        }
+
+        .tag3 {
+          width: 120px;
+          height: 30px;
+          font-family: "RedHatDisplay-Bold";
+          font-size: 14px;
+          line-height: 30px;
+          text-align: center;
+          color: #00d2ff;
+          border: 1px solid #00d2ff;
+          border-radius: 20px;
+          margin: 0 auto;
         }
       }
 
-      .tag3 {
-        width: 120px;
+      .pd-swiper-box {
+        width: 100%;
+        padding: 30px 0;
+
+        .pd-slide-item {
+          width: 80%;
+          position: relative;
+          text-align: left;
+          color: #212995;
+          margin: 0 auto;
+
+          .text-left {
+            position: absolute;
+            top: 230px;
+            left: 35px;
+            font-family: "Oswald-Regular";
+            font-size: 20px;
+            line-height: 1.2;
+          }
+
+          .text-right {
+            position: absolute;
+            top: 230px;
+            left: 70px;
+            font-family: "Oswald-Regular";
+            font-size: 20px;
+            line-height: 1.2;
+          }
+        }
+      }
+
+      .custom-pd-prev {
+        position: absolute;
+        top: 35%;
+        cursor: pointer;
+        left: 10%;
+        width: 30px;
         height: 30px;
-        font-family: "RedHatDisplay-Bold";
-        font-size: 14px;
-        line-height: 30px;
-        text-align: center;
-        color: #00d2ff;
-        border: 1px solid #00d2ff;
-        border-radius: 20px;
-        margin: 0 auto;
-      }
-    }
+        z-index: 100;
 
-    .pd-swiper-box {
-      width: 100%;
-
-      .pd-slide-item {
-        width: 100%;
-        position: relative;
-        text-align: left;
-        color: #212995;
-
-        .text-left {
-          position: absolute;
-          top: 230px;
-          left: 35px;
-          font-family: "Oswald-Regular";
-          font-size: 20px;
-          line-height: 1.2;
-        }
-
-        .text-right {
-          position: absolute;
-          top: 230px;
-          left: 70px;
-          font-family: "Oswald-Regular";
-          font-size: 20px;
-          line-height: 1.2;
+        img {
+          width: 100%;
         }
       }
-    }
 
-    .custom-pd-prev {
-      position: absolute;
-      top: 35%;
-      cursor: pointer;
-      left: 10%;
-      width: 30px;
-      height: 30px;
-      z-index: 100;
+      .custom-pd-next {
+        position: absolute;
+        top: 35%;
+        cursor: pointer;
+        right: 10%;
+        width: 30px;
+        height: 30px;
+        z-index: 100;
 
-      img {
-        width: 100%;
-      }
-    }
-
-    .custom-pd-next {
-      position: absolute;
-      top: 35%;
-      cursor: pointer;
-      right: 10%;
-      width: 30px;
-      height: 30px;
-      z-index: 100;
-
-      img {
-        width: 100%;
+        img {
+          width: 100%;
+        }
       }
     }
   }
+
 
   .transparent-block {
     width: 100%;
@@ -382,29 +397,28 @@ onBeforeUnmount(() => {
   }
 
   .functionally-block {
-    height: 800px;
+    height: 960px;
     background: #fff;
 
     .pic {
       position: relative;
-      width: 1200px;
+      width: 90%;
       height: 800px;
       margin: 0 auto;
 
       .pic-block {
         position: absolute;
-        width: 800px;
-        right: 50px;
-        bottom: 100px;
-        opacity: 0;
-        transform: translateX(500px);
+        position: absolute;
+        width: 700px;
+        left: -300px;
+        top: 603px;
+        opacity: 1;
         transition: all 0.8s ease-out;
         overflow: hidden;
         border-radius: 15px;
 
         &.show {
           opacity: 1;
-          transform: translateX(0);
         }
 
         .pic-img {
@@ -419,10 +433,10 @@ onBeforeUnmount(() => {
       .text {
         box-sizing: border-box;
         position: absolute;
-        width: 480px;
-        height: 65%;
-        left: 10%;
-        top: 100px;
+        width: 94%;
+        height: 435px;
+        left: 3%;
+        top: 160px;
         padding: 40px;
         border-radius: 20px;
         background: #00d2ff;
@@ -430,14 +444,14 @@ onBeforeUnmount(() => {
 
         .text-1 {
           font-family: "RedHatDisplay-Black";
-          font-size: 50px;
+          font-size: 38px;
           line-height: 1;
           color: #212995;
         }
 
         .text-2 {
           font-family: "Oswald-Regular";
-          font-size: 18px;
+          font-size: 14px;
           line-height: 1.5;
           color: #212995;
           margin-top: 30px;
@@ -447,15 +461,15 @@ onBeforeUnmount(() => {
       .icon-aurora {
         position: absolute;
         width: 200px;
-        top: 100px;
-        right: 50px;
+        top: 50px;
+        left: 50%;
         margin-left: -100px;
       }
 
       .icon-cq {
         position: absolute;
         width: 80px;
-        top: 60%;
+        top: 560px;
         left: 50%;
         margin-left: -40px;
         animation: spin 8s linear infinite;
@@ -477,6 +491,7 @@ onBeforeUnmount(() => {
     position: relative;
     background: #fff;
     padding-bottom: 200px;
+
     .fade-slide-enter-active,
     .fade-slide-leave-active {
       transition: opacity 0.2s ease;

@@ -143,7 +143,7 @@ const commitmentRef = ref(null)
 const showBox = ref(false);
 const showCommitment = ref(false);
 const goWhy = () => {
-  router.push({ name: 'Healthy' });
+  router.push({ name: 'mHealthy' });
 }
 let observers = []
 

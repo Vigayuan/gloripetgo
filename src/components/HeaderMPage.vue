@@ -5,7 +5,7 @@
       <div class="icons-list">
       </div>
       <!-- 中间：logo -->
-      <div class="logo">
+      <div @click="goHome" class="logo">
         <img src="../assets/images/Icon-Gloripetgo-logo.svg" alt="Gloripetgo" />
       </div>
 
@@ -46,6 +46,9 @@ const goStory = () => {
 }
 const goSupport = () => {
   router.push({ name: 'mSupport' });
+}
+const goHome = () => {
+  router.push({ name: 'mHome' });
 }
 
 
