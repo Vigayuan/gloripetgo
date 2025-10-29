@@ -288,7 +288,7 @@ import HeaderMPage from '@/components/HeaderMPage.vue';
 import FooterMPage from '@/components/FooterMPage.vue';
 import { ref, reactive, watch } from 'vue'
 import { useRoute } from 'vue-router';
-import { catPageInfo1, catPageInfo2, dogPageInfo } from '@/views/pdInfo.js'
+import { catPageInfo1, catPageInfo2, dogPageInfo } from '@/views/pdInfoM.js'
 const showTabIndex = ref(0)
 const showPdIndex = ref(1)
 const handleTagChange = (index) => {

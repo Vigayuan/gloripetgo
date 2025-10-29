@@ -193,7 +193,7 @@ onBeforeUnmount(() => {
     color: #fff;
 
     .hero-bg {
-      height: 390px;
+      height: 375px;
       overflow: hidden;
 
       img {

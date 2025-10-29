@@ -149,65 +149,94 @@ import { Swiper, SwiperSlide } from 'swiper/vue'
 import { Pagination, Navigation } from 'swiper/modules'
 const modules = [Pagination, Navigation]
 const router = useRouter();
+
 const slider = ref(null);
 const leftWidth = ref(160); // 左边默认宽度
 let isDragging = false;
-const boxRef = ref(null)
+const boxRef = ref(null);
 const show = ref(false);
 let observer;
-const startDrag = () => {
+
+// ✅ 拖动开始
+const startDrag = (e) => {
   isDragging = true;
+
+  // PC 鼠标事件
   document.addEventListener("mousemove", onDrag);
   document.addEventListener("mouseup", stopDrag);
-};
-const goProductDetail = (id) => {
-  router.push({ name: 'ProductDetail', query: { id } });
-}
 
+  // ✅ 移动端触摸事件
+  document.addEventListener("touchmove", onDrag, { passive: false });
+  document.addEventListener("touchend", stopDrag);
+
+  // 防止选中文本
+  e.preventDefault();
+};
+
+// ✅ 拖动中
 const onDrag = (e) => {
   if (!isDragging) return;
+
   const rect = slider.value.getBoundingClientRect();
-  let newWidth = e.clientX - rect.left;
+  let clientX;
+
+  // ✅ 兼容鼠标与触摸位置
+  if (e.touches && e.touches.length) {
+    clientX = e.touches[0].clientX;
+  } else {
+    clientX = e.clientX;
+  }
+
+  let newWidth = clientX - rect.left;
   if (newWidth < 0) newWidth = 0;
   if (newWidth > rect.width) newWidth = rect.width;
   leftWidth.value = newWidth;
+
+  // 阻止页面滚动（仅触摸时）
+  if (e.cancelable) e.preventDefault();
 };
 
+// ✅ 拖动结束
 const stopDrag = () => {
   isDragging = false;
+
   document.removeEventListener("mousemove", onDrag);
   document.removeEventListener("mouseup", stopDrag);
+
+  document.removeEventListener("touchmove", onDrag);
+  document.removeEventListener("touchend", stopDrag);
 };
 
+// 跳转函数
+const goProductDetail = (id) => {
+  router.push({ name: 'ProductDetail', query: { id } });
+};
 
+// ✅ Intersection Observer 动画触发
 onMounted(() => {
   observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          console.log(entry.target, entry.boundingClientRect, entry.isIntersecting);
-          show.value = true; // 进入视口时触发动画
-        } else {
-          show.value = false;
-        }
+        show.value = entry.isIntersecting;
       });
     },
     {
-      threshold: 0,             // 只要有一点进入就检测
-      rootMargin: "0px 0px -30% 0px"
+      threshold: 0,
+      rootMargin: "0px 0px -30% 0px",
     }
   );
 
   if (boxRef.value) {
     observer.observe(boxRef.value);
   }
-})
+});
 
 onBeforeUnmount(() => {
   if (observer && boxRef.value) {
     observer.unobserve(boxRef.value);
   }
-})
+});
+
 </script>
 
 <style lang="scss" scoped>

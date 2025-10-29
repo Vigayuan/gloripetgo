@@ -15,7 +15,7 @@
       <div class="f-message">
         <div class="line"></div>
         <div class="f-message-text">@GloriPetgo</div>
-        <div class="logo">
+        <!-- <div class="logo">
           <div @click="openWindow(3)" class="icon">
             <img src="../assets/images/icon-ins.svg" alt="Instagram" />
           </div>
@@ -25,7 +25,7 @@
           <div @click="openWindow(1)" class="icon">
             <img src="../assets/images/icon-facebook.svg" alt="Facebook" />
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
 
@@ -55,15 +55,15 @@ const goAbout = () => {
 }
 
 
-const openWindow = (index) => {
-  const urls = [
-    "",
-    "https://www.facebook.com/profile.php?id=61577967892785",
-    "https://www.youtube.com/@GloriPetgo",
-    "https://www.instagram.com/",
-  ];
-  window.open(urls[index], "_blank");
-};
+// const openWindow = (index) => {
+//   const urls = [
+//     "",
+//     "https://www.facebook.com/profile.php?id=61577967892785",
+//     "https://www.youtube.com/@GloriPetgo",
+//     "https://www.instagram.com/",
+//   ];
+//   window.open(urls[index], "_blank");
+// };
 </script>
 
 <style lang="scss" scoped>

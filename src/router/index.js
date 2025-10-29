@@ -45,24 +45,30 @@ const router = createRouter({
 // 👇 路由守卫：根据设备类型跳转
 router.beforeEach((to, from, next) => {
     const mobile = isMobile()
-
-    // 当前是否为移动端路由
     const isMobileRoute = to.path.startsWith('/m/')
 
     if (mobile && !isMobileRoute) {
         // 移动端访问PC路由 → 跳到对应 /m/ 下路径
         const mobilePath = '/m' + to.path
-        // 如果该移动端路径存在再跳转，否则默认跳 /m/home
         const exist = router.getRoutes().some(r => r.path === mobilePath)
-        next(exist ? mobilePath : '/m/home')
+        next({
+            path: exist ? mobilePath : '/m/home',
+            query: to.query,
+            params: to.params
+        })
     } else if (!mobile && isMobileRoute) {
         // PC访问移动端路由 → 去掉 /m
         const pcPath = to.path.replace(/^\/m/, '') || '/'
         const exist = router.getRoutes().some(r => r.path === pcPath)
-        next(exist ? pcPath : '/')
+        next({
+            path: exist ? pcPath : '/',
+            query: to.query,
+            params: to.params
+        })
     } else {
         next()
     }
 })
+
 
 export default router

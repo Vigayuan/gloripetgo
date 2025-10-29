@@ -71,7 +71,7 @@ const toggleMenu = () => (showMenu.value = !showMenu.value);
 
     .menu-toggle {
       cursor: pointer;
-      width: 120px;
+      width: 100px;
       text-align: right;
       img {
         width: 30px;
@@ -116,7 +116,7 @@ const toggleMenu = () => (showMenu.value = !showMenu.value);
     padding-bottom: 10px;
     div {
       cursor: pointer;
-      margin: 0 20px;
+      margin: 20px;
     }
 
     .product-block {
