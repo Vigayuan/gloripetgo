@@ -2,82 +2,66 @@
  * @Description: 
  * @Author: Viga
  * @Date: 2025-09-17 14:22:34
- * @LastEditTime: 2025-10-24 13:51:03
+ * @LastEditTime: 2025-10-29 10:25:41
  */
 import { createRouter, createWebHistory } from 'vue-router'
 import HomePage from '@/views/HomePage.vue'
+
+// 检测是否为移动端
+function isMobile () {
+    return /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+}
+
 const router = createRouter({
     history: createWebHistory(),
     routes: [
-        {
-            path: '/',
-            name: 'Home',
-            component: HomePage
-        },
-        {
-            path: '/home',
-            redirect: '/'
-        },
-        {
-            path: '/m/home', 
-            name: 'mHome',
-            component: () => import('@/views/HomeMPage.vue')
-        },
-        {
-            path: '/m/healthy',
-            name: 'mHealthy',
-            component: () => import('@/views/HealthyMPage.vue')
-        },
-        {
-            path: '/m/ourstory',
-            name: 'mOurstory',
-            component: () => import('@/views/OurstoryMPage.vue')
-        },
-        {
-            path: '/m/support',
-            name: 'mSupport',
-            component: () => import('@/views/SupportMPage.vue')
-        },
-        {
-            path: '/m/products',
-            name: 'mProducts',
-            component: () => import('@/views/ProductsMPage.vue')
-        },
-        {
-            path: '/healthy',
-            name: 'Healthy',
-            component: () => import('@/views/HealthyPage.vue')
-        },
-        {
-            path: '/products',
-            name: 'Products',
-            component: () => import('@/views/ProductsPage.vue')
-        },
-        {
-            path: '/productDetail',
-            name: 'ProductDetail',
-            component: () => import('@/views/ProductDetail.vue')
-        },
-        {
-            path: '/m/productDetail',
-            name: 'mProductDetail',
-            component: () => import('@/views/ProductMDetail.vue')
-        },
-        {
-            path: '/support',
-            name: 'Support',
-            component: () => import('@/views/SupportPage.vue')
-        },
+        { path: '/', name: 'Home', component: HomePage },
+        { path: '/home', redirect: '/' },
+
+        // 移动端路由
+        { path: '/m/home', name: 'mHome', component: () => import('@/views/HomeMPage.vue') },
+        { path: '/m/healthy', name: 'mHealthy', component: () => import('@/views/HealthyMPage.vue') },
+        { path: '/m/ourstory', name: 'mOurstory', component: () => import('@/views/OurstoryMPage.vue') },
+        { path: '/m/support', name: 'mSupport', component: () => import('@/views/SupportMPage.vue') },
+        { path: '/m/products', name: 'mProducts', component: () => import('@/views/ProductsMPage.vue') },
+        { path: '/m/productDetail', name: 'mProductDetail', component: () => import('@/views/ProductMDetail.vue') },
+
+        // PC端路由
+        { path: '/healthy', name: 'Healthy', component: () => import('@/views/HealthyPage.vue') },
+        { path: '/products', name: 'Products', component: () => import('@/views/ProductsPage.vue') },
+        { path: '/productDetail', name: 'ProductDetail', component: () => import('@/views/ProductDetail.vue') },
+        { path: '/support', name: 'Support', component: () => import('@/views/SupportPage.vue') },
+        { path: '/ourstory', name: 'Ourstory', component: () => import('@/views/OurstoryPage.vue') },
     ],
-    // 👇 关键：添加 scrollBehavior
     scrollBehavior (to, from, savedPosition) {
         if (savedPosition) {
-            // 如果使用浏览器前进/后退按钮，保留上次滚动位置
             return savedPosition
         } else {
-            // 否则页面跳转时滚动到顶部
             return { top: 0, left: 0 }
         }
+    }
+})
+
+// 👇 路由守卫：根据设备类型跳转
+router.beforeEach((to, from, next) => {
+    const mobile = isMobile()
+
+    // 当前是否为移动端路由
+    const isMobileRoute = to.path.startsWith('/m/')
+
+    if (mobile && !isMobileRoute) {
+        // 移动端访问PC路由 → 跳到对应 /m/ 下路径
+        const mobilePath = '/m' + to.path
+        // 如果该移动端路径存在再跳转，否则默认跳 /m/home
+        const exist = router.getRoutes().some(r => r.path === mobilePath)
+        next(exist ? mobilePath : '/m/home')
+    } else if (!mobile && isMobileRoute) {
+        // PC访问移动端路由 → 去掉 /m
+        const pcPath = to.path.replace(/^\/m/, '') || '/'
+        const exist = router.getRoutes().some(r => r.path === pcPath)
+        next(exist ? pcPath : '/')
+    } else {
+        next()
     }
 })
 

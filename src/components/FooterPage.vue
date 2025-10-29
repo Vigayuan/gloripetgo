@@ -40,7 +40,7 @@ const goWhy = () => {
   router.push({ name: 'Healthy' });
 }
 const goStory = () => {
-  router.push({ name: 'Home' });
+  router.push({ name: 'ourstory' });
 }
 const goAbout = () => {
   router.push({ name: 'Support' });

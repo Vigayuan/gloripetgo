@@ -68,12 +68,10 @@
             text1: 'Fresh free range chicken (36%), fresh turkey (28%), fresh boneless duck (18%), fresh chicken liver (3%), potato flour, dried sweet potato, chicken fat, deep sea fish oil, egg yolk powder, pumpkin, broccoli, carrot, papaya, dried cranberry (1.5%), dandelion granules (1%), alfalfa meal, chicory root powder, yucca powder, ice field moss extract (0.8%), natural lactic acid, fructooligosaccharides, chondroitin sulfate, lecithin, L-carnitine, sodium chloride, choline chloride, taurine, vitamin E, L-ascorbate-2-phosphate, niacin, vitamin A, thiamine mononitrate, D-calcium pantothenate, riboflavin, pyridoxine hydrochloride, cyanocobalamin, folic acid, vitamin D3, D-biotin, iron proteinate, copper proteinate, manganese proteinate, zinc proteinate, calcium iodate, sodium selenite, potassium chloride, Bacillus subtilis, rosemary extract.',
         },
     ],
-    GuidImg: new URL("@/assets/pdimg/pd-tab-bg.jpg", import.meta.url).href,
+    GuidImg: new URL("@/assets/mimgs/cat_feeding_1.png", import.meta.url).href,
     analysisList:['≥ 40.0%','≥ 0.8%','≥ 15.0%','≥ 0.2%','≤ 5.0% ','≥ 0.85%','≤ 10.0%','≥ 2.6%','≥ 1.0%'],
     catBgList: [
-        new URL("@/assets/pdimg/scroll_cat_bg_01.jpg", import.meta.url).href,
-        new URL("@/assets/pdimg/scroll_cat_bg_02.jpg", import.meta.url).href,
-        new URL("@/assets/pdimg/scroll_cat_bg_03.jpg", import.meta.url).href,
+        new URL("@/assets/mimgs/scroll_cat_bg_01.jpg", import.meta.url).href,
     ],
     catDescList: [
         new URL("@/assets/mimgs/cat_pd_2_1.png", import.meta.url).href,
@@ -153,12 +151,10 @@ const catPageInfo2 = {
             text1: 'Arctic char (32%), cod (18%), fresh turkey (16%), salmon (8%), herring (5%), fresh chicken liver (3%), potato flour, dried sweet potatoes, chicken fat, deep-sea fish oil, egg yolk powder, pumpkin, broccoli, carrot, papaya, dried cranberry, dandelion granules, alfalfa powder, chicory root powder, yucca powder, ice field moss extract (0.8%), fructooligosaccharides, chondroitin sulfate, lecithin (0.3%), sodium chloride, choline chloride, taurine, vitamin E, L-ascorbate-2-phosphate, niacin, vitamin A, thiamine mononitrate, D-calcium pantothenate, riboflavin, pyridoxine hydrochloride, cyanocobalamin, folic acid, vitamin Ds, D-biotin, iron proteinate, copper proteinate, manganese proteinate, zine proteinate, calcium iodate, sodium selenite, potassium chloride, Bacillus subtilis, rosemary extract.',
         },
     ],
-    GuidImg: new URL("@/assets/pdimg/pd-tab-cat2-bg.jpg", import.meta.url).href,
+    GuidImg: new URL("@/assets/mimgs/cat_feeding_2.png", import.meta.url).href,
     analysisList:['≥ 40.0%','≥ 0.8%','≥ 16.0%','≥ 0.2%','≤ 5.0% ','≥ 0.85%','≤ 10.0%','≥ 2.6%','≥ 1.0%'],
     catBgList: [
-        new URL("@/assets/pdimg/scroll_cat_bg_01.jpg", import.meta.url).href,
-        new URL("@/assets/pdimg/scroll_cat_bg_02.jpg", import.meta.url).href,
-        new URL("@/assets/pdimg/scroll_cat_bg_03.jpg", import.meta.url).href,
+        new URL("@/assets/mimgs/scroll_cat_bg_01.jpg", import.meta.url).href,
     ],
     catDescList: [        
         new URL("@/assets/mimgs/cat_pd_1_1.png", import.meta.url).href,
@@ -238,12 +234,10 @@ const dogPageInfo = {
             text1: 'Fresh free range chicken (36%), fresh turkey (28%), fresh boneless duck (18%), fresh chicken liver (3%), potato flour, dried sweet potato, chicken fat, deep sea fish oil, egg yolk powder, pumpkin, broccoli, carrot, papaya, dried cranberry (1.5%), dandelion granules (1%), alfalfa meal, chicory root powder, yucca powder, ice field moss extract (0.8%), natural lactic acid, fructooligosaccharides, chondroitin sulfate, lecithin, L-carnitine, sodium chloride, choline chloride, taurine, vitamin E, L-ascorbate-2-phosphate, niacin, vitamin A, thiamine mononitrate, D-calcium pantothenate, riboflavin, pyridoxine hydrochloride, cyanocobalamin, folic acid, vitamin D3, D-biotin, iron proteinate, copper proteinate, manganese proteinate, zinc proteinate, calcium iodate, sodium selenite, potassium chloride, Bacillus subtilis, rosemary extract.',
         },
     ],
-    GuidImg: new URL("@/assets/pdimg/pd-tab-dog-bg.jpg", import.meta.url).href,
+    GuidImg: new URL("@/assets/mimgs/dog_feeding_1.png", import.meta.url).href,
     analysisList:['≥ 40.0%','≥ 0.8%','≥ 15.0%','≥ 0.2%','≤ 5.0% ','≥ 0.85%','≤ 10.0%','≥ 2.6%','≥ 1.0%'],
     catBgList: [
-        new URL("@/assets/pdimg/scroll_dog_bg_01.jpg", import.meta.url).href,
-        new URL("@/assets/pdimg/scroll_dog_bg_02.jpg", import.meta.url).href,
-        new URL("@/assets/pdimg/scroll_dog_bg_03.jpg", import.meta.url).href,
+        new URL("@/assets/mimgs/scroll_dog_bg_01.png", import.meta.url).href,
     ],
     catDescList: [
         new URL("@/assets/mimgs/dog_pd_1_1.png", import.meta.url).href,

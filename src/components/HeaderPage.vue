@@ -85,7 +85,7 @@ const goWhy = () => {
   router.push({ name: 'Healthy' });
 }
 const goStory = () => {
-  router.push({ name: 'Story' });
+  router.push({ name: 'ourstory' });
 }
 const goSupport = () => {
   router.push({ name: 'Support' });

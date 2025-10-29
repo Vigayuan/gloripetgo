@@ -8,12 +8,10 @@
       <div @click="goHome" class="logo">
         <img src="../assets/images/Icon-Gloripetgo-logo.svg" alt="Gloripetgo" />
       </div>
-
       <!-- 右侧：菜单按钮（移动端） -->
       <div class="menu-toggle" @click="toggleMenu">
         <img src="../assets/images/icon-menu.svg" alt="">
       </div>
-
     </div>
 
     <!-- 导航菜单（PC 显示 / 移动端弹出） -->
@@ -72,7 +70,6 @@ const toggleMenu = () => (showMenu.value = !showMenu.value);
     padding: 0 30px;
 
     .menu-toggle {
-      display: none;
       cursor: pointer;
       width: 120px;
       text-align: right;
@@ -107,7 +104,7 @@ const toggleMenu = () => (showMenu.value = !showMenu.value);
 
   /* 顶部菜单（PC显示） */
   .menu {
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     color: #fff;
@@ -180,48 +177,5 @@ const toggleMenu = () => (showMenu.value = !showMenu.value);
     }
   }
 
-  /* ---------- 移动端适配 ---------- */
-  @media (max-width: 768px) {
-    .nav-inner {
-      padding: 0 15px;
-
-      .menu-toggle {
-        display: block;
-      }
-
-      .icons-list {
-        .icon {
-          width: 25px;
-          margin-left: 10px;
-        }
-      }
-
-      .logo {
-        width: 60px;
-      }
-    }
-
-    .menu {
-      display: none;
-      flex-direction: column;
-      align-items: center;
-      background: #212995;
-      width: 100%;
-      color: #fff;
-
-      div {
-        padding: 15px 0;
-        font-size: 16px;
-      }
-
-      &.show {
-        display: flex;
-      }
-    }
-
-    .arrow-down-block {
-      display: none; // 移动端隐藏产品下拉区
-    }
-  }
 }
 </style>
