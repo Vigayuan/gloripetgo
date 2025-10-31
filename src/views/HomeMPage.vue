@@ -39,11 +39,9 @@
     <!-- Products -->
     <section id="products" class="products">
       <h3 class="products-text1">Discover <br><span class="sub1">Our </span><span class="sub2">Products</span></h3>
-      <Swiper :modules="modules" :loop="true" :slides-per-view="1" :pagination="{ clickable: true }"
-        :autoplay="{ delay: 4000, disableOnInteraction: false }"
-        :navigation="{ nextEl: '.custom-pd-next', prevEl: '.custom-pd-prev' }" class="pd-swiper-box">
+      <Swiper :modules="modules" :loop="true" :slides-per-view="1" :pagination="{ clickable: true }" :autoplay="{ delay: 4000, disableOnInteraction: false }" :navigation="{ nextEl: '.custom-pd-next', prevEl: '.custom-pd-prev' }" class="pd-swiper-box">
         <SwiperSlide>
-          <div  @click="goProductDetail(1)" class="pd-slide-item">
+          <div @click="goProductDetail(1)" class="pd-slide-item">
             <img src="../assets/images/pd1.png" alt="">
             <div class="pd-tag1">IMMUNE SUPPORT</div>
             <div class="pd-tag2">JOINT CARE</div>
@@ -105,9 +103,7 @@
         <div class="swiper-block-text2">Arctic Glaciers Align</div>
         <div class="swiper-block-text3">with natural nutrition.</div>
       </div>
-      <Swiper :modules="modules" :loop="true" :slides-per-view="3" :space-between="20" :pagination="{ clickable: true }"
-        :autoplay="{ delay: 4000, disableOnInteraction: false }"
-        :navigation="{ nextEl: '.custom-next', prevEl: '.custom-prev' }" class="swiper-box">
+      <Swiper :modules="modules" :loop="true" :slides-per-view="3" :space-between="20" :pagination="{ clickable: true }" :autoplay="{ delay: 4000, disableOnInteraction: false }" :navigation="{ nextEl: '.custom-next', prevEl: '.custom-prev' }" class="swiper-box">
         <SwiperSlide>
           <div class="slide-item">
             <div class="slide-item-text1">FREE-
@@ -305,49 +301,48 @@ onBeforeUnmount(() => {
       position: absolute;
       font-family: "RedHatDisplay-Bold";
       text-align: left;
-      font-size: 65px;
+      font-size: 1.7333rem;
       line-height: 1;
-      bottom: 125px;
-      left: 19px;
+      bottom: 3.3333rem;
+      left: 0.5067rem;
 
       .title1-sub1 {
         display: inline-block;
-        font-size: 36px;
-        vertical-align: 22px;
+        font-size: 0.96rem;
+        vertical-align: 0.5867rem;
       }
 
       .title1-sub2 {
         font-family: "RedHatDisplay-Regular";
-        font-size: 36px;
+        font-size: 0.96rem;
       }
     }
 
     .title2 {
       position: absolute;
-      bottom: 109px;
-      left: 20px;
+      bottom: 2.9067rem;
+      left: 0.5333rem;
       font-family: "Oswald-Regular";
-      font-size: 12px;
+      font-size: 0.32rem;
       line-height: 1.5;
-      width: 233px;
+      width: 6.2133rem;
       text-align: left;
     }
 
     .btn-leran-more {
       cursor: pointer;
       position: absolute;
-      bottom: 65px;
-      right: 43px;
+      bottom: 1.7333rem;
+      right: 1.1467rem;
       font-family: "RedHatDisplay-Bold";
-      border: 2px solid #fff;
-      border-radius: 18px;
-      font-size: 14px;
-      width: 121px;
-      height: 36px;
-      line-height: 32px;
+      border: 0.0533rem solid #fff;
+      border-radius: 0.48rem;
+      font-size: 0.3733rem;
+      width: 3.2267rem;
+      height: 0.96rem;
+      line-height: 0.8533rem;
     }
   }
-
   .unleash {
     position: relative;
     font-size: 0;
@@ -361,7 +356,7 @@ onBeforeUnmount(() => {
       top: 0;
       left: 0;
       opacity: 0;
-      transform: translateY(150px);
+      transform: translateY(4rem);
       transition: all 0.8s ease-out;
     }
 
@@ -372,27 +367,27 @@ onBeforeUnmount(() => {
 
     .unleash-text1 {
       position: absolute;
-      top: 40px;
-      left: 30px;
+      top: 1.0667rem;
+      left: 0.8rem;
       color: #212995;
 
       .text-sub1 {
         font-family: "RedHatDisplay-Bold";
-        font-size: 30px;
+        font-size: 0.8rem;
         line-height: 1;
         text-align: left;
       }
 
       .text-sub2 {
         font-family: "RedHatDisplay-Bold";
-        font-size: 35px;
+        font-size: 0.9333rem;
         line-height: 1;
         text-align: left;
       }
 
       .text-sub3 {
         font-family: "Khalila";
-        font-size: 45px;
+        font-size: 1.2rem;
         line-height: 1;
         text-align: left;
         color: #a1a1a1;
@@ -401,12 +396,12 @@ onBeforeUnmount(() => {
 
     .unleash-text2 {
       position: absolute;
-      bottom: 85px;
+      bottom: 2.2667rem;
       width: 86%;
       right: 7%;
       color: #212995;
       font-family: "Oswald-Regular";
-      font-size: 16px;
+      font-size: 0.4267rem;
       line-height: 1.2;
       text-align: center;
     }
@@ -417,11 +412,11 @@ onBeforeUnmount(() => {
 
     .products-text1 {
       font-family: "RedHatDisplay-Regular";
-      font-size: 30px;
+      font-size: 0.8rem;
       line-height: 1;
       text-align: center;
       color: #212995;
-      padding: 50px 0;
+      padding: 1.3333rem 0;
       margin: 0;
 
       .sub1 {
@@ -445,23 +440,23 @@ onBeforeUnmount(() => {
 
         .pd-tag1 {
           font-family: "RedHatDisplay-Bold";
-          font-size: 14px;
+          font-size: 0.3733rem;
           line-height: 1;
           text-align: center;
           color: #212995;
-          height: 14px;
-          margin-top: 20px;
+          height: 0.3733rem;
+          margin-top: 0.5333rem;
         }
 
         .pd-tag2 {
           font-family: "RedHatDisplay-Bold";
-          font-size: 30px;
+          font-size: 0.8rem;
           line-height: 1;
           text-align: center;
           color: #212995;
-          width: 270px;
+          width: 7.2rem;
           margin: 0 auto;
-          height: 60px;
+          height: 1.6rem;
         }
       }
     }
@@ -470,9 +465,9 @@ onBeforeUnmount(() => {
       position: absolute;
       top: 50%;
       cursor: pointer;
-      left: 10%;
-      width: 30px;
-      height: 30px;
+      left: 1.25rem;
+      width: 0.8rem;
+      height: 0.8rem;
       z-index: 100;
 
       img {
@@ -484,9 +479,9 @@ onBeforeUnmount(() => {
       position: absolute;
       top: 50%;
       cursor: pointer;
-      right: 10%;
-      width: 30px;
-      height: 30px;
+      right: 1.25rem;
+      width: 0.8rem;
+      height: 0.8rem;
       z-index: 100;
 
       img {
@@ -496,27 +491,27 @@ onBeforeUnmount(() => {
   }
 
   .brand-logo {
-    padding: 20px 0;
+    padding: 0.5333rem 0;
 
     .logo-list {
       width: 90%;
       margin: 0 auto;
-      border-top: 1px solid #7c7c7c;
-      border-bottom: 1px solid #7c7c7c;
-      padding: 15px 0;
+      border-top: 0.0267rem solid #7c7c7c;
+      border-bottom: 0.0267rem solid #7c7c7c;
+      padding: 0.4rem 0;
 
       .logo-list-line {
         display: flex;
         justify-content: space-between;
-        margin: 10px 0;
+        margin: 0.2667rem 0;
 
         .logo-item {
-          height: 25px;
+          height: 0.6667rem;
           flex: 1;
           text-align: center;
 
           img {
-            height: 25px;
+            height: 0.6667rem;
           }
         }
       }
@@ -531,25 +526,25 @@ onBeforeUnmount(() => {
       width: 100%;
       text-align: center;
       color: #212995;
-      padding: 10px 0 30px;
+      padding: 0.2667rem 0 0.8rem;
       overflow: visible;
 
       .swiper-block-text1 {
         font-family: "RedHatDisplay-Medium";
-        font-size: 14px;
+        font-size: 0.3733rem;
         line-height: 1;
         font-style: italic;
       }
 
       .swiper-block-text2 {
         font-family: "RedHatDisplay-Bold";
-        font-size: 24px;
+        font-size: 0.64rem;
         line-height: 1.2;
       }
 
       .swiper-block-text3 {
         font-family: "RedHatDisplay-Regular";
-        font-size: 20px;
+        font-size: 0.5333rem;
         line-height: 1;
       }
     }
@@ -558,9 +553,9 @@ onBeforeUnmount(() => {
       position: absolute;
       top: 50%;
       cursor: pointer;
-      left: 5%;
-      width: 30px;
-      height: 30px;
+      left: 1.3333rem;
+      width: 0.8rem;
+      height: 0.8rem;
       z-index: 100;
 
       img {
@@ -572,9 +567,9 @@ onBeforeUnmount(() => {
       position: absolute;
       top: 50%;
       cursor: pointer;
-      right: 5%;
-      width: 30px;
-      height: 30px;
+      right: 1.3333rem;
+      width: 0.8rem;
+      height: 0.8rem;
       z-index: 100;
 
       img {
@@ -588,21 +583,21 @@ onBeforeUnmount(() => {
 
       .swiper-button-prev {
         top: 40% !important;
-        left: 10%;
+        left: 1.25rem;
         background-image: url(../assets/images/icon-arrow.svg);
         background-repeat: no-repeat;
       }
 
       .swiper-button-next {
         top: 40% !important;
-        right: 10%;
+        right: 1.25rem;
       }
     }
 
     .swiper-box {
       :deep(.swiper-pagination) {
-        width: 200px;
-        height: 80px;
+        width: 5.3333rem;
+        height: 2.1333rem;
         display: flex;
         justify-content: space-around;
         align-items: center;
@@ -612,16 +607,16 @@ onBeforeUnmount(() => {
           cursor: pointer;
           display: block;
           background: #505050;
-          border: 1px solid #505050;
+          border: 0.0267rem solid #505050;
           opacity: 0.6;
-          width: 10px;
-          height: 10px;
-          border-radius: 10px;
+          width: 0.2667rem;
+          height: 0.2667rem;
+          border-radius: 0.2667rem;
         }
 
         .swiper-pagination-bullet-active {
           background: #e8e8e8;
-          border: 1px solid #505050;
+          border: 0.0267rem solid #505050;
           opacity: 1;
         }
       }
@@ -632,7 +627,7 @@ onBeforeUnmount(() => {
         color: #fff;
 
         img {
-          width: 80px;
+          width: 2.1333rem;
         }
 
         .slide-item-text1 {
@@ -640,7 +635,7 @@ onBeforeUnmount(() => {
           top: 15%;
           left: 8%;
           font-family: "RedHatDisplay-Bold";
-          font-size: 30px;
+          font-size: 0.5rem;
           line-height: 1;
           text-align: left;
         }
@@ -650,10 +645,10 @@ onBeforeUnmount(() => {
           bottom: 15%;
           left: 8%;
           font-family: "RedHatDisplay-Regular";
-          font-size: 15px;
+          font-size: 0.4rem;
           line-height: 1;
-          border-bottom: 2px solid #fff;
-          padding-bottom: 4px;
+          border-bottom: 0.0533rem solid #fff;
+          padding-bottom: 0.1067rem;
           cursor: pointer;
         }
 
@@ -676,37 +671,37 @@ onBeforeUnmount(() => {
 
     .phil-text1 {
       font-family: "RedHatDisplay-Regular";
-      font-size: 45px;
+      font-size: 1.2rem;
       line-height: 1;
-      padding-left: 40px;
+      padding-left: 1.0667rem;
     }
 
     .phil-text2 {
       font-family: "RedHatDisplay-Bold";
-      font-size: 60px;
+      font-size: 1.6rem;
       line-height: 1;
-      padding-left: 40px;
+      padding-left: 1.0667rem;
     }
 
     .phil-items {
-      font-size: 50px;
+      font-size: 1.3333rem;
       line-height: 1;
-      padding-left: 40px;
+      padding-left: 1.0667rem;
       display: flex;
       flex-wrap: wrap;
       width: 100%;
       justify-content: left;
-      margin-top: 20px;
+      margin-top: 0.5333rem;
 
       .phil-item {
         width: 45%;
         display: flex;
         justify-content: space-between;
-        margin-bottom: 30px;
+        margin-bottom: 0.8rem;
 
         .phil-left {
-          width: 50px;
-          margin-right: 8px;
+          width: 1.3333rem;
+          margin-right: 0.2133rem;
           line-height: 0;
 
           .img {
@@ -715,21 +710,21 @@ onBeforeUnmount(() => {
         }
 
         .phil-right {
-          width: 170px;
+          width: 4.5333rem;
 
           .phil-right-text1 {
             font-family: "RedHatDisplay-Regular";
-            font-size: 22px;
+            font-size: 0.5867rem;
             line-height: 1;
             text-align: left;
           }
 
           .phil-right-text2 {
             font-family: "Oswald-Regular";
-            font-size: 14px;
+            font-size: 0.3733rem;
             line-height: 1;
             text-align: left;
-            margin-top: 5px;
+            margin-top: 0.1333rem;
           }
         }
       }
@@ -741,7 +736,7 @@ onBeforeUnmount(() => {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 500px;
+    height: 13.3333rem;
 
     .cta-left {
       width: 70%;
@@ -754,18 +749,18 @@ onBeforeUnmount(() => {
 
       img {
         position: absolute;
-        top: 200px;
+        top: 5.3333rem;
         right: 12%;
-        width: 80px;
+        width: 2.1333rem;
       }
 
       .cta-text1 {
         position: absolute;
-        top: 280px;
+        top: 7.4667rem;
         right: 10%;
-        width: 200px;
+        width: 5.3333rem;
         font-family: "RedHatDisplay-Medium";
-        font-size: 40px;
+        font-size: 1.0667rem;
         line-height: 1;
         text-align: right;
         color: #212995;

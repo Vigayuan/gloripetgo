@@ -193,7 +193,7 @@ onBeforeUnmount(() => {
     color: #fff;
 
     .hero-bg {
-      height: 375px;
+      height: 10.0000rem;
       overflow: hidden;
 
       img {
@@ -205,30 +205,30 @@ onBeforeUnmount(() => {
 
     @keyframes moveUp {
       to {
-        transform: translateY(-20px);
+        transform: translateY(-0.5333rem);
       }
     }
 
     .title1 {
       position: absolute;
-      bottom: 50px;
-      left: 35px;
+      bottom: 1.3333rem;
+      left: 0.9333rem;
       font-family: "RedHatDisplay-Black";
-      font-size: 60px;
+      font-size: 1.6000rem;
       line-height: 1;
       text-align: left;
       width: 70%;
       opacity: 0;
-      transform: translateY(-100px);
+      transform: translateY(-2.6667rem);
       animation: dropIn-079450ae 1s ease-out forwards;
-      text-shadow: 0 0 4px #525252;
+      text-shadow: 0 0 0.1067rem #525252;
     }
   }
 
   @keyframes dropIn {
     from {
       opacity: 0;
-      transform: translateY(-100px);
+      transform: translateY(-2.6667rem);
     }
 
     to {
@@ -250,7 +250,7 @@ onBeforeUnmount(() => {
   .unleash {
     position: relative;
     font-size: 0;
-    height: 850px;
+    height: 22.6667rem;
     background: #eee8e0;
 
     img {
@@ -259,40 +259,40 @@ onBeforeUnmount(() => {
 
     .story_bg {
       position: absolute;
-      width: 550px;
-      top: 200px;
+      width: 14.6667rem;
+      top: 5.3333rem;
       left: 15%;
     }
 
     .unleash-text1 {
       position: absolute;
-      top: 25px;
+      top: 0.6667rem;
       width: 70%;
-      left: 35px;
+      left: 0.9333rem;
 
       .text-sub1 {
         font-family: "RedHatDisplay-Black";
-        font-size: 50px;
+        font-size: 1.3333rem;
         line-height: 1;
         text-align: left;
         color: #212995;
 
         span {
           font-family: "RedHatDisplay-Medium";
-          font-size: 25px;
+          font-size: 0.6667rem;
         }
       }
 
       .text-sub2 {
         font-family: "RedHatDisplay-Bold";
-        font-size: 45px;
+        font-size: 1.2000rem;
         line-height: 1;
         text-align: left;
       }
 
       .text-sub3 {
         font-family: "Khalila";
-        font-size: 65px;
+        font-size: 1.7333rem;
         line-height: 1;
         text-align: left;
         color: #a1a1a1;
@@ -302,15 +302,15 @@ onBeforeUnmount(() => {
     .unleash-text2 {
       position: absolute;
       width: 80%;
-      top: 420px;
+      top: 11.2000rem;
       left: 10%;
       color: #fff;
       font-family: "RedHatDisplay-Regular";
-      font-size: 55px;
+      font-size: 1.4667rem;
       line-height: 1.2;
       text-align: left;
       opacity: 0;
-      transform: translateY(1000);
+      transform: translateY(26.6667rem);
       transition: all 0.8s ease-out;
 
       &.showBox {
@@ -322,15 +322,15 @@ onBeforeUnmount(() => {
     .unleash-text3 {
       position: absolute;
       width: 80%;
-      top: 490px;
+      top: 13.0667rem;
       left: 10%;
       color: #212995;
       font-family: "RedHatDisplay-Regular";
-      font-size: 16px;
+      font-size: 0.4267rem;
       line-height: 1.5;
       text-align: left;
       opacity: 0;
-      transform: translateY(1000);
+      transform: translateY(26.6667rem);
       transition: all 0.8s ease-out;
 
       &.showBox {
@@ -348,7 +348,7 @@ onBeforeUnmount(() => {
   .our-mission {
     position: relative;
     width: 100%;
-    height: 270px;
+    height: 7.2000rem;
     overflow: hidden;
 
     img {
@@ -359,11 +359,11 @@ onBeforeUnmount(() => {
       position: relative;
       width: 100%;
       line-height: 0;
-      height: 270px;
+      height: 7.2000rem;
 
       .img-scroll {
         position: absolute;
-        top: -10px;
+        top: -0.2667rem;
         left: 0;
         width: 100%;
         height: 100%;
@@ -372,31 +372,31 @@ onBeforeUnmount(() => {
 
     .text-1 {
       position: absolute;
-      top: 60px;
+      top: 1.6000rem;
       left: 50%;
-      width: 600px;
-      margin-left: -300px;
+      width: 16.0000rem;
+      margin-left: -8.0000rem;
       font-family: "RedHatDisplay-black";
-      font-size: 45px;
+      font-size: 1.2000rem;
       line-height: 1;
       text-align: center;
       color: #fff;
-      transform: translateY(1000);
+      transform: translateY(26.6667rem);
       transition: all 0.8s ease-out;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      text-shadow: 0.0533rem 0.0533rem 0.1067rem rgba(0, 0, 0, 0.3);
     }
 
     .text-2 {
       font-family: "RedHatDisplay-Regular";
       position: absolute;
       width: 70%;
-      top: 130px;
+      top: 3.4667rem;
       left: 15%;
-      font-size: 16px;
+      font-size: 0.4267rem;
       line-height: 1.5;
       text-align: center;
       color: #fff;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      text-shadow: 0.0533rem 0.0533rem 0.1067rem rgba(0, 0, 0, 0.3);
     }
   }
 
@@ -416,23 +416,23 @@ onBeforeUnmount(() => {
     .his-content {
       position: absolute;
       width: 80%;
-      left: 35px;
-      top: 85px;
+      left: 0.9333rem;
+      top: 2.2667rem;
       text-align: left;
 
       .text-1 {
         font-family: "RedHatDisplay-Regular";
-        font-size: 65px;
+        font-size: 1.7333rem;
         line-height: 1;
         color: #6fc3ee;
       }
 
       .text-2 {
         font-family: "RedHatDisplay-Medium";
-        font-size: 16px;
+        font-size: 0.4267rem;
         line-height: 1.5;
         color: #333;
-        margin-top: 10px;
+        margin-top: 0.2667rem;
 
         .text-sub-1 {
           font-family: "RedHatDisplay-Bold";
@@ -453,7 +453,7 @@ onBeforeUnmount(() => {
     .img-block {
       width: 100%;
       line-height: 0;
-      padding-top: 30px;
+      padding-top: 0.8000rem;
 
       img {
         width: 100%;
@@ -463,23 +463,23 @@ onBeforeUnmount(() => {
     .his-content {
       position: absolute;
       width: 80%;
-      left: 35px;
-      top: 10px;
+      left: 0.9333rem;
+      top: 0.2667rem;
       text-align: left;
 
       .text-1 {
         font-family: "RedHatDisplay-Regular";
-        font-size: 65px;
+        font-size: 1.7333rem;
         line-height: 1;
         color: #6fc3ee;
       }
 
       .text-2 {
         font-family: "RedHatDisplay-Medium";
-        font-size: 16px;
+        font-size: 0.4267rem;
         line-height: 1.5;
         color: #333;
-        margin-top: 5px;
+        margin-top: 0.1333rem;
 
         .text-sub-1 {
           font-family: "RedHatDisplay-Bold";
@@ -509,17 +509,16 @@ onBeforeUnmount(() => {
 
     .text-1 {
       position: absolute;
-      top: 160px;
+      top: 4.2667rem;
       left: 10%;
       width: 80%;
-      /* margin-left: -300px; */
       font-family: "RedHatDisplay-Medium";
-      font-size: 30px;
+      font-size: 0.8000rem;
       line-height: 1.2;
       text-align: center;
       color: #fff;
       opacity: 0;
-      transform: translateY(1000);
+      transform: translateY(26.6667rem);
       transition: all 0.8s ease-out;
 
       &.showCommitment {
@@ -534,7 +533,7 @@ onBeforeUnmount(() => {
   }
 
   .four-re {
-    padding: 40px 0 40px 35px;
+    padding: 1.0667rem 0 1.0667rem 0.9333rem;
     color: #212995;
     text-align: left;
     justify-content: space-between;
@@ -542,17 +541,17 @@ onBeforeUnmount(() => {
 
     .item {
       width: 80%;
-      margin-bottom: 30px;
+      margin-bottom: 0.8000rem;
       .title {
         font-family: "RedHatDisplay-black";
-        font-size: 24px;
+        font-size: 0.6400rem;
         line-height: 1.2;
-        margin-bottom: 20px;
+        margin-bottom: 0.5333rem;
       }
 
       .content {
         font-family: "RedHatDisplay-Regular";
-        font-size: 14px;
+        font-size: 0.3733rem;
         line-height: 1.2;
       }
     }
@@ -576,10 +575,10 @@ onBeforeUnmount(() => {
       position: absolute;
       top: 30%;
       left: 50%;
-      width: 600px;
-      margin-left: -300px;
+      width: 16.0000rem;
+      margin-left: -8.0000rem;
       font-family: "RedHatDisplay-Medium";
-      font-size: 22px;
+      font-size: 0.5867rem;
       line-height: 1.2;
       text-align: center;
       color: #fff;
@@ -590,4 +589,5 @@ onBeforeUnmount(() => {
     }
   }
 }
+
 </style>

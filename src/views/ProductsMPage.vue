@@ -247,7 +247,6 @@ onBeforeUnmount(() => {
 
   img {
     user-drag: none;
-    /* 禁止图片拖动 */
     -webkit-user-drag: none;
   }
 
@@ -278,7 +277,7 @@ onBeforeUnmount(() => {
 
   .products-box {
     width: 100%;
-    padding-bottom: 30px;
+    padding-bottom: 0.8rem;
     background-color: #fff;
 
     .products {
@@ -286,15 +285,15 @@ onBeforeUnmount(() => {
       background: #212995;
       width: 94%;
       margin: 0 auto;
-      border-radius: 20px;
+      border-radius: 0.5333rem;
 
       .products-text1 {
         font-family: "RedHatDisplay-Regular";
-        font-size: 30px;
+        font-size: 0.8rem;
         line-height: 1;
         text-align: center;
         color: #212995;
-        padding: 50px 0;
+        padding: 1.3333rem 0;
         margin: 0;
 
         .sub1 {
@@ -315,8 +314,8 @@ onBeforeUnmount(() => {
         text-align: center;
 
         img {
-          width: 220px;
-          margin-left: -30px;
+          width: 5.8667rem;
+          margin-left: -0.8rem;
 
           &:hover {
             animation: scaleUp 1s ease-in-out;
@@ -325,16 +324,16 @@ onBeforeUnmount(() => {
 
         .tag1 {
           font-family: "RedHatDisplay-Bold";
-          font-size: 22px;
+          font-size: 0.5867rem;
           line-height: 1;
           text-align: center;
           color: #00d2ff;
-          height: 80px;
-          margin-top: 15px;
+          height: 2.1333rem;
+          margin-top: 0.4rem;
 
           .tag2 {
             font-family: "RedHatDisplay-Regular";
-            font-size: 22px;
+            font-size: 0.5867rem;
             line-height: 1;
             text-align: center;
             color: #fff;
@@ -342,22 +341,22 @@ onBeforeUnmount(() => {
         }
 
         .tag3 {
-          width: 120px;
-          height: 30px;
+          width: 3.2rem;
+          height: 0.8rem;
           font-family: "RedHatDisplay-Bold";
-          font-size: 14px;
-          line-height: 30px;
+          font-size: 0.3733rem;
+          line-height: 0.8rem;
           text-align: center;
           color: #00d2ff;
-          border: 1px solid #00d2ff;
-          border-radius: 20px;
+          border: 0.0267rem solid #00d2ff;
+          border-radius: 0.5333rem;
           margin: 0 auto;
         }
       }
 
       .pd-swiper-box {
         width: 100%;
-        padding: 30px 0;
+        padding: 0.8rem 0;
 
         .pd-slide-item {
           width: 80%;
@@ -368,19 +367,19 @@ onBeforeUnmount(() => {
 
           .text-left {
             position: absolute;
-            top: 230px;
-            left: 35px;
+            top: 6.1333rem;
+            left: 0.9333rem;
             font-family: "Oswald-Regular";
-            font-size: 20px;
+            font-size: 0.5333rem;
             line-height: 1.2;
           }
 
           .text-right {
             position: absolute;
-            top: 230px;
-            left: 70px;
+            top: 6.1333rem;
+            left: 1.8667rem;
             font-family: "Oswald-Regular";
-            font-size: 20px;
+            font-size: 0.5333rem;
             line-height: 1.2;
           }
         }
@@ -391,8 +390,8 @@ onBeforeUnmount(() => {
         top: 35%;
         cursor: pointer;
         left: 10%;
-        width: 30px;
-        height: 30px;
+        width: 0.8rem;
+        height: 0.8rem;
         z-index: 100;
 
         img {
@@ -405,8 +404,8 @@ onBeforeUnmount(() => {
         top: 35%;
         cursor: pointer;
         right: 10%;
-        width: 30px;
-        height: 30px;
+        width: 0.8rem;
+        height: 0.8rem;
         z-index: 100;
 
         img {
@@ -416,35 +415,33 @@ onBeforeUnmount(() => {
     }
   }
 
-
   .transparent-block {
     width: 100%;
-    height: 300px;
+    height: 8rem;
     border-right: none;
     border-left: none;
     background: transparent;
   }
 
   .functionally-block {
-    height: 960px;
+    height: 25.6rem;
     background: #fff;
 
     .pic {
       position: relative;
       width: 90%;
-      height: 800px;
+      height: 21.3333rem;
       margin: 0 auto;
 
       .pic-block {
         position: absolute;
-        position: absolute;
-        width: 700px;
-        left: -300px;
-        top: 603px;
+        width: 18.6667rem;
+        left: -8rem;
+        top: 16.08rem;
         opacity: 1;
         transition: all 0.8s ease-out;
         overflow: hidden;
-        border-radius: 15px;
+        border-radius: 0.4rem;
 
         &.show {
           opacity: 1;
@@ -463,55 +460,45 @@ onBeforeUnmount(() => {
         box-sizing: border-box;
         position: absolute;
         width: 94%;
-        height: 435px;
+        height: 11.6rem;
         left: 3%;
-        top: 160px;
-        padding: 40px;
-        border-radius: 20px;
+        top: 4.2667rem;
+        padding: 1.0667rem;
+        border-radius: 0.5333rem;
         background: #00d2ff;
         text-align: left;
 
         .text-1 {
           font-family: "RedHatDisplay-Black";
-          font-size: 38px;
+          font-size: 1.0133rem;
           line-height: 1;
           color: #212995;
         }
 
         .text-2 {
           font-family: "Oswald-Regular";
-          font-size: 14px;
+          font-size: 0.3733rem;
           line-height: 1.5;
           color: #212995;
-          margin-top: 30px;
+          margin-top: 0.8rem;
         }
       }
 
       .icon-aurora {
         position: absolute;
-        width: 200px;
-        top: 50px;
+        width: 5.3333rem;
+        top: 1.3333rem;
         left: 50%;
-        margin-left: -100px;
+        margin-left: -2.6667rem;
       }
 
       .icon-cq {
         position: absolute;
-        width: 80px;
-        top: 560px;
+        width: 2.1333rem;
+        top: 14.9333rem;
         left: 50%;
-        margin-left: -40px;
+        margin-left: -1.0667rem;
         animation: spin 8s linear infinite;
-      }
-
-      @keyframes spin {
-        from {
-          transform: rotate(0deg);
-        }
-
-        to {
-          transform: rotate(360deg);
-        }
       }
     }
   }
@@ -519,7 +506,7 @@ onBeforeUnmount(() => {
   .slide-block {
     position: relative;
     background: #fff;
-    padding-bottom: 200px;
+    padding-bottom: 5.3333rem;
 
     .fade-slide-enter-active,
     .fade-slide-leave-active {
@@ -540,12 +527,12 @@ onBeforeUnmount(() => {
       width: 100%;
       text-align: center;
       color: #212995;
-      padding: 50px 0;
+      padding: 1.3333rem 0;
       overflow: visible;
 
       .slide-block-text1 {
         font-family: "RedHatDisplay-Medium";
-        font-size: 38px;
+        font-size: 1.0133rem;
         line-height: 1.5;
 
         span {
@@ -555,16 +542,16 @@ onBeforeUnmount(() => {
 
       .slide-block-text2 {
         font-family: "Oswald-Regular";
-        font-size: 14px;
+        font-size: 0.3733rem;
         line-height: 1.2;
       }
 
       .slide-block-text3 {
         position: absolute;
-        top: 520px;
-        left: 5%;
+        top: 13.8667rem;
+        left: 0.1333rem;
         font-family: "RedHatDisplay-Black";
-        font-size: 12px;
+        font-size: 0.32rem;
         line-height: 1.2;
         width: 40%;
         text-align: center;
@@ -572,10 +559,10 @@ onBeforeUnmount(() => {
 
       .slide-block-text4 {
         position: absolute;
-        top: 520px;
-        right: 5%;
+        top: 13.8667rem;
+        right: 0.1333rem;
         font-family: "RedHatDisplay-Black";
-        font-size: 12px;
+        font-size: 0.32rem;
         line-height: 1.2;
         width: 40%;
         text-align: center;
@@ -583,10 +570,10 @@ onBeforeUnmount(() => {
 
       .slide-block-text5 {
         position: absolute;
-        top: 680px;
-        left: 5%;
+        top: 18.1333rem;
+        left: 0.1333rem;
         font-family: "RedHatDisplay-Black";
-        font-size: 12px;
+        font-size: 0.32rem;
         line-height: 1.2;
         width: 40%;
         text-align: center;
@@ -594,10 +581,10 @@ onBeforeUnmount(() => {
 
       .slide-block-text6 {
         position: absolute;
-        top: 680px;
-        right: 5%;
+        top: 18.1333rem;
+        right: 0.1333rem;
         font-family: "RedHatDisplay-Black";
-        font-size: 12px;
+        font-size: 0.32rem;
         line-height: 1.2;
         width: 40%;
         text-align: center;
@@ -605,12 +592,11 @@ onBeforeUnmount(() => {
     }
 
     .slide-wrapper {
-      height: 320px;
-      width: 320px;
+      height: 8.5333rem;
+      width: 8.5333rem;
       border-radius: 50%;
       overflow: hidden;
       margin: 0 auto;
-      overflow: hidden;
       position: relative;
 
       .img {
@@ -629,7 +615,7 @@ onBeforeUnmount(() => {
         overflow: hidden;
 
         img {
-          width: 320px;
+          width: 8.5333rem;
         }
       }
 
@@ -638,26 +624,25 @@ onBeforeUnmount(() => {
         top: 0;
         height: 100%;
         width: 0;
-        /* 只作为定位线 */
       }
 
       .handle {
         position: absolute;
         top: 50%;
         transform: translate(-50%, -50%);
-        width: 40px;
-        height: 40px;
+        width: 1.0667rem;
+        height: 1.0667rem;
         border-radius: 50%;
         background: white;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 0.0533rem 0.1333rem rgba(0, 0, 0, 0.3);
         cursor: col-resize;
       }
 
       .arrow {
-        font-size: 14px;
+        font-size: 0.3733rem;
         color: #444;
         user-select: none;
       }
@@ -669,7 +654,7 @@ onBeforeUnmount(() => {
     width: 100%;
     overflow: hidden;
     white-space: nowrap;
-    padding: 50px 0 0;
+    padding: 1.3333rem 0 0;
 
     .marquee-content {
       display: inline-block;
@@ -678,8 +663,8 @@ onBeforeUnmount(() => {
       div {
         font-family: "RedHatDisplay-Medium";
         display: inline-block;
-        padding-right: 50px;
-        font-size: 60px;
+        padding-right: 1.3333rem;
+        font-size: 1.6rem;
         color: #212995;
 
         span {
@@ -689,21 +674,10 @@ onBeforeUnmount(() => {
     }
   }
 
-  @keyframes marquee {
-    0% {
-      transform: translateX(0);
-    }
-
-    100% {
-      transform: translateX(-50%);
-    }
-  }
-
   .philosophy {
     position: relative;
     font-size: 0;
     color: #fff;
-
     background: #fff;
 
     img {
@@ -717,40 +691,40 @@ onBeforeUnmount(() => {
     .phil-text1 {
       position: absolute;
       font-family: "RedHatDisplay-Regular";
-      font-size: 45px;
+      font-size: 1.2rem;
       line-height: 1;
-      top: 40px;
+      top: 1.0667rem;
       left: 6%;
     }
 
     .phil-text2 {
       position: absolute;
       font-family: "RedHatDisplay-Bold";
-      font-size: 60px;
+      font-size: 1.6rem;
       line-height: 1;
-      top: 85px;
+      top: 2.2667rem;
       left: 6%;
     }
 
     .phil-items {
       position: absolute;
-      font-size: 50px;
+      font-size: 1.3333rem;
       line-height: 1;
-      top: 195px;
+      top: 5.2rem;
       left: 10%;
       display: flex;
       flex-wrap: wrap;
-      width: 520px;
+      width: 13.8667rem;
       justify-content: space-between;
 
       .phil-item {
-        width: 230px;
+        width: 6.1333rem;
         display: flex;
         justify-content: space-between;
-        margin-bottom: 30px;
+        margin-bottom: 0.8rem;
 
         .phil-left {
-          width: 50px;
+          width: 1.3333rem;
 
           .img {
             width: 100%;
@@ -758,21 +732,21 @@ onBeforeUnmount(() => {
         }
 
         .phil-right {
-          width: 170px;
+          width: 4.5333rem;
 
           .phil-right-text1 {
             font-family: "RedHatDisplay-Regular";
-            font-size: 38px;
+            font-size: 1.0133rem;
             line-height: 1;
             text-align: left;
           }
 
           .phil-right-text2 {
             font-family: "Oswald-Regular";
-            font-size: 14px;
+            font-size: 0.3733rem;
             line-height: 1;
             text-align: left;
-            margin-top: 10px;
+            margin-top: 0.2667rem;
           }
         }
       }
@@ -784,7 +758,7 @@ onBeforeUnmount(() => {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 500px;
+    height: 13.3333rem;
 
     .cta-left {
       width: 70%;
@@ -797,18 +771,18 @@ onBeforeUnmount(() => {
 
       img {
         position: absolute;
-        top: 200px;
+        top: 5.3333rem;
         right: 12%;
-        width: 80px;
+        width: 2.1333rem;
       }
 
       .cta-text1 {
         position: absolute;
-        top: 280px;
+        top: 7.4667rem;
         right: 10%;
-        width: 200px;
+        width: 5.3333rem;
         font-family: "RedHatDisplay-Medium";
-        font-size: 40px;
+        font-size: 1.0667rem;
         line-height: 1;
         text-align: right;
         color: #212995;
@@ -820,6 +794,7 @@ onBeforeUnmount(() => {
     }
   }
 }
+
 
 @keyframes scaleUp {
   0% {

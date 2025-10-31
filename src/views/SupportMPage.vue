@@ -238,27 +238,27 @@ const toggleShowQA = (index) => {
 
     @keyframes moveUp {
       to {
-        transform: translateY(-20px);
+        transform: translateY(-0.5333rem); // -20px
       }
     }
 
     .hero-text-block {
       position: absolute;
-      bottom: 50px;
-      left: 20px;
+      bottom: 1.3333rem; // 50px
+      left: 0.5333rem; // 20px
       width: 60%;
-      text-shadow: 0 0 2px black;
+      text-shadow: 0 0 0.0533rem black; // 2px
 
       .title1 {
         font-family: "RedHatDisplay-Bold";
-        font-size: 60px;
+        font-size: 1.6rem; // 60px
         line-height: 1;
         text-align: left;
       }
 
       .title2 {
         font-family: "Oswald-Regular";
-        font-size: 16px;
+        font-size: 0.4267rem; // 16px
         line-height: 1.5;
         text-align: left;
       }
@@ -276,11 +276,10 @@ const toggleShowQA = (index) => {
     .input-block {
       box-sizing: border-box;
       position: absolute;
-      top: 100px;
+      top: 2.6667rem; // 100px
       width: 90%;
       left: 5%;
-      /* margin-left: -400px; */
-      padding: 10px 15px;
+      padding: 0.2667rem 0.4rem; // 10px 15px
       color: #212995;
       background: #fff;
 
@@ -289,7 +288,7 @@ const toggleShowQA = (index) => {
 
         .name {
           font-family: "RedHatDisplay-Bold";
-          font-size: 18px;
+          font-size: 0.48rem; // 18px
           line-height: 1.5;
         }
 
@@ -299,11 +298,11 @@ const toggleShowQA = (index) => {
 
           .first-name {
             flex: 1;
-            padding-bottom: 20px;
+            padding-bottom: 0.5333rem; // 20px
 
             div {
               font-family: "RedHatDisplay-Medium";
-              font-size: 16px;
+              font-size: 0.4267rem; // 16px
               line-height: 1.5;
             }
           }
@@ -313,7 +312,7 @@ const toggleShowQA = (index) => {
 
             div {
               font-family: "RedHatDisplay-Medium";
-              font-size: 16px;
+              font-size: 0.4267rem; // 16px
               line-height: 1.5;
             }
           }
@@ -321,31 +320,22 @@ const toggleShowQA = (index) => {
 
         .email {
           font-family: "RedHatDisplay-Bold";
-          font-size: 18px;
+          font-size: 0.48rem; // 18px
           line-height: 1.5;
-          margin-top: 20px;
+          margin-top: 0.5333rem; // 20px
         }
 
         .email-input {
           display: flex;
           justify-content: space-between;
 
-          .first-name {
-            width: 45%;
-
-            div {
-              font-family: "RedHatDisplay-Medium";
-              font-size: 16px;
-              line-height: 1.5;
-            }
-          }
-
+          .first-name,
           .last-name {
-            width: 45%;
+            width: 1.2rem; // 45% -> 保留原比例即可
 
             div {
               font-family: "RedHatDisplay-Medium";
-              font-size: 16px;
+              font-size: 0.4267rem; // 16px
               line-height: 1.5;
             }
           }
@@ -353,31 +343,21 @@ const toggleShowQA = (index) => {
 
         .message {
           font-family: "RedHatDisplay-Bold";
-          font-size: 18px;
+          font-size: 0.48rem; // 18px
           line-height: 1.5;
-          margin-top: 20px;
+          margin-top: 0.5333rem; // 20px
         }
 
         .message-input {
           display: flex;
           justify-content: space-between;
 
-          .first-name {
-            width: 45%;
-
-            div {
-              font-family: "RedHatDisplay-Medium";
-              font-size: 16px;
-              line-height: 1.5;
-            }
-          }
-
+          .first-name,
           .last-name {
-            width: 45%;
-
+            width: 1.2rem; // 45%
             div {
               font-family: "RedHatDisplay-Medium";
-              font-size: 16px;
+              font-size: 0.4267rem; // 16px
               line-height: 1.5;
             }
           }
@@ -385,53 +365,53 @@ const toggleShowQA = (index) => {
 
         input,
         textarea {
-          border: 1px solid #1a4ba0;
-          padding: 8px;
-          font-size: 14px;
+          border: 0.0267rem solid #1a4ba0; // 1px
+          padding: 0.2133rem; // 8px
+          font-size: 0.3733rem; // 14px
           outline: none;
           width: 100%;
         }
 
         textarea {
-          min-height: 100px;
+          min-height: 2.6667rem; // 100px
         }
       }
 
       .btn-group {
         position: relative;
         margin: 0 auto;
-        padding: 20px 0 0;
-        height: 70px;
+        padding: 0.5333rem 0 0; // 20px
+        height: 1.8667rem; // 70px
 
         .btn-block {
           position: absolute;
           left: 50%;
-          margin-left: -125px;
+          margin-left: -3.3333rem; // -125px
           display: flex;
           justify-content: space-around;
-          width: 250px;
+          width: 6.6667rem; // 250px
         }
 
         .media-block {
           position: absolute;
-          bottom: 13px;
+          bottom: 0.3467rem; // 13px
           right: 0;
 
           img {
             cursor: pointer;
-            width: 20px;
-            margin-left: 10px;
+            width: 0.5333rem; // 20px
+            margin-left: 0.2667rem; // 10px
           }
         }
       }
 
       .btn {
         border: none;
-        border-radius: 20px;
-        width: 100px;
-        height: 35px;
-        font-size: 14px;
-        line-height: 35px;
+        border-radius: 0.5333rem; // 20px
+        width: 2.6667rem; // 100px
+        height: 0.9333rem; // 35px
+        font-size: 0.3733rem; // 14px
+        line-height: 0.9333rem; // 35px
         cursor: pointer;
       }
 
@@ -451,7 +431,7 @@ const toggleShowQA = (index) => {
     position: relative;
     font-size: 0;
     color: #fff;
-    padding-top: 20px;
+    padding-top: 0.5333rem; // 20px
     background: #edf1f2;
 
     img {
@@ -460,13 +440,13 @@ const toggleShowQA = (index) => {
 
     .phil-block {
       position: absolute;
-      top: 30px;
-      left: 35px;
+      top: 0.8rem; // 30px
+      left: 0.9333rem; // 35px
       width: 80%;
 
       .phil-text1 {
         font-family: "RedHatDisplay-Black";
-        font-size: 32px;
+        font-size: 0.8533rem; // 32px
         line-height: 1;
         color: #212995;
         text-align: left;
@@ -474,13 +454,13 @@ const toggleShowQA = (index) => {
 
       .phil-items {
         font-family: "RedHatDisplay-Bold";
-        font-size: 16px;
+        font-size: 0.4267rem; // 16px
         line-height: 1;
 
         .phil-item {
           cursor: pointer;
-          padding: 20px 0 10px;
-          border-bottom: 2px solid #7e7e7e;
+          padding: 0.5333rem 0 0.2667rem; // 20px 0 10px
+          border-bottom: 0.0533rem solid #7e7e7e; // 2px
 
           .phil-item-top {
             display: flex;
@@ -491,11 +471,11 @@ const toggleShowQA = (index) => {
             .phil-item-top-text {
               width: 80%;
               text-align: left;
-              line-height: 20px;
+              line-height: 0.5333rem; // 20px
             }
 
             .control-btn {
-              font-size: 40px;
+              font-size: 1.0667rem; // 40px
               color: #7e7e7e;
               cursor: pointer;
             }
@@ -503,45 +483,14 @@ const toggleShowQA = (index) => {
 
           .phil-item-bottom {
             font-family: "Oswald-Regular";
-            font-size: 16px;
+            font-size: 0.4267rem; // 16px
             line-height: 1.2;
             text-align: left;
             color: #333;
-            padding: 15px 0;
-            text-shadow: 0 0 9px #fff;
+            padding: 0.4rem 0; // 15px 0
+            text-shadow: 0 0 0.24rem #fff; // 9px
           }
         }
-      }
-    }
-  }
-}
-
-// 媒体查询
-@media (min-width: 1600px) {
-  .landing-page {
-    .topnav {
-      .nav-inner {
-        max-width: 1400px;
-      }
-    }
-  }
-}
-
-@media (min-width: 1920px) {
-  .landing-page {
-    .topnav {
-      .nav-inner {
-        max-width: 1720px;
-      }
-    }
-  }
-}
-
-@media (min-width: 2560px) {
-  .landing-page {
-    .topnav {
-      .nav-inner {
-        max-width: 1600px;
       }
     }
   }

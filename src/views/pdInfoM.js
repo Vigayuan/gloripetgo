@@ -1,4 +1,4 @@
- const catPageInfo1 = {
+ const catPageInfo1 = { //绿色 --》id 3
     pdImgList: [
         new URL("@/assets/pdimg/pd-cat-1.jpg", import.meta.url).href,
         new URL("@/assets/pdimg/pd-cat-2.jpg", import.meta.url).href,
@@ -69,7 +69,8 @@
         },
     ],
     GuidImg: new URL("@/assets/mimgs/cat_feeding_1.png", import.meta.url).href,
-    analysisList:['≥ 40.0%','≥ 0.8%','≥ 15.0%','≥ 0.2%','≤ 5.0% ','≥ 0.85%','≤ 10.0%','≥ 2.6%','≥ 1.0%'],
+    analysisList:['≥ 40.0%','≥ 15.0%','≤ 5.0% ','≤ 10.0%','≥ 1.0%','≥ 0.8%','≥ 0.2%','≥ 0.85%','≥ 2.6%'],
+    analysisListName:['Crude protein','Crude fat','Crude fiber','Moisture','Calcium','Phosphorus','Taurine','Omega-3*','Omega-6*'],
     catBgList: [
         new URL("@/assets/mimgs/scroll_cat_bg_01.jpg", import.meta.url).href,
     ],
@@ -152,7 +153,8 @@ const catPageInfo2 = {
         },
     ],
     GuidImg: new URL("@/assets/mimgs/cat_feeding_2.png", import.meta.url).href,
-    analysisList:['≥ 40.0%','≥ 0.8%','≥ 16.0%','≥ 0.2%','≤ 5.0% ','≥ 0.85%','≤ 10.0%','≥ 2.6%','≥ 1.0%'],
+    analysisList:['≥ 40.0%','≥ 16.0%','≤ 5.0% ','≤ 10.0%','≥ 1.0%','≥ 0.8%','≥ 0.2%','≥ 0.85%','≥ 2.6%'],
+    analysisListName:['Crude protein','Crude fat','Crude fiber','Moisture','Calcium','Phosphorus','Taurine','Omega-3*','Omega-6*'],
     catBgList: [
         new URL("@/assets/mimgs/scroll_cat_bg_01.jpg", import.meta.url).href,
     ],
@@ -174,8 +176,8 @@ const dogPageInfo = {
     title2: "Complete Dog Food",
     desc: "Enriched with glucosamine to enhance bone and cartilage metabolism, paired with MSM and chondroitin to promote cartilage repair, improve ligament elasticity, and boost joint fluid production, reducing discomfort from exercise. Features an optimal calcium-phosphorus ratio and vitamin D to strengthen bone density. Comprehensive care for your dog’s joint health.",
     tagList: [
-        new URL("@/assets/pdimg/icon-urinary.png", import.meta.url).href,
-        new URL("@/assets/pdimg/icon-immune.png", import.meta.url).href,
+        new URL("@/assets/pdimg/icon-joint.png", import.meta.url).href,
+        new URL("@/assets/pdimg/icon-dog-immune.png", import.meta.url).href,
         new URL("@/assets/pdimg/icon-micro.png", import.meta.url).href,
     ],
     features: [
@@ -231,11 +233,12 @@ const dogPageInfo = {
             text2: '3%',
         },
         {
-            text1: 'Fresh free range chicken (36%), fresh turkey (28%), fresh boneless duck (18%), fresh chicken liver (3%), potato flour, dried sweet potato, chicken fat, deep sea fish oil, egg yolk powder, pumpkin, broccoli, carrot, papaya, dried cranberry (1.5%), dandelion granules (1%), alfalfa meal, chicory root powder, yucca powder, ice field moss extract (0.8%), natural lactic acid, fructooligosaccharides, chondroitin sulfate, lecithin, L-carnitine, sodium chloride, choline chloride, taurine, vitamin E, L-ascorbate-2-phosphate, niacin, vitamin A, thiamine mononitrate, D-calcium pantothenate, riboflavin, pyridoxine hydrochloride, cyanocobalamin, folic acid, vitamin D3, D-biotin, iron proteinate, copper proteinate, manganese proteinate, zinc proteinate, calcium iodate, sodium selenite, potassium chloride, Bacillus subtilis, rosemary extract.',
+            text1: 'Ice lake free-range duck (36%), fresh chicken (18%), fresh turkey (13%), fresh chicken liver (3%), dried sweet potatoes, cassava flour, chicken fat, deep-sea fish oil, egg yolk powder, pumpkin, broccoli, carrot, papaya, dried cranberries, dandelion granules, alfalfa powder, chicory root powder, yucca powder, ice field moss extract (0.8%), fructooligosaccharides, glucosamine, MSM (methyl sulfonyl methane), chondroitin sulfate, lecithin, Lcarnitine, sodium chloride, choline chloride, vitamin E, Lascorbate-2-phosphate, niacin, vitamin A, thiamine nitrate, Dcalcium pantothenate, riboflavin, pyridoxine hydrochloride, cyanocobalamin, folic acid, vitamin D3, D-biotin, iron proteinate, copper proteinate, manganese proteinate, zinc proteinate, calcium iodate, sodium selenite, potassium chloride, bacillus subtilis, rosemary extract.',
         },
     ],
     GuidImg: new URL("@/assets/mimgs/dog_feeding_1.png", import.meta.url).href,
-    analysisList:['≥ 40.0%','≥ 0.8%','≥ 15.0%','≥ 0.2%','≤ 5.0% ','≥ 0.85%','≤ 10.0%','≥ 2.6%','≥ 1.0%'],
+    analysisList:['≥ 30.0%','≥ 14.0%','≤ 6.0%','≤ 10.0%','≥ 1.2% ','≥ 1.0%','≥ 1.6%','≥ 0.7%','≥ 2.3%','≥600mg/kg','≥600mg/kg','≥300mg/kg','≥600 IU/kg'],
+    analysisListName:['Crude protein','Crude fat','Crude fiber','Moisture','Calcium','Phosphorus','Lysine','Omega-3*','Omega-6*','Glucosamine*','MSM(methy | sulfony | methane)*','Chondroitin sulfate*','Vitamin D'],
     catBgList: [
         new URL("@/assets/mimgs/scroll_dog_bg_01.png", import.meta.url).href,
     ],

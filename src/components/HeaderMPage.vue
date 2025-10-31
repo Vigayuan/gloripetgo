@@ -117,6 +117,7 @@ const toggleMenu = () => (showMenu.value = !showMenu.value);
     div {
       cursor: pointer;
       margin: 20px;
+      width: 100%;
     }
 
     .product-block {
@@ -135,6 +136,11 @@ const toggleMenu = () => (showMenu.value = !showMenu.value);
       display: flex;
       flex-direction: column;
       height: auto;
+      position: absolute;
+      top: 75px;
+      left: 0;
+      z-index: 100;
+      width: 100%;
     }
   }
 
@@ -176,6 +182,5 @@ const toggleMenu = () => (showMenu.value = !showMenu.value);
       }
     }
   }
-
 }
 </style>

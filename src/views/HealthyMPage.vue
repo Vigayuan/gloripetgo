@@ -83,10 +83,10 @@
     </div>
     <div class="nutrition-block">
       <div class="text-block">
-        <div @click="changeSwiperIndex(1)" class="text1" :class="{ active: swiperIndex === 1 }">Arctic<br />Char</div>
-        <div @click="changeSwiperIndex(2)" class="text2" :class="{ active: swiperIndex === 2 }">Free-<br>Range<br>Chicken</div>
-        <div @click="changeSwiperIndex(3)" class="text3" :class="{ active: swiperIndex === 3 }"> Icelake<br>Free-range<br>Duck</div>
-        <div @click="changeSwiperIndex(4)" class="text4" :class="{ active: swiperIndex === 4 }">Icefield<br>Moss</div>
+        <div @click="changeSwiperIndex(4)" class="text1" :class="{ active: swiperIndex === 4 }">Arctic<br />Char</div>
+        <div @click="changeSwiperIndex(1)" class="text2" :class="{ active: swiperIndex === 1 }">Free-<br>Range<br>Chicken</div>
+        <div @click="changeSwiperIndex(2)" class="text3" :class="{ active: swiperIndex === 2 }"> Icelake<br>Free-range<br>Duck</div>
+        <div @click="changeSwiperIndex(3)" class="text4" :class="{ active: swiperIndex === 3 }">Icefield<br>Moss</div>
       </div>
       <img v-show="swiperIndex === 1" src="../assets/mimgs/food_1.png" alt="">
       <img v-show="swiperIndex === 2" src="../assets/mimgs/food_2.png" alt="">
@@ -95,14 +95,6 @@
     </div>
     <div class="swiper-block">
       <Swiper :modules="modules" :slides-per-view="1" @swiper="onSwiper" class="swiper-box">
-        <SwiperSlide>
-          <div class="slide-item" style="background: #3dd8d0;">
-            <div class="slide-item-right">
-              From the cold Arctic waters, this fish offers a delicate taste and is rich in omega‑3s to keep your cat’s
-              coat soft and shiny. Gentle protein makes it ideal for sensitive stomachs.
-            </div>
-          </div>
-        </SwiperSlide>
 
         <SwiperSlide>
           <div class="slide-item" style="background: #fc8686;">
@@ -126,6 +118,14 @@
             <div class="slide-item-right">
               Canadian Arctic moss is packed with antioxidants and prebiotics to aid digestion, boost immunity, and
               protect skin and coat.
+            </div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div class="slide-item" style="background: #3dd8d0;">
+            <div class="slide-item-right">
+              From the cold Arctic waters, this fish offers a delicate taste and is rich in omega‑3s to keep your cat’s
+              coat soft and shiny. Gentle protein makes it ideal for sensitive stomachs.
             </div>
           </div>
         </SwiperSlide>
@@ -289,7 +289,7 @@ onBeforeUnmount(() => {
     color: #fff;
 
     .hero-bg {
-      height: 400px;
+      height: 10.67rem;
       overflow: hidden;
 
       img {
@@ -301,7 +301,7 @@ onBeforeUnmount(() => {
 
     @keyframes moveUp {
       to {
-        transform: translateY(-20px) scale(1.05);
+        transform: translateY(-0.53rem) scale(1.05);
       }
     }
 
@@ -310,18 +310,18 @@ onBeforeUnmount(() => {
       top: 35%;
       left: 10%;
       font-family: "RedHatDisplay-Medium";
-      font-size: 28px;
+      font-size: 0.75rem;
       line-height: 1;
       text-align: center;
       width: 80%;
       /* 动画设置 */
       opacity: 0;
-      transform: translateY(-100px);
+      transform: translateY(-2.67rem);
       animation: dropIn 1s ease-out forwards;
 
       .title1-sub1 {
         font-family: "RedHatDisplay-black";
-        font-size: 30px;
+        font-size: 0.8rem;
       }
     }
   }
@@ -329,7 +329,7 @@ onBeforeUnmount(() => {
   @keyframes dropIn {
     from {
       opacity: 0;
-      transform: translateY(-100px);
+      transform: translateY(-2.67rem);
     }
 
     to {
@@ -358,21 +358,19 @@ onBeforeUnmount(() => {
 
     .unleash-text1 {
       position: absolute;
-      top: 20px;
+      top: 0.53rem;
       width: 80%;
       left: 10%;
       opacity: 0;
-      //   transform: translateY(-100px);
       transition: all 0.8s 0.8s ease-out;
 
       &.showBox {
         opacity: 1;
-        // transform: translateY(0);
       }
 
       .text-sub1 {
         font-family: "RedHatDisplay-Regular";
-        font-size: 26px;
+        font-size: 0.69rem;
         line-height: 1;
         text-align: left;
         color: #9f9f9f;
@@ -385,14 +383,14 @@ onBeforeUnmount(() => {
 
       .text-sub2 {
         font-family: "RedHatDisplay-Bold";
-        font-size: 45px;
+        font-size: 1.2rem;
         line-height: 1;
         text-align: left;
       }
 
       .text-sub3 {
         font-family: "Khalila";
-        font-size: 65px;
+        font-size: 1.73rem;
         line-height: 1;
         text-align: left;
         color: #a1a1a1;
@@ -402,11 +400,11 @@ onBeforeUnmount(() => {
     .unleash-text2 {
       position: absolute;
       width: 44%;
-      bottom: 160px;
+      bottom: 4.27rem;
       left: 50%;
       color: #212995;
       font-family: "RedHatDisplay-Regular";
-      font-size: 14px;
+      font-size: 0.37rem;
       line-height: 1.2;
       text-align: left;
       opacity: 0;
@@ -420,12 +418,11 @@ onBeforeUnmount(() => {
     .unleash-text3 {
       position: absolute;
       width: 80%;
-      bottom: -7px;
+      bottom: -0.19rem;
       left: 10%;
-      /* margin-left: -500px; */
       color: #212995;
       font-family: "RedHatDisplay-Regular";
-      font-size: 45px;
+      font-size: 1.2rem;
       line-height: 1;
       text-align: center;
       opacity: 0;
@@ -461,19 +458,19 @@ onBeforeUnmount(() => {
 
         .text-left {
           position: absolute;
-          top: 230px;
-          left: 35px;
+          top: 6.13rem;
+          left: 0.93rem;
           font-family: "Oswald-Regular";
-          font-size: 20px;
+          font-size: 0.45rem;
           line-height: 1.2;
         }
 
         .text-right {
           position: absolute;
-          top: 230px;
-          left: 70px;
+          top: 6.13rem;
+          left: 1.87rem;
           font-family: "Oswald-Regular";
-          font-size: 20px;
+          font-size: 0.45rem;
           line-height: 1.2;
         }
       }
@@ -484,8 +481,8 @@ onBeforeUnmount(() => {
       top: 35%;
       cursor: pointer;
       left: 10%;
-      width: 30px;
-      height: 30px;
+      width: 0.8rem;
+      height: 0.8rem;
       z-index: 100;
 
       img {
@@ -498,8 +495,8 @@ onBeforeUnmount(() => {
       top: 35%;
       cursor: pointer;
       right: 10%;
-      width: 30px;
-      height: 30px;
+      width: 0.8rem;
+      height: 0.8rem;
       z-index: 100;
 
       img {
@@ -509,7 +506,7 @@ onBeforeUnmount(() => {
   }
 
   .good-taste-block {
-    padding: 40px 35px 0;
+    padding: 1.07rem 0.93rem 0;
     background: #fff;
 
     .left {
@@ -518,13 +515,13 @@ onBeforeUnmount(() => {
 
       .text {
         font-family: "RedHatDisplay-Medium";
-        font-size: 16px;
+        font-size: 0.43rem;
         line-height: 1;
 
         span {
           display: inline-block;
           font-family: "RedHatDisplay-black";
-          font-size: 24px;
+          font-size: 0.64rem;
           line-height: 1;
         }
       }
@@ -534,7 +531,7 @@ onBeforeUnmount(() => {
       text-align: right;
 
       img {
-        width: 60px;
+        width: 1.6rem;
       }
     }
   }
@@ -543,7 +540,7 @@ onBeforeUnmount(() => {
     position: relative;
     width: 100%;
     line-height: 0;
-    padding: 35px 0;
+    padding: 0.93rem 0;
     background-color: #fff;
 
     img {
@@ -552,15 +549,15 @@ onBeforeUnmount(() => {
     .text-block {
       position: absolute;
       top: 0;
-      left: 35px;
-      width: 200px;
+      left: 0.93rem;
+      width: 5.33rem;
       div {
         font-family: "RedHatDisplay-Regular";
-        font-size: 30px;
+        font-size: 0.8rem;
         line-height: 1;
         text-align: left;
-        margin-bottom: 15px;
-        padding-left: 10px;
+        margin-bottom: 0.4rem;
+        padding-left: 0.27rem;
         &.active {
           position: relative;
           font-family: "RedHatDisplay-Bold";
@@ -570,7 +567,7 @@ onBeforeUnmount(() => {
             position: absolute;
             top: 0;
             left: 0;
-            width: 5px;
+            width: 0.13rem;
             height: 100%;
             background: #212995;
           }
@@ -590,27 +587,27 @@ onBeforeUnmount(() => {
   }
 
   .brand-logo {
-    padding: 20px 0;
+    padding: 0.53rem 0;
 
     .logo-list {
       width: 90%;
       margin: 0 auto;
-      border-top: 1px solid #7c7c7c;
-      border-bottom: 1px solid #7c7c7c;
-      padding: 15px 0;
+      border-top: 0.027rem solid #7c7c7c;
+      border-bottom: 0.027rem solid #7c7c7c;
+      padding: 0.4rem 0;
 
       .logo-list-line {
         display: flex;
         justify-content: space-between;
-        margin: 10px 0;
+        margin: 0.27rem 0;
 
         .logo-item {
-          height: 25px;
+          height: 0.67rem;
           flex: 1;
           text-align: center;
 
           img {
-            height: 25px;
+            height: 0.67rem;
           }
         }
       }
@@ -640,8 +637,8 @@ onBeforeUnmount(() => {
 
     .swiper-box {
       :deep(.swiper-pagination) {
-        width: 200px;
-        height: 120px;
+        width: 5.33rem;
+        height: 3.2rem;
         display: flex;
         justify-content: space-around;
         align-items: center;
@@ -651,16 +648,16 @@ onBeforeUnmount(() => {
           cursor: pointer;
           display: block;
           background: #505050;
-          border: 1px solid #505050;
+          border: 0.027rem solid #505050;
           opacity: 0.6;
-          width: 10px;
-          height: 10px;
-          border-radius: 10px;
+          width: 0.27rem;
+          height: 0.27rem;
+          border-radius: 0.27rem;
         }
 
         .swiper-pagination-bullet-active {
           background: #e8e8e8;
-          border: 1px solid #505050;
+          border: 0.027rem solid #505050;
           opacity: 1;
         }
       }
@@ -668,25 +665,24 @@ onBeforeUnmount(() => {
       .slide-item {
         position: relative;
         width: 100%;
-        height: 160px;
+        height: 4.27rem;
         display: flex;
-        padding: 20px 30px 20px 40px;
+        padding: 0.53rem 0.8rem 0.53rem 1.07rem;
         box-sizing: border-box;
         color: #11196c;
-        box-sizing: border-box;
 
         .slide-item-left {
-          width: 100px;
+          width: 2.67rem;
           font-family: "RedHatDisplay-Bold";
-          font-size: 30px;
+          font-size: 0.8rem;
           line-height: 1;
           text-align: left;
-          margin-right: 50px;
+          margin-right: 1.33rem;
         }
 
         .slide-item-right {
           font-family: "RedHatDisplay-Regular";
-          font-size: 16px;
+          font-size: 0.43rem;
           line-height: 1.5;
           text-align: left;
           word-break: break-word;
@@ -698,7 +694,7 @@ onBeforeUnmount(() => {
   .Manufacturing {
     position: relative;
     font-size: 0;
-    padding: 180px 0 30px;
+    padding: 4.8rem 0 0.8rem;
     background: #fff;
 
     img {
@@ -707,13 +703,13 @@ onBeforeUnmount(() => {
 
     .Manufacturing-text1 {
       position: absolute;
-      top: 50px;
+      top: 1.33rem;
       width: 80%;
       left: 10%;
 
       .text-sub1 {
         font-family: "RedHatDisplay-Regular";
-        font-size: 34px;
+        font-size: 0.9rem;
         line-height: 1;
         text-align: center;
         color: #9f9f9f;
@@ -731,10 +727,10 @@ onBeforeUnmount(() => {
       color: #fff;
       background: #212995;
       font-family: "Oswald-Regular";
-      font-size: 18px;
+      font-size: 0.48rem;
       line-height: 1.2;
       text-align: center;
-      padding: 20px 40px;
+      padding: 0.53rem 1.07rem;
       opacity: 0;
       transition: all 0.8s 1s ease-out;
 
@@ -743,7 +739,7 @@ onBeforeUnmount(() => {
       }
 
       div {
-        margin: 30px 0;
+        margin: 0.8rem 0;
       }
     }
   }
@@ -751,7 +747,7 @@ onBeforeUnmount(() => {
   .feed-guide {
     position: relative;
     font-size: 0;
-    padding: 20px 0;
+    padding: 0.53rem 0;
     background: #fff;
 
     img {
@@ -760,10 +756,10 @@ onBeforeUnmount(() => {
 
     .feed-guide-text1 {
       position: absolute;
-      top: 65px;
-      width: 500px;
+      top: 1.73rem;
+      width: 13.33rem;
       left: 50%;
-      margin-left: -250px;
+      margin-left: -6.67rem;
       color: #000;
       opacity: 0;
       transition: all 0.8s ease-out;
@@ -774,7 +770,7 @@ onBeforeUnmount(() => {
 
       .text-sub1 {
         font-family: "RedHatDisplay-Black";
-        font-size: 14px;
+        font-size: 0.37rem;
         line-height: 1;
         text-align: center;
 
@@ -785,11 +781,11 @@ onBeforeUnmount(() => {
 
       .text-sub2 {
         font-family: "RedHatDisplay-Regular";
-        font-size: 38px;
+        font-size: 1.01rem;
         line-height: 1;
         text-align: center;
         color: #fff;
-        margin-top: 31px;
+        margin-top: 0.83rem;
 
         span {
           font-family: "RedHatDisplay-Black";
@@ -800,14 +796,12 @@ onBeforeUnmount(() => {
     .feed-guide-text2 {
       box-sizing: border-box;
       position: absolute;
-      top: 204px;
+      top: 5.44rem;
       width: 70%;
       left: 15%;
-      /* margin-left: -250px; */
       color: #000;
       font-family: "RedHatDisplay-Regular";
-      font-size: 16px;
-      /* line-height: 1.8; */
+      font-size: 0.43rem;
       text-align: center;
       opacity: 0;
       transition: all 0.8s ease-out;
@@ -817,7 +811,7 @@ onBeforeUnmount(() => {
       }
 
       div {
-        margin: 30px 0;
+        margin: 0.8rem 0;
       }
     }
   }

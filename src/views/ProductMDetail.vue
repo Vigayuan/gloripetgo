@@ -149,76 +149,12 @@
         <div v-show="showTabIndex == 3" class="tab-item tab-item-3">
           <div class="table-block">
             <div class="table-items">
-              <div class="table-item">
+              <div v-for="(item,index) in pdInfo.analysisList" :key="index" class="table-item">
                 <div class="table-item-title">
-                  Crude protein
+                  {{ pdInfo.analysisListName[index] }}
                 </div>
-                <div class="table-item-title">
-                  {{ pdInfo.analysisList[0] }}
-                </div>
-              </div>
-              <div class="table-item">
-                <div class="table-item-title">
-                  Phosphorus
-                </div>
-                <div class="table-item-title">
-                  {{ pdInfo.analysisList[1] }}
-                </div>
-              </div>
-              <div class="table-item">
-                <div class="table-item-title">
-                  Crude fat
-                </div>
-                <div class="table-item-title">
-                  {{ pdInfo.analysisList[2] }}
-                </div>
-              </div>
-              <div class="table-item">
-                <div class="table-item-title">
-                  Taurine
-                </div>
-                <div class="table-item-title">
-                  {{ pdInfo.analysisList[3] }}
-                </div>
-              </div>
-              <div class="table-item">
-                <div class="table-item-title">
-                  Crude fiber
-                </div>
-                <div class="table-item-title">
-                  {{ pdInfo.analysisList[4] }}
-                </div>
-              </div>
-              <div class="table-item">
-                <div class="table-item-title">
-                  Omega-3*
-                </div>
-                <div class="table-item-title">
-                  {{ pdInfo.analysisList[5] }}
-                </div>
-              </div>
-              <div class="table-item">
-                <div class="table-item-title">
-                  Moisture
-                </div>
-                <div class="table-item-title">
-                  {{ pdInfo.analysisList[6] }}
-                </div>
-              </div>
-              <div class="table-item">
-                <div class="table-item-title">
-                  Omega-6*
-                </div>
-                <div class="table-item-title">
-                  {{ pdInfo.analysisList[7] }}
-                </div>
-              </div>
-              <div class="table-item">
-                <div class="table-item-title">
-                  Calcium
-                </div>
-                <div class="table-item-title">
-                  {{ pdInfo.analysisList[8] }}
+                <div class="table-item-title1">
+                  {{ item }}
                 </div>
               </div>
             </div>
@@ -315,7 +251,6 @@ const pdInfo = reactive({
   title1: "Free-Range Chicken Recipe",
   title2: "Complete Cat Food",
   desc: "Uses low-magnesium and low-calcium ingredients as primary components, incorporating natural acidifiers to maintain a slightly acidic urine environment in cats, reducing urinary stone risk. Dandelion flavonoids boost urine flow and hydration.Cranberries add PACs to curb bacterial adhesion, aiding daily urinary health.",
-  analysisList: ['≥ 40.0%', '≥ 0.8%', '≥ 16.0%', '≥ 0.2%', '≤ 5.0% ', '≥ 0.85%', '≤ 10.0%', '≥ 2.6%', '≥ 1.0%'],
   tagList: [
     new URL("@/assets/pdimg/icon-urinary.png", import.meta.url).href,
     new URL("@/assets/pdimg/icon-immune.png", import.meta.url).href,
@@ -349,6 +284,8 @@ const pdInfo = reactive({
       desc: "All life stages"
     }
   ],
+  analysisList: ['≥ 30.0%', '≥ 14.0%', '≤ 6.0%', '≤ 10.0%', '≥ 1.2% ', '≥ 1.0%', '≥ 1.6%', '≥ 0.7%', '≥ 2.3%', '≥600mg/kg', '≥600mg/kg', '≥300mg/kg', '≥600 IU/kg'],
+  analysisListName: ['Crude protein', 'Crude fat', 'Crude fiber', 'Moisture', 'Calcium', 'Phosphorus', 'Lysine', 'Omega-3*', 'Omega-6*', 'Glucosamine*', 'MSM(methy | sulfony | methane)*', 'Chondroitin sulfate*', 'Vitamin D'],
   Ingredients: [
     {
       text1: 'Attrictive daily meal = ',
@@ -438,9 +375,9 @@ watch(
       .handle-left {
         cursor: pointer;
         position: absolute;
-        top: 200px;
+        top: 5.3333rem;
         left: 0;
-        width: 20px;
+        width: 0.5333rem;
 
         img {
           width: 100%;
@@ -450,9 +387,9 @@ watch(
       .handle-right {
         cursor: pointer;
         position: absolute;
-        top: 200px;
+        top: 5.3333rem;
         right: 0;
-        width: 20px;
+        width: 0.5333rem;
 
         img {
           width: 100%;
@@ -465,20 +402,20 @@ watch(
 
       .point-block {
         position: absolute;
-        top: 320px;
+        top: 8.5333rem;
         left: 50%;
         transform: translateX(-50%);
         display: flex;
-        gap: 10px;
+        gap: 0.2667rem;
       }
 
       .point {
-        width: 10px;
-        height: 10px;
+        width: 0.2667rem;
+        height: 0.2667rem;
         background: transparent;
         border-radius: 50%;
         cursor: pointer;
-        border: 1px solid #fff;
+        border: 0.0267rem solid #fff;
 
         &.active {
           background: #fff;
@@ -486,21 +423,21 @@ watch(
       }
 
       .thumbs {
-        margin-top: 10px;
+        margin-top: 0.2667rem;
         display: flex;
         justify-content: flex-start;
-        gap: 10px;
-        padding-left: 20px;
+        gap: 0.2667rem;
+        padding-left: 0.5333rem;
 
         img {
-          width: 70px;
-          height: 70px;
+          width: 1.8667rem;
+          height: 1.8667rem;
           object-fit: cover;
-          border-radius: 6px;
-          border: 1px solid #ddd;
+          border-radius: 0.16rem;
+          border: 0.0267rem solid #ddd;
 
           &.active {
-            border: 1px solid #212995;
+            border: 0.0533rem solid #212995;
           }
         }
       }
@@ -511,43 +448,42 @@ watch(
       display: flex;
       flex-direction: column;
       text-align: left;
-      padding: 20px 20px;
+      padding: 0.5333rem 0.5333rem;
 
       .subtitle {
         font-family: "RedHatDisplay-Regular";
-        font-size: 18px;
+        font-size: 0.48rem;
         line-height: 1;
-        margin: 10px 0;
+        margin: 0.2667rem 0;
         color: #676767;
       }
 
       .title {
         font-family: "RedHatDisplay-Blod";
-        font-size: 20px;
+        font-size: 0.5333rem;
         font-weight: 700;
         color: #212995;
-        margin-bottom: 12px;
+        margin-bottom: 0.32rem;
         line-height: 1;
       }
 
       .desc {
         font-family: "RedHatDisplay-Regular";
         color: #231f20;
-        font-size: 14px;
+        font-size: 0.3733rem;
         line-height: 1.2;
-        margin-bottom: 16px;
+        margin-bottom: 0.4267rem;
       }
 
       .desc-2 {
         font-family: "RedHatDisplay-Regular";
         color: #231f20;
-        font-size: 14px;
+        font-size: 0.3733rem;
         line-height: 1.2;
-        margin-bottom: 16px;
+        margin-bottom: 0.4267rem;
 
         display: -webkit-box;
         -webkit-line-clamp: 2;
-        /* 限制显示2行 */
         -webkit-box-orient: vertical;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -556,35 +492,35 @@ watch(
       .read-more {
         cursor: pointer;
         font-family: "RedHatDisplay-Blod";
-        font-size: 15px;
+        font-size: 0.4rem;
         font-weight: 700;
         color: #212995;
-        margin-bottom: 20px;
+        margin-bottom: 0.5333rem;
         line-height: 1;
-        padding-bottom: 2px;
-        border-bottom: 1px solid #212995;
-        width: 90px;
+        padding-bottom: 0.0533rem;
+        border-bottom: 0.0267rem solid #212995;
+        width: 2.4rem;
         text-align: center;
       }
 
       .daily-meal {
         font-family: "Oswald-Medium";
         color: #676767;
-        font-size: 20px;
+        font-size: 0.5333rem;
         line-height: 1;
         display: flex;
-        margin-bottom: 10px;
+        margin-bottom: 0.2667rem;
 
         img {
-          height: 20px;
+          height: 0.5333rem;
         }
       }
 
       .tags {
         display: flex;
-        gap: 8px;
+        gap: 0.2133rem;
         flex-wrap: wrap;
-        margin-bottom: 16px;
+        margin-bottom: 0.4267rem;
 
         .tag {
           width: 30%;
@@ -596,13 +532,13 @@ watch(
       }
 
       .info {
-        font-size: 14px;
+        font-size: 0.3733rem;
         line-height: 1.6;
-        margin-bottom: 12px;
+        margin-bottom: 0.32rem;
         display: flex;
         color: #212995;
-        padding: 20px 0;
-        border: 2px solid #212995;
+        padding: 0.5333rem 0;
+        border: 0.0533rem solid #212995;
         border-left: none;
         border-right: none;
         justify-content: space-between;
@@ -610,9 +546,9 @@ watch(
 
         .info-detail {
           flex: 1;
-          border-right: 2px solid #212995;
+          border-right: 0.0533rem solid #212995;
           font-family: "RedHatDisplay-Medium";
-          font-size: 12px;
+          font-size: 0.32rem;
           line-height: 1.5;
 
           &:last-child {
@@ -632,16 +568,16 @@ watch(
 
         li {
           display: flex;
-          padding: 10px 20px;
-          font-size: 12px;
+          padding: 0.2667rem 0.5333rem;
+          font-size: 0.32rem;
           line-height: 1.5;
-          margin-bottom: 6px;
+          margin-bottom: 0.16rem;
           font-family: "RedHatDisplay-Medium";
           align-items: center;
 
           img {
-            width: 60px;
-            margin-right: 20px;
+            width: 1.6rem;
+            margin-right: 0.5333rem;
           }
         }
       }
@@ -653,7 +589,7 @@ watch(
     margin: 0 auto;
 
     .tab-header {
-      border: 3px solid #d3d3d3;
+      border: 0.08rem solid #d3d3d3;
       border-left: none;
       border-right: none;
       border-bottom: none;
@@ -661,14 +597,14 @@ watch(
       display: flex;
       align-items: center;
       justify-content: space-between;
-      font-size: 22px;
+      font-size: 0.5867rem;
       line-height: 2;
       font-family: "RedHatDisplay-Black";
       color: #212995;
 
       .control-btn {
         cursor: pointer;
-        font-size: 40px;
+        font-size: 1.0667rem;
         line-height: 1;
         font-family: "RedHatDisplay-Blod";
         color: #575757;
@@ -681,10 +617,10 @@ watch(
       .tab-item {
         display: flex;
         text-align: left;
-        padding: 10px 0 20px;
+        padding: 0.2667rem 0 0.5333rem;
 
         &.tab-item-2 {
-          padding: 20px 0 0;
+          padding: 0.5333rem 0 0;
 
           img {
             width: 100%;
@@ -699,20 +635,26 @@ watch(
               .table-item {
                 display: flex;
                 justify-content: space-between;
-                padding: 0 10px;
+                padding: 0 0.2667rem;
                 &:nth-child(2n) {
                   background: #eee;
                 }
                 .table-item-title {
-                  width: 115px;
+                  flex: 1;
                   font-family: "Oswald-Regular";
-                  font-size: 18px;
+                  font-size: 0.4267rem;
                   color: #212995;
-                  line-height: 35px;
-                  height: 35px;
-                  &:nth-child(2) {
-                    text-align: right;
-                  }
+                  line-height: 0.9333rem;
+                  height: 0.9333rem;
+                }
+                .table-item-title1 {
+                  font-family: "Oswald-Regular";
+                  font-size: 0.4267rem;
+                  color: #212995;
+                  line-height: 0.9333rem;
+                  height: 0.9333rem;
+                  width: 90px;
+                  text-align: right;
                 }
               }
             }
@@ -720,34 +662,34 @@ watch(
         }
 
         .left {
-          font-size: 12px;
+          font-size: 0.32rem;
           line-height: 1.2;
-          width: 180px;
-          border-right: 2px solid #d3d3d3;
+          width: 4.8rem;
+          border-right: 0.0533rem solid #d3d3d3;
 
           span {
             font-family: "RedHatDisplay-Blod";
-            font-size: 40px;
+            font-size: 1.0667rem;
             line-height: 1;
           }
         }
 
         .center {
-          width: 300px;
-          padding: 0 20px;
+          width: 8rem;
+          padding: 0 0.5333rem;
           display: flex;
           justify-content: space-between;
           flex-wrap: wrap;
 
           div {
-            font-size: 12px;
+            font-size: 0.32rem;
             line-height: 1;
-            width: 90px;
+            width: 2.4rem;
             text-align: left;
-            margin-bottom: 20px;
+            margin-bottom: 0.5333rem;
             span {
               font-family: "RedHatDisplay-Blod";
-              font-size: 40px;
+              font-size: 1.0667rem;
             }
           }
         }
@@ -755,7 +697,7 @@ watch(
       .right {
         text-align: left;
         color: #212995;
-        margin-bottom: 20px;
+        margin-bottom: 0.5333rem;
       }
     }
   }
@@ -765,7 +707,7 @@ watch(
     overflow: hidden;
     position: relative;
     font-size: 0;
-    margin-top: 50px;
+    margin-top: 1.3333rem;
 
     .img-block {
       position: relative;
@@ -785,13 +727,13 @@ watch(
     .text {
       width: 100%;
       position: absolute;
-      top: 65px;
+      top: 1.7333rem;
       left: 0;
-      font-size: 22px;
+      font-size: 0.5867rem;
       line-height: 1;
       color: #fff;
       text-align: center;
-      text-shadow: 0 0 4px black;
+      text-shadow: 0 0 0.1067rem black;
       font-family: "RedHatDisplay-Regular";
 
       span {
@@ -801,7 +743,7 @@ watch(
   }
 
   .cat-desc {
-    margin: 30px auto;
+    margin: 0.8rem auto;
     font-size: 0;
     position: relative;
 
@@ -817,27 +759,27 @@ watch(
   }
 
   .brand-logo {
-    padding: 20px 0;
+    padding: 0.5333rem 0;
 
     .logo-list {
       width: 90%;
       margin: 0 auto;
-      border-top: 1px solid #7c7c7c;
-      border-bottom: 1px solid #7c7c7c;
-      padding: 15px 0;
+      border-top: 0.0267rem solid #7c7c7c;
+      border-bottom: 0.0267rem solid #7c7c7c;
+      padding: 0.4rem 0;
 
       .logo-list-line {
         display: flex;
         justify-content: space-between;
-        margin: 10px 0;
+        margin: 0.2667rem 0;
 
         .logo-item {
-          height: 25px;
+          height: 0.6667rem;
           flex: 1;
           text-align: center;
 
           img {
-            height: 25px;
+            height: 0.6667rem;
           }
         }
       }
