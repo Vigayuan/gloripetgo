@@ -29,10 +29,10 @@
           SPIRIT
         </div>
       </div>
-      <div class="unleash-text2" :class="{ showBox }">
+      <div class="unleash-text2">
         In 1998
       </div>
-      <div class="unleash-text3" :class="{ showBox }">
+      <div class="unleash-text3">
         under the shimmering auroras of Canada's Yukon, <span>Dr. Ethan Frost</span>, a veterinarian and polar explorer,
         joined an Arctic expedition. He witnessed local Inuit communities caring for their sled dogs through the
         harshest winters.
@@ -214,7 +214,7 @@ onBeforeUnmount(() => {
       bottom: 1.3333rem;
       left: 0.9333rem;
       font-family: "RedHatDisplay-Black";
-      font-size: 1.2000rem;
+      font-size: 1.2rem;
       line-height: 1;
       text-align: left;
       width: 70%;
@@ -285,7 +285,7 @@ onBeforeUnmount(() => {
 
       .text-sub2 {
         font-family: "RedHatDisplay-Bold";
-        font-size: 1.2000rem;
+        font-size: 1.2rem;
         line-height: 1;
         text-align: left;
       }
@@ -302,15 +302,15 @@ onBeforeUnmount(() => {
     .unleash-text2 {
       position: absolute;
       width: 80%;
-      top: 11.2000rem;
+      top: 11.2rem;
       left: 10%;
       color: #fff;
       font-family: "RedHatDisplay-Regular";
       font-size: 1.4667rem;
       line-height: 1.2;
       text-align: left;
-      opacity: 0;
-      transform: translateY(26.6667rem);
+      opacity: 1;
+      //   transform: translateY(26.6667rem);
       transition: all 0.8s ease-out;
 
       &.showBox {
@@ -329,8 +329,8 @@ onBeforeUnmount(() => {
       font-size: 0.4267rem;
       line-height: 1.5;
       text-align: left;
-      opacity: 0;
-      transform: translateY(26.6667rem);
+      opacity: 1;
+      //   transform: translateY(26.6667rem);
       transition: all 0.8s ease-out;
 
       &.showBox {
@@ -348,7 +348,7 @@ onBeforeUnmount(() => {
   .our-mission {
     position: relative;
     width: 100%;
-    height: 7.2000rem;
+    height: 7.2rem;
     overflow: hidden;
 
     img {
@@ -359,7 +359,7 @@ onBeforeUnmount(() => {
       position: relative;
       width: 100%;
       line-height: 0;
-      height: 7.2000rem;
+      height: 7.2rem;
 
       .img-scroll {
         position: absolute;
@@ -372,12 +372,12 @@ onBeforeUnmount(() => {
 
     .text-1 {
       position: absolute;
-      top: 1.6000rem;
+      top: 1.6rem;
       left: 50%;
-      width: 16.0000rem;
-      margin-left: -8.0000rem;
+      width: 16rem;
+      margin-left: -8rem;
       font-family: "RedHatDisplay-black";
-      font-size: 1.2000rem;
+      font-size: 1.2rem;
       line-height: 1;
       text-align: center;
       color: #fff;
@@ -390,7 +390,7 @@ onBeforeUnmount(() => {
       font-family: "RedHatDisplay-Regular";
       position: absolute;
       width: 70%;
-      top: 3.4667rem;
+      top: 2.5rem;
       left: 15%;
       font-size: 0.4267rem;
       line-height: 1.5;
@@ -415,21 +415,21 @@ onBeforeUnmount(() => {
 
     .his-content {
       position: absolute;
-      width: 80%;
+      width: 65%;
       left: 0.9333rem;
-      top: 2.2667rem;
+      top: 1.3rem;
       text-align: left;
 
       .text-1 {
         font-family: "RedHatDisplay-Regular";
-        font-size: 1.7333rem;
+        font-size: 1rem;
         line-height: 1;
         color: #6fc3ee;
       }
 
       .text-2 {
         font-family: "RedHatDisplay-Medium";
-        font-size: 0.4267rem;
+        font-size: 0.35rem;
         line-height: 1.5;
         color: #333;
         margin-top: 0.2667rem;
@@ -453,7 +453,7 @@ onBeforeUnmount(() => {
     .img-block {
       width: 100%;
       line-height: 0;
-      padding-top: 0.8000rem;
+      padding-top: 0.8rem;
 
       img {
         width: 100%;
@@ -464,19 +464,19 @@ onBeforeUnmount(() => {
       position: absolute;
       width: 80%;
       left: 0.9333rem;
-      top: 0.2667rem;
+      top: 0.6rem;
       text-align: left;
 
       .text-1 {
         font-family: "RedHatDisplay-Regular";
-        font-size: 1.7333rem;
+        font-size: 1rem;
         line-height: 1;
         color: #6fc3ee;
       }
 
       .text-2 {
         font-family: "RedHatDisplay-Medium";
-        font-size: 0.4267rem;
+        font-size: 0.35rem;
         line-height: 1.5;
         color: #333;
         margin-top: 0.1333rem;
@@ -509,11 +509,11 @@ onBeforeUnmount(() => {
 
     .text-1 {
       position: absolute;
-      top: 4.2667rem;
+      top: 3rem;
       left: 10%;
       width: 80%;
       font-family: "RedHatDisplay-Medium";
-      font-size: 0.8000rem;
+      font-size: 0.8rem;
       line-height: 1.2;
       text-align: center;
       color: #fff;
@@ -541,10 +541,10 @@ onBeforeUnmount(() => {
 
     .item {
       width: 80%;
-      margin-bottom: 0.8000rem;
+      margin-bottom: 0.8rem;
       .title {
         font-family: "RedHatDisplay-black";
-        font-size: 0.6400rem;
+        font-size: 0.64rem;
         line-height: 1.2;
         margin-bottom: 0.5333rem;
       }
@@ -575,8 +575,8 @@ onBeforeUnmount(() => {
       position: absolute;
       top: 30%;
       left: 50%;
-      width: 16.0000rem;
-      margin-left: -8.0000rem;
+      width: 16rem;
+      margin-left: -8rem;
       font-family: "RedHatDisplay-Medium";
       font-size: 0.5867rem;
       line-height: 1.2;
@@ -589,5 +589,4 @@ onBeforeUnmount(() => {
     }
   }
 }
-
 </style>
