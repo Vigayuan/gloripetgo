@@ -118,7 +118,7 @@
     <div class="functionally-block" ref="boxRef">
       <div class="pic">
         <div class="pic-block" :class="{ show }">
-          <img class="pic-img" src="../assets/images/dog-pic-1.jpg" alt="">
+          <img class="pic-img" src="../assets/mimgs/product_bg_04.jpg" alt="">
         </div>
         <div class="text">
           <div class="text-1"> Functionally<br>
@@ -429,19 +429,18 @@ onBeforeUnmount(() => {
 
     .pic {
       position: relative;
-      width: 90%;
+      width: 100%;
       height: 21.3333rem;
       margin: 0 auto;
 
       .pic-block {
         position: absolute;
-        width: 18.6667rem;
-        left: -8rem;
+        width: 100%;
+        left: 0;
         top: 16.08rem;
         opacity: 1;
         transition: all 0.8s ease-out;
         overflow: hidden;
-        border-radius: 0.4rem;
 
         &.show {
           opacity: 1;
@@ -459,9 +458,9 @@ onBeforeUnmount(() => {
       .text {
         box-sizing: border-box;
         position: absolute;
-        width: 94%;
+        width: 90%;
         height: 11.6rem;
-        left: 3%;
+        left: 5%;
         top: 4.2667rem;
         padding: 1.0667rem;
         border-radius: 0.5333rem;
@@ -499,6 +498,15 @@ onBeforeUnmount(() => {
         left: 50%;
         margin-left: -1.0667rem;
         animation: spin 8s linear infinite;
+      }
+            @keyframes spin {
+        from {
+          transform: rotate(0deg);
+        }
+
+        to {
+          transform: rotate(360deg);
+        }
       }
     }
   }
