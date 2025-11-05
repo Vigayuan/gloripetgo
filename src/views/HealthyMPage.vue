@@ -289,7 +289,7 @@ onBeforeUnmount(() => {
     color: #fff;
 
     .hero-bg {
-      height: 10.67rem;
+      height: 8.67rem;
       overflow: hidden;
 
       img {
@@ -370,7 +370,7 @@ onBeforeUnmount(() => {
 
       .text-sub1 {
         font-family: "RedHatDisplay-Regular";
-        font-size: 0.69rem;
+        font-size: 0.65rem;
         line-height: 1;
         text-align: left;
         color: #9f9f9f;
@@ -400,7 +400,7 @@ onBeforeUnmount(() => {
     .unleash-text2 {
       position: absolute;
       width: 44%;
-      bottom: 4.27rem;
+      bottom: 3.5rem;
       left: 50%;
       color: #212995;
       font-family: "RedHatDisplay-Regular";
