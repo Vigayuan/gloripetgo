@@ -246,19 +246,19 @@ const toggleShowQA = (index) => {
       position: absolute;
       bottom: 1.3333rem; // 50px
       left: 0.5333rem; // 20px
-      width: 60%;
+      width: 40%;
       text-shadow: 0 0 0.0533rem black; // 2px
 
       .title1 {
         font-family: "RedHatDisplay-Bold";
-        font-size: 1.6rem; // 60px
+        font-size: 1rem; // 60px
         line-height: 1;
         text-align: left;
       }
 
       .title2 {
         font-family: "Oswald-Regular";
-        font-size: 0.4267rem; // 16px
+        font-size: 0.32rem; // 16px
         line-height: 1.5;
         text-align: left;
       }
@@ -446,7 +446,7 @@ const toggleShowQA = (index) => {
 
       .phil-text1 {
         font-family: "RedHatDisplay-Black";
-        font-size: 0.8533rem; // 32px
+        font-size: 0.52rem; // 32px
         line-height: 1;
         color: #212995;
         text-align: left;

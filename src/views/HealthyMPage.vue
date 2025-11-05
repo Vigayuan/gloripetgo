@@ -361,12 +361,7 @@ onBeforeUnmount(() => {
       top: 0.53rem;
       width: 80%;
       left: 10%;
-      opacity: 0;
-      transition: all 0.8s 0.8s ease-out;
-
-      &.showBox {
-        opacity: 1;
-      }
+      opacity: 1;
 
       .text-sub1 {
         font-family: "RedHatDisplay-Regular";
@@ -548,15 +543,15 @@ onBeforeUnmount(() => {
     }
     .text-block {
       position: absolute;
-      top: 0;
+      top: 0.5rem;
       left: 0.93rem;
       width: 5.33rem;
       div {
         font-family: "RedHatDisplay-Regular";
-        font-size: 0.8rem;
+        font-size: 0.64rem;
         line-height: 1;
         text-align: left;
-        margin-bottom: 0.4rem;
+        margin-bottom: 0.5rem;
         padding-left: 0.27rem;
         &.active {
           position: relative;
@@ -781,7 +776,7 @@ onBeforeUnmount(() => {
 
       .text-sub2 {
         font-family: "RedHatDisplay-Regular";
-        font-size: 1.01rem;
+        font-size: 0.8rem;
         line-height: 1;
         text-align: center;
         color: #fff;
@@ -796,7 +791,7 @@ onBeforeUnmount(() => {
     .feed-guide-text2 {
       box-sizing: border-box;
       position: absolute;
-      top: 5.44rem;
+      top: 4.5rem;
       width: 70%;
       left: 15%;
       color: #000;

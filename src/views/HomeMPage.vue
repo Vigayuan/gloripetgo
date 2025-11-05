@@ -301,7 +301,7 @@ onBeforeUnmount(() => {
       position: absolute;
       font-family: "RedHatDisplay-Bold";
       text-align: left;
-      font-size: 1.7333rem;
+      font-size: 1.2rem;
       line-height: 1;
       bottom: 3.3333rem;
       left: 0.5067rem;
@@ -373,21 +373,21 @@ onBeforeUnmount(() => {
 
       .text-sub1 {
         font-family: "RedHatDisplay-Bold";
-        font-size: 0.8rem;
+        font-size: 0.6rem;
         line-height: 1;
         text-align: left;
       }
 
       .text-sub2 {
         font-family: "RedHatDisplay-Bold";
-        font-size: 0.9333rem;
+        font-size: 0.7rem;
         line-height: 1;
         text-align: left;
       }
 
       .text-sub3 {
         font-family: "Khalila";
-        font-size: 1.2rem;
+        font-size: 0.9rem;
         line-height: 1;
         text-align: left;
         color: #a1a1a1;
@@ -396,12 +396,12 @@ onBeforeUnmount(() => {
 
     .unleash-text2 {
       position: absolute;
-      bottom: 2.2667rem;
+      bottom: 2.1333rem;
       width: 86%;
       right: 7%;
       color: #212995;
       font-family: "Oswald-Regular";
-      font-size: 0.4267rem;
+      font-size: 0.3733rem;
       line-height: 1.2;
       text-align: center;
     }
@@ -635,7 +635,7 @@ onBeforeUnmount(() => {
           top: 15%;
           left: 8%;
           font-family: "RedHatDisplay-Bold";
-          font-size: 0.5rem;
+          font-size: 0.4rem;
           line-height: 1;
           text-align: left;
         }
@@ -643,9 +643,9 @@ onBeforeUnmount(() => {
         .slide-item-text2 {
           position: absolute;
           bottom: 15%;
-          left: 8%;
+          right: 8%;
           font-family: "RedHatDisplay-Regular";
-          font-size: 0.4rem;
+          font-size: 0.3rem;
           line-height: 1;
           border-bottom: 0.0533rem solid #fff;
           padding-bottom: 0.1067rem;
@@ -671,14 +671,14 @@ onBeforeUnmount(() => {
 
     .phil-text1 {
       font-family: "RedHatDisplay-Regular";
-      font-size: 1.2rem;
+      font-size: 1rem;
       line-height: 1;
       padding-left: 1.0667rem;
     }
 
     .phil-text2 {
       font-family: "RedHatDisplay-Bold";
-      font-size: 1.6rem;
+      font-size: 1.2rem;
       line-height: 1;
       padding-left: 1.0667rem;
     }
@@ -696,11 +696,11 @@ onBeforeUnmount(() => {
       .phil-item {
         width: 45%;
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-start;
         margin-bottom: 0.8rem;
 
         .phil-left {
-          width: 1.3333rem;
+          width: 0.8rem;
           margin-right: 0.2133rem;
           line-height: 0;
 
@@ -710,18 +710,18 @@ onBeforeUnmount(() => {
         }
 
         .phil-right {
-          width: 4.5333rem;
+          width: 2.5rem;
 
           .phil-right-text1 {
             font-family: "RedHatDisplay-Regular";
-            font-size: 0.5867rem;
+            font-size: 0.4267rem;
             line-height: 1;
             text-align: left;
           }
 
           .phil-right-text2 {
             font-family: "Oswald-Regular";
-            font-size: 0.3733rem;
+            font-size: 0.32rem;
             line-height: 1;
             text-align: left;
             margin-top: 0.1333rem;
