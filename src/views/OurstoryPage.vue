@@ -554,7 +554,7 @@ onBeforeUnmount(() => {
 
     .text-1 {
       position: absolute;
-      top: 160px;
+      top: 190px;
       left: 50%;
       width: 600px;
       margin-left: -300px;
