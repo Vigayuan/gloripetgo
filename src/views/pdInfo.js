@@ -69,7 +69,8 @@
         },
     ],
     GuidImg: new URL("@/assets/pdimg/pd-tab-bg.jpg", import.meta.url).href,
-    analysisList:['≥ 40.0%','≥ 0.8%','≥ 15.0%','≥ 0.2%','≤ 5.0% ','≥ 0.85%','≤ 10.0%','≥ 2.6%','≥ 1.0%'],
+    analysisList:['≥ 40.0%','≥ 15.0%','≤ 5.0% ','≤ 10.0%','≥ 1.0%','≥ 0.8%','≥ 0.2%','≥ 0.85%','≥ 2.6%'],
+    analysisListName:['Crude protein','Crude fat','Crude fiber','Moisture','Calcium','Phosphorus','Taurine','Omega-3*','Omega-6*'],
     catBgList: [
         new URL("@/assets/pdimg/scroll_cat_bg_01.jpg", import.meta.url).href,
         new URL("@/assets/pdimg/scroll_cat_bg_02.jpg", import.meta.url).href,
@@ -154,7 +155,8 @@ const catPageInfo2 = {
         },
     ],
     GuidImg: new URL("@/assets/pdimg/pd-tab-cat2-bg.jpg", import.meta.url).href,
-    analysisList:['≥ 40.0%','≥ 0.8%','≥ 16.0%','≥ 0.2%','≤ 5.0% ','≥ 0.85%','≤ 10.0%','≥ 2.6%','≥ 1.0%'],
+    analysisList:['≥ 40.0%','≥ 16.0%','≤ 5.0% ','≤ 10.0%','≥ 1.0%','≥ 0.8%','≥ 0.2%','≥ 0.85%','≥ 2.6%'],
+    analysisListName:['Crude protein','Crude fat','Crude fiber','Moisture','Calcium','Phosphorus','Taurine','Omega-3*','Omega-6*'],
     catBgList: [
         new URL("@/assets/pdimg/scroll_cat_bg_01.jpg", import.meta.url).href,
         new URL("@/assets/pdimg/scroll_cat_bg_02.jpg", import.meta.url).href,
@@ -240,6 +242,7 @@ const dogPageInfo = {
     ],
     GuidImg: new URL("@/assets/pdimg/pd-tab-dog-bg.jpg", import.meta.url).href,
     analysisList:['≥ 30.0%','≥ 14.0%','≤ 6.0%','≤ 10.0%','≥ 1.2% ','≥ 1.0%','≥ 1.6%','≥ 0.7%','≥ 2.3%','≥600mg/kg','≥600mg/kg','≥300mg/kg','≥600 IU/kg'],
+    analysisListName:['Crude protein','Crude fat','Crude fiber','Moisture','Calcium','Phosphorus','Lysine','Omega-3*','Omega-6*','Glucosamine*','MSM(methy | sulfony | methane)*','Chondroitin sulfate*','Vitamin D'],
     catBgList: [
         new URL("@/assets/pdimg/scroll_dog_bg_01.jpg", import.meta.url).href,
         new URL("@/assets/pdimg/scroll_dog_bg_02.jpg", import.meta.url).href,

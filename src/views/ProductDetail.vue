@@ -130,75 +130,12 @@
                 <div v-show="showTabIndex == 3" class="tab-item tab-item-3">
                     <div class="table-block">
                         <div class="table-items">
-                            <div class="table-item">
+                            <div v-for="(item,index) in pdInfo.analysisListName" :key="index" class="table-item">
                                 <div class="table-item-title">
-                                    Crude protein
+                                    {{ pdInfo.analysisListName[index] }}
                                 </div>
-                                <div class="table-item-title">
-                                    {{ pdInfo.analysisList[0] }}
-                                </div>
-                                <div class="table-item-title">
-                                    Phosphorus
-                                </div>
-                                <div class="table-item-title">
-                                    {{ pdInfo.analysisList[1] }}
-                                </div>
-                            </div>
-                            <div class="table-item">
-                                <div class="table-item-title">
-                                    Crude fat
-                                </div>
-                                <div class="table-item-title">
-                                    {{ pdInfo.analysisList[2] }}
-
-                                </div>
-                                <div class="table-item-title">
-                                    Taurine
-                                </div>
-                                <div class="table-item-title">
-                                    {{ pdInfo.analysisList[3] }}
-                                </div>
-                            </div>
-                            <div class="table-item">
-                                <div class="table-item-title">
-                                    Crude fiber
-                                </div>
-                                <div class="table-item-title">
-                                    {{ pdInfo.analysisList[4] }}
-
-                                </div>
-                                <div class="table-item-title">
-                                    Omega-3*
-                                </div>
-                                <div class="table-item-title">
-                                    {{ pdInfo.analysisList[5] }}
-                                </div>
-                            </div>
-                            <div class="table-item">
-                                <div class="table-item-title">
-                                    Moisture
-                                </div>
-                                <div class="table-item-title">
-                                    {{ pdInfo.analysisList[6] }}
-                                </div>
-                                <div class="table-item-title">
-                                    Omega-6*
-                                </div>
-                                <div class="table-item-title">
-                                    {{ pdInfo.analysisList[7] }}
-                                </div>
-                            </div>
-                            <div class="table-item">
-                                <div class="table-item-title">
-                                    Calcium
-                                </div>
-                                <div class="table-item-title">
-                                    {{ pdInfo.analysisList[8] }}
-
-                                </div>
-                                <div class="table-item-title">
-                                </div>
-                                <div class="table-item-title">
+                                <div class="table-item-title1">
+                                    {{ pdInfo.analysisList[index] }}
                                 </div>
                             </div>
                         </div>
@@ -275,7 +212,8 @@ const pdInfo = reactive({
     title1: "Free-Range Chicken Recipe",
     title2: "Complete Cat Food",
     desc: "Uses low-magnesium and low-calcium ingredients as primary components, incorporating natural acidifiers to maintain a slightly acidic urine environment in cats, reducing urinary stone risk. Dandelion flavonoids boost urine flow and hydration.Cranberries add PACs to curb bacterial adhesion, aiding daily urinary health.",
-    analysisList: ['≥ 40.0%', '≥ 0.8%', '≥ 16.0%', '≥ 0.2%', '≤ 5.0% ', '≥ 0.85%', '≤ 10.0%', '≥ 2.6%', '≥ 1.0%'],
+    analysisList:['≥ 40.0%','≥ 15.0%','≤ 5.0% ','≤ 10.0%','≥ 1.0%','≥ 0.8%','≥ 0.2%','≥ 0.85%','≥ 2.6%'],
+    analysisListName:['Crude protein','Crude fat','Crude fiber','Moisture','Calcium','Phosphorus','Taurine','Omega-3*','Omega-6*'],
     tagList: [
         new URL("@/assets/pdimg/icon-urinary.png", import.meta.url).href,
         new URL("@/assets/pdimg/icon-immune.png", import.meta.url).href,
@@ -670,15 +608,26 @@ watch(
                 &.tab-item-3 {
                     .table-block {
                         width: 100%;
-                        padding: 0 15%;
+                        padding: 0 5%;
 
                         .table-items {
+                            display: flex;
+                            flex-wrap: wrap;
                             .table-item {
+                                width: 50%;
                                 display: flex;
                                 justify-content: space-between;
 
                                 .table-item-title {
-                                    width: 115px;
+                                    width: 270px;
+                                    font-family: 'Oswald-Regular';
+                                    font-size: 22px;
+                                    color: #212995;
+                                    line-height: 35px;
+                                    height: 35px;
+                                }
+                                .table-item-title1 {
+                                    width: 150px;
                                     font-family: 'Oswald-Regular';
                                     font-size: 22px;
                                     color: #212995;
