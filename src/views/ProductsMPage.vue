@@ -42,8 +42,7 @@
         <div class="slide-wrapper" ref="slider">
           <img class="img" src="../assets/images/drag-circle-bg-2.png" alt="">
           <div class="top-img" :style="{ width: leftWidth + 'px' }">
-            <img src="../assets/images/drag-circle-bg-1.png" alt=""
-              style="transform: scale(1.01);transform-origin: center;">
+            <img src="../assets/images/drag-circle-bg-1.png" alt="" style="transform: scale(1.01);transform-origin: center;">
           </div>
           <div class="divider" :style="{ left: leftWidth + 'px' }">
             <div class="handle" @touchstart.prevent="startDrag">
@@ -66,9 +65,7 @@
     <!-- Products -->
     <section id="products" class="products-box">
       <div class="products">
-        <Swiper :modules="modules" :loop="true" :slides-per-view="1" :pagination="{ clickable: true }"
-          :autoplay="{ delay: 4000, disableOnInteraction: false }"
-          :navigation="{ nextEl: '.custom-pd-next', prevEl: '.custom-pd-prev' }" class="pd-swiper-box">
+        <Swiper :modules="modules" :loop="true" :slides-per-view="1" :pagination="{ clickable: true }" :autoplay="{ delay: 4000, disableOnInteraction: false }" :navigation="{ nextEl: '.custom-pd-next', prevEl: '.custom-pd-prev' }" class="pd-swiper-box">
           <SwiperSlide>
             <div class="pd-slide-item">
               <div class="product-card">
@@ -499,7 +496,7 @@ onBeforeUnmount(() => {
         margin-left: -1.0667rem;
         animation: spin 8s linear infinite;
       }
-            @keyframes spin {
+      @keyframes spin {
         from {
           transform: rotate(0deg);
         }
@@ -679,6 +676,15 @@ onBeforeUnmount(() => {
           font-family: "RedHatDisplay-Black";
         }
       }
+      @keyframes marquee {
+        0% {
+          transform: translateX(0);
+        }
+
+        100% {
+          transform: translateX(-50%);
+        }
+      }
     }
   }
 
@@ -802,7 +808,6 @@ onBeforeUnmount(() => {
     }
   }
 }
-
 
 @keyframes scaleUp {
   0% {

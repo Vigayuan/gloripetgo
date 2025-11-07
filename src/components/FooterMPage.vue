@@ -30,8 +30,7 @@
     </div>
 
     <div class="copyright">
-      © 2025 “GloriPetgo” marks are trademarks of CANADA ANNOK PETFOODS INC. All
-      Rights Reserved.
+      © 2025，CANADA ANNOK PETFOODS INC. All Rights Reserved.
     </div>
   </footer>
 </template>
@@ -55,15 +54,15 @@ const goAbout = () => {
 }
 
 
- const openWindow = (index) => {
-   const urls = [
-     "",
- "https://www.facebook.com/profile.php?id=61577967892785",
- "https://www.youtube.com/@GloriPetgo",
- "https://www.instagram.com/",
-   ];
-   window.open(urls[index], "_blank");
- };
+const openWindow = (index) => {
+  const urls = [
+    "",
+    "https://www.facebook.com/profile.php?id=61577967892785",
+    "https://www.youtube.com/@GloriPetgo",
+    "https://www.instagram.com/",
+  ];
+  window.open(urls[index], "_blank");
+};
 </script>
 
 <style lang="scss" scoped>

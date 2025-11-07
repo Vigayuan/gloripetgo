@@ -25,8 +25,7 @@
         </div>
       </div>
     </div>
-    <div class="copyright">© 2025 “GloriPetgo” marks are trademarks of CANADA ANNOK PETFOODS INC. All Rights Reserved.
-    </div>
+    <div class="copyright">© 2025，CANADA ANNOK PETFOODS INC. All Rights Reserved.</div>
   </footer>
 
 </template>
