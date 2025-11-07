@@ -30,7 +30,7 @@
     </div>
 
     <div class="copyright">
-      © 2025，CANADA ANNOK PETFOODS INC. All Rights Reserved.
+      © 2025，CANADA ANNOK PETFOODS INC.<br>All Rights Reserved.
     </div>
   </footer>
 </template>
