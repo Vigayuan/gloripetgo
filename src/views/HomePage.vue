@@ -5,7 +5,7 @@
 
     <!-- Hero -->
     <section class="hero">
-      <img src="../assets/images/bg_01.jpg" alt="">
+      <img src="../assets/imgs/home-banner.jpg" alt="">
       <div class="title1">
         Daily <br>
         Defense <span class="title1-sub1">in</span> <span class="title1-sub2">Every Bite</span>
@@ -74,7 +74,7 @@
         <div class="swiper-block-text2">Arctic Glaciers Align</div>
         <div class="swiper-block-text3">with natural nutrition.</div>
       </div>
-      <Swiper :modules="modules" :loop="true" :slides-per-view="3" :pagination="{ clickable: true }" :autoplay="{delay: 4000,disableOnInteraction: false}"        :navigation="{ nextEl: '.custom-next', prevEl: '.custom-prev' }" class="swiper-box">
+      <Swiper :modules="modules" :loop="true" :slides-per-view="3" :pagination="{ clickable: true }" :autoplay="{delay: 4000,disableOnInteraction: false}" :navigation="{ nextEl: '.custom-next', prevEl: '.custom-prev' }" class="swiper-box">
         <SwiperSlide>
           <div class="slide-item">
             <div class="slide-item-text1">FREE-
@@ -102,7 +102,7 @@
             <img src="../assets/images/swiper-item-3.jpg" alt="">
           </div>
         </SwiperSlide>
-        <SwiperSlide>   
+        <SwiperSlide>
           <div class="slide-item">
             <div class="slide-item-text1">ARCTIC<br>
               CHAR</div>
@@ -120,7 +120,7 @@
     </div>
     <!-- Philosophy -->
     <section class="philosophy" ref="philRef">
-            <img src="../assets/images/bg_04.jpg" alt="">
+      <img src="../assets/images/bg_04.jpg" alt="">
       <div class="phil-text1" :class="{ show }">Product</div>
       <div class="phil-text2" :class="{ show }">Philosophy</div>
       <div class="phil-items" :class="{ show }">
@@ -331,7 +331,6 @@ onBeforeUnmount(() => {
       transform: translateY(-100px);
       animation: fadeDown 0.8s ease-out 0.5s forwards;
     }
-
   }
 
   @keyframes fadeDown {
@@ -607,7 +606,6 @@ onBeforeUnmount(() => {
           border: 1px solid #505050;
           opacity: 1;
         }
-
       }
 
       .slide-item {
@@ -665,7 +663,6 @@ onBeforeUnmount(() => {
       transition: all 0.8s ease-out;
     }
 
-
     .phil-text1.show {
       opacity: 1;
       transform: translateY(0);
@@ -682,7 +679,6 @@ onBeforeUnmount(() => {
       transform: translateY(150px);
       transition: all 0.8s ease-out;
     }
-
 
     .phil-text2.show {
       opacity: 1;
@@ -702,7 +698,6 @@ onBeforeUnmount(() => {
       opacity: 0;
       transform: translateY(150px);
       transition: all 0.8s ease-out;
-
 
       &.show {
         opacity: 1;
@@ -745,7 +740,6 @@ onBeforeUnmount(() => {
     }
   }
 
-
   .cta {
     background: #f25929;
     display: flex;
@@ -786,7 +780,6 @@ onBeforeUnmount(() => {
       }
     }
   }
-
 }
 
 // 媒体查询
