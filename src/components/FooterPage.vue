@@ -2,30 +2,32 @@
   <footer class="footer">
     <div class="footer-inner">
       <div class="brand">
-        <img src="../assets/images/logo-blue-color.svg" alt="">
+        <img src="../assets/imgs/schrain-logo.png" alt="">
       </div>
-      <div class="f-menu">
-        <div @click="goPd">Products</div>
-        <div @click="goWhy">Why healthy</div>
-        <div @click="goStory">Our story</div>
-        <div @click="goAbout">Support</div>
-      </div>
-      <div class="f-message">
-        <div class="f-message-text">@GloriPetgo</div>
-        <div class="logo">
-          <div @click="openWindow(3)" class="icon">
-            <img src="../assets/images/icon-ins.svg" alt="">
+      <div class="f-right">
+        <div class="f-bottom-text">INSTINCT FIRST <span>NATURE ALWAYS</span></div>
+        <div class="f-message">
+          <div class="logo">
+            <div @click="openWindow(3)" class="icon">
+              <img src="../assets/images/icon-ins.svg" alt="">
+            </div>
+            <div @click="openWindow(2)" class="icon">
+              <img src="../assets/images/icon-youtube.svg" alt="">
+            </div>
+            <div @click="openWindow(1)" class="icon">
+              <img src="../assets/images/icon-facebook.svg" alt="">
+            </div>
           </div>
-          <div @click="openWindow(2)" class="icon">
-            <img src="../assets/images/icon-youtube.svg" alt="">
-          </div>
-          <div @click="openWindow(1)" class="icon">
-            <img src="../assets/images/icon-facebook.svg" alt="">
-          </div>
+        </div>
+        <div class="f-menu">
+          <div @click="goPd">PRODUCTS</div>
+          <div @click="goWhy">WHY HEALTHY</div>
+          <div @click="goStory">LEARN</div>
+          <div @click="goAbout">CONTACT</div>
         </div>
       </div>
     </div>
-    <div class="copyright">© 2025，CANADA ANNOK PETFOODS INC. All Rights Reserved.</div>
+    <div class="copyright">© 2026 SCHRAIN ARE TRADENARKS OF CANADA ANNOK PETFOODS INC All Rights Reserved.</div>
   </footer>
 
 </template>
@@ -58,62 +60,69 @@ const openWindow = (index) => {
 </script>
 <style lang="scss" scoped>
 .footer {
-  padding: 50px;
-  background: #fff;
+  padding: 0 0 50px;
+  background: #1f160b;
 
   .footer-inner {
     display: flex;
+    width: 1200px;
+    margin: 0 auto;
     justify-content: space-between;
     align-items: flex-start;
-
+    padding-right: 150px;
     .brand {
-      width: 150px;
-
+      width: 185px;
+      margin-top: -5px;
       img {
         width: 100%;
       }
     }
-
-    .f-menu {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 50%;
-      font-family: "Oswald-Medium";
-      font-size: 30px;
-      line-height: 1;
-      color: #212995;
-      padding-top: 35px;
-
-      div {
-        cursor: pointer;
-      }
-    }
-
-    .f-message {
-      width: 140px;
-      padding-top: 35px;
-      .f-message-text {
-        color: #212995;
-        font-family: "Oswald-Medium";
-        font-size: 30px;
-        line-height: 1;
-        margin-bottom: 15px;
-      }
-
-      .logo {
+    .f-right {
+      flex: 1;
+      padding: 20px 100px;
+      .f-menu {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        width: 100%;
+        font-family: "Oswald-Medium";
+        font-size: 22px;
+        line-height: 1;
+        color: #fff;
+        padding-top: 35px;
 
-        .icon {
+        div {
           cursor: pointer;
-          width: 35px;
+        }
+      }
 
-          img {
-            width: 100%;
+      .f-message {
+        width: 140px;
+        padding-top: 28px;
+
+        .logo {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 100%;
+
+          .icon {
+            cursor: pointer;
+            width: 35px;
+
+            img {
+              width: 100%;
+            }
           }
+        }
+      }
+      .f-bottom-text {
+        font-family: "Oswald-Medium";
+        font-size: 48px;
+        line-height: 1;
+        color: #fff;
+        text-align: left;
+        span {
+          color: #f39800;
         }
       }
     }
@@ -123,8 +132,8 @@ const openWindow = (index) => {
     font-family: "Oswald-Regular";
     font-size: 18px;
     line-height: 1;
-    color: #212995;
-    margin-top: 50px;
+    color: #fde2b9;
+    margin-top: 30px;
   }
 }
 </style>

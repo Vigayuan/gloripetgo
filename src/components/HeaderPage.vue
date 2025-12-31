@@ -2,19 +2,18 @@
   <!-- Top nav -->
   <header class="topnav">
     <div class="nav-inner">
+      <div @click="goHome" class="logo">
+        <img src="../assets/imgs/schrain-logo.png" alt="">
+      </div>
       <nav class="menu">
         <div class="product-block" @mouseenter="onEnter" @mouseleave="onLeave">
-          <div @click="goPd" class="text nav-text" :class="{ active: activeName === 'Products' }">Products</div>
-          <img class="products-arrow" :class="{ rotate: showArrowBlock }" src="../assets/images/products-arrow.svg"
-            alt="" />
+          <div @click="goPd" class="text nav-text" :class="{ active: activeName === 'Products' }">PRODUCTS</div>
+          <!-- <img class="products-arrow" :class="{ rotate: showArrowBlock }" src="../assets/images/products-arrow.svg" alt="" /> -->
         </div>
-        <div @click="goWhy" class="nav-text" :class="{ active: activeName === 'Healthy' }">Why healthy</div>
-        <div @click="goStory" class="nav-text" :class="{ active: activeName === 'Story' }">Our story</div>
-        <div @click="goSupport" class="nav-text" :class="{ active: activeName === 'Support' }">Support</div>
+        <div @click="goWhy" class="nav-text" :class="{ active: activeName === 'Healthy' }">WHY SCHRAIN</div>
+        <div @click="goStory" class="nav-text" :class="{ active: activeName === 'Story' }">LEARN</div>
+        <div @click="goSupport" class="nav-text" :class="{ active: activeName === 'Support' }">CONTACT</div>
       </nav>
-      <div @click="goHome" class="logo">
-        <img src="../assets/images/Icon-Gloripetgo-logo.svg" alt="">
-      </div>
       <div class="icons-list">
         <div @click="openWindow(1)" class="icon">
           <img src="../assets/images/icon-facebook.svg" alt="">
@@ -113,32 +112,35 @@ const onLeave = () => {
 
 <style lang="scss" scoped>
 .topnav {
-  position: relative;
+  position: absolute;
   width: 100%;
-  height: 80px;
-  background: #212995;
+  min-width: 1200px;
+  height: 132px;
+  top: 0;
+  left: 0;
+  background: transparent;
 
   .nav-inner {
     position: relative;
     box-sizing: border-box;
     display: flex;
-    height: 80px;
+    height: 132px;
     justify-content: space-between;
     align-items: center;
     width: 100%;
     padding: 0 50px;
     margin: 0 auto;
     z-index: 100;
-    background: #212995;
+    background: transparent;
 
     .menu {
-      width: 40%;
+      width: 50%;
       display: flex;
       color: #fff;
       font-family: "Oswald-SemiBold";
       font-size: 18px;
-      line-height: 80px;
-
+      line-height: 132px;
+      justify-content: space-around;
       .active {
         position: relative;
 
@@ -177,12 +179,12 @@ const onLeave = () => {
 
     .logo {
       cursor: pointer;
-      width: 70px;
+      width: 200px;
       height: auto;
     }
 
     .icons-list {
-      width: 40%;
+      width: 200px;
       display: flex;
       flex-direction: row-reverse;
 
@@ -197,7 +199,7 @@ const onLeave = () => {
   .arrow-down-block {
     position: absolute;
     display: flex;
-    top: 80px;
+    top: 132px;
     left: 0;
     width: 100%;
     height: 0;

@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: Viga
  * @Date: 2025-09-17 14:22:34
- * @LastEditTime: 2025-10-29 10:25:41
+ * @LastEditTime: 2025-12-31 10:22:06
  */
 import { createRouter, createWebHistory } from 'vue-router'
 import HomePage from '@/views/HomePage.vue'
@@ -32,6 +32,7 @@ const router = createRouter({
         { path: '/productDetail', name: 'ProductDetail', component: () => import('@/views/ProductDetail.vue') },
         { path: '/support', name: 'Support', component: () => import('@/views/SupportPage.vue') },
         { path: '/ourstory', name: 'Ourstory', component: () => import('@/views/OurstoryPage.vue') },
+        { path: '/footer', name: 'Footer', component: () => import('@/components/FooterPage.vue') },
     ],
     scrollBehavior (to, from, savedPosition) {
         if (savedPosition) {
