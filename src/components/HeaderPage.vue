@@ -16,13 +16,13 @@
       </nav>
       <div class="icons-list">
         <div @click="openWindow(1)" class="icon">
-          <img src="../assets/images/icon-facebook.svg" alt="">
+          <img src="../assets/imgs/icon-facebook.svg" alt="">
         </div>
         <div @click="openWindow(2)" class="icon">
-          <img src="../assets/images/icon-youtube.svg" alt="">
+          <img src="../assets/imgs/icon-youtube.svg" alt="">
         </div>
         <div @click="openWindow(3)" class="icon">
-          <img src="../assets/images/icon-ins.svg" alt="">
+          <img src="../assets/imgs/icon-ins.svg" alt="">
         </div>
       </div>
     </div>
