@@ -5,16 +5,17 @@
 
     <!-- Hero -->
     <section class="hero">
-      <img src="../assets/imgs/home-banner.jpg" alt="">
+      <img src="../assets/imgs/landing/home-banner.jpg" alt="">
       <div class="title1">
-        Daily <br>
-        Defense <span class="title1-sub1">in</span> <span class="title1-sub2">Every Bite</span>
+        INSTINCT FIRST <br> <span class="title1-sub1">NATURE ALWAYS</span>
       </div>
       <div class="title2">
-        Ensure comprehensive nutrition and health protection for your pet with every delicious bite.
+        Feed the hunter within. <br>
+        Canadian cold-pressed and freeze-dried nutrition <br>
+        crafted for true carnivores.
       </div>
       <div @click="goProduct" class="btn-leran-more">
-        LEARN MORE
+        EXPLORE PRODUCTS
       </div>
     </section>
 
@@ -74,7 +75,9 @@
         <div class="swiper-block-text2">Arctic Glaciers Align</div>
         <div class="swiper-block-text3">with natural nutrition.</div>
       </div>
-      <Swiper :modules="modules" :loop="true" :slides-per-view="3" :pagination="{ clickable: true }" :autoplay="{delay: 4000,disableOnInteraction: false}" :navigation="{ nextEl: '.custom-next', prevEl: '.custom-prev' }" class="swiper-box">
+      <Swiper :modules="modules" :loop="true" :slides-per-view="3" :pagination="{ clickable: true }"
+        :autoplay="{ delay: 4000, disableOnInteraction: false }"
+        :navigation="{ nextEl: '.custom-next', prevEl: '.custom-prev' }" class="swiper-box">
         <SwiperSlide>
           <div class="slide-item">
             <div class="slide-item-text1">FREE-
@@ -276,35 +279,30 @@ onBeforeUnmount(() => {
 
     .title1 {
       position: absolute;
-      bottom: 7%;
-      left: 4%;
-      font-family: "RedHatDisplay-Bold";
-      font-size: 132px;
-      line-height: 108px;
+      top: 38%;
+      margin-left: 166px;
+      left: 50%;
+      font-family: "Oswald-Medium";
+      font-size: 58px;
+      line-height: 1;
       text-align: left;
-      opacity: 0;
       transform: translateY(-100px);
       animation: fadeDown 0.8s ease-out 0.5s forwards;
+      text-shadow: 0 0 15px #000;
 
       .title1-sub1 {
         display: inline-block;
         font-size: 55px;
         vertical-align: 10px;
-        margin-left: -5px;
-      }
-
-      .title1-sub2 {
-        font-family: "RedHatDisplay-Regular";
-        font-size: 55px;
-        vertical-align: 10px;
-        margin-left: -15px;
+        color: #f39800;
       }
     }
 
     .title2 {
       position: absolute;
-      bottom: 30%;
-      right: 63px;
+      top: 60%;
+      margin-left: 166px;
+      left: 50%;
       font-family: "Oswald-Regular";
       font-size: 16px;
       line-height: 1.5;
@@ -318,16 +316,16 @@ onBeforeUnmount(() => {
     .btn-leran-more {
       cursor: pointer;
       position: absolute;
-      bottom: 19%;
-      right: 75px;
-      font-family: "RedHatDisplay-Bold";
-      border: 3px solid #fff;
-      border-radius: 25px;
+      top: 75%;
+      margin-left: 166px;
+      left: 50%;
+      font-family: "Oswald-SemiBold";
       font-size: 16px;
-      width: 130px;
-      height: 32px;
-      line-height: 32px;
+      width: 180px;
+      height: 50px;
+      line-height: 50px;
       opacity: 0;
+      background-color: #e60012;
       transform: translateY(-100px);
       animation: fadeDown 0.8s ease-out 0.5s forwards;
     }

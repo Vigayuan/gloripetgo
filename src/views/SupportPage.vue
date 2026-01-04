@@ -50,9 +50,9 @@
             <button class="btn btn-clear" @click="clearForm">Clear all</button>
           </div>
           <div class="media-block">
-            <img @click="openWindow(1)" src="../assets/images/icon-facebook.svg" alt="">
-            <img @click="openWindow(2)" src="../assets/images/icon-youtube.svg" alt="">
-            <img @click="openWindow(3)" src="../assets/images/icon-ins.svg" alt="">
+            <img @click="openWindow(1)" src="../assets/imgs/icon-facebook.svg" alt="">
+            <img @click="openWindow(2)" src="../assets/imgs/icon-youtube.svg" alt="">
+            <img @click="openWindow(3)" src="../assets/imgs/icon-ins.svg" alt="">
           </div>
         </div>
       </div>

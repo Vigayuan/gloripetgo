@@ -17,13 +17,13 @@
         <div class="f-message-text">@GloriPetgo</div>
         <div class="logo">
           <div @click="openWindow(3)" class="icon">
-            <img src="../assets/images/icon-ins.svg" alt="Instagram" />
+            <img src="../assets/imgs/icon-ins.svg" alt="Instagram" />
           </div>
           <div @click="openWindow(2)" class="icon">
-            <img src="../assets/images/icon-youtube.svg" alt="YouTube" />
+            <img src="../assets/imgs/icon-youtube.svg" alt="YouTube" />
           </div>
           <div @click="openWindow(1)" class="icon">
-            <img src="../assets/images/icon-facebook.svg" alt="Facebook" />
+            <img src="../assets/imgs/icon-facebook.svg" alt="Facebook" />
           </div>
         </div>
       </div>
