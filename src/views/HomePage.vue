@@ -36,23 +36,23 @@
         </div>
         <img src="../assets/imgs/landing/home-pg-1.jpg" alt="">
         <div class="unleash-text1 title">
-          Built for <br>
-          Carnivores
+          BUILT FOR <br>
+          CARNIVORES
         </div>
         <div class="unleash-text2 body">
           Cats weren’t made to eat grains. Schrain follows the Biologically Appropriate philosophy with WholePrey ratios—meat, organs, and cartilage in the balance nature intended.
         </div>
         <div class="unleash-text3 title">
-          Nature<br>
-          Without <br>
-          Compromise
+          NATURE<br>
+          WITHOUT <br>
+          COMPROMISE
         </div>
         <div class="unleash-text4 body">
           Arctic salmon. North American turkey. Deep-sea cod. No grains, no artificial palatants, no artificial colors—just real, honest nutrition.
         </div>
         <div class="unleash-text5 title">
-          Where Nature
-          Meets Science
+          WHERE NATURE
+          MEETS SCIENCE
         </div>
         <div class="unleash-text6 body">
           Every batch undergoes third‑party testing for protein authenticity, microbes, and heavy metals. Nature inspires the formula; science ensures the safety.
@@ -62,7 +62,8 @@
 
     <!-- Products -->
     <section id="products" class="products">
-      <h3 class="products-text1">Discover <span class="sub1">Our </span><span class="sub2">Products</span></h3>
+      <div class="products-text1">OUR <br>BESTSELLERS</div>
+      <div class="products-text2">HELP YOUR CAT ACHIEVE <br>THE IDEAL BALANCE <br>IT NEEDS.</div>
       <div class="product-grid">
         <div @click="goProductDetail(1)" class="product-card">
           <img style="margin-left: -35px;" src="../assets/images/pd1.png" alt="">
@@ -425,17 +426,17 @@ onBeforeUnmount(() => {
       }
       .unleash-text2 {
         position: absolute;
-        top: 300px;
+        top: 280px;
         left: 230px;
       }
       .unleash-text3 {
         position: absolute;
-        top: 120px;
+        top: 90px;
         left: 780px;
       }
       .unleash-text4 {
         position: absolute;
-        top: 250px;
+        top: 212px;
         left: 780px;
       }
       .unleash-text5 {
@@ -445,7 +446,7 @@ onBeforeUnmount(() => {
       }
       .unleash-text6 {
         position: absolute;
-        top: 300px;
+        top: 380px;
         left: 780px;
       }
       .title {
@@ -458,7 +459,7 @@ onBeforeUnmount(() => {
       }
       .body {
         font-family: "Oswald-Regular";
-        font-size: 18px;
+        font-size: 16px;
         line-height: 1.2;
         text-align: left;
         color: #1f150b;
