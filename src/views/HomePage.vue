@@ -2,7 +2,6 @@
   <div class="landing-page">
 
     <HeaderPage />
-
     <!-- Hero -->
     <section class="hero">
       <img src="../assets/imgs/landing/home-banner.jpg" alt="">
@@ -19,20 +18,45 @@
       </div>
     </section>
 
+    <div class="landing-content-line">
+      <div class="landing-content-line-text-wrapper">
+        <div class="landing-content-line-text">Brand From Canada</div>
+        <div class="landing-content-line-text">Premium Nutrition Pet Food</div>
+        <div class="landing-content-line-text">WholePrey</div>
+      </div>
+    </div>
+
     <!-- Unleash energy -->
-    <section class="unleash " ref="boxRef">
-      <img src="../assets/images/bg_02.jpg" alt="">
-      <div class="particle" :class="{ show }">
-        <img src="../assets/images/particle.png" alt="">
-      </div>
-      <div class="unleash-text1">
-        <div class="text-sub1">Let your pets</div>
-        <div class="text-sub2">unleash their</div>
-        <div class="text-sub3">Joy&Energy!</div>
-      </div>
-      <div class="unleash-text2">
-        With GloriPetgo™, you're not just filling their<br>bowls—you’re fueling their lives with irresistible,
-        <br>nourishing meals. Plus, every bite helps pets beyond your<br> own, spreading happiness all around.
+    <section class="unleash-block " ref="boxRef">
+      <div class="unleash-content">
+        <div class="particle" :class="{ show }">
+          <div class="particle-content">
+            INSTINCT FIRST
+          </div>
+        </div>
+        <img src="../assets/imgs/landing/home-pg-1.jpg" alt="">
+        <div class="unleash-text1 title">
+          Built for <br>
+          Carnivores
+        </div>
+        <div class="unleash-text2 body">
+          Cats weren’t made to eat grains. Schrain follows the Biologically Appropriate philosophy with WholePrey ratios—meat, organs, and cartilage in the balance nature intended.
+        </div>
+        <div class="unleash-text3 title">
+          Nature<br>
+          Without <br>
+          Compromise
+        </div>
+        <div class="unleash-text4 body">
+          Arctic salmon. North American turkey. Deep-sea cod. No grains, no artificial palatants, no artificial colors—just real, honest nutrition.
+        </div>
+        <div class="unleash-text5 title">
+          Where Nature
+          Meets Science
+        </div>
+        <div class="unleash-text6 body">
+          Every batch undergoes third‑party testing for protein authenticity, microbes, and heavy metals. Nature inspires the formula; science ensures the safety.
+        </div>
       </div>
     </section>
 
@@ -75,9 +99,7 @@
         <div class="swiper-block-text2">Arctic Glaciers Align</div>
         <div class="swiper-block-text3">with natural nutrition.</div>
       </div>
-      <Swiper :modules="modules" :loop="true" :slides-per-view="3" :pagination="{ clickable: true }"
-        :autoplay="{ delay: 4000, disableOnInteraction: false }"
-        :navigation="{ nextEl: '.custom-next', prevEl: '.custom-prev' }" class="swiper-box">
+      <Swiper :modules="modules" :loop="true" :slides-per-view="3" :pagination="{ clickable: true }" :autoplay="{ delay: 4000, disableOnInteraction: false }" :navigation="{ nextEl: '.custom-next', prevEl: '.custom-prev' }" class="swiper-box">
         <SwiperSlide>
           <div class="slide-item">
             <div class="slide-item-text1">FREE-
@@ -268,6 +290,27 @@ onBeforeUnmount(() => {
   min-width: 1200px;
   background: #e8e8e8;
 
+  .landing-content-line {
+    width: 100%;
+    margin: 0 auto;
+    height: 60px;
+    font-family: "Oswald-Regular";
+    font-size: 25px;
+    line-height: 60px;
+    color: #938c34;
+    background-color: #1f160b;
+    .landing-content-line-text-wrapper {
+      width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .landing-content-line-text {
+        cursor: pointer;
+      }
+    }
+  }
+
   .hero {
     position: relative;
     font-size: 0;
@@ -343,66 +386,84 @@ onBeforeUnmount(() => {
     }
   }
 
-  .unleash {
-    position: relative;
+  .unleash-block {
     font-size: 0;
+    background: #efe8db;
+    .unleash-content {
+      position: relative;
+      width: 1200px;
+      margin: 0 auto;
+      img {
+        width: 1100px;
+        margin: 0 auto;
+      }
 
-    img {
-      width: 100%;
-    }
+      .particle {
+        // position: absolute;
+        margin: 45px auto 0;
+        // left: 0;
+        opacity: 0;
+        transform: translateY(150px);
+        transition: all 0.8s ease-out;
+        .particle-content {
+          font-family: "Oswald-SemiBold";
+          font-size: 64px;
+          line-height: 58px;
+          color: #938c34;
+        }
+      }
 
-    .particle {
-      position: absolute;
-      top: 45px;
-      left: 0;
-      opacity: 0;
-      transform: translateY(150px);
-      transition: all 0.8s ease-out;
-    }
+      .particle.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
 
-    .particle.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .unleash-text1 {
-      position: absolute;
-      top: 24%;
-      left: 11%;
-      color: #212995;
-
-      .text-sub1 {
+      .unleash-text1 {
+        position: absolute;
+        top: 190px;
+        left: 230px;
+      }
+      .unleash-text2 {
+        position: absolute;
+        top: 300px;
+        left: 230px;
+      }
+      .unleash-text3 {
+        position: absolute;
+        top: 120px;
+        left: 780px;
+      }
+      .unleash-text4 {
+        position: absolute;
+        top: 250px;
+        left: 780px;
+      }
+      .unleash-text5 {
+        position: absolute;
+        top: 300px;
+        left: 780px;
+      }
+      .unleash-text6 {
+        position: absolute;
+        top: 300px;
+        left: 780px;
+      }
+      .title {
         font-family: "RedHatDisplay-Bold";
-        font-size: 40px;
-        line-height: 1;
+        font-size: 30px;
+        line-height: 1.2;
         text-align: left;
+        color: #efe8db;
+        width: 250px;
       }
-
-      .text-sub2 {
-        font-family: "RedHatDisplay-Bold";
-        font-size: 45px;
-        line-height: 1;
+      .body {
+        font-family: "Oswald-Regular";
+        font-size: 18px;
+        line-height: 1.2;
         text-align: left;
+        color: #1f150b;
+        width: 250px;
       }
-
-      .text-sub3 {
-        font-family: "Khalila";
-        font-size: 65px;
-        line-height: 1;
-        text-align: left;
-        color: #a1a1a1;
-      }
-    }
-
-    .unleash-text2 {
-      position: absolute;
-      bottom: 20%;
-      right: 3%;
-      color: #212995;
-      font-family: "Oswald-Regular";
-      font-size: 18px;
-      line-height: 1;
-      text-align: center;
     }
   }
 
