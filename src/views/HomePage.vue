@@ -40,7 +40,8 @@
           CARNIVORES
         </div>
         <div class="unleash-text2 body">
-          Cats weren’t made to eat grains. Schrain follows the Biologically Appropriate philosophy with WholePrey ratios—meat, organs, and cartilage in the balance nature intended.
+          Cats weren’t made to eat grains. Schrain follows the Biologically Appropriate philosophy with WholePrey
+          ratios—meat, organs, and cartilage in the balance nature intended.
         </div>
         <div class="unleash-text3 title">
           NATURE<br>
@@ -48,182 +49,76 @@
           COMPROMISE
         </div>
         <div class="unleash-text4 body">
-          Arctic salmon. North American turkey. Deep-sea cod. No grains, no artificial palatants, no artificial colors—just real, honest nutrition.
+          Arctic salmon. North American turkey. Deep-sea cod. No grains, no artificial palatants, no artificial
+          colors—just real, honest nutrition.
         </div>
         <div class="unleash-text5 title">
           WHERE NATURE
           MEETS SCIENCE
         </div>
         <div class="unleash-text6 body">
-          Every batch undergoes third‑party testing for protein authenticity, microbes, and heavy metals. Nature inspires the formula; science ensures the safety.
+          Every batch undergoes third‑party testing for protein authenticity, microbes, and heavy metals. Nature
+          inspires the formula; science ensures the safety.
         </div>
       </div>
     </section>
 
     <!-- Products -->
-    <section id="products" class="products">
-      <div class="products-text1">OUR <br>BESTSELLERS</div>
-      <div class="products-text2">HELP YOUR CAT ACHIEVE <br>THE IDEAL BALANCE <br>IT NEEDS.</div>
-      <div class="product-grid">
-        <div @click="goProductDetail(1)" class="product-card">
-          <img style="margin-left: -35px;" src="../assets/images/pd1.png" alt="">
-          <div class="tag1">IMMUNE SUPPORT</div>
-          <div class="tag2">JOINT CARE</div>
-        </div>
-        <div @click="goProductDetail(2)" class="product-card">
-          <img src="../assets/images/pd2.png" alt="">
-          <div class="tag1">IMMUNE SUPPORT</div>
-          <div class="tag2">SKIN & COAT HEALTH</div>
-        </div>
-        <div @click="goProductDetail(3)" class="product-card">
-          <img src="../assets/images/pd3.png" alt="">
-          <div class="tag1">IMMUNE SUPPORT</div>
-          <div class="tag2">URINARY HEALTH</div>
+    <section id="products" class="products-block">
+      <img src="../assets/imgs/landing/tree.png" alt="" class="products-bg-img">
+      <div class="products">
+        <div class="products-text1">OUR <br>BESTSELLERS</div>
+        <div class="products-text2">HELP YOUR CAT ACHIEVE <br>THE IDEAL BALANCE <br>IT NEEDS.</div>
+        <div class="product-grid">
+          <div @click="goProductDetail(1)" class="product-card">
+            <img style="margin-left: -35px;" src="../assets/images/pd1.png" alt="">
+            <div class="tag1">COLD PRESSING CAT FOOD</div>
+            <div class="tag2">DEEP SEA FISH</div>
+            <div class="btn">EXPLORE</div>
+          </div>
+          <div @click="goProductDetail(2)" class="product-card">
+            <img src="../assets/images/pd2.png" alt="">
+            <div class="tag1">HIGH MEATINESS CAT FOOD</div>
+            <div class="tag2">BEEF FLAVOR</div>
+            <div class="btn">EXPLORE</div>
+          </div>
+          <div @click="goProductDetail(3)" class="product-card">
+            <img src="../assets/images/pd3.png" alt="">
+            <div class="tag1">FREEZE-DRIED MEAT CAT FOOD</div>
+            <div class="tag2">DEEP SEA FISH</div>
+            <div class="btn">EXPLORE</div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="brand-logo">
-      <div class="logo-list">
-        <img src="../assets/images/icon-MSC.svg" alt="">
-        <img src="../assets/images/icon-aafco.svg" alt="">
-        <img src="../assets/images/icon-Global-Animal.svg" alt="">
-        <img src="../assets/images/icon-FDA.svg" alt="">
-        <img src="../assets/images/icon-CFIA.svg" alt="">
-        <img src="../assets/images/icon-SQF.svg" alt="">
-      </div>
-    </section>
-
-    <div class="swiper-block">
-      <div class="swiper-block-text">
-        <div class="swiper-block-text1">The ingredients from</div>
-        <div class="swiper-block-text2">Arctic Glaciers Align</div>
-        <div class="swiper-block-text3">with natural nutrition.</div>
-      </div>
-      <Swiper :modules="modules" :loop="true" :slides-per-view="3" :pagination="{ clickable: true }" :autoplay="{ delay: 4000, disableOnInteraction: false }" :navigation="{ nextEl: '.custom-next', prevEl: '.custom-prev' }" class="swiper-box">
-        <SwiperSlide>
-          <div class="slide-item">
-            <div class="slide-item-text1">FREE-
-              RANGE<br>
-              CHICKEN</div>
-            <div @click="goWhy" class="slide-item-text2">Learn more</div>
-            <img src="../assets/images/swiper-item-1.jpg" alt="">
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div class="slide-item">
-            <div class="slide-item-text1">ICE LAKE<br>
-              FREE-RANGE<br>
-              DUCK
-            </div>
-            <div @click="goWhy" class="slide-item-text2">Learn more</div>
-            <img src="../assets/images/swiper-item-2.jpg" alt="">
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div class="slide-item">
-            <div class="slide-item-text1">ICEFIELD<br>
-              MOSS</div>
-            <div @click="goWhy" class="slide-item-text2">Learn more</div>
-            <img src="../assets/images/swiper-item-3.jpg" alt="">
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div class="slide-item">
-            <div class="slide-item-text1">ARCTIC<br>
-              CHAR</div>
-            <div @click="goWhy" class="slide-item-text2">Learn more</div>
-            <img src="../assets/images/swiper-item-4.jpg" alt="">
-          </div>
-        </SwiperSlide>
-      </Swiper>
-      <div class="custom-prev">
-        <img src="../assets/images/icon-arrow.svg" alt="">
-      </div>
-      <div class="custom-next">
-        <img src="../assets/images/icon-arrow.svg" style="transform: rotate(180deg);" alt="">
+    <div class="landing-g-4">
+      <img class="home-pg-2" src="../assets/imgs/landing/home-pg-2.jpg" alt="">
+      <img class="home-pg-4" src="../assets/imgs/landing/home-pg-4.png" alt="">
+    </div>
+    <div class="landing-g-5">
+      <img class="home-pg-5-bg" src="../assets/imgs/landing/home-pg-3.jpg" alt="">
+      <div class="landing-g-5-content">
+        <div class="landing-g-5-title1">
+          TO HELP EVERY HOUSE CAT <br>
+          RECLAIM THE DIET OF THEIR
+        </div>
+        <div class="landing-g-5-title2">
+          WILD ANCESTORS
+        </div>
       </div>
     </div>
-    <!-- Philosophy -->
-    <section class="philosophy" ref="philRef">
-      <img src="../assets/images/bg_04.jpg" alt="">
-      <div class="phil-text1" :class="{ show }">Product</div>
-      <div class="phil-text2" :class="{ show }">Philosophy</div>
-      <div class="phil-items" :class="{ show }">
-        <div class="phil-item">
-          <div class="phil-left">
-            <img src="../assets/images/icon-Natural.svg" alt="">
-          </div>
-          <div class="phil-right">
-            <div class="phil-right-text1">Natural</div>
-            <div class="phil-right-text2">Chemical elements bring too many allergy risks.</div>
-          </div>
+    <div class="landing-g-6">
+      <div class="landing-g-6-content">
+        <div class="landing-g-6-title1">
+          IN THE NEXT DECADE, WE AIM TO BRING INSTINCT FIRST. NATURE ALWAYS. TO MILLIONS OF CATS—DELIVERING VISIBLE
+          HEALTH FROM THE INSIDE OUT.
         </div>
-        <div class="phil-item">
-          <div class="phil-left">
-            <img src="../assets/images/icon-health.svg" alt="">
-          </div>
-          <div class="phil-right">
-            <div class="phil-right-text1">Health</div>
-            <div class="phil-right-text2">Defense Three meals a day reduce the risk of illness.</div>
-          </div>
-        </div>
-        <div class="phil-item">
-          <div class="phil-left">
-            <img src="../assets/images/icon-fresh.svg" alt="">
-          </div>
-          <div class="phil-right">
-            <div class="phil-right-text1">Fresh</div>
-            <div class="phil-right-text2">Freshness from the original material to the whole processing of the product.
-            </div>
-          </div>
-        </div>
-        <div class="phil-item">
-          <div class="phil-left">
-            <img src="../assets/images/icon-convenient.svg" alt="">
-          </div>
-          <div class="phil-right">
-            <div class="phil-right-text1">Convenient</div>
-            <div class="phil-right-text2">Keep food fresh high-cost & highly effective Easy Lock ensures freshness.
-            </div>
-          </div>
+        <div class="landing-g-6-title2">
+          BECAUSE THE PERFECT FORMULA<br> WASN’T DESIGNEDBY HUMANS. IT<br> <span>WAS WRITTEN BY NATURE.</span>
         </div>
       </div>
-    </section>
-
-    <!-- <section class="cta">
-      <div class="cta-left">
-        <Swiper :modules="modules" :loop="true" :slides-per-view="3.5" :pagination="{ clickable: true }" :navigation="{nextEl: '.custom-next',prevEl: '.custom-prev'}" class="swiper-box">
-          <SwiperSlide>
-            <div class="slide-item">
-              <img src="../assets/images/swiper-item-1.jpg" style="width:250px" alt="">
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div class="slide-item">
-              <img src="../assets/images/swiper-item-2.jpg" style="width:250px" alt="">
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div class="slide-item">
-              <img src="../assets/images/swiper-item-3.jpg" style="width:250px" alt="">
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div class="slide-item">
-              <img src="../assets/images/swiper-item-4.jpg" style="width:250px" alt="">
-            </div>
-          </SwiperSlide>
-        </Swiper>
-      </div>
-      <div class="cta-right">
-        <img src="../assets/images/icon-talk.svg" alt="">
-        <div class="cta-text1">The Truth <br>
-          Behind<br>
-          <span>the Taste</span>
-        </div>
-      </div>
-    </section> -->
+    </div>
 
     <FooterPage />
   </div>
@@ -231,8 +126,6 @@
 
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from "vue";
-import { Swiper, SwiperSlide } from 'swiper/vue'
-import { Pagination, Navigation, Autoplay } from 'swiper/modules'
 import HeaderPage from '@/components/HeaderPage.vue'
 import FooterPage from '@/components/FooterPage.vue'
 import { useRouter } from "vue-router";
@@ -240,11 +133,10 @@ const router = useRouter()
 const boxRef = ref(null);
 const philRef = ref(null);
 const show = ref(false);
-const modules = [Pagination, Navigation, Autoplay]
 let observer;
-const goWhy = () => {
-  router.push({ name: 'Healthy' });
-}
+//const goWhy = () => {
+//  router.push({ name: 'Healthy' });
+//}
 const goProductDetail = (id) => {
   router.push({ name: 'ProductDetail', query: { id } });
 }
@@ -300,12 +192,14 @@ onBeforeUnmount(() => {
     line-height: 60px;
     color: #938c34;
     background-color: #1f160b;
+
     .landing-content-line-text-wrapper {
       width: 1200px;
       margin: 0 auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
+
       .landing-content-line-text {
         cursor: pointer;
       }
@@ -390,10 +284,12 @@ onBeforeUnmount(() => {
   .unleash-block {
     font-size: 0;
     background: #efe8db;
+
     .unleash-content {
       position: relative;
       width: 1200px;
       margin: 0 auto;
+
       img {
         width: 1100px;
         margin: 0 auto;
@@ -406,6 +302,7 @@ onBeforeUnmount(() => {
         opacity: 0;
         transform: translateY(150px);
         transition: all 0.8s ease-out;
+
         .particle-content {
           font-family: "Oswald-SemiBold";
           font-size: 64px;
@@ -424,31 +321,37 @@ onBeforeUnmount(() => {
         top: 190px;
         left: 230px;
       }
+
       .unleash-text2 {
         position: absolute;
         top: 280px;
         left: 230px;
       }
+
       .unleash-text3 {
         position: absolute;
         top: 90px;
         left: 780px;
       }
+
       .unleash-text4 {
         position: absolute;
         top: 212px;
         left: 780px;
       }
+
       .unleash-text5 {
         position: absolute;
         top: 300px;
         left: 780px;
       }
+
       .unleash-text6 {
         position: absolute;
         top: 380px;
         left: 780px;
       }
+
       .title {
         font-family: "RedHatDisplay-Bold";
         font-size: 30px;
@@ -457,6 +360,7 @@ onBeforeUnmount(() => {
         color: #efe8db;
         width: 250px;
       }
+
       .body {
         font-family: "Oswald-Regular";
         font-size: 16px;
@@ -468,67 +372,184 @@ onBeforeUnmount(() => {
     }
   }
 
-  .products {
-    .products-text1 {
-      font-family: "RedHatDisplay-Regular";
-      font-size: 30px;
-      line-height: 1;
-      text-align: center;
-      color: #212995;
-      padding: 50px 0;
-      margin: 0;
+  .products-block {
+    position: relative;
+    background-color: #efe8db;
 
-      .sub1 {
-        font-family: "RedHatDisplay-Bold";
-        font-weight: bold;
-      }
-
-      .sub2 {
-        font-family: "RedHatDisplay-Bold";
-        font-weight: bold;
-      }
+    .products-bg-img {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 557px;
     }
 
-    .product-grid {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 90%;
+    .products {
+      position: relative;
+      width: 1200px;
       margin: 0 auto;
+      height: 500px;
 
-      .product-card {
-        cursor: pointer;
-        width: 25%;
-        height: auto;
+      .products-text1 {
+        position: absolute;
+        font-family: "Oswald-SemiBold";
+        font-size: 50px;
+        line-height: 1;
+        text-align: left;
+        color: #1f160b;
+        left: 90px;
+        top: 80px;
+      }
 
-        img {
-          width: 100%;
-          max-width: 250px;
-          margin-left: -50px;
+      .products-text2 {
+        position: absolute;
+        font-family: "Oswald-Medium";
+        font-size: 21px;
+        line-height: 1;
+        text-align: left;
+        color: #1f160b;
+        left: 90px;
+        top: 220px;
+      }
 
-          &:hover {
-            animation: hoverUp 0.3s ease-out forwards;
+      .product-grid {
+        position: absolute;
+        top: 100px;
+        right: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 700px;
+
+        .product-card {
+          cursor: pointer;
+          width: 250px;
+          height: auto;
+
+          img {
+            width: 100%;
+            max-width: 250px;
+            margin-left: -50px;
+
+            &:hover {
+              animation: hoverUp 0.3s ease-out forwards;
+            }
+          }
+
+          .tag1 {
+            font-family: "Oswald-SemiBold";
+            font-size: 12px;
+            line-height: 1;
+            text-align: center;
+            color: #000;
+            height: 12px;
+          }
+
+          .tag2 {
+            font-family: "Oswald-SemiBold";
+            font-size: 26px;
+            line-height: 1;
+            text-align: center;
+            color: #000;
+            margin: 0 auto;
+            height: 26px;
+          }
+
+          .btn {
+            font-family: "Oswald-SemiBold";
+            width: 155px;
+            height: 38px;
+            line-height: 38px;
+            text-align: center;
+            color: #fff;
+            background-color: #e60012;
+            margin: 20px auto 0;
           }
         }
+      }
+    }
+  }
 
-        .tag1 {
-          font-family: "RedHatDisplay-Bold";
-          font-size: 14px;
-          line-height: 1;
-          text-align: center;
-          color: #212995;
-          height: 14px;
-        }
+  .landing-g-4 {
+    height: 688px;
+    background-color: #000;
 
-        .tag2 {
-          font-family: "RedHatDisplay-Bold";
-          font-size: 30px;
-          line-height: 1;
-          text-align: center;
-          color: #212995;
-          width: 270px;
-          margin: 0 auto;
-          height: 60px;
+    .home-pg-2 {
+      width: 1070px;
+      margin: 80px auto 50px;
+    }
+
+    .home-pg-3 {
+      width: 1100px;
+      margin: 0 auto;
+    }
+  }
+
+  .landing-g-5 {
+    position: relative;
+    background-color: #000;
+
+    .home-pg-5-bg {
+      width: 100%;
+    }
+
+    .landing-g-5-content {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      margin-left: -600px;
+      margin-top: 60px;
+      width: 1200px;
+
+      .landing-g-5-title1 {
+        font-family: "Oswald-Regular";
+        font-size: 37px;
+        line-height: 1;
+        text-align: center;
+        color: #efe8db;
+        width: 100%;
+      }
+
+      .landing-g-5-title2 {
+        font-family: "Oswald-Regular";
+        font-size: 105px;
+        line-height: 1;
+        text-align: center;
+        color: #f39800;
+        width: 100%;
+        margin-top: 20px;
+      }
+    }
+  }
+
+  .landing-g-6 {
+    background-color: #efe8db;
+    height: 450px;
+
+    .landing-g-6-content {
+      width: 1200px;
+      margin: 0 auto;
+
+      .landing-g-6-title1 {
+        font-size: 27px;
+        font-family: "Oswald-Regular";
+        color: #000;
+        width: 800px;
+        margin: 0 auto;
+      }
+
+      .landing-g-6-title2 {
+        font-size: 27px;
+        font-family: "Oswald-Regular";
+        color: #97903c;
+        width: 500px;
+        margin: 0 auto;
+        border: 3px solid #97903c;
+        padding: 30px 40px;
+        border-radius: 50%;
+        margin-top: 65px;
+
+        span {
+          font-family: "Oswald-SemiBold";
         }
       }
     }
