@@ -1,120 +1,89 @@
 <template>
-  <div class="landing-page">
+  <div class="products-page">
     <!-- Header -->
     <HeaderPage />
     <!-- Hero -->
     <section class="hero">
       <img class="bg_line" src="../assets/imgs/products/products_line.png" alt="">
       <div class="hero-content">
+        <div class="hero-text">
+          HELP YOUR CAT ACHIEVE <br>
+          THE IDEAL BALANCE IT NEEDS.
+        </div>
+        <div class="hero-title">
+          PREMIUM<br>
+          PET FOOD
+        </div>
         <img src="../assets/imgs/products/products_01.png" alt="">
       </div>
     </section>
-    <div class="img">
+    <div class="hero-img">
       <img src="../assets/imgs/products/products_03.png" alt="">
     </div>
-    <div style="background-color: #fff;">
-      <div class="slide-block">
-        <div class="slide-block-text">
-          <div class="slide-block-text1">Nature’s <span>Pledge</span></div>
-          <div class="slide-block-text2">The Ingredients Your Pet Deserves</div>
-          <transition name="fade-slide" mode="out-in">
-            <div v-if="leftWidth > 200">
-              <div class="slide-block-text3">Only humanely raised, <br>
-                responsibly sourced meats.</div>
-              <div class="slide-block-text4">High-end nutrition, <br>
-                100% traceable ingredients.</div>
-              <div class="slide-block-text5">Expertly crafted, <br>
-                delivered to your pet.</div>
-              <div class="slide-block-text6">Verified by leading authorities <br>
-                for complete confidence</div>
-            </div>
-            <div v-else>
-              <div class="slide-block-text3">Crafted without corn,wheat,<br>
-                soy, or syntheticadditives <br>
-                for pure nutrition.</div>
-              <div class="slide-block-text4">Sourced from animals raised<br>
-                free of antibioticsand<br>
-                added hormones..</div>
-              <div class="slide-block-text5">Ethically procured<br>
-                seafood in every blend.</div>
-              <div class="slide-block-text6">Enriched with non-GMO <br>
-                fruits and vegetables.</div>
-            </div>
-          </transition>
-        </div>
-        <div class="slide-wrapper" ref="slider">
-          <img class="img" src="../assets/images/drag-circle-bg-2.png" alt="">
-          <div class="top-img" :style="{ width: leftWidth + 'px' }">
-            <img src="../assets/images/drag-circle-bg-1.png" alt="" style="transform: scale(1.01);transform-origin: center;">
-          </div>png
-          <div class="divider" :style="{ left: leftWidth + 'px' }">
-            <div class="handle" @mousedown.prevent="startDrag">
-              <img src="../assets/images/drag-circle.svg" alt="">
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="marquee">
-        <div class="marquee-content">
-          <div><span>Daily Guard</span> Feast</div>
-          <div><span>Daily Guard</span> Feast</div>
-          <div><span>Daily Guard</span> Feast</div>
-          <div><span>Daily Guard</span> Feast</div>
-          <div><span>Daily Guard</span> Feast</div>
-          <div><span>Daily Guard</span> Feast</div>
-        </div>
-      </div>
-    </div>
     <!-- Products -->
-    <section id="products" class="products">
-      <div class="product-grid">
-        <div class="product-card">
-          <img src="../assets/images/pd1.png" alt="">
-          <div class="tag1">Ice Lake <br>
-            Free-Range Duck<br>
-            <div class="tag2">Complete Dog Food</div>
+    <section id="products" class="products-block">
+      <div class="products">
+        <div class="product-grid">
+          <div @click="goProductDetail(3)" class="product-card">
+            <img src="../assets/imgs/pd3-1.jpg" alt="">
+            <div class="tag1">COLD PRESSING CAT FOOD</div>
+            <div class="tag2">DEEP SEA FISH</div>
+            <div class="tag3">Low-temperature pressed to preserve natural ocean flavor—perfect for picky eaters.</div>
+            <div class="btn">EXPLORE</div>
           </div>
-          <div @click="goProductDetail(1)" class="tag3">LEARN MORE</div>
-        </div>
-        <div class="product-card">
-          <img src="../assets/images/pd2.png" alt="">
-          <div class="tag1">Arctic Char <br>
-            <div class="tag2">Complete Cat Food</div>
+          <div @click="goProductDetail(1)" class="product-card">
+            <img src="../assets/imgs/pd1-1.jpg" alt="">
+            <div class="tag1">HIGH MEATINESS CAT FOOD</div>
+            <div class="tag2">BEEF FLAVOR</div>
+            <div class="tag3">Rich, robust energy from premium beef—ideal for active, athletic cats.</div>
+            <div class="btn">EXPLORE</div>
           </div>
-          <div @click="goProductDetail(2)" class="tag3">LEARN MORE</div>
-        </div>
-        <div class="product-card">
-          <img src="../assets/images/pd3.png" alt="">
-          <div class="tag1">Free-Range Chicken<br>
-            <div class="tag2">Complete Cat Food</div>
+          <div @click="goProductDetail(2)" class="product-card">
+            <img src="../assets/imgs/pd2-1.jpg" alt="">
+            <div class="tag1">FREEZE-DRIED MEAT CAT FOOD</div>
+            <div class="tag2">DEEP SEA FISH</div>
+            <div class="tag3">Three protein sources freeze‑dried to peak nutrition. Highly palatable. Naturally
+              nourishing.</div>
+            <div class="btn">EXPLORE</div>
           </div>
-          <div @click="goProductDetail(3)" class="tag3">LEARN MORE</div>
         </div>
       </div>
     </section>
-
-    <div class="transparent-block"></div>
-
-    <div class="functionally-block" ref="boxRef">
-      <div class="pic">
-        <div class="pic-block" :class="{ show }">
-          <img class="pic-img" src="../assets/images/dog-pic-1.jpg" alt="">
+    <div class="pd-g-3">
+      <div class="pd-g-3-g">
+        <div class="pd-g-3-item pg-g-3-l">
+          <div class="pd-g-3-t">
+            <div class="text1">BUILT<br>
+              FOR </div>
+            <div class="text2">CARNIVORES</div>
+            <div class="text3">Cats weren’t made to eat grains. Schrain follows the Biologically Appropriate philosophy
+              with WholePrey ratios—meat, organs, and cartilage in the balance nature intended.</div>
+          </div>
+          <div class="pd-g-3-b">
+            <img src="../assets/imgs/products/meat.jpg" alt="">
+          </div>
         </div>
-        <div class="text">
-          <div class="text-1"> Functionally<br>
-            Focused</div>
-          <div class="text-2">GloriPetgo’s Aurora Series is built on the foundational benefits of boosting immunity and
-            supporting intestinal health, with a product philosophy centered on daily prevention to reduce the risk of
-            illnesses.</div>
-          <div class="text-2">Meanwhile, each of the three products in the Aurora Series is designed to focus on a
-            distinct, specialized benefit — for instance, Arctic Char Complete Cat Food prioritizes coat care as its
-            core function.</div>
+        <div class="pd-g-3-item pg-g-3-r">
+          <div class="pd-g-3-t">
+            <img src="../assets/imgs/products/cat.jpg" alt="">
+          </div>
+          <div class="pd-g-3-b">
+            <div class="text1">NATURE
+              WITHOUT </div>
+            <div class="text2">COMPROMISE</div>
+            <div class="text3">Arctic salmon. North American turkey. Deep-sea cod. No grains, no artificial palatants,
+              no artificial colors—just real, honest nutrition.</div>
+          </div>
         </div>
-        <img src="../assets/images/icon-Aurora.svg" alt="" class="icon-aurora">
-        <img src="../assets/images/icon-cq.svg" alt="" class="icon-cq">
       </div>
     </div>
-
+    <div class="pd-g-4">
+      <div class="pd-g-4-content">
+        <div class="pd-g-4-text1">WHERE <br>NATURE</div>
+        <div class="pd-g-4-text2">MEETS SCIENCE</div>
+        <img class="pd-g-4-img" src="../assets/imgs/products/products_02.png" alt="">
+      </div>
+    </div>
     <!-- Footer -->
     <FooterPage />
   </div>
@@ -126,46 +95,18 @@ import FooterPage from "@/components/FooterPage.vue";
 import { onMounted, ref, onBeforeUnmount } from 'vue'
 import { useRouter } from "vue-router";
 const router = useRouter();
-const slider = ref(null);
-const leftWidth = ref(200); // 左边默认宽度
-let isDragging = false;
 const boxRef = ref(null)
 const show = ref(false);
 let observer;
-const startDrag = () => {
-  isDragging = true;
-  document.addEventListener("mousemove", onDrag);
-  document.addEventListener("mouseup", stopDrag);
-};
 const goProductDetail = (id) => {
   router.push({ name: 'ProductDetail', query: { id } });
 }
-const onWindowResize = () => {
-  if (window.innerWidth > 1600) {
-    leftWidth.value = 300;
-  } else {
-    leftWidth.value = 200;
-  }
-}
-const onDrag = (e) => {
-  if (!isDragging) return;
-  const rect = slider.value.getBoundingClientRect();
-  let newWidth = e.clientX - rect.left;
-  if (newWidth < 0) newWidth = 0;
-  if (newWidth > rect.width) newWidth = rect.width;
-  leftWidth.value = newWidth;
-};
 
-const stopDrag = () => {
-  isDragging = false;
-  document.removeEventListener("mousemove", onDrag);
-  document.removeEventListener("mouseup", stopDrag);
-};
+
+
 
 
 onMounted(() => {
-  onWindowResize()
-  window.addEventListener("resize", onWindowResize);
   observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -189,7 +130,6 @@ onMounted(() => {
 })
 
 onBeforeUnmount(() => {
-  window.removeEventListener("resize", onWindowResize);
   if (observer && boxRef.value) {
     observer.unobserve(boxRef.value);
   }
@@ -197,12 +137,13 @@ onBeforeUnmount(() => {
 </script>
 
 <style lang="scss" scoped>
-.landing-page {
+.products-page {
   width: 100%;
   min-width: 1200px;
   background: transparent;
   overflow: hidden;
   background: #000;
+
   img {
     user-drag: none;
     /* 禁止图片拖动 */
@@ -216,6 +157,7 @@ onBeforeUnmount(() => {
     margin-top: 132px;
     background: #938c34;
     overflow: hidden;
+
     .bg_line {
       position: absolute;
       width: 1200px;
@@ -223,500 +165,233 @@ onBeforeUnmount(() => {
       top: -450px;
       z-index: 10;
     }
+
     .hero-content {
       position: relative;
       width: 1200px;
       margin: 0 auto;
       z-index: 100;
+
+      .hero-text {
+        position: absolute;
+        top: 90px;
+        left: 0;
+        font-family: "Oswald-Medium";
+        font-size: 60px;
+        line-height: 1;
+        color: #efe8db;
+        text-align: left;
+      }
+
+      .hero-title {
+        position: absolute;
+        top: 90px;
+        right: 0;
+        font-family: "Oswald-Medium";
+        font-size: 20px;
+        line-height: 1;
+        color: #efe8db;
+        text-align: left;
+      }
+
       img {
         width: 100%;
       }
     }
   }
 
-  .products {
-    background: #fff;
-    padding-bottom: 20px;
-    .products-text1 {
-      font-family: "RedHatDisplay-Regular";
-      font-size: 30px;
-      line-height: 1;
-      text-align: center;
-      color: #212995;
-      padding: 50px 0;
-      margin: 0;
-
-      .sub1 {
-        font-family: "RedHatDisplay-Bold";
-        font-weight: bold;
-      }
-
-      .sub2 {
-        font-family: "RedHatDisplay-Bold";
-        font-weight: bold;
-      }
-    }
-
-    .product-grid {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 1000px;
-      margin: 0 auto;
-      background: #212995;
-      border-radius: 25px;
-      padding: 40px 100px;
-
-      .product-card {
-        cursor: pointer;
-        width: 25%;
-        height: auto;
-
-        img {
-          width: 100%;
-          max-width: 250px;
-          margin-left: -30px;
-
-          &:hover {
-            animation: scaleUp 1s ease-in-out;
-          }
-        }
-
-        .tag1 {
-          font-family: "RedHatDisplay-Bold";
-          font-size: 22px;
-          line-height: 1;
-          text-align: center;
-          color: #00d2ff;
-          height: 80px;
-          margin-top: 15px;
-
-          .tag2 {
-            font-family: "RedHatDisplay-Regular";
-            font-size: 22px;
-            line-height: 1;
-            text-align: center;
-            color: #fff;
-          }
-        }
-
-        .tag3 {
-          width: 120px;
-          height: 30px;
-          font-family: "RedHatDisplay-Bold";
-          font-size: 14px;
-          line-height: 30px;
-          text-align: center;
-          color: #00d2ff;
-          border: 1px solid #00d2ff;
-          border-radius: 20px;
-          margin: 0 auto;
-        }
-      }
-    }
-  }
-
-  .transparent-block {
+  .hero-img {
     width: 100%;
-    height: 300px;
-    border-right: none;
-    border-left: none;
-    background: transparent;
-  }
-
-  .functionally-block {
-    height: 800px;
-    background: #fff;
-
-    .pic {
-      position: relative;
-      width: 1200px;
-      height: 800px;
-      margin: 0 auto;
-
-      .pic-block {
-        position: absolute;
-        width: 800px;
-        right: 50px;
-        bottom: 100px;
-        opacity: 0;
-        transform: translateX(500px);
-        transition: all 0.8s ease-out;
-        overflow: hidden;
-        border-radius: 15px;
-
-        &.show {
-          opacity: 1;
-          transform: translateX(0);
-        }
-
-        .pic-img {
-          width: 100%;
-
-          &:hover {
-            animation: scaleUp 2s ease-in-out;
-          }
-        }
-      }
-
-      .text {
-        box-sizing: border-box;
-        position: absolute;
-        width: 480px;
-        height: 65%;
-        left: 10%;
-        top: 100px;
-        padding: 40px;
-        border-radius: 20px;
-        background: #00d2ff;
-        text-align: left;
-
-        .text-1 {
-          font-family: "RedHatDisplay-Black";
-          font-size: 50px;
-          line-height: 1;
-          color: #212995;
-        }
-
-        .text-2 {
-          font-family: "Oswald-Regular";
-          font-size: 18px;
-          line-height: 1.5;
-          color: #212995;
-          margin-top: 30px;
-        }
-      }
-
-      .icon-aurora {
-        position: absolute;
-        width: 200px;
-        top: 100px;
-        right: 50px;
-        margin-left: -100px;
-      }
-
-      .icon-cq {
-        position: absolute;
-        width: 80px;
-        top: 60%;
-        left: 50%;
-        margin-left: -40px;
-        animation: spin 8s linear infinite;
-      }
-
-      @keyframes spin {
-        from {
-          transform: rotate(0deg);
-        }
-
-        to {
-          transform: rotate(360deg);
-        }
-      }
-    }
-  }
-
-  .slide-block {
-    position: relative;
-    background: #fff;
-
-    .fade-slide-enter-active,
-    .fade-slide-leave-active {
-      transition: opacity 0.2s ease;
-    }
-
-    .fade-slide-enter-from,
-    .fade-slide-leave-to {
-      opacity: 0;
-    }
-
-    .fade-slide-enter-to,
-    .fade-slide-leave-from {
-      opacity: 1;
-    }
-
-    .slide-block-text {
-      width: 100%;
-      text-align: center;
-      color: #212995;
-      padding: 50px 0;
-      overflow: visible;
-
-      .slide-block-text1 {
-        font-family: "RedHatDisplay-Medium";
-        font-size: 68px;
-        line-height: 1.5;
-
-        span {
-          font-family: "RedHatDisplay-Black";
-        }
-      }
-
-      .slide-block-text2 {
-        font-family: "Oswald-Regular";
-        font-size: 22px;
-        line-height: 1.2;
-      }
-
-      .slide-block-text3 {
-        position: absolute;
-        top: 300px;
-        left: 100px;
-        font-family: "RedHatDisplay-Black";
-        font-size: 16px;
-        line-height: 1.2;
-        width: 300px;
-        text-align: center;
-      }
-
-      .slide-block-text4 {
-        position: absolute;
-        top: 300px;
-        right: 100px;
-        font-family: "RedHatDisplay-Black";
-        font-size: 16px;
-        line-height: 1.2;
-        width: 300px;
-        text-align: center;
-      }
-
-      .slide-block-text5 {
-        position: absolute;
-        top: 450px;
-        left: 100px;
-        font-family: "RedHatDisplay-Black";
-        font-size: 16px;
-        line-height: 1.2;
-        width: 300px;
-        text-align: center;
-      }
-
-      .slide-block-text6 {
-        position: absolute;
-        top: 450px;
-        right: 100px;
-        font-family: "RedHatDisplay-Black";
-        font-size: 16px;
-        line-height: 1.2;
-        width: 300px;
-        text-align: center;
-      }
-    }
-
-    .slide-wrapper {
-      height: 402px;
-      width: 400px;
-      border-radius: 50%;
-      overflow: hidden;
-      margin: 0 auto;
-      overflow: hidden;
-      position: relative;
-
-      .img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        user-drag: none;
-        -webkit-user-drag: none;
-      }
-
-      .top-img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        overflow: hidden;
-
-        img {
-          width: 400px;
-        }
-      }
-
-      .divider {
-        position: absolute;
-        top: 0;
-        height: 100%;
-        width: 0;
-        /* 只作为定位线 */
-      }
-
-      .handle {
-        position: absolute;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        background: white;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-        cursor: col-resize;
-      }
-
-      .arrow {
-        font-size: 14px;
-        color: #444;
-        user-select: none;
-      }
-    }
-  }
-
-  .marquee {
-    background: #fff;
-    width: 100%;
-    overflow: hidden;
-    white-space: nowrap;
-    padding: 50px 0 0;
-
-    .marquee-content {
-      display: inline-block;
-      animation: marquee 35s linear infinite;
-
-      div {
-        font-family: "RedHatDisplay-Medium";
-        display: inline-block;
-        padding-right: 50px;
-        font-size: 120px;
-        color: #212995;
-
-        span {
-          font-family: "RedHatDisplay-Black";
-        }
-      }
-    }
-  }
-
-  @keyframes marquee {
-    0% {
-      transform: translateX(0);
-    }
-
-    100% {
-      transform: translateX(-50%);
-    }
-  }
-
-  .philosophy {
-    position: relative;
-    font-size: 0;
-    color: #fff;
-
-    background: #fff;
 
     img {
       width: 100%;
-
-      &:hover {
-        animation: scaleUp 1s ease-in-out;
-      }
     }
+  }
 
-    .phil-text1 {
-      position: absolute;
-      font-family: "RedHatDisplay-Regular";
-      font-size: 45px;
-      line-height: 1;
-      top: 40px;
-      left: 6%;
-    }
+  .products-block {
+    position: relative;
+    background-color: #efe8db;
 
-    .phil-text2 {
-      position: absolute;
-      font-family: "RedHatDisplay-Bold";
-      font-size: 60px;
-      line-height: 1;
-      top: 85px;
-      left: 6%;
-    }
+    .products {
+      position: relative;
+      width: 1200px;
+      margin: 0 auto;
+      height: 500px;
+      background-color: #efe8db;
 
-    .phil-items {
-      position: absolute;
-      font-size: 50px;
-      line-height: 1;
-      top: 195px;
-      left: 10%;
-      display: flex;
-      flex-wrap: wrap;
-      width: 520px;
-      justify-content: space-between;
-
-      .phil-item {
-        width: 230px;
+      .product-grid {
         display: flex;
         justify-content: space-between;
-        margin-bottom: 30px;
+        align-items: center;
+        width: 100%;
+        padding: 0 80px;
 
-        .phil-left {
-          width: 50px;
+        .product-card {
+          cursor: pointer;
+          width: 330px;
+          height: auto;
 
-          .img {
-            width: 100%;
-          }
-        }
+          img {
+            width: 310px;
+            margin: 0 auto 20px;
 
-        .phil-right {
-          width: 170px;
-
-          .phil-right-text1 {
-            font-family: "RedHatDisplay-Regular";
-            font-size: 38px;
-            line-height: 1;
-            text-align: left;
+            &:hover {
+              animation: hoverUp 0.3s ease-out forwards;
+            }
           }
 
-          .phil-right-text2 {
-            font-family: "Oswald-Regular";
-            font-size: 14px;
+          .tag1 {
+            font-family: "Oswald-SemiBold";
+            font-size: 12px;
             line-height: 1;
-            text-align: left;
-            margin-top: 10px;
+            text-align: center;
+            color: #000;
+            height: 12px;
+          }
+
+          .tag2 {
+            font-family: "Oswald-SemiBold";
+            font-size: 26px;
+            line-height: 1;
+            text-align: center;
+            color: #000;
+            margin: 0 auto;
+            height: 26px;
+          }
+
+          .tag3 {
+            font-family: "Oswald-SemiBold";
+            font-size: 16px;
+            line-height: 1;
+            text-align: center;
+            color: #938c34;
+            margin: 10px auto;
+          }
+
+          .btn {
+            font-family: "Oswald-SemiBold";
+            width: 155px;
+            height: 38px;
+            line-height: 38px;
+            text-align: center;
+            color: #fff;
+            background-color: #e60012;
+            margin: 20px auto 0;
           }
         }
       }
     }
   }
 
-  .cta {
-    background: #f25929;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 500px;
+  .pd-g-3 {
+    background-color: #efe8db;
+    padding-top: 15px;
 
-    .cta-left {
-      width: 70%;
-    }
+    .pd-g-3-g {
+      width: 1188px;
+      margin: 0 auto;
+      display: flex;
 
-    .cta-right {
-      position: relative;
-      width: 30%;
-      height: 100%;
+      .pd-g-3-item {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
 
-      img {
-        position: absolute;
-        top: 200px;
-        right: 12%;
-        width: 80px;
-      }
+        .pd-g-3-t {
+          height: 469px;
+        }
 
-      .cta-text1 {
-        position: absolute;
-        top: 280px;
-        right: 10%;
-        width: 200px;
-        font-family: "RedHatDisplay-Medium";
-        font-size: 40px;
-        line-height: 1;
-        text-align: right;
-        color: #212995;
+        .pd-g-3-b {
+          height: 469px;
+        }
 
-        span {
-          font-family: "RedHatDisplay-Black";
+        .text1 {
+          font-family: "Oswald-Regular";
+          font-size: 30px;
+          line-height: 1;
+          color: #1f160b;
+          text-align: center;
+          margin-top: 50px;
+        }
+
+        .text2 {
+          font-family: "Oswald-SemiBold";
+          font-size: 74px;
+          line-height: 1;
+          color: #938c34;
+          text-align: center;
+          margin-top: 20px;
+        }
+
+        .text3 {
+          font-family: "Oswald-SemiBold";
+          font-size: 23px;
+          line-height: 1;
+          color: #938c34;
+          width: 400px;
+          margin: 0 auto;
+          text-align: center;
+          margin-top: 50px;
         }
       }
     }
+  }
+
+  .pd-g-4 {
+    background-color: #938c34;
+
+    .pd-g-4-content {
+      position: relative;
+      width: 1200px;
+      margin: 0 auto;
+
+      .pd-g-4-img {
+        position: relative;
+        z-index: 100;
+        width: 1200px;
+        margin: 0 auto;
+      }
+
+      .pd-g-4-text1 {
+        position: absolute;
+        font-family: "Oswald-Regular";
+        font-size: 26px;
+        line-height: 1;
+        color: #1f160b;
+        text-align: center;
+        margin-top: 50px;
+        width: 100px;
+        left: 50%;
+        text-align: center;
+        margin-left: -50px;
+        top: 8px;
+      }
+
+      .pd-g-4-text2 {
+        z-index: 10;
+        position: absolute;
+        font-size: 82px;
+        line-height: 1;
+        color: #efe8db;
+        text-align: center;
+        margin-top: 50px;
+        width: 700px;
+        left: 50%;
+        text-align: center;
+        margin-left: -350px;
+        top: 25px;
+      }
+    }
+  }
+}
+
+@keyframes hoverUp {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.05);
   }
 }
 
@@ -735,7 +410,7 @@ onBeforeUnmount(() => {
 }
 
 @media screen and (min-width: 1600px) {
-  .landing-page {
+  .products-page {
     .slide-block {
       position: relative;
 
@@ -931,7 +606,7 @@ onBeforeUnmount(() => {
 
 // 媒体查询
 @media (min-width: 1600px) {
-  .landing-page {
+  .products-page {
     .topnav {
       .nav-inner {
         max-width: 1400px;
@@ -941,7 +616,7 @@ onBeforeUnmount(() => {
 }
 
 @media (min-width: 1920px) {
-  .landing-page {
+  .products-page {
     .topnav {
       .nav-inner {
         max-width: 1720px;
@@ -951,7 +626,7 @@ onBeforeUnmount(() => {
 }
 
 @media (min-width: 2560px) {
-  .landing-page {
+  .products-page {
     .topnav {
       .nav-inner {
         max-width: 1600px;
