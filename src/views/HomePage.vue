@@ -70,20 +70,20 @@
         <div class="products-text1">OUR <br>BESTSELLERS</div>
         <div class="products-text2">HELP YOUR CAT ACHIEVE <br>THE IDEAL BALANCE <br>IT NEEDS.</div>
         <div class="product-grid">
-          <div @click="goProductDetail(1)" class="product-card">
-            <img style="margin-left: -35px;" src="../assets/images/pd1.png" alt="">
+          <div @click="goProductDetail(3)" class="product-card">
+            <img src="../assets/imgs/pd3-4.png" alt="">
             <div class="tag1">COLD PRESSING CAT FOOD</div>
             <div class="tag2">DEEP SEA FISH</div>
             <div class="btn">EXPLORE</div>
           </div>
-          <div @click="goProductDetail(2)" class="product-card">
-            <img src="../assets/images/pd2.png" alt="">
+          <div @click="goProductDetail(1)" class="product-card">
+            <img src="../assets/imgs/pd1-4.png" alt="">
             <div class="tag1">HIGH MEATINESS CAT FOOD</div>
             <div class="tag2">BEEF FLAVOR</div>
             <div class="btn">EXPLORE</div>
           </div>
-          <div @click="goProductDetail(3)" class="product-card">
-            <img src="../assets/images/pd3.png" alt="">
+          <div @click="goProductDetail(2)" class="product-card">
+            <img src="../assets/imgs/pd2-4.png" alt="">
             <div class="tag1">FREEZE-DRIED MEAT CAT FOOD</div>
             <div class="tag2">DEEP SEA FISH</div>
             <div class="btn">EXPLORE</div>
@@ -413,7 +413,7 @@ onBeforeUnmount(() => {
 
       .product-grid {
         position: absolute;
-        top: 100px;
+        top: 60px;
         right: 20px;
         display: flex;
         justify-content: space-between;
@@ -426,9 +426,8 @@ onBeforeUnmount(() => {
           height: auto;
 
           img {
-            width: 100%;
-            max-width: 250px;
-            margin-left: -50px;
+            width: 166px;
+            margin: 0 auto 30px;
 
             &:hover {
               animation: hoverUp 0.3s ease-out forwards;

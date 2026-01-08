@@ -2,13 +2,16 @@
   <div class="landing-page">
     <!-- Header -->
     <HeaderPage />
-    <div class="fix-bg">
-      <img src="../assets/images/fix_bg_01.jpg" alt="">
-    </div>
     <!-- Hero -->
     <section class="hero">
-      <img src="../assets/images/pds_bg_02.jpg" alt="">
+      <img class="bg_line" src="../assets/imgs/products/products_line.png" alt="">
+      <div class="hero-content">
+        <img src="../assets/imgs/products/products_01.png" alt="">
+      </div>
     </section>
+    <div class="img">
+      <img src="../assets/imgs/products/products_03.png" alt="">
+    </div>
     <div style="background-color: #fff;">
       <div class="slide-block">
         <div class="slide-block-text">
@@ -199,35 +202,35 @@ onBeforeUnmount(() => {
   min-width: 1200px;
   background: transparent;
   overflow: hidden;
-
+  background: #000;
   img {
     user-drag: none;
     /* 禁止图片拖动 */
     -webkit-user-drag: none;
   }
 
-  .fix-bg {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    line-height: 0;
-    z-index: -1;
-
-    img {
-      width: 100%;
-    }
-  }
-
   .hero {
     position: relative;
     font-size: 0;
     color: #fff;
-    background: #fff;
-
-    img {
-      width: 100%;
+    margin-top: 132px;
+    background: #938c34;
+    overflow: hidden;
+    .bg_line {
+      position: absolute;
+      width: 1200px;
+      right: 0;
+      top: -450px;
+      z-index: 10;
+    }
+    .hero-content {
+      position: relative;
+      width: 1200px;
+      margin: 0 auto;
+      z-index: 100;
+      img {
+        width: 100%;
+      }
     }
   }
 
