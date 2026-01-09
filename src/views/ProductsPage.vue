@@ -83,6 +83,8 @@
         <div class="pd-g-4-text2">MEETS SCIENCE</div>
         <img class="pd-g-4-img" src="../assets/imgs/products/products_02.png" alt="">
       </div>
+      <div class="pd-g-4-bg">
+      </div>
     </div>
     <!-- Footer -->
     <FooterPage />
@@ -338,8 +340,9 @@ onBeforeUnmount(() => {
   }
 
   .pd-g-4 {
+    position: relative;
     background-color: #938c34;
-
+    padding-bottom: 50px;
     .pd-g-4-content {
       position: relative;
       width: 1200px;
@@ -381,6 +384,15 @@ onBeforeUnmount(() => {
         margin-left: -350px;
         top: 25px;
       }
+    }
+    .pd-g-4-bg {
+      position: absolute;
+      width: 100%;
+      height: 690px;
+      bottom: 0;
+      left: 0;
+      background: url("../assets/imgs/products/bg.jpg") no-repeat center center;
+      background-size: cover;
     }
   }
 }

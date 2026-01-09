@@ -5,7 +5,7 @@
     <!-- Hero -->
     <section class="hero">
       <div class="hero-bg">
-        <img src="../assets/images/story_bg_01.jpg" alt="">
+        <img src="../assets/imgs/why/why_01.jpg" alt="">
       </div>
       <div class="title1">
         OUR<br>
@@ -16,6 +16,9 @@
       </div>
       <div @click="goWhy" class="btn-leran-more">
         LEARN MORE
+      </div>
+      <div class="bg-fixed">
+        <img src="../assets/imgs/why/wave.png" alt="">
       </div>
     </section>
 
@@ -43,7 +46,7 @@
       <img style="width: 100%;" src="../assets/images/story_bg_10.jpg" alt="">
     </div>
     <div class="our-mission" ref="missionRef">
-      <div class="img-block" >
+      <div class="img-block">
         <div class="img-scroll" ref="imgBlockRef">
           <img src="../assets/images/mission_bg_01.jpg" alt="">
           <img src="../assets/images/mission_bg_02.jpg" alt="">
@@ -224,21 +227,32 @@ onBeforeUnmount(() => {
     position: relative;
     font-size: 0;
     color: #fff;
-
+    height: 520px;
     .hero-bg {
-      height: 310px;
+      height: 520px;
       overflow: hidden;
 
       img {
         width: 100%;
-        transform: translateY(-40px);
+        transform: translateY(0);
         animation: moveUp 10s ease-out 0.5s forwards;
+      }
+    }
+    .bg-fixed {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 60px;
+      img {
+        width: 100%;
+        min-height: 60px;
       }
     }
 
     @keyframes moveUp {
       to {
-        transform: translateY(-140px);
+        transform: translateY(-40px);
       }
     }
 

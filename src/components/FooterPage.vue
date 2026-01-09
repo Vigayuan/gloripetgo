@@ -48,13 +48,13 @@ const goAbout = () => {
 }
 const openWindow = (index) => {
   if (index == 1) {
-    window.open('https://www.facebook.com/profile.php?id=61577967892785', "_blank")
+    window.open('https://www.facebook.com/share/1GTfXNJgyP/?mibextid=wwXIfr', "_blank")
   }
   else if (index == 2) {
-    window.open('https://www.youtube.com/@GloriPetgo', "_blank")
+    window.open('https://youtube.com/@schrain-m7k?si=QJXMeFB-wNk63Hbp', "_blank")
   }
   else {
-    window.open('https://www.instagram.com/glori.petgo?igsh=ajc5bmZuNWJ2MWY4&utm_source=qr', "_blank")
+    window.open('https://www.instagram.com/schrainpetfoods?igsh=MnZzN3RxMjVyeTUw&utm_source=qr', "_blank")
   }
 }
 </script>

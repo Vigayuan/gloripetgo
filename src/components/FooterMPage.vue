@@ -57,9 +57,9 @@ const goAbout = () => {
 const openWindow = (index) => {
   const urls = [
     "",
-    "https://www.facebook.com/profile.php?id=61577967892785",
-    "https://www.youtube.com/@GloriPetgo",
-    "https://www.instagram.com/",
+    "https://www.facebook.com/share/1GTfXNJgyP/?mibextid=wwXIfr",
+    "https://youtube.com/@schrain-m7k?si=QJXMeFB-wNk63Hbp",
+    "https://www.instagram.com/schrainpetfoods?igsh=MnZzN3RxMjVyeTUw&utm_source=qr",
   ];
   window.open(urls[index], "_blank");
 };
