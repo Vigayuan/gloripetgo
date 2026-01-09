@@ -4,18 +4,9 @@
     <HeaderPage />
     <!-- Hero -->
     <section class="hero">
+      <div class="hero-top-black"></div>
       <div class="hero-bg">
         <img src="../assets/imgs/why/why_01.jpg" alt="">
-      </div>
-      <div class="title1">
-        OUR<br>
-        STORY
-      </div>
-      <div class="title2">
-        Ensure comprehensive nutrition and health protection for your pet with every delicious bite.
-      </div>
-      <div @click="goWhy" class="btn-leran-more">
-        LEARN MORE
       </div>
       <div class="bg-fixed">
         <img src="../assets/imgs/why/wave.png" alt="">
@@ -141,8 +132,6 @@
 import HeaderPage from "@/components/HeaderPage.vue";
 import FooterPage from "@/components/FooterPage.vue";
 import { ref, onMounted, onBeforeUnmount } from 'vue'
-import { useRouter } from "vue-router";
-const router = useRouter()
 const boxRef = ref(null)
 const missionRef = ref(null)
 const commitmentRef = ref(null)
@@ -150,9 +139,6 @@ const showBox = ref(false);
 const showMission = ref(false);
 const showCommitment = ref(false);
 const imgBlockRef = ref(null)
-const goWhy = () => {
-  router.push({ name: 'Healthy' });
-}
 let observers = []
 
 const handleScroll = () => {
@@ -228,14 +214,39 @@ onBeforeUnmount(() => {
     font-size: 0;
     color: #fff;
     height: 520px;
+    .hero-top-black {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100px;
+      background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 1) 0%,
+        rgba(0, 0, 0, 0.1) 80%,
+        rgba(0, 0, 0, 0) 100%
+      );
+      z-index: 2;
+    }
     .hero-bg {
       height: 520px;
       overflow: hidden;
 
       img {
         width: 100%;
-        transform: translateY(0);
-        animation: moveUp 10s ease-out 0.5s forwards;
+        animation: scaleUp 5s ease-out 0.5s forwards;
+      }
+    }
+    @media screen and (min-width: 1200px) {
+      height: 560px;
+      .hero-bg {
+        height: 560px;
+      }
+    }
+    @media screen and (min-width: 1440px) {
+      height: 620px;
+      .hero-bg {
+        height: 620px;
       }
     }
     .bg-fixed {
@@ -250,25 +261,10 @@ onBeforeUnmount(() => {
       }
     }
 
-    @keyframes moveUp {
+    @keyframes scaleUp {
       to {
-        transform: translateY(-40px);
+        transform: scale(1.05);
       }
-    }
-
-    .title1 {
-      position: absolute;
-      top: 45%;
-      left: 15%;
-      font-family: "RedHatDisplay-Black";
-      font-size: 60px;
-      line-height: 1;
-      text-align: left;
-      width: 70%;
-      /* 动画设置 */
-      opacity: 0;
-      transform: translateY(-100px);
-      animation: dropIn 1s ease-out forwards;
     }
   }
 
