@@ -23,4 +23,9 @@ body{
   text-align: center;
   color: #2c3e50;
 }
+img{
+  user-select: none;
+  -webkit-user-drag: none; /* Chrome / Safari */
+  user-drag: none;
+}
 </style>

@@ -21,7 +21,7 @@ const router = createRouter({
         // 移动端路由
         { path: '/m/home', name: 'mHome', component: () => import('@/views/HomeMPage.vue') },
         { path: '/m/healthy', name: 'mHealthy', component: () => import('@/views/HealthyMPage.vue') },
-        { path: '/m/ourstory', name: 'mOurstory', component: () => import('@/views/OurstoryMPage.vue') },
+        { path: '/m/whyus', name: 'mOurstory', component: () => import('@/views/OurstoryMPage.vue') },
         { path: '/m/support', name: 'mSupport', component: () => import('@/views/SupportMPage.vue') },
         { path: '/m/products', name: 'mProducts', component: () => import('@/views/ProductsMPage.vue') },
         { path: '/m/productDetail', name: 'mProductDetail', component: () => import('@/views/ProductMDetail.vue') },
@@ -31,7 +31,7 @@ const router = createRouter({
         { path: '/products', name: 'Products', component: () => import('@/views/ProductsPage.vue') },
         { path: '/productDetail', name: 'ProductDetail', component: () => import('@/views/ProductDetail.vue') },
         { path: '/support', name: 'Support', component: () => import('@/views/SupportPage.vue') },
-        { path: '/ourstory', name: 'Ourstory', component: () => import('@/views/OurstoryPage.vue') },
+        { path: '/whyus', name: 'Ourstory', component: () => import('@/views/OurstoryPage.vue') },
         { path: '/footer', name: 'Footer', component: () => import('@/components/FooterPage.vue') },
     ],
     scrollBehavior (to, from, savedPosition) {

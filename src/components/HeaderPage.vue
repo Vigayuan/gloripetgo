@@ -143,16 +143,7 @@ const onLeave = () => {
       justify-content: space-around;
       .active {
         position: relative;
-
-        &::after {
-          position: absolute;
-          content: "";
-          width: 100%;
-          height: 3px;
-          background: #fff;
-          bottom: 17px;
-          left: 0;
-        }
+        color: #e40012;
       }
 
       .product-block {
