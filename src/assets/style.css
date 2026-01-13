@@ -70,4 +70,22 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: 'Copper';
+  src: url('@/assets/fonts/Copperplate.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gantari';
+  src: url('@/assets/fonts/Gantari-VariableFont_wght.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Khalila';
+  src: url('@/assets/fonts/Khalila.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
 

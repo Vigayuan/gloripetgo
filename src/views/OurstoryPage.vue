@@ -439,7 +439,8 @@ onBeforeUnmount(() => {
       top: 40px;
       left: 150px;
       color: #1f160b;
-      font-family: "RedHatDisplay-Regular";
+      font-family: "Gantari";
+      font-weight: bold;
       font-size: 68px;
       line-height: 1;
       text-align: left;
@@ -459,7 +460,8 @@ onBeforeUnmount(() => {
       top: 100px;
       left: 300px;
       color: #1f150b;
-      font-family: "RedHatDisplay-Regular";
+      font-family: "Gantari";
+      font-weight: bold;
       font-size: 68px;
       line-height: 1;
       text-align: left;
@@ -474,7 +476,7 @@ onBeforeUnmount(() => {
 
       span {
         display: inline-block;
-        font-family: "RedHatDisplay-black";
+        font-family: "Khalila";
         color: #938c34;
       }
     }
@@ -574,11 +576,11 @@ onBeforeUnmount(() => {
 
       .left {
         width: 380px;
-        padding-top: 50px;
+        padding-top: 80px;
         padding-right: 20px;
         .text-1{
-          font-family: "Oswald-Regular";
-          font-size: 64px;
+          font-family: "Copper";
+          font-size: 50px;
           line-height: 1;
           text-align: left;
           color: #1f160b;
@@ -589,7 +591,7 @@ onBeforeUnmount(() => {
           line-height: 1.2;
           text-align: left;
           color: #938c34;
-          margin-top: 20px;
+          margin-top: 40px;
         }
       }
 
@@ -662,7 +664,7 @@ onBeforeUnmount(() => {
         color: #231f20;
 
         .text1 {
-          font-family: "Oswald-SemiBlod";
+          font-family: "Copper";
           font-size: 20px;
           line-height: 1.2;
           text-align: center;
@@ -671,7 +673,7 @@ onBeforeUnmount(() => {
         }
 
         .text2 {
-          font-family: "RedHatDisplay-Regular";
+          font-family: "Oswald-Regular";
           font-size: 20px;
           line-height: 1.2;
           text-align: center;

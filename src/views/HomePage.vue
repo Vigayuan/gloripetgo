@@ -328,7 +328,7 @@ onBeforeUnmount(() => {
         left: 230px;
       }
 
-      .unleash-text3 {
+      .unleash-text3 { 
         position: absolute;
         top: 90px;
         left: 780px;
@@ -353,7 +353,7 @@ onBeforeUnmount(() => {
       }
 
       .title {
-        font-family: "RedHatDisplay-Bold";
+        font-family: "Copper";
         font-size: 30px;
         line-height: 1.2;
         text-align: left;
@@ -530,7 +530,7 @@ onBeforeUnmount(() => {
 
       .landing-g-6-title1 {
         font-size: 27px;
-        font-family: "Oswald-Regular";
+        font-family: "Copper";
         color: #000;
         width: 800px;
         margin: 0 auto;
