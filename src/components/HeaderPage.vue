@@ -11,7 +11,7 @@
           <!-- <img class="products-arrow" :class="{ rotate: showArrowBlock }" src="../assets/images/products-arrow.svg" alt="" /> -->
         </div>
         <div @click="goWhy" class="nav-text" :class="{ active: activeName === 'Healthy' }">WHY SCHRAIN</div>
-        <div @click="goStory" class="nav-text" :class="{ active: activeName === 'Story' }">LEARN</div>
+        <div @click="goStory" class="nav-text" :class="{ active: activeName === 'whyus' }">LEARN</div>
         <div @click="goSupport" class="nav-text" :class="{ active: activeName === 'Support' }">CONTACT</div>
       </nav>
       <div class="icons-list">

@@ -17,7 +17,7 @@
     <section class="unleash " ref="boxRef">
       <div class="unleash-content">
         <img class="story_bg" src="../assets/imgs/why/why_02.jpg" alt="">
-        <div class="unleash-text1" :class="{ showBox }">
+        <!-- <div class="unleash-text1" :class="{ showBox }">
           IT ALL BEGAN
         </div>
         <div class="unleash-text2" :class="{ showBox }">
@@ -25,6 +25,9 @@
         </div>
         <div class="unleash-text3" :class="{ showBox }">
           THE <span>Arctic.</span>
+        </div> -->
+        <div class="unleash-text3" :class="{ showBox }">
+          <img src="../assets/imgs/why/itall.svg" alt="">
         </div>
         <div class="unleash-text4" :class="{ showBox }">
           In 2015, Dr. Erin Macdonald witnessed an Arctic fox instinctively select only the freshest prey.
@@ -36,7 +39,6 @@
           We carefully source high-quality, nutrient-dense ingredients, rich in essential vitamins and minerals, to
           craft a complete and balanced kibble designed for your cat’s health and enjoyment. Because true nourishment
           goes beyond survival—it supports a life well lived.
-
 
         </div>
       </div>
@@ -87,9 +89,7 @@
             vitality—leading to cleaner bowls and happier, healthier cats</div>
         </div>
         <div class="right">
-          <Swiper :modules="modules" :loop="true" :slides-per-view="1" :pagination="{ clickable: true }"
-            :autoplay="{ delay: 4000, disableOnInteraction: false }"
-            :navigation="{ nextEl: '.custom-pd-next', prevEl: '.custom-pd-prev' }" class="pd-swiper-box">
+          <Swiper :modules="modules" :loop="true" :slides-per-view="1" :pagination="{ clickable: true }" :autoplay="{ delay: 4000, disableOnInteraction: false }" :navigation="{ nextEl: '.custom-pd-next', prevEl: '.custom-pd-prev' }" class="pd-swiper-box">
             <SwiperSlide>
               <div class="pd-slide-item">
                 <img src="../assets/imgs/why/swp-1.png" alt="">
@@ -115,7 +115,7 @@
             <img src="../assets/imgs/why/arrow-l.png" alt="">
           </div>
           <div class="custom-pd-next">
-            <img src="../assets/imgs/why/arrow-r.png"  alt="">
+            <img src="../assets/imgs/why/arrow-r.png" alt="">
           </div>
         </div>
       </div>
@@ -323,10 +323,12 @@ onBeforeUnmount(() => {
       left: 0;
       width: 100%;
       height: 100px;
-      background: linear-gradient(180deg,
-          rgba(0, 0, 0, 1) 0%,
-          rgba(0, 0, 0, 0.1) 80%,
-          rgba(0, 0, 0, 0) 100%);
+      background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 1) 0%,
+        rgba(0, 0, 0, 0.1) 80%,
+        rgba(0, 0, 0, 0) 100%
+      );
       z-index: 2;
     }
 
@@ -456,15 +458,10 @@ onBeforeUnmount(() => {
 
     .unleash-text3 {
       position: absolute;
-      width: 400px;
-      top: 100px;
-      left: 300px;
+      width: 500px;
+      top: 20px;
+      left: 190px;
       color: #1f150b;
-      font-family: "Gantari";
-      font-weight: bold;
-      font-size: 68px;
-      line-height: 1;
-      text-align: left;
       opacity: 0;
       transform: translateY(1000);
       transition: all 0.8s ease-out;
@@ -578,14 +575,14 @@ onBeforeUnmount(() => {
         width: 380px;
         padding-top: 80px;
         padding-right: 20px;
-        .text-1{
+        .text-1 {
           font-family: "Copper";
           font-size: 50px;
           line-height: 1;
           text-align: left;
           color: #1f160b;
         }
-        .text-2{
+        .text-2 {
           font-family: "RedHatDisplay-Regular";
           font-size: 16px;
           line-height: 1.2;
@@ -601,16 +598,15 @@ onBeforeUnmount(() => {
         padding: 124px 0 0 31px;
         .pd-swiper-box {
           width: 693px;
-    
+
           .pd-slide-item {
             width: 100%;
             position: relative;
             text-align: right;
             color: #212995;
-    
           }
         }
-    
+
         .custom-pd-prev {
           position: absolute;
           top: 207px;
@@ -619,12 +615,12 @@ onBeforeUnmount(() => {
           width: 45px;
           height: 45px;
           z-index: 100;
-    
+
           img {
             width: 100%;
           }
         }
-    
+
         .custom-pd-next {
           position: absolute;
           top: 207px;
@@ -633,14 +629,13 @@ onBeforeUnmount(() => {
           width: 45px;
           height: 45px;
           z-index: 100;
-    
+
           img {
             width: 100%;
           }
         }
       }
     }
-
   }
 
   .his-2005 {

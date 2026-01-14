@@ -24,24 +24,25 @@
 
       <div class="right">
         <div class="title-block">
-          <div class="subtitle">IMMUNE SUPPORT</div>
-          <div class="title">{{ pdInfo.title1 }}<br>{{ pdInfo.title2 }}</div>
+          <div class="subtitle">Freeze-Dried and Kibble Mix</div>
+          <div class="title">{{ pdInfo.title1 }}</div>
+          <div class="title1">{{ pdInfo.title2 }}</div>
         </div>
 
-        <div v-show="!showAllDesc" class="desc-2">
+        <!-- <div v-show="!showAllDesc" class="desc-2">
+          {{ pdInfo.desc }}
+        </div> -->
+        <div class="desc">
           {{ pdInfo.desc }}
         </div>
-        <div v-show="showAllDesc" class="desc">
-          {{ pdInfo.desc }}
-        </div>
-        <div v-show="!showAllDesc" @click="toggleDesc" class="read-more">
+        <!-- <div v-show="!showAllDesc" @click="toggleDesc" class="read-more">
           READ MORE
         </div>
         <div class="daily-meal">
           <div class="text">DAILY MEAL</div>
           <img src="@/assets/pdimg/icon-soup.png" alt="">
-        </div>
-        <div class="tags">
+        </div> -->
+        <!-- <div class="tags">
           <div class="tag">
             <img :src="pdInfo.tagList[0]" alt="">
           </div>
@@ -51,15 +52,21 @@
           <div class="tag">
             <img :src="pdInfo.tagList[2]" alt="">
           </div>
-        </div>
+        </div> -->
 
         <div class="info">
-          <div class="info-detail"><span>{{ pdInfo.pdDetail[0].title }}</span><br>{{ pdInfo.pdDetail[0].desc
-                    }}</div>
-          <div class="info-detail"><span>{{ pdInfo.pdDetail[1].title }}</span><br>{{ pdInfo.pdDetail[1].desc
-                    }}</div>
-          <div class="info-detail"><span>{{ pdInfo.pdDetail[2].title }}</span><br>{{ pdInfo.pdDetail[2].desc
-                    }}</div>
+          <div class="info-detail">
+            <div class="title">{{ pdInfo.pdDetail[0].title }}</div>
+            <div class="content">{{ pdInfo.pdDetail[0].desc}}</div>
+          </div>
+          <div class="info-detail">
+            <div class="title">{{ pdInfo.pdDetail[0].title }}</div>
+            <div class="content">{{ pdInfo.pdDetail[0].desc}}</div>
+          </div>
+          <div class="info-detail">
+            <div class="title">{{ pdInfo.pdDetail[0].title }}</div>
+            <div class="content">{{ pdInfo.pdDetail[0].desc}}</div>
+          </div>
         </div>
 
         <ul class="features">
@@ -199,19 +206,21 @@ const route = useRoute();
 const showPD = (index) => {
   showPdIndex.value = index
 }
-const showAllDesc = ref(false)
-const toggleDesc = () => {
-  showAllDesc.value = !showAllDesc.value
-}
+// const showAllDesc = ref(false)
+// const toggleDesc = () => {
+//   showAllDesc.value = !showAllDesc.value
+// }
 const pdTypeIndex = ref(route.query.id)
 const pdInfo = reactive({
   pdImgList: [
-    new URL("@/assets/pdimg/pd-cat-1.jpg", import.meta.url).href,
-    new URL("@/assets/pdimg/pd-cat-2.jpg", import.meta.url).href,
+    new URL("@/assets/imgs/pd1-1.jpg", import.meta.url).href,
+    new URL("@/assets/imgs/pd1-2.jpg", import.meta.url).href,
+    new URL("@/assets/imgs/pd1-3.jpg", import.meta.url).href,
   ],
-  title1: "Free-Range Chicken Recipe",
-  title2: "Complete Cat Food",
-  desc: "Uses low-magnesium and low-calcium ingredients as primary components, incorporating natural acidifiers to maintain a slightly acidic urine environment in cats, reducing urinary stone risk. Dandelion flavonoids boost urine flow and hydration.Cranberries add PACs to curb bacterial adhesion, aiding daily urinary health.",
+  title1: "Freeze-Dried MEAT CAT FOOD",
+
+  title2: "Deep Sea Fish Flavor",
+  desc: "Cats olfactory sensitivity is more than 200,000 times that of humans. Picky cats may be eager for this freeze-dried recipe created to appeal to their senses. Salmon meat and egg yolk are individually freeze-dried at -40C, then combined into the original ingredients. This keeps the delicious taste and nutrients locked into every bites, and leaves the cats with full vitality all day long!",
   analysisList: ['≥ 40.0%', '≥ 15.0%', '≤ 5.0% ', '≤ 10.0%', '≥ 1.0%', '≥ 0.8%', '≥ 0.2%', '≥ 0.85%', '≥ 2.6%'],
   analysisListName: ['Crude protein', 'Crude fat', 'Crude fiber', 'Moisture', 'Calcium', 'Phosphorus', 'Taurine', 'Omega-3*', 'Omega-6*'],
   tagList: [
@@ -235,15 +244,15 @@ const pdInfo = reactive({
   ],
   pdDetail: [
     {
-      title: "Food Form",
-      desc: "Dry Food"
+      title: "Netweight:",
+      desc: "5.5LB/2.5kg"
     },
     {
-      title: "Net Wt.",
-      desc: "3 lb (1.36 kg)"
+      title: "Food form:",
+      desc: "Raw Mix"
     },
     {
-      title: "Age Range",
+      title: "Age range:",
       desc: "All life stages"
     }
   ],
@@ -341,10 +350,13 @@ watch(
 </script>
 
 <style scoped lang="scss">
+img {
+  display: none;
+}
 .product-page {
   font-family: "Segoe UI", sans-serif;
   color: #333;
-  background: #fff;
+  background: #1f160b;
   min-width: 1200px;
 
   .product-detail {
@@ -353,7 +365,8 @@ watch(
     display: flex;
     gap: 40px;
     padding: 60px 50px;
-    background: #fff;
+    background: #efe8db;
+    border-top: 130px solid #1f160b;
     margin: 0 auto;
 
     .left {
@@ -417,18 +430,27 @@ watch(
       text-align: left;
 
       .subtitle {
-        font-family: "RedHatDisplay-Regular";
-        font-size: 22px;
+        font-family: "Oswald-Medium";
+        font-size: 18px;
         line-height: 1;
         margin: 10px 0;
-        color: #676767;
+        color: #e40012;
       }
 
       .title {
-        font-family: "RedHatDisplay-Blod";
-        font-size: 30px;
+        font-family: "Oswald-Medium";
+        font-size: 60px;
         font-weight: 700;
-        color: #212995;
+        color: #1f160b;
+        margin-bottom: 12px;
+        line-height: 1;
+        width: 400px;
+      }
+      .title1 {
+        font-family: "Oswald-Medium";
+        font-size: 36px;
+        font-weight: 700;
+        color: #1f160b;
         margin-bottom: 12px;
         line-height: 1;
       }
@@ -505,25 +527,32 @@ watch(
         display: flex;
         color: #212995;
         padding: 20px;
-        border: 2px solid #212995;
         border-left: none;
         border-right: none;
         justify-content: space-between;
         text-align: center;
+        flex-wrap: wrap;
 
         .info-detail {
-          flex: 1;
-          border-right: 2px solid #212995;
-          font-family: "RedHatDisplay-Medium";
-          font-size: 20px;
-          line-height: 1.5;
-
-          &:last-child {
-            border-right: none;
+          width: 200px;
+          margin-bottom: 15px;
+          .title {
+            font-family: "Oswald-Regular";
+            font-size: 24px;
+            line-height: 1.5;
+            color: #1f160b;
+            text-align: left;
+            width: 200px;
           }
-
-          span {
+          .content {
             font-family: "Oswald-Medium";
+            width: 200px;
+            height: 60px;
+            font-size: 28px;
+            line-height: 60px;
+            color: #efe8db;
+            text-align: center;
+            background: #1f160b;
           }
         }
       }
