@@ -10,8 +10,8 @@
           <div @click="goPd" class="text nav-text" :class="{ active: activeName === 'Products' }">PRODUCTS</div>
           <!-- <img class="products-arrow" :class="{ rotate: showArrowBlock }" src="../assets/images/products-arrow.svg" alt="" /> -->
         </div>
-        <div @click="goWhy" class="nav-text" :class="{ active: activeName === 'Healthy' }">WHY SCHRAIN</div>
-        <div @click="goStory" class="nav-text" :class="{ active: activeName === 'whyus' }">LEARN</div>
+        <div @click="goWhy" class="nav-text" :class="{ active: activeName === 'whyus' }">WHY SCHRAIN</div>
+        <div @click="goStory" class="nav-text" :class="{ active: activeName === 'story' }">LEARN</div>
         <div @click="goSupport" class="nav-text" :class="{ active: activeName === 'Support' }">CONTACT</div>
       </nav>
       <div class="icons-list">
@@ -26,13 +26,12 @@
         </div>
       </div>
     </div>
-    <div class="arrow-down-block" :class="{ show: showArrowBlock }" @mouseenter="onEnter" @mouseleave="onLeave">
+    <!-- <div class="arrow-down-block" :class="{ show: showArrowBlock }" @mouseenter="onEnter" @mouseleave="onLeave">
       <div class="left">
         <div class="text-1">Explore our</div>
         <div class="text-2">Excellent<br>
           Furry<br>
           Products</div>
-        <!-- <div @click="goPd" class="text-3">Learn More</div> -->
       </div>
       <div class="right">
         <div class="product">
@@ -50,7 +49,7 @@
         </div>
       </div>
     </div>
-    <div class="mask" :class="{ show: showArrowBlock }"></div>
+    <div class="mask" :class="{ show: showArrowBlock }"></div> -->
   </header>
 </template>
 <script setup>
@@ -70,10 +69,10 @@ watch(
   },
   { immediate: true }
 );
-const goProductDetail = (id) => {
-  onLeave()
-  router.push({ name: 'ProductDetail', query: { id } });
-}
+// const goProductDetail = (id) => {
+//   onLeave()
+//   router.push({ name: 'ProductDetail', query: { id } });
+// }
 const goPd = () => {
   router.push({ name: 'Products' })
 }
@@ -81,11 +80,11 @@ const goHome = () => {
   router.push({ name: 'Home' });
 }
 const goWhy = () => {
-  router.push({ name: 'Healthy' });
+  router.push({ name: 'whyus' });
 }
-const goStory = () => {
-  router.push({ name: 'Ourstory' });
-}
+// const goStory = () => {
+//   router.push({ name: 'Ourstory' });
+// }
 const goSupport = () => {
   router.push({ name: 'Support' });
 }

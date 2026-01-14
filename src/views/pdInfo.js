@@ -1,260 +1,161 @@
- const catPageInfo1 = {
-    pdImgList: [
-        new URL("@/assets/pdimg/pd-cat-1.jpg", import.meta.url).href,
-        new URL("@/assets/pdimg/pd-cat-2.jpg", import.meta.url).href,
-        new URL("@/assets/pdimg/pd-cat-3.jpg", import.meta.url).href,
-    ],
-    title1: "Free-Range Chicken Recipe",
-    title2: "Complete Cat Food",
-    desc: "Uses low-magnesium and low-calcium ingredients as primary components, incorporating natural acidifiers to maintain a slightly acidic urine environment in cats, reducing urinary stone risk. Dandelion flavonoids boost urine flow and hydration.Cranberries add PACs to curb bacterial adhesion, aiding daily urinary health.",
-    tagList: [
-        new URL("@/assets/pdimg/icon-urinary.png", import.meta.url).href,
-        new URL("@/assets/pdimg/icon-immune.png", import.meta.url).href,
-        new URL("@/assets/pdimg/icon-micro.png", import.meta.url).href,
-    ],
-    features: [
-        {
-            url: new URL("@/assets/pdimg/pd-tag1.png", import.meta.url).href,
-            desc: "Carefully selected antibiotic-free poultry and pollution-free herbal ingredients"
-        },
-        {
-            url: new URL("@/assets/pdimg/pd-tag2.png", import.meta.url).href,
-            desc: "No artificial preservatives, chemical flavor enhancers, or coloring agents. "
-        },
-        {
-            url: new URL("@/assets/pdimg/pd-tag3.png", import.meta.url).href,
-            desc: "No corn, wheat, oats, or other cereal ingredients are added."
-        }
-    ],
-    pdDetail: [
-        {
-            title: "Food Form",
-            desc: "Dry Food"
-        },
-        {
-            title: "Net Wt.",
-            desc: "3 lb (1.36 kg)"
-        },
-        {
-            title: "Age Range",
-            desc: "All life stages"
-        }
-    ],
-    Ingredients: [
-        {
-            text1: 'Attrictive daily meal = ',
-            text2: '85%',
-            text3: 'raw meat based on',
-        },
-        {
-            text1: 'Fresh free-range',
-            text2: 'chicken',
-            text3: '36%',
-        },
-        {
-            text1: 'Fresh turkey',
-            text2: '28%',
-        },
-        {
-            text1: 'Fresh boneless',
-            text2: 'duck',
-            text3: '18%',
-        },
-        {
-            text1: 'Fresh chicken liver',
-            text2: '3%',
-        },
-        {
-            text1: 'Fresh free range chicken (36%), fresh turkey (28%), fresh boneless duck (18%), fresh chicken liver (3%), potato flour, dried sweet potato, chicken fat, deep sea fish oil, egg yolk powder, pumpkin, broccoli, carrot, papaya, dried cranberry (1.5%), dandelion granules (1%), alfalfa meal, chicory root powder, yucca powder, ice field moss extract (0.8%), natural lactic acid, fructooligosaccharides, chondroitin sulfate, lecithin, L-carnitine, sodium chloride, choline chloride, taurine, vitamin E, L-ascorbate-2-phosphate, niacin, vitamin A, thiamine mononitrate, D-calcium pantothenate, riboflavin, pyridoxine hydrochloride, cyanocobalamin, folic acid, vitamin D3, D-biotin, iron proteinate, copper proteinate, manganese proteinate, zinc proteinate, calcium iodate, sodium selenite, potassium chloride, Bacillus subtilis, rosemary extract.',
-        },
-    ],
-    GuidImg: new URL("@/assets/pdimg/pd-tab-bg.jpg", import.meta.url).href,
-    analysisList:['≥ 40.0%','≥ 15.0%','≤ 5.0% ','≤ 10.0%','≥ 1.0%','≥ 0.8%','≥ 0.2%','≥ 0.85%','≥ 2.6%'],
-    analysisListName:['Crude protein','Crude fat','Crude fiber','Moisture','Calcium','Phosphorus','Taurine','Omega-3*','Omega-6*'],
-    catBgList: [
-        new URL("@/assets/pdimg/scroll_cat_bg_01.jpg", import.meta.url).href,
-        new URL("@/assets/pdimg/scroll_cat_bg_02.jpg", import.meta.url).href,
-        new URL("@/assets/pdimg/scroll_cat_bg_03.jpg", import.meta.url).href,
-    ],
-    catDescList: [
-        new URL("@/assets/pdimg/pd-cat-1-desc_07.png", import.meta.url).href,
-        new URL("@/assets/pdimg/pd-cat-1-desc_09.png", import.meta.url).href,
-        new URL("@/assets/pdimg/pd-cat-1-desc_16.png", import.meta.url).href,
-        new URL("@/assets/pdimg/pd-cat-1-desc_25.png", import.meta.url).href,
-        new URL("@/assets/pdimg/pd-cat-1-desc_27.png", import.meta.url).href,
-    ]
-}
-const catPageInfo2 = {
-    pdImgList: [
-        new URL("@/assets/pdimg/pd-cat2-1.jpg", import.meta.url).href,
-        new URL("@/assets/pdimg/pd-cat2-2.jpg", import.meta.url).href,
-        new URL("@/assets/pdimg/pd-cat2-3.jpg", import.meta.url).href,
-    ],
-    title1: "Arctic Char Recipe Complete",
-    title2: "Cat Food",
-    desc: "This formula combines fish-derived omega fatty acids with zinc, vitamins A & E to strengthen skin barrier and reduce seasonal shedding. Premium proteins fuel keratin synthesis, while lecithin and biotin activate follicles for a glossy, resilient coat.",
-    tagList: [
-        new URL("@/assets/pdimg/icon-skin.png", import.meta.url).href,
-        new URL("@/assets/pdimg/icon-immune.png", import.meta.url).href,
-        new URL("@/assets/pdimg/icon-micro.png", import.meta.url).href,
-    ],
-    features: [
-        {
-            url: new URL("@/assets/pdimg/pd-tag4.png", import.meta.url).href,
-            desc: "Carefully selected antibiotic-free poultry and pollution-free herbal ingredients"
-        },
-        {
-            url: new URL("@/assets/pdimg/pd-tag2.png", import.meta.url).href,
-            desc: "No artificial preservatives, chemical flavor enhancers, or coloring agents. "
-        },
-        {
-            url: new URL("@/assets/pdimg/pd-tag3.png", import.meta.url).href,
-            desc: "No corn, wheat, oats, or other cereal ingredients are added."
-        }
-    ],
-    pdDetail: [
-        {
-            title: "Food Form",
-            desc: "Dry Food"
-        },
-        {
-            title: "Net Wt.",
-            desc: "3 lb (1.36 kg)"
-        },
-        {
-            title: "Age Range",
-            desc: "All life stages"
-        }
-    ],
-    Ingredients: [
-        {
-            text1: 'Attrictive daily meal = ',
-            text2: '82%',
-            text3: 'raw meat based on',
-        },
-        {
-            text1: 'Arctic char',
-            text2: '',
-            text3: '32%',
-        },
-        {
-            text1: 'Cod',
-            text2: '18%',
-        },
-        {
-            text1: 'Fresh turkey',
-            text2: '',
-            text3: '16%',
-        },
-        {
-            text1: 'Fresh turkey',
-            text2: '8%',
-        },
-        {
-            text1: 'Arctic char (32%), cod (18%), fresh turkey (16%), salmon (8%), herring (5%), fresh chicken liver (3%), potato flour, dried sweet potatoes, chicken fat, deep-sea fish oil, egg yolk powder, pumpkin, broccoli, carrot, papaya, dried cranberry, dandelion granules, alfalfa powder, chicory root powder, yucca powder, ice field moss extract (0.8%), fructooligosaccharides, chondroitin sulfate, lecithin (0.3%), sodium chloride, choline chloride, taurine, vitamin E, L-ascorbate-2-phosphate, niacin, vitamin A, thiamine mononitrate, D-calcium pantothenate, riboflavin, pyridoxine hydrochloride, cyanocobalamin, folic acid, vitamin Ds, D-biotin, iron proteinate, copper proteinate, manganese proteinate, zine proteinate, calcium iodate, sodium selenite, potassium chloride, Bacillus subtilis, rosemary extract.',
-        },
-    ],
-    GuidImg: new URL("@/assets/pdimg/pd-tab-cat2-bg.jpg", import.meta.url).href,
-    analysisList:['≥ 40.0%','≥ 16.0%','≤ 5.0% ','≤ 10.0%','≥ 1.0%','≥ 0.8%','≥ 0.2%','≥ 0.85%','≥ 2.6%'],
-    analysisListName:['Crude protein','Crude fat','Crude fiber','Moisture','Calcium','Phosphorus','Taurine','Omega-3*','Omega-6*'],
-    catBgList: [
-        new URL("@/assets/pdimg/scroll_cat_bg_01.jpg", import.meta.url).href,
-        new URL("@/assets/pdimg/scroll_cat_bg_02.jpg", import.meta.url).href,
-        new URL("@/assets/pdimg/scroll_cat_bg_03.jpg", import.meta.url).href,
-    ],
-    catDescList: [
-        new URL("@/assets/pdimg/pd-cat-2-desc_07.png", import.meta.url).href,
-        new URL("@/assets/pdimg/pd-cat-2-desc_09.png", import.meta.url).href,
-        new URL("@/assets/pdimg/pd-cat-2-desc_16.png", import.meta.url).href,
-        new URL("@/assets/pdimg/pd-cat-2-desc_25.png", import.meta.url).href,
-        new URL("@/assets/pdimg/pd-cat-2-desc_27.png", import.meta.url).href,
-    ]
-}
-const dogPageInfo = {
-    pdImgList: [
-        new URL("@/assets/pdimg/pd-dog-1.jpg", import.meta.url).href,
-        new URL("@/assets/pdimg/pd-dog-2.jpg", import.meta.url).href,
-        new URL("@/assets/pdimg/pd-dog-3.jpg", import.meta.url).href,
-    ],
-    title1: "Ice Lake Free-Range Duck Recipe ",
-    title2: "Complete Dog Food",
-    desc: "Enriched with glucosamine to enhance bone and cartilage metabolism, paired with MSM and chondroitin to promote cartilage repair, improve ligament elasticity, and boost joint fluid production, reducing discomfort from exercise. Features an optimal calcium-phosphorus ratio and vitamin D to strengthen bone density. Comprehensive care for your dog’s joint health.",
-    tagList: [
-        new URL("@/assets/pdimg/icon-urinary.png", import.meta.url).href,
-        new URL("@/assets/pdimg/icon-immune.png", import.meta.url).href,
-        new URL("@/assets/pdimg/icon-micro.png", import.meta.url).href,
-    ],
-    features: [
-        {
-            url: new URL("@/assets/pdimg/pd-tag1.png", import.meta.url).href,
-            desc: "Carefully selected antibiotic-free poultry and pollution-free herbal ingredients"
-        },
-        {
-            url: new URL("@/assets/pdimg/pd-tag2.png", import.meta.url).href,
-            desc: "No artificial preservatives, chemical flavor enhancers, or coloring agents. "
-        },
-        {
-            url: new URL("@/assets/pdimg/pd-tag3.png", import.meta.url).href,
-            desc: "No corn, wheat, oats, or other cereal ingredients are added."
-        }
-    ],
-    pdDetail: [
-        {
-            title: "Food Form",
-            desc: "Dry Food"
-        },
-        {
-            title: "Net Wt.",
-            desc: "3 lb (1.36 kg)"
-        },
-        {
-            title: "Age Range",
-            desc: "All life stages"
-        }
-    ],
-    Ingredients: [
-        {
-            text1: 'Attrictive daily meal = ',
-            text2: '70%',
-            text3: 'raw meat based on',
-        },
-        {
-            text1: 'Frostbound lake free-',
-            text2: 'range duck meat',
-            text3: '36%',
-        },
-        {
-            text1: 'Fresh chicken',
-            text2: '18%',
-        },
-        {
-            text1: 'Fresh turkey',
-            text2: '',
-            text3: '13%',
-        },
-        {
-            text1: 'Fresh chicken liver',
-            text2: '3%',
-        },
-        {
-            text1: 'Ice lake free-range duck (36%), fresh chicken (18%), fresh turkey (13%), fresh chicken liver (3%), dried sweet potatoes, cassava flour, chicken fat, deep-sea fish oil, egg yolk powder, pumpkin, broccoli, carrot, papaya, dried cranberries, dandelion granules, alfalfa powder, chicory root powder, yucca powder, ice field moss extract (0.8%), fructooligosaccharides, glucosamine, MSM (methyl sulfonyl methane), chondroitin sulfate, lecithin, Lcarnitine, sodium chloride, choline chloride, vitamin E, Lascorbate-2-phosphate, niacin, vitamin A, thiamine nitrate, Dcalcium pantothenate, riboflavin, pyridoxine hydrochloride, cyanocobalamin, folic acid, vitamin D3, D-biotin, iron proteinate, copper proteinate, manganese proteinate, zinc proteinate, calcium iodate, sodium selenite, potassium chloride, bacillus subtilis, rosemary extract.',
-        },
-    ],
-    GuidImg: new URL("@/assets/pdimg/pd-tab-dog-bg.jpg", import.meta.url).href,
-    analysisList:['≥ 30.0%','≥ 14.0%','≤ 6.0%','≤ 10.0%','≥ 1.2% ','≥ 1.0%','≥ 1.6%','≥ 0.7%','≥ 2.3%','≥600mg/kg','≥600mg/kg','≥300mg/kg','≥600 IU/kg'],
-    analysisListName:['Crude protein','Crude fat','Crude fiber','Moisture','Calcium','Phosphorus','Lysine','Omega-3*','Omega-6*','Glucosamine*','MSM(methy | sulfony | methane)*','Chondroitin sulfate*','Vitamin D'],
-    catBgList: [
-        new URL("@/assets/pdimg/scroll_dog_bg_01.jpg", import.meta.url).href,
-        new URL("@/assets/pdimg/scroll_dog_bg_02.jpg", import.meta.url).href,
-        new URL("@/assets/pdimg/scroll_dog_bg_03.jpg", import.meta.url).href,
-    ],
-    catDescList: [
-        new URL("@/assets/pdimg/pd-dog-1-desc_07.png", import.meta.url).href,
-        new URL("@/assets/pdimg/pd-dog-1-desc_09.png", import.meta.url).href,
-        new URL("@/assets/pdimg/pd-dog-1-desc_16.png", import.meta.url).href,
-        new URL("@/assets/pdimg/pd-dog-1-desc_25.png", import.meta.url).href,
-        new URL("@/assets/pdimg/pd-dog-1-desc_27.png", import.meta.url).href,
-    ]
+const pdInfo1 = {
+  pdImgList: [
+    new URL("@/assets/imgs/pd1-1.jpg", import.meta.url).href,
+    new URL("@/assets/imgs/pd1-2.jpg", import.meta.url).href,
+    new URL("@/assets/imgs/pd1-3.jpg", import.meta.url).href,
+  ],
+  subtitle: "KIBBLE",
+  title1: "HIGH MEATINESS CAT FOOD",
+  title2: "BEEF FLAVOR",
+  desc1: "Crafted for cats who thrive on a protein-rich diet, this grain-free beef recipe delivers an impressive 42% high-quality protein to support lean muscles and everyday vitality.",
+  desc2: "Made with a high meat content and natural ingredients, it provides a flavorful, easy to digest meal that helps keep your cat strong, energized, and satisfied—just the way nature intended.",
+  analysisList: ["≥ 42%", "≥ 16%", "≤ 3.5%", "≤ 10%", "≤ 20%", "≥ 1.2%", "≥ 1%", "≥ 0.2%", "≥ 0.35%"],
+  analysisListName: [
+    "Crude protein",
+    "Crude fat",
+    "Crude fiber",
+    "Moisture",
+    "Crude ash ",
+    "Calcium",
+    "Phosphorus",
+    "Taurine",
+    "Soluble chloride ",
+  ],
+  pdDetail: [
+    { title: "Netweight:", desc: "5.5LB/2.5kg" },
+    { title: "Food form:", desc: "Kibble" },
+    { title: "Age range:", desc: "All life stages" },
+  ],
+  Ingredients: [
+    {
+      text1:
+        "beef (26%), chicken (23%), duck (15%), sardines (12%), cod (10%), chicken liver (2%), butter, chicken fat, potato flour, cassava, whole egg powder, cheese powder, pumpkin, apple, carrot, broccoli, spinach, cranberry, blueberry, brewer's yeast powder, seaweed powder, beet meal, chicory root, plantain, yucca powder.",
+      text2:
+        "taurine, bacillus subtilis, enterococcus faecalis, L-lysine, L-tryptophan, DL-methionine, oligofructose, egg yolk immunoglobulin (IgY), vitamin A, vitamin B1, riboflavin vitamins, niacin, vitamin B6, calcium pantothenate, folic acid, biotin, vitamin C, vitamin D3, DL-α-tocopherol, zinc methionine complex, iron glycine complex, copper methionine complex, manganese methionine complex, choline chloride, chondroitin sulfate, potassium chloride, sodium chloride, rosemary extract.",
+    },
+  ],
+  anotherPd: [
+    {
+      img: new URL("@/assets/imgs/pd2-1.jpg", import.meta.url).href,
+      title1: "FREEZE-DRIED MEAT CAT FOOD",
+      title2: "DEEP SEA FISH FLAVOR",
+      id:2
+    },
+    {
+      img: new URL("@/assets/imgs/pd3-1.jpg", import.meta.url).href,
+      title1: "COLD PRESSING CAT FOOD",
+      title2: "DEEP SEA FISH FLAVOR",
+      id:3
+    },
+  ],
 }
 
-export { catPageInfo1, catPageInfo2, dogPageInfo }
+const pdInfo2 = {
+  pdImgList: [
+    new URL("@/assets/imgs/pd1-1.jpg", import.meta.url).href,
+    new URL("@/assets/imgs/pd1-2.jpg", import.meta.url).href,
+    new URL("@/assets/imgs/pd1-3.jpg", import.meta.url).href,
+  ],
+  subtitle: "FREEZE-DRIED AND KIBBLE MIX",
+  title1: "FREEZE-DRIED MEAT CAT FOOD",
+  title2: "DEEP SEA FISH FLAVOR",
+  desc1:
+    "Cats olfactory sensitivity is more than 200,000 times that of humans. Picky cats may be eager for this freeze-dried recipe created to appeal to their senses.",
+  desc2:
+    "Salmon meat and egg yolk are individually freeze-dried at -40C, then combined into the original ingredients.This keeps the delicious taste and nutrients locked into every bites, and leaves the cats with full vitality all day long!",
+  analysisList: ["≥ 38%", "≥ 16%", "≤ 3.8%", "≤ 10%", "≤ 9%", "≥ 1.1%", "≥ 0.8%", "≥ 0.2%", "≥ 0.3%"],
+  analysisListName: [
+    "Crude protein",
+    "Crude fat",
+    "Crude fiber",
+    "Moisture",
+    "Crude ash ",
+    "Calcium",
+    "Phosphorus",
+    "Taurine",
+    "Soluble chloride ",
+  ],
+  pdDetail: [
+    { title: "Netweight:", desc: "5.5LB/2.5kg" },
+    { title: "Food form:", desc: "Raw Mix" },
+    { title: "Age range:", desc: "All life stages" },
+  ],
+  Ingredients: [
+    {
+      text1:
+        "sardines (22%), chicken (18%), duck (16%), cod (14%), beef (5%), freeze-dried salmon (4.2%), freeze-dried egg yolk (3.8%), chicken liver (3%), chicken fat, deep sea fish oil, potato powder, tapioca, whole egg powder, cheese powder, pumpkin,apple, carrot, broccoli, spinach, cranberry, blueberry, beer yeast powder, seaweed powder, beet meal, chicory root, plantago seed, yucca powder.",
+      text2:
+        "taurine, bacillus subtilis, enterococcus faecalis, L-lysine, L-tryptophan, DL-methionine, oligofructose, egg yolk immunoglobulin (IgY), vitamin A, vitamin B1, riboflavin vitamins, niacin, vitamin B6, calcium pantothen-ate, folic acid, biotin, vitamin C, vitamin D3, DL-a-tocopherol, zinc methionine complex, iron glycine complex, copper methionine complex, manganese methionine complex, choline chloride, chondroitin sulfate, potassium chloride, sodium chloride, rosemary extract.",
+    },
+  ],
+  anotherPd: [
+    {
+      img: new URL("@/assets/imgs/pd1-1.jpg", import.meta.url).href,
+      title1: "HIGH MEATINESS CAT FOOD",
+      title2: "BEEF FLAVOR",
+      id:1
+    },
+    {
+      img: new URL("@/assets/imgs/pd3-1.jpg", import.meta.url).href,
+      title1: "COLD PRESSING CAT FOOD",
+      title2: "DEEP SEA FISH FLAVOR",
+      id:3
+    },
+  ],
+}
+
+const pdInfo3 = {
+  pdImgList: [
+    new URL("@/assets/imgs/pd3-1.jpg", import.meta.url).href,
+    new URL("@/assets/imgs/pd3-2.jpg", import.meta.url).href,
+    new URL("@/assets/imgs/pd3-3.jpg", import.meta.url).href,
+  ],
+  subtitle: "KIBBLE",
+  title1: "COLD PRESSING CAT FOOD",
+  title2: "DEEP SEA FISH FLAVOR",
+  desc1:
+    "Gently cold-pressed and baked at low temperatures, this grain-free recipe helps preserve natural nutrients while making each bite easy to digest.",
+  desc2:
+    "Crafted with deep sea fish as the primary protein, it delivers clean, ocean-fresh flavor cats love, along with balanced nutrition to support daily health and vitality.",
+  analysisList: ["≥ 40%", "≥ 16%", "≤ 3.8%", "≤ 10%", "≤ 9%", "≥ 1.1%", "≥ 0.8%", "≥ 0.2%", "≥ 0.3%"],
+  analysisListName: [
+    "Crude protein",
+    "Crude fat",
+    "Crude fiber",
+    "Moisture",
+    "Crude ash ",
+    "Calcium",
+    "Phosphorus",
+    "Taurine",
+    "Soluble chloride ",
+  ],
+  pdDetail: [
+    { title: "Netweight:", desc: "5.5LB/2.5kg" },
+    { title: "Food form:", desc: "Kibble" },
+    { title: "Age range:", desc: "All life stages" },
+  ],
+  Ingredients: [
+    {
+      text1:
+        "herring (25%), cod (15%), chicken (13%), duck (12%), salmon (10%), chicken liver (3%), chicken fat, deep sea fish oil, potato flour, cassava, whole egg powder, cheese powder, pumpkin, apple, carrot, broccoli, spinach, cranberry, blueberry, brewer's yeast powder, seaweed powder, beet meal, chicory root,plantain, yucca powder.",
+      text2:
+        "taurine, L-lysine, L-tryptophan, DL-methionine, oligofructose, egg yolk immunoglobulin (IgY), vitamin A, vitamin B1, riboflavin, niacin, calcium pantothenate, vitamin Bo, folic acid, biotin, vitamin C, vitamin D3, L-a-tocopherol, zinc methionine complex, iron glycinate complex, copper methionine complex, manganese methionine complex, choline chloride, chondroitin sulfate, potassium chloride, sodium chloride, rosemary extract.",
+    },
+  ],
+  anotherPd: [
+    {
+      img: new URL("@/assets/imgs/pd1-1.jpg", import.meta.url).href,
+      title1: "HIGH MEATINESS CAT FOOD",
+      title2: "BEEF FLAVOR",
+      id:1
+    },
+    {
+      img: new URL("@/assets/imgs/pd2-1.jpg", import.meta.url).href,
+      title1: "FREEZE-DRIED MEAT CAT FOOD",
+      title2: "DEEP SEA FISH FLAVOR",
+      id:2
+    },
+  ],
+}
+
+export { pdInfo1, pdInfo2, pdInfo3 }
