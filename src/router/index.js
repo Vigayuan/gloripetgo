@@ -2,21 +2,24 @@
  * @Description: 
  * @Author: Viga
  * @Date: 2025-09-17 14:22:34
- * @LastEditTime: 2026-01-14 11:30:00
+ * @LastEditTime: 2026-01-15 14:07:12
  */
 import { createRouter, createWebHistory } from 'vue-router'
 import HomePage from '@/views/HomePage.vue'
-
+import Preview from '@/views/PreviewPage.vue'
 // 检测是否为移动端
 function isMobile () {
     return /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
 }
 
 const router = createRouter({
+
     history: createWebHistory(),
     routes: [
-        { path: '/', name: 'Home', component: HomePage },
-        { path: '/home', redirect: '/' },
+        { path: '/', name: 'Preview', component: Preview },
+        { path: '/preview', redirect: '/' },
+        { path: '/home', name: 'Home', component: HomePage },
+        // { path: '/home', redirect: '/' },
 
         // 移动端路由
         { path: '/m/home', name: 'mHome', component: () => import('@/views/HomeMPage.vue') },
