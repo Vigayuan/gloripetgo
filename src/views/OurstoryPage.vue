@@ -16,7 +16,8 @@
     <!-- Unleash energy -->
     <section class="unleash " ref="boxRef">
       <div class="unleash-content">
-        <img class="story_bg" src="../assets/imgs/why/why_02.jpg" alt="">
+        <img class="story_bg" src="../assets/imgs/why/why_021.jpg" alt="">
+        <img src="../assets/imgs/why/photo.jpg" alt="" class="story_photo">
         <!-- <div class="unleash-text1" :class="{ showBox }">
           IT ALL BEGAN
         </div>
@@ -149,7 +150,7 @@
           <div @click="toggleShowQA(1)" class="phil-item">
             <div class="phil-item-top">
               <div class="phil-item-top-text">
-                WHY REAL MEAT FIRST ?
+                What drives Schrain at its core?
               </div>
               <div class="control-btn">
                 <div v-show="showQAIndex != 1">+</div>
@@ -158,16 +159,14 @@
             </div>
             <div v-show="showQAIndex == 1" class="phil-item-bottom">
               <div class="phil-item-bottom-text">
-                We pride ourselves on using real meat as the first ingredient. Our cold-press
-                process locks in all the natural nutrients of the meat, making every bite
-                exceptionally tasty.
+                We believe every cat deserves to eat like an Arctic fox—close to the wild. That’s why we turn down the heat, choose cold-press & freeze-dry, and let instinct flow back into the bowl.
               </div>
             </div>
           </div>
           <div @click="toggleShowQA(2)" class="phil-item">
             <div class="phil-item-top">
               <div class="phil-item-top-text">
-                WHAT DOES “NATURAL” MEAN TO YOU?
+                What does “natural” really mean to you?
               </div>
               <div class="control-btn">
                 <div v-show="showQAIndex != 2">+</div>
@@ -176,14 +175,14 @@
             </div>
             <div v-show="showQAIndex == 2" class="phil-item-bottom">
               <div class="phil-item-bottom-text">
-                Real meat. Light processing. Zero artificial additives.
+                It isn’t a buzz-word; it’s a low-intervention journey: whole muscles of meat, light processing, zero artificial colours or palatants. Open the bag and you’ll smell the ocean and the prairie—no translator needed.
               </div>
             </div>
           </div>
           <div @click="toggleShowQA(3)" class="phil-item">
             <div class="phil-item-top">
               <div class="phil-item-top-text">
-                AAFCO COMPLIANT?
+                Why insist on cold-pressing?
               </div>
               <div class="control-btn">
                 <div v-show="showQAIndex != 3">+</div>
@@ -192,14 +191,14 @@
             </div>
             <div v-show="showQAIndex == 3" class="phil-item-bottom">
               <div class="phil-item-bottom-text">
-                Yes—formulated for All Life Stages.
+                High temperature is an invisible blade—it slashes vitamins, amino acids and aroma. We keep the thermometer below 45 °C so nutrition stays intact and picky cats actually come to the dish.
               </div>
             </div>
           </div>
           <div @click="toggleShowQA(4)" class="phil-item">
             <div class="phil-item-top">
               <div class="phil-item-top-text">
-                HOW DO I TRANSITION FOODS?
+                Which nutrition standard do you follow?
               </div>
               <div class="control-btn">
                 <div v-show="showQAIndex != 4">+</div>
@@ -208,7 +207,55 @@
             </div>
             <div v-show="showQAIndex == 4" class="phil-item-bottom">
               <div class="phil-item-bottom-text">
-                Follow the 7‑day transition: 25% → 50% → 75% → 100%.
+                AAFCO “All Life Stages” is our global passport. Whether your kitty lounges in a Toronto condo or a Shanghai lane-house, the same balanced nutrition reaches their bowl.
+              </div>
+            </div>
+          </div>
+          <div @click="toggleShowQA(5)" class="phil-item">
+            <div class="phil-item-top">
+              <div class="phil-item-top-text">
+                How do you view sustainability?
+              </div>
+              <div class="control-btn">
+                <div v-show="showQAIndex != 5">+</div>
+                <div v-show="showQAIndex == 5">-</div>
+              </div>
+            </div>
+            <div v-show="showQAIndex == 5" class="phil-item-bottom">
+              <div class="phil-item-bottom-text">
+                We respect every fish we fillet and every steer we harvest. Light-weight bags, FSC paper, responsible fisheries and carbon-smart scheduling quietly pay the planet back—because “natural” must not stop at the label edge.
+              </div>
+            </div>
+          </div>
+          <div @click="toggleShowQA(6)" class="phil-item">
+            <div class="phil-item-top">
+              <div class="phil-item-top-text">
+                What role does science play?
+              </div>
+              <div class="control-btn">
+                <div v-show="showQAIndex != 6">+</div>
+                <div v-show="showQAIndex == 6">-</div>
+              </div>
+            </div>
+            <div v-show="showQAIndex == 6" class="phil-item-bottom">
+              <div class="phil-item-bottom-text">
+                Nature proposes, science proof-reads. Each batch walks through a third-party lab magnifying glass—protein authenticity, heavy-metal screen, microbial count. Only when the numbers sing do we stamp the release seal.
+              </div>
+            </div>
+          </div>
+          <div @click="toggleShowQA(7)" class="phil-item">
+            <div class="phil-item-top">
+              <div class="phil-item-top-text">
+                How can I switch foods without upset tummies?
+              </div>
+              <div class="control-btn">
+                <div v-show="showQAIndex != 7">+</div>
+                <div v-show="showQAIndex == 7">-</div>
+              </div>
+            </div>
+            <div v-show="showQAIndex == 7" class="phil-item-bottom">
+              <div class="phil-item-bottom-text">
+                Give the gut a seven-day buffer: days 1–2 = 25 % new, days 3–4 = 50 %, days 5–6 = 75 %, day 7 = 100 %. Slow and steady lets intestinal bacteria catch up.
               </div>
             </div>
           </div>
@@ -231,10 +278,8 @@ import { Pagination, Navigation } from 'swiper/modules'
 const modules = [Pagination, Navigation, Autoplay]
 const boxRef = ref(null)
 const missionRef = ref(null)
-const commitmentRef = ref(null)
 const showBox = ref(false);
 const showMission = ref(false);
-const showCommitment = ref(false);
 const imgBlockRef = ref(null)
 const showQAIndex = ref(-1);
 let observers = []
@@ -284,18 +329,6 @@ onMounted(() => {
   if (missionRef.value) observer2.observe(missionRef.value);
   observers.push(observer2);
 
-  // 3️⃣ commitment
-  const observer3 = new IntersectionObserver(
-    ([entry]) => {
-      showCommitment.value = entry.isIntersecting;
-    },
-    {
-      threshold: 0.2,
-      rootMargin: "0px 0px -20% 0px",
-    }
-  );
-  if (commitmentRef.value) observer3.observe(commitmentRef.value);
-  observers.push(observer3);
 });
 
 
@@ -410,6 +443,16 @@ onBeforeUnmount(() => {
       height: 550px;
       width: 1200px;
       margin: 0 auto;
+      .story_photo {
+        position: absolute;
+        top: 50px;
+        left: 50px;
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        object-fit: cover;
+        transform: rotate(30deg);
+      }
     }
 
     .story_bg {
@@ -530,6 +573,7 @@ onBeforeUnmount(() => {
       font-family: "Oswald-SemiBlod";
       font-size: 29px;
       line-height: 1;
+      font-weight: bold;
       text-align: center;
       color: #fff;
       opacity: 0;
@@ -543,7 +587,7 @@ onBeforeUnmount(() => {
     }
 
     .text-2 {
-      font-family: "RedHatDisplay-Regular";
+      font-family: "Oswald-Regular";
       font-size: 20px;
       line-height: 1.2;
       text-align: center;
@@ -721,6 +765,7 @@ onBeforeUnmount(() => {
               width: 80%;
               text-align: left;
               line-height: 20px;
+              text-transform: uppercase;
             }
 
             .control-btn {

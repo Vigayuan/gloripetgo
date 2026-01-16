@@ -27,7 +27,7 @@
     </div>
 
     <!-- Unleash energy -->
-    <section class="unleash-block " ref="boxRef">
+    <section class="unleash-block" ref="boxRef">
       <div class="unleash-content">
         <div class="particle" :class="{ show }">
           <div class="particle-content">
@@ -92,9 +92,33 @@
       </div>
     </section>
 
-    <div class="landing-g-4">
+    <div class="landing-g-4" ref="bowlRef">
+      <img src="../assets/imgs/landing/bowl.png" alt="" class="bowl" :class="{ show }">
       <img class="home-pg-2" src="../assets/imgs/landing/home-pg-2.jpg" alt="">
-      <img class="home-pg-4" src="../assets/imgs/landing/home-pg-4.png" alt="">
+      <div class="content-block">
+        <div class="content-item">
+          <img src="../assets/imgs/landing/realmeat.svg" alt="">
+          <div class="item-text1">REAL MEAT FIRST</div>
+          <div class="item-text2">HIGH-QUALITY ANIMAL PROTEIN TO SATISFY YOUR CAT'S NATURAL CARNIVOROUS INSTINCTS.</div>
+        </div>
+        <div class="content-item">
+          <img src="../assets/imgs/landing/grainfree.svg" alt="">
+          <div class="item-text1">GRAIN FREE 100%</div>
+          <div class="item-text2">GENTLE ON DIGESTION</div>
+        </div>
+
+        <div class="content-item">
+          <img src="../assets/imgs/landing/no.svg" alt="">
+          <div class="item-text1">NO ARTIFICIAL ADDITIVES</div>
+          <div class="item-text2">NO PALATANTS, NO COLORS, NO MYSTERY INGREDIENTS</div>
+        </div>
+
+        <div class="content-item">
+          <img src="../assets/imgs/landing/ideal.svg" alt="">
+          <div class="item-text1">IDEAL AMINO<br>ACID RATIO</div>
+          <div class="item-text2">BETTER ABSORPTION, LESS STOOL ODOR</div>
+        </div>
+      </div>
     </div>
     <div class="landing-g-5">
       <img class="home-pg-5-bg" src="../assets/imgs/landing/home-pg-3.jpg" alt="">
@@ -131,7 +155,7 @@ import FooterPage from '@/components/FooterPage.vue'
 import { useRouter } from "vue-router";
 const router = useRouter()
 const boxRef = ref(null);
-const philRef = ref(null);
+const bowlRef = ref(null);
 const show = ref(false);
 let observer;
 //const goWhy = () => {
@@ -161,9 +185,11 @@ onMounted(() => {
     }
   );
 
-  if (boxRef.value) {
-    observer.observe(boxRef.value);
-    observer.observe(philRef.value);
+  if (bowlRef.value) {
+    observer.observe(bowlRef.value);
+  }
+  if (bowlRef.value) {
+    observer.observe(bowlRef.value);
   }
 });
 
@@ -171,8 +197,8 @@ onBeforeUnmount(() => {
   if (observer && boxRef.value) {
     observer.unobserve(boxRef.value);
   }
-  if (observer && philRef.value) {
-    observer.unobserve(philRef.value);
+  if (observer && bowlRef.value) {
+    observer.unobserve(bowlRef.value);
   }
 });
 </script>
@@ -328,7 +354,7 @@ onBeforeUnmount(() => {
         left: 230px;
       }
 
-      .unleash-text3 { 
+      .unleash-text3 {
         position: absolute;
         top: 90px;
         left: 780px;
@@ -354,7 +380,7 @@ onBeforeUnmount(() => {
 
       .title {
         font-family: "Copper";
-        font-size: 30px;
+        font-size: 24px;
         line-height: 1.2;
         text-align: left;
         color: #efe8db;
@@ -367,7 +393,7 @@ onBeforeUnmount(() => {
         line-height: 1.2;
         text-align: left;
         color: #1f150b;
-        width: 250px;
+        width: 225px;
       }
     }
   }
@@ -469,8 +495,64 @@ onBeforeUnmount(() => {
   }
 
   .landing-g-4 {
+    position: relative;
     height: 688px;
     background-color: #000;
+    .bowl {
+      position: absolute;
+      top: 222px;
+      left: 50%;
+      width: 319px;
+      opacity: 0;
+      transform: translate(-50%, -50%);
+    }
+
+    .bowl.show {
+      opacity: 1;
+      animation: bowlBounce 0.9s ease-out forwards;
+    }
+    .content-block {
+      width: 1070px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .content-item {
+        width: 240px;
+        text-align: left;
+        img {
+          width: 40px;
+          height: 40px;
+        }
+        .item-text1 {
+          font-family: "Oswald-Medium";
+          font-size: 40px;
+          line-height: 1;
+          color: #f39800;
+          margin: 10px 0;
+        }
+        .item-text2 {
+          font-family: "Oswald-Medium";
+          font-size: 18px;
+          line-height: 1;
+          color: #efe8db;
+        }
+      }
+    }
+    @keyframes bowlBounce {
+      0% {
+        transform: translate(-50%, -50%) scale(0.8);
+      }
+      60% {
+        transform: translate(-50%, -50%) scale(1.08);
+      }
+      80% {
+        transform: translate(-50%, -50%) scale(0.98);
+      }
+      100% {
+        transform: translate(-50%, -50%) scale(1);
+      }
+    }
 
     .home-pg-2 {
       width: 1070px;

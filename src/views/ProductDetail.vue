@@ -50,11 +50,11 @@
       <div class="tab-header">
         <div @click="handleTagChange(1)" :class="showTabIndex == 1 ? 'tab-title active' : 'tab-title'">
           <div>Ingredients</div>
-          <!-- <div>+</div> -->
+          <div>+</div>
         </div>
         <div @click="handleTagChange(3)" :class="showTabIndex == 3 ? 'tab-title active' : 'tab-title'">
           <div>Guaranteed Analysis</div>
-          <!-- <div>+</div> -->
+          <div>+</div>
         </div>
       </div>
       <div class="tab-body">
@@ -215,7 +215,7 @@ const goPdDetail = (id) => {
     path: route.path,
     query: {
       ...route.query, // 关键！
-      id:id
+      id: id
     }
   })
 }
@@ -503,6 +503,8 @@ watch(
         padding: 30px 30px 30px 50px;
         border-bottom: 2px solid #1f160b;
         text-align: left;
+        display: flex;
+        justify-content: space-between;
       }
     }
 

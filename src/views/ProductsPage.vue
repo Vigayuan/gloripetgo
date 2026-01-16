@@ -81,6 +81,7 @@
       <div class="pd-g-4-content">
         <div class="pd-g-4-text1">WHERE <br>NATURE</div>
         <div class="pd-g-4-text2">MEETS SCIENCE</div>
+        <img src="../assets/imgs/products/products_line.png" alt="" class="line">
         <img class="pd-g-4-img" src="../assets/imgs/products/products_02.png" alt="">
       </div>
       <div class="pd-g-4-bg">
@@ -308,7 +309,7 @@ onBeforeUnmount(() => {
         }
 
         .text1 {
-          font-family: "Oswald-Regular";
+          font-family: "Copper";
           font-size: 30px;
           line-height: 1;
           color: #1f160b;
@@ -317,8 +318,8 @@ onBeforeUnmount(() => {
         }
 
         .text2 {
-          font-family: "Oswald-SemiBold";
-          font-size: 74px;
+          font-family: "Copper";
+          font-size: 62px;
           line-height: 1;
           color: #938c34;
           text-align: center;
@@ -343,11 +344,17 @@ onBeforeUnmount(() => {
     position: relative;
     background-color: #938c34;
     padding-bottom: 50px;
+    overflow: hidden;
     .pd-g-4-content {
       position: relative;
       width: 1200px;
       margin: 0 auto;
-
+      .line {
+        position: absolute;
+        top: -510px;
+        left: -38px;
+        opacity: 0.9;
+      }
       .pd-g-4-img {
         position: relative;
         z-index: 100;
@@ -357,23 +364,24 @@ onBeforeUnmount(() => {
 
       .pd-g-4-text1 {
         position: absolute;
-        font-family: "Oswald-Regular";
-        font-size: 26px;
+        font-family: "Copper";
+        font-size: 22px;
         line-height: 1;
         color: #1f160b;
         text-align: center;
         margin-top: 50px;
         width: 100px;
-        left: 50%;
+        left: 585px;
         text-align: center;
         margin-left: -50px;
-        top: 8px;
+        top: 15px;
       }
 
       .pd-g-4-text2 {
         z-index: 10;
+        font-family: "Copper";
         position: absolute;
-        font-size: 82px;
+        font-size: 55px;
         line-height: 1;
         color: #efe8db;
         text-align: center;
@@ -382,7 +390,7 @@ onBeforeUnmount(() => {
         left: 50%;
         text-align: center;
         margin-left: -350px;
-        top: 25px;
+        top: 70px;
       }
     }
     .pd-g-4-bg {

@@ -106,9 +106,9 @@ const openWindow = (index) => {
 const sendMail = () => {
   emailjs.send(
     "service_85ubcj6",     // 你的服务ID
-    "template_5o5qhj7",    // 邮件模板ID
+    "template_z5lxlk2",    // 邮件模板ID
     {
-      to_email: "gloripetgo@gmail.com",
+      to_email: "schrainpetfoods@gmail.com",
       user_name: `${firstName.value} ${lastName.value}`,
       message: `${messageContent.value}`,
       user_email: `${email.value}`
@@ -165,8 +165,6 @@ const clearForm = () => {
         transform: translateY(-140px);
       }
     }
-
-
   }
 
   .unleash {
@@ -336,7 +334,7 @@ const clearForm = () => {
 
           input,
           textarea {
-            border: 1px solid #FFF;
+            border: 1px solid #fff;
             padding: 8px;
             font-size: 28px;
             outline: none;
@@ -367,8 +365,6 @@ const clearForm = () => {
             justify-content: space-between;
             width: 100%;
           }
-
-
         }
 
         .btn {
@@ -438,7 +434,6 @@ const clearForm = () => {
       }
     }
   }
-
 }
 
 // 媒体查询
