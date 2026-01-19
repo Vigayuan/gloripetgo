@@ -191,7 +191,8 @@
             </div>
             <div v-show="showQAIndex == 3" class="phil-item-bottom">
               <div class="phil-item-bottom-text">
-                High temperature is an invisible blade—it slashes vitamins, amino acids and aroma. We keep the thermometer below 45 °C so nutrition stays intact and picky cats actually come to the dish.
+                High temperature is an invisible blade—it slashes vitamins, amino acids and aroma.
+                We keep the process low-temperature, so nutrition stays intact and picky cats willingly come to the dish.
               </div>
             </div>
           </div>

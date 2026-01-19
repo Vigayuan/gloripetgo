@@ -34,29 +34,30 @@
             INSTINCT FIRST
           </div>
         </div>
+        <img class="bowl1" src="../assets/imgs/landing/bowl1.png" alt="" :class="{ show }">
         <img src="../assets/imgs/landing/home-pg-1.jpg" alt="">
-        <div class="unleash-text1 title">
+        <div class="unleash-text1 title" :class="{ show }">
           BUILT FOR <br>
           CARNIVORES
         </div>
-        <div class="unleash-text2 body">
+        <div class="unleash-text2 body" :class="{ show }">
           Cats weren’t made to eat grains. Schrain follows the Biologically Appropriate philosophy with WholePrey
           ratios—meat, organs, and cartilage in the balance nature intended.
         </div>
-        <div class="unleash-text3 title">
+        <div class="unleash-text3 title" :class="{ show }">
           NATURE<br>
           WITHOUT <br>
           COMPROMISE
         </div>
-        <div class="unleash-text4 body">
+        <div class="unleash-text4 body" :class="{ show }">
           Arctic salmon. North American turkey. Deep-sea cod. No grains, no artificial palatants, no artificial
           colors—just real, honest nutrition.
         </div>
-        <div class="unleash-text5 title">
+        <div class="unleash-text5 title" :class="{ show }">
           WHERE NATURE
           MEETS SCIENCE
         </div>
-        <div class="unleash-text6 body">
+        <div class="unleash-text6 body" :class="{ show }">
           Every batch undergoes third‑party testing for protein authenticity, microbes, and heavy metals. Nature
           inspires the formula; science ensures the safety.
         </div>
@@ -185,8 +186,8 @@ onMounted(() => {
     }
   );
 
-  if (bowlRef.value) {
-    observer.observe(bowlRef.value);
+  if (boxRef.value) {
+    observer.observe(boxRef.value);
   }
   if (bowlRef.value) {
     observer.observe(bowlRef.value);
@@ -320,7 +321,18 @@ onBeforeUnmount(() => {
         width: 1100px;
         margin: 0 auto;
       }
+      .bowl1 {
+        position: absolute;
+        width: 263px;
+        top: 152px;
+        left: 467px;
+        transform: rotate(180deg);
+        transition: all 10s ease-out;
 
+        &.show {
+          transform: rotate(0deg);
+        }
+      }
       .particle {
         // position: absolute;
         margin: 45px auto 0;
@@ -385,6 +397,13 @@ onBeforeUnmount(() => {
         text-align: left;
         color: #efe8db;
         width: 250px;
+        opacity: 0;
+        transform: translateY(150px);
+        transition: all 0.8s ease-out;
+        &.show {
+          opacity: 1;
+          transform: translateY(0);
+        }
       }
 
       .body {
@@ -394,6 +413,13 @@ onBeforeUnmount(() => {
         text-align: left;
         color: #1f150b;
         width: 225px;
+        opacity: 0;
+        transform: translateY(150px);
+        transition: all 0.8s ease-out;
+        &.show {
+          opacity: 1;
+          transform: translateY(0);
+        }
       }
     }
   }

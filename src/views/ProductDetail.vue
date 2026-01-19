@@ -163,7 +163,7 @@ const pdInfo = reactive({
   ],
   pdDetail: [
     {
-      title: "Netweight:",
+      title: "Net weight:",
       desc: "5.5LB/2.5kg",
     },
     {
@@ -171,7 +171,7 @@ const pdInfo = reactive({
       desc: "Raw Mix",
     },
     {
-      title: "Age range:",
+      title: "Life Stage:",
       desc: "All life stages",
     },
   ],

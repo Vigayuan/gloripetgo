@@ -280,7 +280,7 @@ const pdInfo = reactive({
       desc: "3 lb (1.36 kg)"
     },
     {
-      title: "Age Range",
+      title: "Life Stage",
       desc: "All life stages"
     }
   ],
