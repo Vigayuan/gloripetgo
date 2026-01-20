@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: Viga
  * @Date: 2025-09-17 13:57:30
- * @LastEditTime: 2025-09-17 14:23:42
+ * @LastEditTime: 2026-01-20 15:20:37
  */
 const { defineConfig } = require('@vue/cli-service')
 const path = require('path')
@@ -15,7 +15,7 @@ module.exports = defineConfig({
         config.resolve.alias.set('@', resolve('src'))
         // 设置 htmlWebpackPlugin 的标题
         config.plugin('html').tap(args => {
-            args[0].title = 'GloriPetgo' // 替换为您想要的标题
+            args[0].title = 'Schrain' // 替换为您想要的标题
             return args
         })
     }
