@@ -140,7 +140,7 @@
           HEALTH FROM THE INSIDE OUT.
         </div>
         <div class="landing-g-6-title2">
-          BECAUSE THE PERFECT FORMULA<br> WASN’T DESIGNEDBY HUMANS. IT<br> <span>WAS WRITTEN BY NATURE.</span>
+          BECAUSE THE PERFECT FORMULA<br> WASN’T DESIGNED BY HUMANS. IT<br> <span>WAS WRITTEN BY NATURE.</span>
         </div>
       </div>
     </div>
@@ -327,7 +327,7 @@ onBeforeUnmount(() => {
         top: 152px;
         left: 467px;
         transform: rotate(180deg);
-        transition: all 10s ease-out;
+        transition: all 20s ease-out;
 
         &.show {
           transform: rotate(0deg);
