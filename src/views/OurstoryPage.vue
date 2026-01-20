@@ -16,8 +16,8 @@
     <!-- Unleash energy -->
     <section class="unleash " ref="boxRef">
       <div class="unleash-content">
-        <img class="story_bg" src="../assets/imgs/why/why_021.jpg" alt="">
-        <img src="../assets/imgs/why/photo.jpg" alt="" class="story_photo">
+        <img class="story_bg" src="../assets/imgs/why/why_02.jpg" alt="">
+        <img src="../assets/imgs/why/photo.jpg" alt="" class="story_photo" :class="{ showBox }">
         <!-- <div class="unleash-text1" :class="{ showBox }">
           IT ALL BEGAN
         </div>
@@ -444,15 +444,20 @@ onBeforeUnmount(() => {
       height: 550px;
       width: 1200px;
       margin: 0 auto;
+      overflow: hidden;
       .story_photo {
         position: absolute;
-        top: 50px;
-        left: 50px;
-        width: 300px;
-        height: 300px;
-        border-radius: 50%;
+        top: 26px;
+        right: 73px;
+        width: 342px;
+        -o-object-fit: cover;
         object-fit: cover;
-        transform: rotate(30deg);
+        transform: rotate(30deg) translateX(1000px);
+        transition: all 0.8s ease-out;
+        box-shadow: 0 0 4px 4px #c4c4c4;
+        &.showBox {
+          transform: rotate(-5deg) translateX(0);
+        }
       }
     }
 

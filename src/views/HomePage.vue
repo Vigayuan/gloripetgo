@@ -94,7 +94,7 @@
     </section>
 
     <div class="landing-g-4" ref="bowlRef">
-      <img src="../assets/imgs/landing/bowl.png" alt="" class="bowl" :class="{ show }">
+      <img src="../assets/imgs/landing/bowl.png" alt="" class="bowl" :class="{ showbowl }">
       <img class="home-pg-2" src="../assets/imgs/landing/home-pg-2.jpg" alt="">
       <div class="content-block">
         <div class="content-item">
@@ -158,7 +158,9 @@ const router = useRouter()
 const boxRef = ref(null);
 const bowlRef = ref(null);
 const show = ref(false);
+const showbowl = ref(false);
 let observer;
+let observer1;
 //const goWhy = () => {
 //  router.push({ name: 'Healthy' });
 //}
@@ -182,7 +184,23 @@ onMounted(() => {
     },
     {
       threshold: 0,             // 只要有一点进入就检测
-      rootMargin: "0px 0px -30% 0px"
+      rootMargin: "0px 0px 0px 0px"
+    }
+  );
+  observer1 = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          console.log(entry.target, entry.boundingClientRect, entry.isIntersecting);
+          showbowl.value = true; // 进入视口时触发动画
+        } else {
+          showbowl.value = false;
+        }
+      });
+    },
+    {
+      threshold: 0,             // 只要有一点进入就检测
+      rootMargin: "0px 0px 0px 0px"
     }
   );
 
@@ -190,7 +208,7 @@ onMounted(() => {
     observer.observe(boxRef.value);
   }
   if (bowlRef.value) {
-    observer.observe(bowlRef.value);
+    observer1.observe(bowlRef.value);
   }
 });
 
@@ -199,7 +217,7 @@ onBeforeUnmount(() => {
     observer.unobserve(boxRef.value);
   }
   if (observer && bowlRef.value) {
-    observer.unobserve(bowlRef.value);
+    observer1.unobserve(bowlRef.value);
   }
 });
 </script>
@@ -530,10 +548,9 @@ onBeforeUnmount(() => {
       left: 50%;
       width: 319px;
       opacity: 0;
-      transform: translate(-50%, -50%);
     }
 
-    .bowl.show {
+    .bowl.showbowl {
       opacity: 1;
       animation: bowlBounce 0.9s ease-out forwards;
     }
