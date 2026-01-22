@@ -6,20 +6,19 @@
       </div>
       <!-- 中间：logo -->
       <div @click="goHome" class="logo">
-        <img src="../assets/images/Icon-Gloripetgo-logo.svg" alt="Gloripetgo" />
+        <img src="../assets/imgs/schrain-logo.png" alt="">
       </div>
       <!-- 右侧：菜单按钮（移动端） -->
       <div class="menu-toggle" @click="toggleMenu">
-        <img src="../assets/images/icon-menu.svg" alt="">
+        <img src="../assets/m/menu.png" alt="">
       </div>
     </div>
 
     <!-- 导航菜单（PC 显示 / 移动端弹出） -->
     <nav class="menu" :class="{ show: showMenu }" @mouseenter="onEnter" @mouseleave="onLeave">
-      <div @click="goPd">Products</div>
-      <div @click="goWhy">Why healthy</div>
-      <div @click="goStory">Our story</div>
-      <div @click="goSupport">Support</div>
+      <div @click="goPd">PRODUCTS</div>
+      <div @click="goWhy">WHY SCHRAIN</div>
+      <div @click="goSupport">CONTACT</div>
     </nav>
   </header>
 </template>
@@ -39,9 +38,6 @@ const goPd = () => {
 const goWhy = () => {
   router.push({ name: 'mHealthy' });
 }
-const goStory = () => {
-  router.push({ name: 'mOurstory' });
-}
 const goSupport = () => {
   router.push({ name: 'mSupport' });
 }
@@ -60,27 +56,33 @@ const toggleMenu = () => (showMenu.value = !showMenu.value);
 .topnav {
   position: relative;
   width: 100%;
-  background: #212995;
+  background: #1f160b;
 
   .nav-inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 80px;
+    position: relative;
+    height: 54px;
     padding: 0 30px;
 
     .menu-toggle {
+      position: absolute;
+      top: 6px;
+      right: 15px;
+      width: 50px;
       cursor: pointer;
-      width: 100px;
       text-align: right;
+      padding: 10px;
+      line-height: 0;
       img {
         width: 30px;
       }
     }
 
     .logo {
-      width: 70px;
-
+      position: absolute;
+      top: 0;
+      left: 30px;
+      width: 85px;
+      z-index: 1000;
       img {
         width: 100%;
       }
@@ -110,10 +112,11 @@ const toggleMenu = () => (showMenu.value = !showMenu.value);
     color: #fff;
     font-family: "Oswald-SemiBold";
     font-size: 18px;
-    background: #212995;
+    background: #1f160b;
     height: 60px;
     transition: all 0.3s ease;
     padding-bottom: 10px;
+    z-index: 100;
     div {
       cursor: pointer;
       margin: 20px;
@@ -137,7 +140,7 @@ const toggleMenu = () => (showMenu.value = !showMenu.value);
       flex-direction: column;
       height: auto;
       position: absolute;
-      top: 75px;
+      top: 53px;
       left: 0;
       z-index: 100;
       width: 100%;

@@ -2,19 +2,16 @@
   <footer class="footer">
     <div class="footer-inner">
       <div class="brand">
-        <img src="../assets/images/logo-blue-color.svg" alt="GloriPetgo Logo" />
+        <img src="../assets/imgs/schrain-logo.png" alt="">
       </div>
 
       <div class="f-menu">
-        <div @click="goPd">Products</div>
-        <div @click="goWhy">Why healthy</div>
-        <div @click="goStory">Our story</div>
-        <div @click="goAbout">Support</div>
+        <div @click="goPd">PRODUCTS</div>
+        <div @click="goWhy">WHY SCHRAIN</div>
+        <div @click="goSupport">CONTACT</div>
       </div>
 
       <div class="f-message">
-        <div class="line"></div>
-        <div class="f-message-text">@GloriPetgo</div>
         <div class="logo">
           <div @click="openWindow(3)" class="icon">
             <img src="../assets/imgs/icon-ins.svg" alt="Instagram" />
@@ -26,12 +23,13 @@
             <img src="../assets/imgs/icon-facebook.svg" alt="Facebook" />
           </div>
         </div>
+        <div class="copyright">
+          © 2026 SCHRAIN ARE TRADENARKS OF CANADA ANNOK <br>
+          PETFOODS INC All Rights Reserved.
+        </div>
       </div>
     </div>
 
-    <div class="copyright">
-      © 2025，CANADA ANNOK PETFOODS INC.<br>All Rights Reserved.
-    </div>
   </footer>
 </template>
 
@@ -42,14 +40,10 @@ const router = useRouter();
 const goPd = () => {
   router.push({ name: 'mProducts' })
 }
-
 const goWhy = () => {
   router.push({ name: 'mHealthy' });
 }
-const goStory = () => {
-  router.push({ name: 'mOurstory' });
-}
-const goAbout = () => {
+const goSupport = () => {
   router.push({ name: 'mSupport' });
 }
 
@@ -67,18 +61,17 @@ const openWindow = (index) => {
 
 <style lang="scss" scoped>
 .footer {
-  padding: 50px;
-  background: #fff;
+  background: #000;
   text-align: center;
-
+  height: 330px;
   .footer-inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
+    position: relative;
 
     .brand {
-      width: 150px;
+      position: absolute;
+      top: -3px;
+      left: 30px;
+      width: 85px;
 
       img {
         width: 100%;
@@ -86,50 +79,40 @@ const openWindow = (index) => {
     }
 
     .f-menu {
+      position: absolute;
+      top: 35px;
+      right: 30px;
       display: flex;
+      flex-direction: column;
       justify-content: space-between;
-      align-items: center;
-      width: 50%;
+      text-align: left;
+      width: 160px;
       font-family: "Oswald-Medium";
-      font-size: 30px;
+      font-size: 26px;
       line-height: 1;
-      color: #212995;
-      padding-top: 35px;
+      color: #fffbe9;
 
       div {
+        margin-bottom: 20px;
         cursor: pointer;
       }
     }
 
     .f-message {
-      width: 140px;
-      padding-top: 35px;
-
-      .line {
-        width: 70%;
-        height: 2px;
-        background: #212995;
-        margin-bottom: 25px;
-        margin-left: 15%;
-      }
-
-      .f-message-text {
-        color: #212995;
-        font-family: "Oswald-Medium";
-        font-size: 30px;
-        line-height: 1;
-        margin-bottom: 15px;
-      }
+      position: absolute;
+      width: 260px;
+      top: 170px;
+      left: 30px;
 
       .logo {
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-start;
         align-items: center;
-        width: 100%;
+        width: 150px;
 
         .icon {
-          width: 35px;
-
+          width: 25px;
+          margin-right: 10px;
           img {
             width: 100%;
           }
@@ -140,65 +123,11 @@ const openWindow = (index) => {
 
   .copyright {
     font-family: "Oswald-Regular";
-    font-size: 18px;
-    line-height: 1.4;
-    color: #212995;
-    margin-top: 50px;
-    text-align: center;
-  }
-
-  /* ----------- 移动端适配 ----------- */
-  @media (max-width: 768px) {
-    padding: 30px 20px;
-
-    .footer-inner {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-
-      .brand {
-        width: 120px;
-        margin-bottom: 25px;
-      }
-
-      .f-menu {
-        width: 100%;
-        flex-direction: column;
-        align-items: center;
-        font-size: 20px;
-        padding-top: 0;
-
-        div {
-          margin: 8px 0;
-        }
-      }
-
-      .f-message {
-        width: 100%;
-        padding-top: 25px;
-
-        .f-message-text {
-          font-size: 22px;
-          margin-bottom: 10px;
-        }
-
-        .logo {
-          justify-content: center;
-          gap: 20px;
-
-          .icon {
-            width: 30px;
-          }
-        }
-      }
-    }
-
-    .copyright {
-      font-size: 14px;
-      margin-top: 30px;
-      line-height: 1.6;
-      padding: 0 10px;
-    }
+    font-size: 11px;
+    line-height: 1.2;
+    color: #fde2b9;
+    margin-top: 10px;
+    text-align: left;
   }
 }
 </style>

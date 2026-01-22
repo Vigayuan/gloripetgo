@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: Viga
  * @Date: 2025-09-17 14:22:34
- * @LastEditTime: 2026-01-20 09:53:41
+ * @LastEditTime: 2026-01-22 11:23:58
  */
 import { createRouter, createWebHistory } from 'vue-router'
 import HomePage from '@/views/HomePage.vue'

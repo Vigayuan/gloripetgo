@@ -21,9 +21,8 @@
         </div>
         <div class="f-menu">
           <div @click="goPd">PRODUCTS</div>
-          <div @click="goWhy">WHY HEALTHY</div>
-          <div @click="goStory">LEARN</div>
-          <div @click="goAbout">CONTACT</div>
+          <div @click="goWhy">WHY SCHRAIN</div>
+          <div @click="goSupport">CONTACT</div>
         </div>
       </div>
     </div>
@@ -38,12 +37,12 @@ const goPd = () => {
   router.push({ name: 'Products' })
 }
 const goWhy = () => {
-  router.push({ name: 'Healthy' });
+  router.push({ name: 'whyus' });
 }
-const goStory = () => {
-  router.push({ name: 'ourstory' });
-}
-const goAbout = () => {
+// const goStory = () => {
+//   router.push({ name: 'Ourstory' });
+// }
+const goSupport = () => {
   router.push({ name: 'Support' });
 }
 const openWindow = (index) => {
