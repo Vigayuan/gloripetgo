@@ -8,9 +8,9 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomePage from '@/views/HomePage.vue'
 // import Preview from '@/views/PreviewPage.vue'
 // 检测是否为移动端
-// function isMobile () {
-//     return /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
-// }
+function isMobile () {
+    return /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+}
 
 const router = createRouter({
 
@@ -47,32 +47,32 @@ const router = createRouter({
 })
 
 // 👇 路由守卫：根据设备类型跳转
-// router.beforeEach((to, from, next) => {
-//     const mobile = isMobile()
-//     const isMobileRoute = to.path.startsWith('/m/')
+router.beforeEach((to, from, next) => {
+    const mobile = isMobile()
+    const isMobileRoute = to.path.startsWith('/m/')
 
-//     if (mobile && !isMobileRoute) {
-//         // 移动端访问PC路由 → 跳到对应 /m/ 下路径
-//         const mobilePath = '/m' + to.path
-//         const exist = router.getRoutes().some(r => r.path === mobilePath)
-//         next({
-//             path: exist ? mobilePath : '/m/home',
-//             query: to.query,
-//             params: to.params
-//         })
-//     } else if (!mobile && isMobileRoute) {
-//         // PC访问移动端路由 → 去掉 /m
-//         const pcPath = to.path.replace(/^\/m/, '') || '/'
-//         const exist = router.getRoutes().some(r => r.path === pcPath)
-//         next({
-//             path: exist ? pcPath : '/',
-//             query: to.query,
-//             params: to.params
-//         })
-//     } else {
-//         next()
-//     }
-// })
+    if (mobile && !isMobileRoute) {
+        // 移动端访问PC路由 → 跳到对应 /m/ 下路径
+        const mobilePath = '/m' + to.path
+        const exist = router.getRoutes().some(r => r.path === mobilePath)
+        next({
+            path: exist ? mobilePath : '/m/home',
+            query: to.query,
+            params: to.params
+        })
+    } else if (!mobile && isMobileRoute) {
+        // PC访问移动端路由 → 去掉 /m
+        const pcPath = to.path.replace(/^\/m/, '') || '/'
+        const exist = router.getRoutes().some(r => r.path === pcPath)
+        next({
+            path: exist ? pcPath : '/',
+            query: to.query,
+            params: to.params
+        })
+    } else {
+        next()
+    }
+})
 
 
 export default router

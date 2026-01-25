@@ -2,233 +2,157 @@
   <div class="landing-page">
 
     <HeaderMPage />
-
     <!-- Hero -->
     <section class="hero">
-      <img src="../assets/mimgs/m_home_bg_01.jpg" alt="">
+      <img src="../assets/m/land-p1.jpg" alt="">
       <div class="title1">
-        Daily <br>
-        Defense <br><span class="title1-sub1">in <span class="title1-sub2">Every Bite</span></span>
+        INSTINCT FIRST <br> <span class="title1-sub1">NATURE ALWAYS</span>
       </div>
       <div class="title2">
-        Ensure comprehensive nutrition and health protection for your pet with every delicious bite.
+        Feed the hunter within. <br>
+        Canadian cold-pressed and freeze-dried nutrition <br>
+        crafted for true carnivores.
       </div>
-      <div @click="goWhy" class="btn-leran-more">
-        LEARN MORE
+      <div @click="goProduct" class="btn-leran-more">
+        EXPLORE PRODUCTS
       </div>
     </section>
 
+    <div class="landing-content-line">
+      <div class="landing-content-line-text-wrapper">
+        <div class="landing-content-line-text">Brand From Canada</div>
+        <div class="landing-content-line-text">Premium Nutrition Pet Food</div>
+        <div class="landing-content-line-text">WholePrey</div>
+      </div>
+    </div>
+
     <!-- Unleash energy -->
-    <section class="unleash " ref="boxRef">
-      <img src="../assets/mimgs/m_home_bg_02.jpg" alt="">
-      <div class="particle" :class="{ show }">
-        <img src="../assets/mimgs/particle.png" alt="">
-      </div>
-      <div class="unleash-text1">
-        <div class="text-sub1">Let your pets</div>
-        <div class="text-sub2">unleash their</div>
-        <div class="text-sub3">Joy&Energy!</div>
-      </div>
-      <div class="unleash-text2">
-        With GloriPetgo™, you're not just filling their bowls—you’re fueling their lives with
-        irresistible,nourishing meals. Plus, every bite helps pets beyond your own, spreading
-        happiness all around.
+    <section class="unleash-block" ref="boxRef">
+      <div class="unleash-content">
+        <div class="particle" :class="{ show }">
+          <div class="particle-content">
+            INSTINCT FIRST
+          </div>
+        </div>
+        <div class="bowl-wrapper">
+          <img class="bowl1" src="../assets/imgs/landing/bowl1.png" alt="" :class="{ show }">
+          <img class="land-p2" src="../assets/m/land-p2.png" alt="">
+        </div>
+        <div class="unleash-text1 title" :class="{ show }">
+          BUILT FOR <br>
+          CARNIVORES
+        </div>
+        <div class="unleash-text2 body" :class="{ show }">
+          Cats weren’t made to eat grains. Schrain follows the Biologically Appropriate philosophy with WholePrey
+          ratios—meat, organs, and cartilage in the balance nature intended.
+        </div>
+        <div class="unleash-text3 title" :class="{ show }">
+          NATURE<br>
+          WITHOUT <br>
+          COMPROMISE
+        </div>
+        <div class="unleash-text4 body" :class="{ show }">
+          Arctic salmon. North American turkey. Deep-sea cod. No grains, no artificial palatants, no artificial
+          colors—just real, honest nutrition.
+        </div>
+        <div class="unleash-text5 title" :class="{ show }">
+          WHERE NATURE
+          MEETS SCIENCE
+        </div>
+        <div class="unleash-text6 body" :class="{ show }">
+          Every batch undergoes third‑party testing for protein authenticity, microbes, and heavy metals. Nature
+          inspires the formula; science ensures the safety.
+        </div>
       </div>
     </section>
 
     <!-- Products -->
-    <section id="products" class="products">
-      <h3 class="products-text1">Discover <br><span class="sub1">Our </span><span class="sub2">Products</span></h3>
-      <Swiper :modules="modules" :loop="true" :slides-per-view="1" :pagination="{ clickable: true }" :autoplay="{ delay: 4000, disableOnInteraction: false }" :navigation="{ nextEl: '.custom-pd-next', prevEl: '.custom-pd-prev' }" class="pd-swiper-box">
+    <section id="products" class="products-block">
+      <img src="../assets/m/land-p3.png" alt="" class="products-bg-img">
+      <div class="products-text1">OUR <br>BESTSELLERS</div>
+      <div class="products-text2">HELP YOUR CAT ACHIEVE <br>THE IDEAL BALANCE <br>IT NEEDS.</div>
+    </section>
+    <div class="swiper-block products">
+      <Swiper :modules="modules" :loop="true" :slides-per-view="1" :pagination="{ clickable: true }"
+        :autoplay="{ delay: 4000, disableOnInteraction: false }" class="swiper-box">
         <SwiperSlide>
-          <div @click="goProductDetail(1)" class="pd-slide-item">
-            <img src="../assets/images/pd1.png" alt="">
-            <div class="pd-tag1">IMMUNE SUPPORT</div>
-            <div class="pd-tag2">JOINT CARE</div>
+          <div @click="goProductDetail(3)" class="product-card">
+            <img src="../assets/imgs/pd3-4.png" alt="">
+            <div class="tag1">COLD PRESSING CAT FOOD</div>
+            <div class="tag2">DEEP SEA FISH</div>
+            <div class="btn">EXPLORE</div>
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div @click="goProductDetail(2)" class="pd-slide-item">
-            <img src="../assets/images/pd2.png" alt="">
-            <div class="pd-tag1">IMMUNE SUPPORT</div>
-            <div class="pd-tag2">SKIN & COAT HEALTH</div>
+          <div @click="goProductDetail(1)" class="product-card">
+            <img src="../assets/imgs/pd1-4.png" alt="">
+            <div class="tag1">HIGH MEATINESS CAT FOOD</div>
+            <div class="tag2">BEEF FLAVOR</div>
+            <div class="btn">EXPLORE</div>
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div @click="goProductDetail(3)" class="pd-slide-item">
-            <img src="../assets/images/pd3.png" alt="">
-            <div class="pd-tag1">IMMUNE SUPPORT</div>
-            <div class="pd-tag2">URINARY HEALTH</div>
+          <div @click="goProductDetail(2)" class="product-card">
+            <img src="../assets/imgs/pd2-4.png" alt="">
+            <div class="tag1">FREEZE-DRIED MEAT CAT FOOD</div>
+            <div class="tag2">DEEP SEA FISH</div>
+            <div class="btn">EXPLORE</div>
           </div>
         </SwiperSlide>
       </Swiper>
-      <div class="custom-pd-prev">
-        <img src="../assets/images/icon-arrow.svg" alt="">
-      </div>
-      <div class="custom-pd-next">
-        <img src="../assets/images/icon-arrow.svg" style="transform: rotate(180deg);" alt="">
-      </div>
-    </section>
+    </div>
 
-    <section class="brand-logo">
-      <div class="logo-list">
-        <div class="logo-list-line">
-          <div class="logo-item">
-            <img src="../assets/images/icon-MSC.svg" alt="">
-          </div>
-          <div class="logo-item">
-            <img src="../assets/images/icon-aafco.svg" alt="">
-          </div>
-          <div class="logo-item">
-            <img src="../assets/images/icon-Global-Animal.svg" alt="">
-          </div>
+    <div class="landing-g-4" ref="bowlRef">
+      <img src="../assets/imgs/landing/bowl.png" alt="" class="bowl" :class="{ showbowl }">
+      <img class="home-pg-2" src="../assets/imgs/landing/home-pg-2.jpg" alt="">
+      <div class="content-block">
+        <div class="content-item">
+          <img src="../assets/imgs/landing/realmeat.svg" alt="">
+          <div class="item-text1">REAL MEAT FIRST</div>
+          <div class="item-text2">HIGH-QUALITY ANIMAL PROTEIN TO SATISFY YOUR CAT'S NATURAL CARNIVOROUS INSTINCTS.</div>
         </div>
-        <div class="logo-list-line">
-          <div class="logo-item">
-            <img src="../assets/images/icon-SQF.svg" alt="">
-          </div>
-          <div class="logo-item">
-            <img src="../assets/images/icon-CFIA.svg" alt="">
-          </div>
-          <div class="logo-item">
-            <img src="../assets/images/icon-FDA.svg" alt="">
-          </div>
+        <div class="content-item">
+          <img src="../assets/imgs/landing/grainfree.svg" alt="">
+          <div class="item-text1">GRAIN FREE 100%</div>
+          <div class="item-text2">GENTLE ON DIGESTION</div>
         </div>
-      </div>
-    </section>
 
-    <div class="swiper-block">
-      <div class="swiper-block-text">
-        <div class="swiper-block-text1">The ingredients from</div>
-        <div class="swiper-block-text2">Arctic Glaciers Align</div>
-        <div class="swiper-block-text3">with natural nutrition.</div>
-      </div>
-      <Swiper :modules="modules" :loop="true" :slides-per-view="3" :space-between="20" :pagination="{ clickable: true }" :autoplay="{ delay: 4000, disableOnInteraction: false }" :navigation="{ nextEl: '.custom-next', prevEl: '.custom-prev' }" class="swiper-box">
-        <SwiperSlide>
-          <div class="slide-item">
-            <div class="slide-item-text1">FREE-
-              RANGE<br>
-              CHICKEN</div>
-            <div @click="goWhy" class="slide-item-text2">Learn more</div>
-            <img src="../assets/mimgs/swiper-item-1.jpg" alt="">
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div class="slide-item">
-            <div class="slide-item-text1">ICE LAKE<br>
-              FREE-RANGE<br>
-              DUCK
-            </div>
-            <div @click="goWhy" class="slide-item-text2">Learn more</div>
-            <img src="../assets/mimgs/swiper-item-2.jpg" alt="">
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div class="slide-item">
-            <div class="slide-item-text1">ICEFIELD<br>
-              MOSS</div>
-            <div @click="goWhy" class="slide-item-text2">Learn more</div>
-            <img src="../assets/mimgs/swiper-item-3.jpg" alt="">
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div class="slide-item">
-            <div class="slide-item-text1">ARCTIC<br>
-              CHAR</div>
-            <div @click="goWhy" class="slide-item-text2">Learn more</div>
-            <img src="../assets/mimgs/swiper-item-4.jpg" alt="">
-          </div>
-        </SwiperSlide>
-      </Swiper>
-      <div class="custom-prev">
-        <img src="../assets/images/icon-arrow.svg" alt="">
-      </div>
-      <div class="custom-next">
-        <img src="../assets/images/icon-arrow.svg" style="transform: rotate(180deg);" alt="">
+        <div class="content-item">
+          <img src="../assets/imgs/landing/no.svg" alt="">
+          <div class="item-text1">NO ARTIFICIAL ADDITIVES</div>
+          <div class="item-text2">NO PALATANTS, NO COLORS, NO MYSTERY INGREDIENTS</div>
+        </div>
+
+        <div class="content-item">
+          <img src="../assets/imgs/landing/ideal.svg" alt="">
+          <div class="item-text1">IDEAL AMINO<br>ACID RATIO</div>
+          <div class="item-text2">BETTER ABSORPTION, LESS STOOL ODOR</div>
+        </div>
       </div>
     </div>
-    <!-- Philosophy -->
-    <section class="philosophy">
-      <div class="phil-text1">Product</div>
-      <div class="phil-text2">Philosophy</div>
-      <div class="phil-items">
-        <div class="phil-item">
-          <div class="phil-left">
-            <img src="../assets/mimgs/icon-Natural.svg" alt="">
-          </div>
-          <div class="phil-right">
-            <div class="phil-right-text1">Natural</div>
-            <div class="phil-right-text2">Chemical elements bring too many allergy risks.</div>
-          </div>
+    <div class="landing-g-5">
+      <img class="home-pg-5-bg" src="../assets/imgs/landing/home-pg-3.jpg" alt="">
+      <div class="landing-g-5-content">
+        <div class="landing-g-5-title1">
+          TO HELP EVERY HOUSE CAT <br>
+          RECLAIM THE DIET OF THEIR
         </div>
-        <div class="phil-item">
-          <div class="phil-left">
-            <img src="../assets/mimgs/icon-health.svg" alt="">
-          </div>
-          <div class="phil-right">
-            <div class="phil-right-text1">Health</div>
-            <div class="phil-right-text2">Defense Three meals a day reduce the risk of illness.</div>
-          </div>
-        </div>
-        <div class="phil-item">
-          <div class="phil-left">
-            <img src="../assets/mimgs/icon-fresh.svg" alt="">
-          </div>
-          <div class="phil-right">
-            <div class="phil-right-text1">Fresh</div>
-            <div class="phil-right-text2">Freshness from the original material to the whole processing of
-              the product.
-            </div>
-          </div>
-        </div>
-        <div class="phil-item">
-          <div class="phil-left">
-            <img src="../assets/mimgs/icon-convenient.svg" alt="">
-          </div>
-          <div class="phil-right">
-            <div class="phil-right-text1">Convenient</div>
-            <div class="phil-right-text2">Keep food fresh high-cost & highly effective Easy Lock ensures
-              freshness.
-            </div>
-          </div>
+        <div class="landing-g-5-title2">
+          WILD ANCESTORS
         </div>
       </div>
-      <img src="../assets/mimgs/m_home_bg_03.jpg" alt="">
-    </section>
-
-    <!-- <section class="cta">
-      <div class="cta-left">
-        <Swiper :modules="modules" :loop="true" :slides-per-view="3.5" :pagination="{ clickable: true }" :navigation="{nextEl: '.custom-next',prevEl: '.custom-prev'}" class="swiper-box">
-          <SwiperSlide>
-            <div class="slide-item">
-              <img src="../assets/images/swiper-item-1.jpg" style="width:250px" alt="">
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div class="slide-item">
-              <img src="../assets/images/swiper-item-2.jpg" style="width:250px" alt="">
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div class="slide-item">
-              <img src="../assets/images/swiper-item-3.jpg" style="width:250px" alt="">
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div class="slide-item">
-              <img src="../assets/images/swiper-item-4.jpg" style="width:250px" alt="">
-            </div>
-          </SwiperSlide>
-        </Swiper>
-      </div>
-      <div class="cta-right">
-        <img src="../assets/images/icon-talk.svg" alt="">
-        <div class="cta-text1">The Truth <br>
-          Behind<br>
-          <span>the Taste</span>
+    </div>
+    <div class="landing-g-6">
+      <div class="landing-g-6-content">
+        <div class="landing-g-6-title1">
+          IN THE NEXT DECADE, WE AIM TO BRING INSTINCT FIRST. NATURE ALWAYS. TO MILLIONS OF CATS—DELIVERING VISIBLE
+          HEALTH FROM THE INSIDE OUT.
+        </div>
+        <div class="landing-g-6-title2">
+          BECAUSE THE PERFECT FORMULA<br> WASN’T DESIGNED BY HUMANS. IT<br> <span>WAS WRITTEN BY NATURE.</span>
         </div>
       </div>
-    </section> -->
+    </div>
 
     <FooterMPage />
   </div>
@@ -236,21 +160,27 @@
 
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from "vue";
-import { Swiper, SwiperSlide } from 'swiper/vue'
-import { Pagination, Navigation, Autoplay } from 'swiper/modules'
 import HeaderMPage from '@/components/HeaderMPage.vue'
 import FooterMPage from '@/components/FooterMPage.vue'
 import { useRouter } from "vue-router";
+import { Swiper, SwiperSlide } from 'swiper/vue'
+import { Pagination, Navigation, Autoplay } from 'swiper/modules'
+const modules = [Pagination, Navigation, Autoplay]
 const router = useRouter()
 const boxRef = ref(null);
+const bowlRef = ref(null);
 const show = ref(false);
-const modules = [Pagination, Navigation, Autoplay]
+const showbowl = ref(false);
 let observer;
-const goWhy = () => {
-  router.push({ name: 'mHealthy' });
-}
+let observer1;
+//const goWhy = () => {
+//  router.push({ name: 'Healthy' });
+//}
 const goProductDetail = (id) => {
-  router.push({ name: 'mProductDetail', query: { id } });
+  router.push({ name: 'ProductDetail', query: { id } });
+}
+const goProduct = () => {
+  router.push({ name: 'Products' });
 }
 onMounted(() => {
   observer = new IntersectionObserver(
@@ -266,12 +196,31 @@ onMounted(() => {
     },
     {
       threshold: 0,             // 只要有一点进入就检测
-      rootMargin: "0px 0px -30% 0px"
+      rootMargin: "0px 0px 0px 0px"
+    }
+  );
+  observer1 = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          console.log(entry.target, entry.boundingClientRect, entry.isIntersecting);
+          showbowl.value = true; // 进入视口时触发动画
+        } else {
+          showbowl.value = false;
+        }
+      });
+    },
+    {
+      threshold: 0,             // 只要有一点进入就检测
+      rootMargin: "0px 0px 0px 0px"
     }
   );
 
   if (boxRef.value) {
     observer.observe(boxRef.value);
+  }
+  if (bowlRef.value) {
+    observer1.observe(bowlRef.value);
   }
 });
 
@@ -279,14 +228,37 @@ onBeforeUnmount(() => {
   if (observer && boxRef.value) {
     observer.unobserve(boxRef.value);
   }
+  if (observer && bowlRef.value) {
+    observer1.unobserve(bowlRef.value);
+  }
 });
 </script>
 
 <style lang="scss" scoped>
 .landing-page {
   width: 100%;
-  background: #fff;
-  overflow: hidden;
+  background: #e8e8e8;
+
+  .landing-content-line {
+    width: 100%;
+    margin: 0 auto;
+    height: 36px;
+    font-family: "Oswald-Regular";
+    font-size: 12px;
+    line-height: 36px;
+    color: #938c34;
+    background-color: #1f160b;
+    padding: 0 10px;
+
+    .landing-content-line-text-wrapper {
+      width: 100%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+    }
+  }
 
   .hero {
     position: relative;
@@ -299,221 +271,473 @@ onBeforeUnmount(() => {
 
     .title1 {
       position: absolute;
-      font-family: "RedHatDisplay-Bold";
-      text-align: left;
-      font-size: 1.2rem;
+      top: 50%;
+      width: 80%;
+      left: 10%;
+      font-family: "Oswald-Medium";
+      font-size: 32px;
       line-height: 1;
-      bottom: 3.3333rem;
-      left: 0.5067rem;
+      text-align: center;
+      transform: translateY(-100px);
+      animation: fadeDown 0.8s ease-out 0.5s forwards;
+      text-shadow: 0 0 15px #000;
 
       .title1-sub1 {
         display: inline-block;
-        font-size: 0.96rem;
-        vertical-align: 0.5867rem;
-      }
-
-      .title1-sub2 {
-        font-family: "RedHatDisplay-Regular";
-        font-size: 0.96rem;
+        font-size: 27.5px;
+        vertical-align: 10px;
+        color: #f39800;
       }
     }
 
     .title2 {
       position: absolute;
-      bottom: 2.9067rem;
-      left: 0.5333rem;
+      top: 65%;
+      /* margin-left: 166px; */
+      left: 10%;
       font-family: "Oswald-Regular";
-      font-size: 0.32rem;
-      line-height: 1.5;
-      width: 6.2133rem;
-      text-align: left;
+      font-size: 11px;
+      line-height: 1.2;
+      width: 80%;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(-100px);
+      animation: fadeDown 0.8s ease-out 0.5s forwards;
     }
 
     .btn-leran-more {
-      cursor: pointer;
+
       position: absolute;
-      bottom: 1.7333rem;
-      right: 1.1467rem;
-      font-family: "RedHatDisplay-Bold";
-      border: 0.0533rem solid #fff;
-      border-radius: 0.48rem;
-      font-size: 0.3733rem;
-      width: 3.2267rem;
-      height: 0.96rem;
-      line-height: 0.8533rem;
+      top: 80%;
+      margin-left: -65px;
+      left: 50%;
+      font-family: "Oswald-SemiBold";
+      font-size: 12px;
+      width: 130px;
+      height: 35px;
+      line-height: 35px;
+      opacity: 0;
+      background-color: #e60012;
+      transform: translateY(-100px);
+      animation: fadeDown 0.8s ease-out 0.5s forwards;
     }
   }
-  .unleash {
-    position: relative;
-    font-size: 0;
 
-    img {
-      width: 100%;
-    }
-
-    .particle {
-      position: absolute;
-      top: 0;
-      left: 0;
+  @keyframes fadeDown {
+    0% {
       opacity: 0;
-      transform: translateY(4rem);
-      transition: all 0.8s ease-out;
+      transform: translateY(-100px);
     }
 
-    .particle.show {
+    100% {
       opacity: 1;
       transform: translateY(0);
     }
+  }
 
-    .unleash-text1 {
-      position: absolute;
-      top: 1.0667rem;
-      left: 0.8rem;
-      color: #212995;
+  .unleash-block {
+    font-size: 0;
+    background: #efe8db;
 
-      .text-sub1 {
-        font-family: "RedHatDisplay-Bold";
-        font-size: 0.6rem;
-        line-height: 1;
-        text-align: left;
+    .unleash-content {
+      position: relative;
+      width: 100%;
+      margin: 0 auto;
+
+      .bowl-wrapper {
+        position: relative;
+
+        .land-p2 {
+          width: 100%;
+          margin: 0 auto;
+        }
+
+        .bowl1 {
+          position: absolute;
+          width: 34%;
+          top: 4%;
+          left: 33%;
+          transform: rotate(180deg);
+          transition: all 20s ease-out;
+
+          &.show {
+            transform: rotate(0deg);
+          }
+        }
       }
 
-      .text-sub2 {
-        font-family: "RedHatDisplay-Bold";
-        font-size: 0.7rem;
-        line-height: 1;
-        text-align: left;
+      .particle {
+        // position: absolute;
+        margin: 0 auto;
+        // left: 0;
+        opacity: 0;
+        transform: translateY(150px);
+        transition: all 0.8s ease-out;
+        padding-top: 40px;
+
+        .particle-content {
+          font-family: "Oswald-SemiBold";
+          font-size: 40px;
+          line-height: 36px;
+          color: #938c34;
+        }
       }
 
-      .text-sub3 {
-        font-family: "Khalila";
-        font-size: 0.9rem;
-        line-height: 1;
+      .particle.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .unleash-text1 {
+        position: absolute;
+        top: 240px;
+        left: 35px;
+      }
+
+      .unleash-text2 {
+        position: absolute;
+        top: 290px;
+        left: 35px;
+      }
+
+      .unleash-text3 {
+        position: absolute;
+        top: 310px;
+        left: 202px;
+      }
+
+      .unleash-text4 {
+        position: absolute;
+        top: 379px;
+        left: 202px;
+      }
+
+      .unleash-text5 {
+        position: absolute;
+        top: 432px;
+        left: 35px;
+      }
+
+      .unleash-text6 {
+        position: absolute;
+        top: 520px;
+        left: 35px;
+      }
+
+      .title {
+        font-family: "Copper";
+        font-size: 17px;
+        line-height: 1.2;
         text-align: left;
-        color: #a1a1a1;
+        color: #efe8db;
+        width: 120px;
+        opacity: 0;
+        transform: translateY(150px);
+        transition: all 0.8s ease-out;
+
+        &.show {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .body {
+        font-family: "Oswald-Regular";
+        font-size: 10px;
+        line-height: 1.2;
+        text-align: left;
+        color: #1f150b;
+        width: 150px;
+        opacity: 0;
+        transform: translateY(150px);
+        transition: all 0.8s ease-out;
+
+        &.show {
+          opacity: 1;
+          transform: translateY(0);
+        }
       }
     }
+  }
 
-    .unleash-text2 {
+  .products-block {
+    position: relative;
+    background-color: #efe8db;
+
+    .products-bg-img {
+      width: 100%;
+    }
+
+    .products-text1 {
       position: absolute;
-      bottom: 2.1333rem;
-      width: 86%;
-      right: 7%;
-      color: #212995;
-      font-family: "Oswald-Regular";
-      font-size: 0.3733rem;
-      line-height: 1.2;
+      font-family: "Oswald-SemiBold";
+      font-size: 26px;
+      line-height: 1;
+      text-align: left;
+      color: #1f160b;
+      left: 0;
+      top: 34px;
+      width: 100%;
       text-align: center;
     }
+
+    .products-text2 {
+      position: absolute;
+      font-family: "Oswald-Medium";
+      font-size: 12px;
+      line-height: 1;
+      text-align: center;
+      color: #1f160b;
+      left: 0;
+      top: 106px;
+      width: 100%;
+    }
+
+
   }
 
   .products {
     position: relative;
+    width: 100%;
+    margin: 0 auto;
+    height: 500px;
 
-    .products-text1 {
-      font-family: "RedHatDisplay-Regular";
-      font-size: 0.8rem;
-      line-height: 1;
-      text-align: center;
-      color: #212995;
-      padding: 1.3333rem 0;
-      margin: 0;
 
-      .sub1 {
-        font-family: "RedHatDisplay-Bold";
-        font-weight: bold;
-      }
 
-      .sub2 {
-        font-family: "RedHatDisplay-Bold";
-        font-weight: bold;
-      }
-    }
+    .product-grid {
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 700px;
 
-    .pd-swiper-box {
-      position: relative;
+      .product-card {
+        cursor: pointer;
+        width: 250px;
+        height: auto;
 
-      .pd-slide-item {
         img {
-          width: 60%;
+          width: 166px;
+          margin: 0 auto 30px;
+
+          &:hover {
+            animation: hoverUp 0.3s ease-out forwards;
+          }
         }
 
-        .pd-tag1 {
-          font-family: "RedHatDisplay-Bold";
-          font-size: 0.3733rem;
+        .tag1 {
+          font-family: "Oswald-SemiBold";
+          font-size: 12px;
           line-height: 1;
           text-align: center;
-          color: #212995;
-          height: 0.3733rem;
-          margin-top: 0.5333rem;
+          color: #000;
+          height: 12px;
         }
 
-        .pd-tag2 {
-          font-family: "RedHatDisplay-Bold";
-          font-size: 0.8rem;
+        .tag2 {
+          font-family: "Oswald-SemiBold";
+          font-size: 26px;
           line-height: 1;
           text-align: center;
-          color: #212995;
-          width: 7.2rem;
+          color: #000;
           margin: 0 auto;
-          height: 1.6rem;
+          height: 26px;
         }
-      }
-    }
 
-    .custom-pd-prev {
-      position: absolute;
-      top: 50%;
-      cursor: pointer;
-      left: 1.25rem;
-      width: 0.8rem;
-      height: 0.8rem;
-      z-index: 100;
-
-      img {
-        width: 100%;
-      }
-    }
-
-    .custom-pd-next {
-      position: absolute;
-      top: 50%;
-      cursor: pointer;
-      right: 1.25rem;
-      width: 0.8rem;
-      height: 0.8rem;
-      z-index: 100;
-
-      img {
-        width: 100%;
+        .btn {
+          font-family: "Oswald-SemiBold";
+          width: 155px;
+          height: 38px;
+          line-height: 38px;
+          text-align: center;
+          color: #fff;
+          background-color: #e60012;
+          margin: 20px auto 0;
+        }
       }
     }
   }
 
+  .landing-g-4 {
+    position: relative;
+    height: 688px;
+    background-color: #000;
+
+    .bowl {
+      position: absolute;
+      top: 222px;
+      left: 50%;
+      width: 319px;
+      opacity: 0;
+    }
+
+    .bowl.showbowl {
+      opacity: 1;
+      animation: bowlBounce 0.9s ease-out forwards;
+    }
+
+    .content-block {
+      width: 100%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .content-item {
+        width: 240px;
+        text-align: left;
+
+        img {
+          width: 40px;
+          height: 40px;
+        }
+
+        .item-text1 {
+          font-family: "Oswald-Medium";
+          font-size: 40px;
+          line-height: 1;
+          color: #f39800;
+          margin: 10px 0;
+        }
+
+        .item-text2 {
+          font-family: "Oswald-Medium";
+          font-size: 18px;
+          line-height: 1;
+          color: #efe8db;
+        }
+      }
+    }
+
+    @keyframes bowlBounce {
+      0% {
+        transform: translate(-50%, -50%) scale(0.8);
+      }
+
+      60% {
+        transform: translate(-50%, -50%) scale(1.08);
+      }
+
+      80% {
+        transform: translate(-50%, -50%) scale(0.98);
+      }
+
+      100% {
+        transform: translate(-50%, -50%) scale(1);
+      }
+    }
+
+    .home-pg-2 {
+      width: 100%;
+      margin: 80px auto 50px;
+    }
+
+    .home-pg-3 {
+      width: 1100px;
+      margin: 0 auto;
+    }
+  }
+
+  .landing-g-5 {
+    position: relative;
+    background-color: #000;
+
+    .home-pg-5-bg {
+      width: 100%;
+    }
+
+    .landing-g-5-content {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      margin-left: -600px;
+      margin-top: 60px;
+      width: 100%;
+
+      .landing-g-5-title1 {
+        font-family: "Oswald-Regular";
+        font-size: 37px;
+        line-height: 1;
+        text-align: center;
+        color: #efe8db;
+        width: 100%;
+      }
+
+      .landing-g-5-title2 {
+        font-family: "Oswald-Regular";
+        font-size: 105px;
+        line-height: 1;
+        text-align: center;
+        color: #f39800;
+        width: 100%;
+        margin-top: 20px;
+      }
+    }
+  }
+
+  .landing-g-6 {
+    background-color: #efe8db;
+    height: 450px;
+
+    .landing-g-6-content {
+      width: 100%;
+      margin: 0 auto;
+
+      .landing-g-6-title1 {
+        font-size: 27px;
+        font-family: "Copper";
+        color: #000;
+        width: 800px;
+        margin: 0 auto;
+      }
+
+      .landing-g-6-title2 {
+        font-size: 27px;
+        font-family: "Oswald-Regular";
+        color: #97903c;
+        width: 500px;
+        margin: 0 auto;
+        border: 3px solid #97903c;
+        padding: 30px 40px;
+        border-radius: 50%;
+        margin-top: 65px;
+
+        span {
+          font-family: "Oswald-SemiBold";
+        }
+      }
+    }
+  }
+
+  @keyframes hoverUp {
+    0% {
+      transform: scale(1);
+    }
+
+    100% {
+      transform: scale(1.05);
+    }
+  }
+
   .brand-logo {
-    padding: 0.5333rem 0;
+    padding: 40px 0;
 
     .logo-list {
+      box-sizing: border-box;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       width: 90%;
       margin: 0 auto;
-      border-top: 0.0267rem solid #7c7c7c;
-      border-bottom: 0.0267rem solid #7c7c7c;
-      padding: 0.4rem 0;
+      padding: 30px 5%;
+      border-top: 1px solid #7c7c7c;
+      border-bottom: 1px solid #7c7c7c;
 
-      .logo-list-line {
-        display: flex;
-        justify-content: space-between;
-        margin: 0.2667rem 0;
+      img {
 
-        .logo-item {
-          height: 0.6667rem;
-          flex: 1;
-          text-align: center;
-
-          img {
-            height: 0.6667rem;
-          }
-        }
+        height: 40px;
       }
     }
   }
@@ -522,60 +746,7 @@ onBeforeUnmount(() => {
     position: relative;
     overflow: hidden;
 
-    .swiper-block-text {
-      width: 100%;
-      text-align: center;
-      color: #212995;
-      padding: 0.2667rem 0 0.8rem;
-      overflow: visible;
 
-      .swiper-block-text1 {
-        font-family: "RedHatDisplay-Medium";
-        font-size: 0.3733rem;
-        line-height: 1;
-        font-style: italic;
-      }
-
-      .swiper-block-text2 {
-        font-family: "RedHatDisplay-Bold";
-        font-size: 0.64rem;
-        line-height: 1.2;
-      }
-
-      .swiper-block-text3 {
-        font-family: "RedHatDisplay-Regular";
-        font-size: 0.5333rem;
-        line-height: 1;
-      }
-    }
-
-    .custom-prev {
-      position: absolute;
-      top: 50%;
-      cursor: pointer;
-      left: 1.3333rem;
-      width: 0.8rem;
-      height: 0.8rem;
-      z-index: 100;
-
-      img {
-        width: 100%;
-      }
-    }
-
-    .custom-next {
-      position: absolute;
-      top: 50%;
-      cursor: pointer;
-      right: 1.3333rem;
-      width: 0.8rem;
-      height: 0.8rem;
-      z-index: 100;
-
-      img {
-        width: 100%;
-      }
-    }
 
     :deep(.swiper-box) {
       width: 140%;
@@ -583,21 +754,21 @@ onBeforeUnmount(() => {
 
       .swiper-button-prev {
         top: 40% !important;
-        left: 1.25rem;
+        left: 10%;
         background-image: url(../assets/images/icon-arrow.svg);
         background-repeat: no-repeat;
       }
 
       .swiper-button-next {
         top: 40% !important;
-        right: 1.25rem;
+        right: 10%;
       }
     }
 
     .swiper-box {
       :deep(.swiper-pagination) {
-        width: 5.3333rem;
-        height: 2.1333rem;
+        width: 200px;
+        height: 80px;
         display: flex;
         justify-content: space-around;
         align-items: center;
@@ -607,16 +778,16 @@ onBeforeUnmount(() => {
           cursor: pointer;
           display: block;
           background: #505050;
-          border: 0.0267rem solid #505050;
+          border: 1px solid #505050;
           opacity: 0.6;
-          width: 0.2667rem;
-          height: 0.2667rem;
-          border-radius: 0.2667rem;
+          width: 10px;
+          height: 10px;
+          border-radius: 10px;
         }
 
         .swiper-pagination-bullet-active {
           background: #e8e8e8;
-          border: 0.0267rem solid #505050;
+          border: 1px solid #505050;
           opacity: 1;
         }
       }
@@ -626,16 +797,12 @@ onBeforeUnmount(() => {
         width: 100%;
         color: #fff;
 
-        img {
-          width: 2.1333rem;
-        }
-
         .slide-item-text1 {
           position: absolute;
           top: 15%;
           left: 8%;
           font-family: "RedHatDisplay-Bold";
-          font-size: 0.4rem;
+          font-size: 30px;
           line-height: 1;
           text-align: left;
         }
@@ -643,12 +810,12 @@ onBeforeUnmount(() => {
         .slide-item-text2 {
           position: absolute;
           bottom: 15%;
-          right: 8%;
+          left: 8%;
           font-family: "RedHatDisplay-Regular";
-          font-size: 0.3rem;
+          font-size: 15px;
           line-height: 1;
-          border-bottom: 0.0533rem solid #fff;
-          padding-bottom: 0.1067rem;
+          border-bottom: 2px solid #fff;
+          padding-bottom: 4px;
           cursor: pointer;
         }
 
@@ -662,47 +829,73 @@ onBeforeUnmount(() => {
   .philosophy {
     position: relative;
     font-size: 0;
-    color: #212995;
-    text-align: left;
+    color: #fff;
 
     img {
       width: 100%;
     }
 
     .phil-text1 {
+      position: absolute;
       font-family: "RedHatDisplay-Regular";
-      font-size: 1rem;
+      font-size: 45px;
       line-height: 1;
-      padding-left: 1.0667rem;
+      top: 40px;
+      left: 6%;
+      opacity: 0;
+      transform: translateY(150px);
+      transition: all 0.8s ease-out;
+    }
+
+    .phil-text1.show {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     .phil-text2 {
+      position: absolute;
       font-family: "RedHatDisplay-Bold";
-      font-size: 1.2rem;
+      font-size: 60px;
       line-height: 1;
-      padding-left: 1.0667rem;
+      top: 85px;
+      left: 6%;
+      opacity: 0;
+      transform: translateY(150px);
+      transition: all 0.8s ease-out;
+    }
+
+    .phil-text2.show {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     .phil-items {
-      font-size: 1.3333rem;
+      position: absolute;
+      font-size: 50px;
       line-height: 1;
-      padding-left: 1.0667rem;
+      top: 195px;
+      left: 10%;
       display: flex;
       flex-wrap: wrap;
-      width: 100%;
-      justify-content: left;
-      margin-top: 0.5333rem;
+      width: 520px;
+      justify-content: space-between;
+      opacity: 0;
+      transform: translateY(150px);
+      transition: all 0.8s ease-out;
+
+      &.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
 
       .phil-item {
-        width: 45%;
+        width: 230px;
         display: flex;
-        justify-content: flex-start;
-        margin-bottom: 0.8rem;
+        justify-content: space-between;
+        margin-bottom: 30px;
 
         .phil-left {
-          width: 0.8rem;
-          margin-right: 0.2133rem;
-          line-height: 0;
+          width: 50px;
 
           .img {
             width: 100%;
@@ -710,21 +903,21 @@ onBeforeUnmount(() => {
         }
 
         .phil-right {
-          width: 2.5rem;
+          width: 170px;
 
           .phil-right-text1 {
             font-family: "RedHatDisplay-Regular";
-            font-size: 0.4267rem;
+            font-size: 38px;
             line-height: 1;
             text-align: left;
           }
 
           .phil-right-text2 {
             font-family: "Oswald-Regular";
-            font-size: 0.32rem;
-            line-height: 1;
+            font-size: 14px;
+            line-height: 1.3;
             text-align: left;
-            margin-top: 0.1333rem;
+            margin-top: 10px;
           }
         }
       }
@@ -736,7 +929,7 @@ onBeforeUnmount(() => {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 13.3333rem;
+    height: 500px;
 
     .cta-left {
       width: 70%;
@@ -749,18 +942,18 @@ onBeforeUnmount(() => {
 
       img {
         position: absolute;
-        top: 5.3333rem;
+        top: 200px;
         right: 12%;
-        width: 2.1333rem;
+        width: 80px;
       }
 
       .cta-text1 {
         position: absolute;
-        top: 7.4667rem;
+        top: 280px;
         right: 10%;
-        width: 5.3333rem;
+        width: 200px;
         font-family: "RedHatDisplay-Medium";
-        font-size: 1.0667rem;
+        font-size: 40px;
         line-height: 1;
         text-align: right;
         color: #212995;
