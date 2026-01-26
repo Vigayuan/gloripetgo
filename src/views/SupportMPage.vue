@@ -6,150 +6,69 @@
     <!-- Hero -->
     <section class="hero">
       <div class="hero-bg">
-        <img src="../assets/mimgs/about_bg_02.jpg" alt="">
-      </div>
-      <div class="hero-text-block">
-        <div class="title1">
-          GET IN<br>
-          TOUCH
-        </div>
-        <div class="title2">
-          <!-- Ensure comprehensive nutrition and health protection for your pet with every delicious bite. -->
-          Reinforce the commitment to the pet's health and happiness.
-        </div>
+        <img src="../assets/m/contact-p1.jpg" alt="">
       </div>
     </section>
 
     <!-- Unleash energy -->
-    <section class="unleash " ref="boxRef">
-      <img src="../assets/mimgs/about_bg_03.jpg" alt="">
-      <div class="input-block">
-        <div class="inner-input-block">
-          <div class="name">NAME*</div>
-          <div class="name-input">
-            <div class="first-name">
-              <input type="text" id="firstName" v-model="firstName" placeholder="First Name" />
-              <!-- <div>First Name</div> -->
+    <section class="unleash" ref="boxRef">
+      <img style="height: 900px;width:100%" src="../assets/m/contact-p3.png" alt="">
+      <div class="unleash-content">
+        <div class="title1">
+          GET IN <br>
+          TOUCH
+        </div>
+        <div class="title2">
+          Ensure comprehensive nutrition and health protection for your pet with every delicious bite.
+        </div>
+        <div class="input-block">
+          <div class="inner-input-block">
+            <div class="name-input">
+              <div class="first-name">
+                <div>FIRST NAME:</div>
+                <input type="text" id="firstName" v-model="firstName" />
+              </div>
+              <div class="last-name">
+                <div>LAST NAME:</div>
+                <input type="text" id="lastName" v-model="lastName" />
+              </div>
+            </div>
+            <div class="email">E-MAIL:</div>
+            <div class="email-input">
+              <input type="text" id="email" v-model="email" />
+            </div>
+            <div class="message">MESSAGE:</div>
+            <div class="message-input">
+              <textarea type="text" id="message" v-model="messageContent" />
             </div>
           </div>
-          <div class="name-input">
-            <div class="last-name">
-              <input type="text" id="lastName" v-model="lastName" placeholder="Last Name" />
-              <!-- <div>Last Name</div> -->
+          <div class="btn-group">
+            <div class="btn-block">
+              <button class="btn btn-send" @click="sendForm">SEND</button>
+              <button class="btn btn-clear" @click="clearForm">CLEAR</button>
             </div>
           </div>
-          <div class="email">E-MAIL*</div>
-          <div class="email-input">
-            <input type="text" id="email" v-model="email" placeholder="Email" />
-          </div>
-          <div class="message">MESSAGE*</div>
-          <div class="message-input">
-            <textarea type="text" id="message" v-model="messageContent" placeholder="Message" />
-          </div>
         </div>
-        <div class="btn-group">
-          <div class="btn-block">
-            <button class="btn btn-send" @click="sendForm">Send</button>
-            <button class="btn btn-clear" @click="clearForm">Clear all</button>
-          </div>
-          <!-- <div class="media-block">
-            <img @click="openWindow(1)" src="../assets/images/icon-facebook.svg" alt="">
-            <img @click="openWindow(2)" src="../assets/images/icon-youtube.svg" alt="">
-            <img @click="openWindow(3)" src="../assets/images/icon-ins.svg" alt="">
-          </div> -->
-        </div>
+        <img class="keli" src="../assets/imgs/contact/keli.png" alt="">
       </div>
     </section>
-    <!-- Philosophy -->
-    <section class="philosophy">
-      <img src="../assets/mimgs/about_bg_04.jpg" alt="">
-      <div class="phil-block">
-        <div class="phil-text1">Frequently <br> Asked Questions</div>
-        <div class="phil-items">
-          <div @click="toggleShowQA(1)" class="phil-item">
-            <div class="phil-item-top">
-              <div class="phil-item-top-text">
-                Are GloriPetgo pet food safe?
-              </div>
-              <div class="control-btn">
-                <div v-show="showQAIndex != 1">+</div>
-                <div v-show="showQAIndex == 1">-</div>
-              </div>
-            </div>
-            <div v-show="showQAIndex == 1" class="phil-item-bottom">
-              <div class="phil-item-bottom-text">
-                We are a team passionate about pets, and ensuring the quality and safety of our products is our top
-                priority. Our rigorous processes and operations are designed to deliver the highest levels of quality,
-                purity, and safety, while adhering to regulatory standards and continuously seeking improvement across
-                all our facilities.
-                Our products are crafted using nutritious, high-quality ingredients that comply with relevant standards.
-              </div>
-            </div>
-          </div>
-          <div @click="toggleShowQA(2)" class="phil-item">
-            <div class="phil-item-top">
-              <div class="phil-item-top-text">
-                How do I keep my pet happy and healthy?
-              </div>
-              <div class="control-btn">
-                <div v-show="showQAIndex != 2">+</div>
-                <div v-show="showQAIndex == 2">-</div>
-              </div>
-            </div>
-            <div v-show="showQAIndex == 2" class="phil-item-bottom">
-              <div class="phil-item-bottom-text">
-                Taking the initiative to ask this question is a great starting point toward ensuring your pet’s
-                well-being. As a dedicated pet parent, it’s essential to offer both preventive and active care to
-                promote their happiness and health. The list of needs—from vaccinations and proper nutrition to flea and
-                tick prevention—might feel daunting at first.
-              </div>
-            </div>
-          </div>
-          <div @click="toggleShowQA(3)" class="phil-item">
-            <div class="phil-item-top">
-              <div class="phil-item-top-text">
-                What key factors should I consider
-                when selecting a pet food?
-              </div>
-              <div class="control-btn">
-                <div v-show="showQAIndex != 3">+</div>
-                <div v-show="showQAIndex == 3">-</div>
-              </div>
-            </div>
-            <div v-show="showQAIndex == 3" class="phil-item-bottom">
-              <div class="phil-item-bottom-text">
-                When choosing the ideal food for your pet, there are several important aspects to keep in mind.
-                GloriPetgo’s premium nutrition offers a well-rounded and balanced diet, perfect for your growing
-                companion. With carefully balanced levels of protein, fat, fiber, vitamins, and minerals, we aim to give
-                you peace of mind in your nutritional decisions.
-              </div>
-            </div>
-          </div>
-          <div @click="toggleShowQA(4)" class="phil-item">
-            <div class="phil-item-top">
-              <div class="phil-item-top-text">
-                What does "Cruelty Free" mean
-                to GloriPetgo?
-              </div>
-              <div class="control-btn">
-                <div v-show="showQAIndex != 4">+</div>
-                <div v-show="showQAIndex == 4">-</div>
-              </div>
-            </div>
-            <div v-show="showQAIndex == 4" class="phil-item-bottom">
-              <div class="phil-item-bottom-text">
-                The animals featured in our products are raised, transported, and processed humanely in accordance with
-                Canadian regulations. All fish used are wild-caught and sourced sustainably.
-                GloriPetgo does not perform laboratory experiments on animals. We assess our formulas by collaborating
-                with a network of breeders, pet rescue organizations, and our own pets.
-                Our products undergo nutritional testing both at our facility and through third-party laboratories.
-                These labs focus on analyzing the food itself, not conducting tests on animals.
-              </div>
-            </div>
-          </div>
-        </div>
+
+    <div class="contact-info-1">
+      <img src="../assets/imgs/contact/contact_02.jpg" alt="">
+      <div class="text1">INSTINCT FIRST <br>
+        NATURE ALWAYS</div>
+    </div>
+    <div class="contact-info-2">
+      <img src="../assets/imgs/contact/contact_03.jpg" alt="">
+      <div class="text-wrapper">
+        <div class="text">RECLAIM THE<br> ANCIENT DIET</div>
+        <div class="text">100%<br>
+          CARNIVORE<br>
+          IDENTITY</div>
+        <div class="text">VISIBLE<br>
+          WILD HEALTH</div>
       </div>
-    </section>
+    </div>
 
     <FooterMPage />
   </div>
@@ -164,26 +83,15 @@ const firstName = ref("");
 const lastName = ref("");
 const email = ref("");
 const messageContent = ref("");
-const showQAIndex = ref(-1);
 import emailjs from "emailjs-com"
 
-// const openWindow = (index) => {
-//   if (index == 1) {
-//     window.open('https://www.facebook.com/profile.php?id=61577967892785', "_blank")
-//   }
-//   else if (index == 2) {
-//     window.open('https://www.youtube.com/@GloriPetgo', "_blank")
-//   }
-//   else {
-//     window.open('https://www.instagram.com/', "_blank")
-//   }
-// }
+
 const sendMail = () => {
   emailjs.send(
     "service_85ubcj6",     // 你的服务ID
-    "template_5o5qhj7",    // 邮件模板ID
+    "template_z5lxlk2",    // 邮件模板ID
     {
-      to_email: "gloripetgo@gmail.com",
+      to_email: "schrainpetfoods@gmail.com",
       user_name: `${firstName.value} ${lastName.value}`,
       message: `${messageContent.value}`,
       user_email: `${email.value}`
@@ -211,11 +119,7 @@ const clearForm = () => {
   email.value = "";
   messageContent.value = "";
 };
-const toggleShowQA = (index) => {
-  showQAIndex.value = showQAIndex.value === index ? -1 : index;
-}
 </script>
-
 <style lang="scss" scoped>
 .landing-page {
   width: 100%;
@@ -227,270 +131,281 @@ const toggleShowQA = (index) => {
     color: #fff;
 
     .hero-bg {
+      height: 300px;
       overflow: hidden;
 
       img {
         width: 100%;
-        transform: translateY(0);
-        // animation: moveUp 10s ease-out 0.5s forwards;
+        transform: translateY(-30px);
+        animation: moveUp 10s ease-out 0.5s forwards;
       }
     }
 
     @keyframes moveUp {
       to {
-        transform: translateY(-0.5333rem); // -20px
-      }
-    }
-
-    .hero-text-block {
-      position: absolute;
-      bottom: 1.3333rem; // 50px
-      left: 0.5333rem; // 20px
-      width: 40%;
-      text-shadow: 0 0 0.0533rem black; // 2px
-
-      .title1 {
-        font-family: "RedHatDisplay-Bold";
-        font-size: 1rem; // 60px
-        line-height: 1;
-        text-align: left;
-      }
-
-      .title2 {
-        font-family: "Oswald-Regular";
-        font-size: 0.32rem; // 16px
-        line-height: 1.5;
-        text-align: left;
+        transform: translateY(-70px);
       }
     }
   }
 
   .unleash {
     position: relative;
-    font-size: 0;
+    height: 900px;
 
     img {
       width: 100%;
     }
 
-    .input-block {
-      box-sizing: border-box;
-      position: absolute;
-      top: 2.6667rem; // 100px
+    margin-top: -90px;
+
+    .unleash-content {
       width: 90%;
+      top: 110px;
+      height: calc(100% - 110px);
+      position: absolute;
       left: 5%;
-      padding: 0.2667rem 0.4rem; // 10px 15px
-      color: #212995;
-      background: #fff;
 
-      .inner-input-block {
+      .keli {
+        position: absolute;
+        width: 290px;
+        bottom: -145px;
+        left: 50px;
+        z-index: 100;
+      }
+
+      .title1 {
+        font-family: "RedHatDisplay-Bold";
+        font-size: 28px;
+        line-height: 1;
         text-align: left;
+        color: #efe8db;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50%;
+        padding: 0 20px;
+      }
 
-        .name {
-          font-family: "RedHatDisplay-Bold";
-          font-size: 0.48rem; // 18px
-          line-height: 1.5;
-        }
+      .title2 {
+        font-family: "Oswald-Regular";
+        font-size: 10px;
+        line-height: 1.5;
+        width: 50%;
+        text-align: left;
+        color: #efe8db;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        padding: 0 20px;
+      }
 
-        .name-input {
-          display: flex;
-          justify-content: space-between;
 
-          .first-name {
-            flex: 1;
-            padding-bottom: 0.5333rem; // 20px
+      .input-block {
+        box-sizing: border-box;
+        position: absolute;
+        top: 85px;
+        width: 88%;
+        left: 6%;
+        color: #efe8db;
 
-            div {
-              font-family: "RedHatDisplay-Medium";
-              font-size: 0.4267rem; // 16px
-              line-height: 1.5;
+        .inner-input-block {
+          text-align: left;
+
+          .name {
+            font-family: "RedHatDisplay-Bold";
+            font-size: 12px;
+            line-height: 1.5;
+          }
+
+          .name-input {
+            display: flex;
+            justify-content: space-between;
+
+            .first-name {
+              width: 45%;
+
+              div {
+                font-family: "RedHatDisplay-Medium";
+                font-size: 12px;
+                line-height: 1.5;
+              }
+            }
+
+            .last-name {
+              width: 45%;
+
+              div {
+                font-family: "RedHatDisplay-Medium";
+                font-size: 12px;
+                line-height: 1.5;
+              }
             }
           }
 
-          .last-name {
-            flex: 1;
+          .email {
+            font-family: "RedHatDisplay-Bold";
+            font-size: 12px;
+            line-height: 1.5;
+            margin-top: 20px;
+          }
 
-            div {
-              font-family: "RedHatDisplay-Medium";
-              font-size: 0.4267rem; // 16px
-              line-height: 1.5;
+          .email-input {
+            display: flex;
+            justify-content: space-between;
+
+            .first-name {
+              width: 20%;
+
+              div {
+                font-family: "RedHatDisplay-Medium";
+                font-size: 12px;
+                line-height: 1.5;
+              }
+            }
+
+            .last-name {
+              width: 45%;
+
+              div {
+                font-family: "RedHatDisplay-Medium";
+                font-size: 12px;
+                line-height: 1.5;
+              }
             }
           }
-        }
 
-        .email {
-          font-family: "RedHatDisplay-Bold";
-          font-size: 0.48rem; // 18px
-          line-height: 1.5;
-          margin-top: 0.5333rem; // 20px
-        }
+          .message {
+            font-family: "RedHatDisplay-Bold";
+            font-size: 12px;
+            line-height: 1.5;
+            margin-top: 20px;
+          }
 
-        .email-input {
-          display: flex;
-          justify-content: space-between;
+          .message-input {
+            display: flex;
+            justify-content: space-between;
 
-          .first-name,
-          .last-name {
-            width: 1.2rem; // 45% -> 保留原比例即可
+            .first-name {
+              width: 45%;
 
-            div {
-              font-family: "RedHatDisplay-Medium";
-              font-size: 0.4267rem; // 16px
-              line-height: 1.5;
+              div {
+                font-family: "RedHatDisplay-Medium";
+                font-size: 12px;
+                line-height: 1.5;
+              }
+            }
+
+            .last-name {
+              width: 45%;
+
+              div {
+                font-family: "RedHatDisplay-Medium";
+                font-size: 12px;
+                line-height: 1.5;
+              }
             }
           }
-        }
 
-        .message {
-          font-family: "RedHatDisplay-Bold";
-          font-size: 0.48rem; // 18px
-          line-height: 1.5;
-          margin-top: 0.5333rem; // 20px
-        }
+          input,
+          textarea {
+            border: 1px solid #fff;
+            padding: 8px;
+            font-size: 28px;
+            outline: none;
+            width: 100%;
+            border-radius: 10px;
+            color: #fff;
+            background-color: #6d6d6d;
+            margin-top: 5px;
+          }
 
-        .message-input {
-          display: flex;
-          justify-content: space-between;
-
-          .first-name,
-          .last-name {
-            width: 1.2rem; // 45%
-            div {
-              font-family: "RedHatDisplay-Medium";
-              font-size: 0.4267rem; // 16px
-              line-height: 1.5;
-            }
+          textarea {
+            min-height: 220px;
+            resize: none;
           }
         }
 
-        input,
-        textarea {
-          border: 0.0267rem solid #1a4ba0; // 1px
-          padding: 0.2133rem; // 8px
-          font-size: 0.3733rem; // 14px
-          outline: none;
-          width: 100%;
-        }
+        .btn-group {
+          position: relative;
+          margin: 0 auto;
+          padding: 20px 0 0;
+          height: 40px;
 
-        textarea {
-          min-height: 2.6667rem; // 100px
-        }
-      }
-
-      .btn-group {
-        position: relative;
-        margin: 0 auto;
-        padding: 0.5333rem 0 0; // 20px
-        height: 1.8667rem; // 70px
-
-        .btn-block {
-          position: absolute;
-          left: 50%;
-          margin-left: -3.3333rem; // -125px
-          display: flex;
-          justify-content: space-around;
-          width: 6.6667rem; // 250px
-        }
-
-        .media-block {
-          position: absolute;
-          bottom: 0.3467rem; // 13px
-          right: 0;
-
-          img {
-            cursor: pointer;
-            width: 0.5333rem; // 20px
-            margin-left: 0.2667rem; // 10px
+          .btn-block {
+            padding: 0 10px;
+            position: absolute;
+            left: 0;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
           }
         }
-      }
 
-      .btn {
-        border: none;
-        border-radius: 0.5333rem; // 20px
-        width: 2.6667rem; // 100px
-        height: 0.9333rem; // 35px
-        font-size: 0.3733rem; // 14px
-        line-height: 0.9333rem; // 35px
-        cursor: pointer;
-      }
+        .btn {
+          border: none;
+          width: 90px;
+          height: 25px;
+          font-size: 12px;
+          line-height: 25px;
+          cursor: pointer;
+        }
 
-      .btn-send {
-        background-color: #1a2ba0;
-        color: #fff;
-      }
+        .btn-send {
+          background-color: #e60012;
+          color: #fff;
+        }
 
-      .btn-clear {
-        background-color: #b3b3b3;
-        color: #fff;
+        .btn-clear {
+          background-color: #efe8db;
+          color: #1f160b;
+        }
       }
     }
   }
 
-  .philosophy {
+  .contact-info-1 {
     position: relative;
-    font-size: 0;
-    color: #fff;
-    padding-top: 0.5333rem; // 20px
-    background: #edf1f2;
 
     img {
       width: 100%;
     }
 
-    .phil-block {
+    .text1 {
       position: absolute;
-      top: 0.8rem; // 30px
-      left: 0.9333rem; // 35px
-      width: 80%;
+      bottom: 88px;
+      font-family: "Oswald-Medium";
+      font-size: 80px;
+      line-height: 1.2;
+      color: #fff;
+      text-shadow: 0 0 18px #000;
+      left: 50%;
+      text-align: left;
+      transform: translateX(-600px);
+    }
+  }
 
-      .phil-text1 {
-        font-family: "RedHatDisplay-Black";
-        font-size: 0.52rem; // 32px
-        line-height: 1;
-        color: #212995;
+  .contact-info-2 {
+    position: relative;
+
+    img {
+      width: 100%;
+    }
+
+    .text-wrapper {
+      position: absolute;
+      width: 100%;
+      top: 50px;
+      left: 50%;
+      margin-left: -600px;
+      display: flex;
+      justify-content: space-between;
+
+      .text {
+        font-family: "Oswald-Medium";
+        font-size: 41px;
+        line-height: 1.2;
+        color: #1f160b;
         text-align: left;
-      }
-
-      .phil-items {
-        font-family: "RedHatDisplay-Bold";
-        font-size: 0.4267rem; // 16px
-        line-height: 1;
-
-        .phil-item {
-          cursor: pointer;
-          padding: 0.5333rem 0 0.2667rem; // 20px 0 10px
-          border-bottom: 0.0533rem solid #7e7e7e; // 2px
-
-          .phil-item-top {
-            display: flex;
-            justify-content: space-between;
-            color: #212995;
-            align-items: center;
-
-            .phil-item-top-text {
-              width: 80%;
-              text-align: left;
-              line-height: 0.5333rem; // 20px
-            }
-
-            .control-btn {
-              font-size: 1.0667rem; // 40px
-              color: #7e7e7e;
-              cursor: pointer;
-            }
-          }
-
-          .phil-item-bottom {
-            font-family: "Oswald-Regular";
-            font-size: 0.4267rem; // 16px
-            line-height: 1.2;
-            text-align: left;
-            color: #333;
-            padding: 0.4rem 0; // 15px 0
-            text-shadow: 0 0 0.24rem #fff; // 9px
-          }
-        }
       }
     }
   }

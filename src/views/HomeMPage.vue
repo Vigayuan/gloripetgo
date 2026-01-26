@@ -73,8 +73,8 @@
       <div class="products-text2">HELP YOUR CAT ACHIEVE <br>THE IDEAL BALANCE <br>IT NEEDS.</div>
     </section>
     <div class="swiper-block products">
-      <Swiper :modules="modules" :loop="true" :slides-per-view="1" :pagination="{ clickable: true }"
-        :autoplay="{ delay: 4000, disableOnInteraction: false }" class="swiper-box">
+      <!-- <Swiper :modules="modules" :loop="true" :slides-per-view="1" :pagination="{ clickable: true }" class="swiper-box"> -->
+        <Swiper :modules="modules" :loop="true" :slides-per-view="1" :pagination="{ clickable: true }" :autoplay="{ delay: 4000, disableOnInteraction: false }" class="swiper-box">
         <SwiperSlide>
           <div @click="goProductDetail(3)" class="product-card">
             <img src="../assets/imgs/pd3-4.png" alt="">
@@ -104,11 +104,11 @@
 
     <div class="landing-g-4" ref="bowlRef">
       <img src="../assets/imgs/landing/bowl.png" alt="" class="bowl" :class="{ showbowl }">
-      <img class="home-pg-2" src="../assets/imgs/landing/home-pg-2.jpg" alt="">
+      <img class="home-pg-2" src="../assets/m/land-p4.png" alt="">
       <div class="content-block">
         <div class="content-item">
           <img src="../assets/imgs/landing/realmeat.svg" alt="">
-          <div class="item-text1">REAL MEAT FIRST</div>
+          <div class="item-text1">REAL MEAT <br>FIRST</div>
           <div class="item-text2">HIGH-QUALITY ANIMAL PROTEIN TO SATISFY YOUR CAT'S NATURAL CARNIVOROUS INSTINCTS.</div>
         </div>
         <div class="content-item">
@@ -131,7 +131,7 @@
       </div>
     </div>
     <div class="landing-g-5">
-      <img class="home-pg-5-bg" src="../assets/imgs/landing/home-pg-3.jpg" alt="">
+      <img class="home-pg-5-bg" src="../assets/m/land-p5.jpg" alt="">
       <div class="landing-g-5-content">
         <div class="landing-g-5-title1">
           TO HELP EVERY HOUSE CAT <br>
@@ -500,62 +500,51 @@ onBeforeUnmount(() => {
     position: relative;
     width: 100%;
     margin: 0 auto;
-    height: 500px;
+    padding: 30px 0;
 
+    .product-card {
+      cursor: pointer;
+      width: 100%;
+      height: auto;
 
+      img {
+        width: 166px;
+        margin: 0 auto 30px;
 
-    .product-grid {
-      position: absolute;
-      top: 60px;
-      right: 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 700px;
-
-      .product-card {
-        cursor: pointer;
-        width: 250px;
-        height: auto;
-
-        img {
-          width: 166px;
-          margin: 0 auto 30px;
-
-          &:hover {
-            animation: hoverUp 0.3s ease-out forwards;
-          }
+        &:hover {
+          animation: hoverUp 0.3s ease-out forwards;
         }
+      }
 
-        .tag1 {
-          font-family: "Oswald-SemiBold";
-          font-size: 12px;
-          line-height: 1;
-          text-align: center;
-          color: #000;
-          height: 12px;
-        }
+      .tag1 {
+        font-family: "Oswald-SemiBold";
+        font-size: 10px;
+        line-height: 1;
+        text-align: center;
+        color: #000;
+        height: 12px;
+      }
 
-        .tag2 {
-          font-family: "Oswald-SemiBold";
-          font-size: 26px;
-          line-height: 1;
-          text-align: center;
-          color: #000;
-          margin: 0 auto;
-          height: 26px;
-        }
+      .tag2 {
+        font-family: "Oswald-SemiBold";
+        font-size: 20px;
+        line-height: 1;
+        text-align: center;
+        color: #000;
+        margin: 0 auto;
+        height: 26px;
+      }
 
-        .btn {
-          font-family: "Oswald-SemiBold";
-          width: 155px;
-          height: 38px;
-          line-height: 38px;
-          text-align: center;
-          color: #fff;
-          background-color: #e60012;
-          margin: 20px auto 0;
-        }
+      .btn {
+        font-family: "Oswald-SemiBold";
+        width: 126px;
+        height: 30px;
+        font-size: 14px;
+        line-height: 30px;
+        text-align: center;
+        color: #fff;
+        background-color: #e60012;
+        margin: 10px auto 0;
       }
     }
   }
@@ -567,9 +556,9 @@ onBeforeUnmount(() => {
 
     .bowl {
       position: absolute;
-      top: 222px;
+      top: 174px;
       left: 50%;
-      width: 319px;
+      width: 166px;
       opacity: 0;
     }
 
@@ -579,24 +568,26 @@ onBeforeUnmount(() => {
     }
 
     .content-block {
-      width: 100%;
+      width: 90%;
       margin: 0 auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap;
 
       .content-item {
-        width: 240px;
+        width: 43%;
+        height: 150px;
         text-align: left;
 
         img {
-          width: 40px;
-          height: 40px;
+          width: 20px;
+          height: 20px;
         }
 
         .item-text1 {
           font-family: "Oswald-Medium";
-          font-size: 40px;
+          font-size: 20px;
           line-height: 1;
           color: #f39800;
           margin: 10px 0;
@@ -604,8 +595,8 @@ onBeforeUnmount(() => {
 
         .item-text2 {
           font-family: "Oswald-Medium";
-          font-size: 18px;
-          line-height: 1;
+          font-size: 10px;
+          line-height: 1.2;
           color: #efe8db;
         }
       }
@@ -651,14 +642,12 @@ onBeforeUnmount(() => {
     .landing-g-5-content {
       position: absolute;
       top: 0;
-      left: 50%;
-      margin-left: -600px;
       margin-top: 60px;
       width: 100%;
 
       .landing-g-5-title1 {
         font-family: "Oswald-Regular";
-        font-size: 37px;
+        font-size: 15px;
         line-height: 1;
         text-align: center;
         color: #efe8db;
@@ -667,37 +656,38 @@ onBeforeUnmount(() => {
 
       .landing-g-5-title2 {
         font-family: "Oswald-Regular";
-        font-size: 105px;
+        font-size: 42px;
         line-height: 1;
         text-align: center;
         color: #f39800;
         width: 100%;
-        margin-top: 20px;
+        margin-top: 10px;
       }
     }
   }
 
   .landing-g-6 {
     background-color: #efe8db;
-    height: 450px;
+    height: 330px;
 
     .landing-g-6-content {
       width: 100%;
       margin: 0 auto;
 
       .landing-g-6-title1 {
-        font-size: 27px;
+        font-size: 13px;
         font-family: "Copper";
         color: #000;
-        width: 800px;
+        width: 80%;
+        line-height: 1.5;
         margin: 0 auto;
       }
 
       .landing-g-6-title2 {
-        font-size: 27px;
+        font-size: 15px;
         font-family: "Oswald-Regular";
         color: #97903c;
-        width: 500px;
+        width: 80%;
         margin: 0 auto;
         border: 3px solid #97903c;
         padding: 30px 40px;
@@ -745,12 +735,12 @@ onBeforeUnmount(() => {
   .swiper-block {
     position: relative;
     overflow: hidden;
+    background-color: #efe8db;
 
 
 
     :deep(.swiper-box) {
-      width: 140%;
-      margin-left: -20%;
+      width: 100%;
 
       .swiper-button-prev {
         top: 40% !important;
@@ -767,7 +757,7 @@ onBeforeUnmount(() => {
 
     .swiper-box {
       :deep(.swiper-pagination) {
-        width: 200px;
+        width: 100px;
         height: 80px;
         display: flex;
         justify-content: space-around;
@@ -777,17 +767,17 @@ onBeforeUnmount(() => {
         .swiper-pagination-bullet {
           cursor: pointer;
           display: block;
-          background: #505050;
-          border: 1px solid #505050;
+          background: #23221f;
+          border: 1px solid #23221f;
           opacity: 0.6;
-          width: 10px;
-          height: 10px;
+          width: 16px;
+          height: 16px;
           border-radius: 10px;
         }
 
         .swiper-pagination-bullet-active {
-          background: #e8e8e8;
-          border: 1px solid #505050;
+          background: #e60012;
+          border: 1px solid #e60012;
           opacity: 1;
         }
       }
