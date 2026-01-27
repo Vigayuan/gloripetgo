@@ -199,7 +199,6 @@ const clearForm = () => {
         padding: 0 20px;
       }
 
-
       .input-block {
         box-sizing: border-box;
         position: absolute;
@@ -343,7 +342,7 @@ const clearForm = () => {
 
         .btn {
           border: none;
-          width: 90px;
+          width: 100px;
           height: 25px;
           font-size: 12px;
           line-height: 25px;
