@@ -3,26 +3,30 @@
     <!-- Header -->
     <HeaderMPage />
     <!-- Hero -->
+    <!-- Hero -->
     <section class="hero">
       <div class="hero-bg">
-        <img src="../assets/mimgs/story_bg_02.jpg" alt="">
+        <img src="../assets/m/why-p1.jpg" alt="">
       </div>
-      <div class="title1">
-        OUR<br>
-        STORY
+      <!-- <div class="title1">
+        Ensuring Your Pet's<br>
+        <span class="title1-sub1">Health & Happiness</span>
       </div>
       <div class="title2">
         Ensure comprehensive nutrition and health protection for your pet with every delicious bite.
       </div>
       <div @click="goWhy" class="btn-leran-more">
         LEARN MORE
-      </div>
+      </div> -->
     </section>
+    <div class="shape-img">
+      <img src="../assets/m/why-p5.png" alt="">
+    </div>
 
     <!-- Unleash energy -->
     <section class="unleash " ref="boxRef">
-      <img src="../assets/mimgs/story_bg_03.jpg" alt="">
-      <img src="../assets/mimgs/story_bg_04.jpg" alt="">
+      <img src="../assets/m/why-p2.jpg" alt="">
+      <img class="itall" src="../assets/m/itall.svg" alt="">
       <div class="unleash-text1">
         <div class="text-sub1"><span>INSPIRED BY THE</span><br>
           POLAR <br>
@@ -186,7 +190,7 @@ onBeforeUnmount(() => {
 <style lang="scss" scoped>
 .landing-page {
   width: 100%;
-
+  background: #eee8da;
   .hero {
     position: relative;
     font-size: 0;
@@ -225,6 +229,11 @@ onBeforeUnmount(() => {
     }
   }
 
+  .shape-img {
+    margin-top: -137px;
+    z-index: 1000;
+    position: relative;
+  }
   @keyframes dropIn {
     from {
       opacity: 0;
@@ -252,11 +261,16 @@ onBeforeUnmount(() => {
     font-size: 0;
     height: 22.6667rem;
     background: #eee8e0;
-
+    margin-top: -5px;
     img {
       width: 100%;
     }
-
+    .itall {
+      position: absolute;
+      width: 80%;
+      left: 10%;
+      top: 0;
+    }
     .story_bg {
       position: absolute;
       width: 14.6667rem;
