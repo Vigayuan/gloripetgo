@@ -27,23 +27,17 @@
     <section class="unleash " ref="boxRef">
       <img src="../assets/m/why-p2.jpg" alt="">
       <img class="itall" src="../assets/m/itall.svg" alt="">
-      <div class="unleash-text1">
-        <div class="text-sub1"><span>INSPIRED BY THE</span><br>
-          POLAR <br>
-          SPIRIT
-        </div>
-      </div>
-      <div class="unleash-text2">
-        In 1998
-      </div>
-      <div class="unleash-text3">
-        under the shimmering auroras of Canada's Yukon, <span>Dr. Ethan Frost</span>, a veterinarian and polar explorer,
-        joined an Arctic expedition. He witnessed local Inuit communities caring for their sled dogs through the
-        harshest winters.
-        <br>
-        These incredible dogs thrived on wild, hunted meats, cold-water fish, and herbs shaped by the frozen land. The
-        strength in their eyes sparked Ethan's question: Could the wisdom of polar survival become everyday protection
-        for our pets at home?
+      <div class="unleash-text1" :class="{ showBox }">
+        In 2015, Dr. Erin Macdonald witnessed an Arctic fox instinctively select only the freshest prey.
+        That moment revealed a fundamental truth: real nutrition doesn’t come from engineering—it follows nature.
+        <br><br>
+
+        Schrain was born from that belief.<br><br>
+
+        We carefully source high-quality, nutrient-dense ingredients, rich in essential vitamins and minerals, to
+        craft a complete and balanced kibble designed for your cat’s health and enjoyment. Because true nourishment
+        goes beyond survival—it supports a life well lived.
+
       </div>
     </section>
     <div class="our-mission">
