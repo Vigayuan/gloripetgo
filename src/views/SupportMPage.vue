@@ -54,12 +54,9 @@
     </section>
 
     <div class="contact-info-1">
-      <img src="../assets/imgs/contact/contact_02.jpg" alt="">
+      <img src="../assets/m/contact-p2.jpg" alt="">
       <div class="text1">INSTINCT FIRST <br>
         NATURE ALWAYS</div>
-    </div>
-    <div class="contact-info-2">
-      <img src="../assets/imgs/contact/contact_03.jpg" alt="">
       <div class="text-wrapper">
         <div class="text">RECLAIM THE<br> ANCIENT DIET</div>
         <div class="text">100%<br>
@@ -150,7 +147,7 @@ const clearForm = () => {
 
   .unleash {
     position: relative;
-    height: 900px;
+    height: 810px;
 
     img {
       width: 100%;
@@ -167,9 +164,9 @@ const clearForm = () => {
 
       .keli {
         position: absolute;
-        width: 290px;
-        bottom: -145px;
-        left: 50px;
+        width: 100px;
+        bottom: -50px;
+        left: 5%;
         z-index: 100;
       }
 
@@ -371,37 +368,26 @@ const clearForm = () => {
 
     .text1 {
       position: absolute;
-      bottom: 88px;
+      top: 100px;
       font-family: "Oswald-Medium";
-      font-size: 80px;
+      font-size: 26px;
       line-height: 1.2;
       color: #fff;
       text-shadow: 0 0 18px #000;
-      left: 50%;
+      left: 8%;
       text-align: left;
-      transform: translateX(-600px);
-    }
-  }
-
-  .contact-info-2 {
-    position: relative;
-
-    img {
-      width: 100%;
     }
 
     .text-wrapper {
       position: absolute;
-      width: 100%;
-      top: 50px;
-      left: 50%;
-      margin-left: -600px;
+      width: 84%;
+      top: 206px;
+      left: 8%;
       display: flex;
       justify-content: space-between;
-
       .text {
         font-family: "Oswald-Medium";
-        font-size: 41px;
+        font-size: 16px;
         line-height: 1.2;
         color: #1f160b;
         text-align: left;
