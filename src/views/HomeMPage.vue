@@ -669,6 +669,9 @@ onBeforeUnmount(() => {
   .landing-g-6 {
     background-color: #efe8db;
     height: 330px;
+    z-index: 100;
+    margin-top: -3px;
+    position: relative;
 
     .landing-g-6-content {
       width: 100%;

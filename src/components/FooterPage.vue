@@ -36,6 +36,7 @@ const router = useRouter();
 const goPd = () => {
   router.push({ name: 'Products' })
 }
+
 const goWhy = () => {
   router.push({ name: 'whyus' });
 }

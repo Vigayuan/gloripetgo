@@ -40,8 +40,9 @@ const router = useRouter();
 const goPd = () => {
   router.push({ name: 'mProducts' })
 }
+
 const goWhy = () => {
-  router.push({ name: 'mHealthy' });
+  router.push({ name: 'whyus' });
 }
 const goSupport = () => {
   router.push({ name: 'mSupport' });

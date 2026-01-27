@@ -8,16 +8,6 @@
       <div class="hero-bg">
         <img src="../assets/m/why-p1.jpg" alt="">
       </div>
-      <!-- <div class="title1">
-        Ensuring Your Pet's<br>
-        <span class="title1-sub1">Health & Happiness</span>
-      </div>
-      <div class="title2">
-        Ensure comprehensive nutrition and health protection for your pet with every delicious bite.
-      </div>
-      <div @click="goWhy" class="btn-leran-more">
-        LEARN MORE
-      </div> -->
     </section>
     <div class="shape-img">
       <img src="../assets/m/why-p5.png" alt="">
@@ -39,92 +29,232 @@
         goes beyond survival—it supports a life well lived.
 
       </div>
+      <img src="../assets/imgs/why/photo.jpg" alt="" class="story_photo" :class="{ showBox }">
     </section>
-    <div class="our-mission">
-      <div class="img-block">
-        <div class="img-scroll">
-          <img src="../assets/mimgs/story_bg_05.jpg" alt="">
+    <div class="our-mission" ref="missionRef">
+      <div class="our-mission-content">
+        <div class="our-mission-item">
+          <div class="img-block">
+            <img src="../assets/imgs/why/icon_01.png" alt="">
+          </div>
+          <div class="text-1" :class="{ showMission }">REAL MEAT <br>FIRST</div>
+          <div class="text-2" :class="{ showMission }">High-quality animal protein to satisfy your cat's natural
+            carnivorous instincts.`</div>
+        </div>
+        <div class="our-mission-item">
+          <div class="img-block">
+            <img src="../assets/imgs/why/icon_02.png" alt="">
+          </div>
+          <div class="text-1" :class="{ showMission }">100%<br>
+            GRAIN-FREE</div>
+          <div class="text-2" :class="{ showMission }">Gentle on digestion</div>
+        </div>
+        <div class="our-mission-item">
+          <div class="img-block">
+            <img src="../assets/imgs/why/icon_03.png" alt="">
+          </div>
+          <div class="text-1" :class="{ showMission }">IDEAL AMINO <br>
+            ACID RATIO</div>
+          <div class="text-2" :class="{ showMission }">Better absorption, less stool odor</div>
+        </div>
+        <div class="our-mission-item">
+          <div class="img-block">
+            <img src="../assets/imgs/why/icon_04.png" alt="">
+          </div>
+          <div class="text-1" :class="{ showMission }">NO ARTIFICIAL<br>
+            ADDITIVES</div>
+          <div class="text-2" :class="{ showMission }">No palatants, no colors, no mystery ingredients</div>
         </div>
       </div>
-      <div class="text-1">Our mission</div>
-      <div class="text-2">help pets live healthier, longer lives through nature-powered,
-        preventive
-        nutrition.</div>
+    </div>
+    <div class="advance-block">
+      <div class="advance-content">
+        <div class="left">
+          <div class="text-1">OUR <br>
+            INGREDIENTS</div>
+          <div class="text-2">When your cat’s gut is balanced, they’re better positioned to thrive. That’s why every
+            ingredient in our recipes is carefully selected to support healthy digestion, immune function, and everyday
+            vitality—leading to cleaner bowls and happier, healthier cats</div>
+        </div>
+        <div class="right">
+          <Swiper :modules="modules" :loop="true" :slides-per-view="1" :pagination="{ clickable: true }"
+            :autoplay="{ delay: 4000, disableOnInteraction: false }"  class="pd-swiper-box">
+            <SwiperSlide>
+              <div class="pd-slide-item">
+                <img src="../assets/imgs/why/swp-1.png" alt="">
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div class="pd-slide-item">
+                <img src="../assets/imgs/why/swp-2.png" alt="">
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div class="pd-slide-item">
+                <img src="../assets/imgs/why/swp-3.png" alt="">
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div class="pd-slide-item">
+                <img src="../assets/imgs/why/swp-4.png" alt="">
+              </div>
+            </SwiperSlide>
+          </Swiper>
+        </div>
+      </div>
     </div>
     <div class="his-2005">
-      <div class="img-block">
-        <img src="../assets/mimgs/story_bg_06.jpg" alt="">
-      </div>
-      <div class="his-content">
-        <div class="text-1">
-          In 2005
+      <div class="his-2005-content">
+        <div class="left">
+          <img src="../assets/m/why-p3.jpg" alt="">
         </div>
-        <div class="text-2">
-          Ethan teamed up with nutritionists in Quebec to create <span class="text-sub-1">GloriPetgo™</span> — a brand
-          built on the belief of <span class="text-sub-2">“Daily Defense in Every Bite.”</span> Our mission is simple
-          yet powerful: help pets live healthier, longer lives through
-          nature-powered, preventive nutrition.
+        <div class="center">
+          <div class="text1">TO HELP EVERY <br>
+            HOUSE CAT RECLAIM<br>
+            THE DIET OF THEIR<br>
+            WILD ANCESTORS</div>
+          <img class="icon-cat" src="../assets/m/why-p6.png" alt="">
+          <div class="text2">In the next decade, we aim to bring Instinct First.<br> Nature Always. to millions of
+            cats—delivering visible<br> health from the inside out.<br>
+            Because the perfect formula wasn’t designed by<br> humans. It was written by nature.
+          </div>
         </div>
-      </div>
-    </div>
-    <div class="his-2022">
-      <div class="img-block">
-        <img src="../assets/mimgs/story_bg_07.jpg" alt="">
-      </div>
-      <div class="his-content">
-        <div class="text-1">
-          2022
-        </div>
-        <div class="text-2">
-          <span class="text-sub-1">GloriPetgo™</span> began sharing this philosophy worldwide, offering pet owners food
-          inspired by the Arctic’s resilience — crafted to guard their companions’ health from the inside out.
-          <br>
-          Today, every bag of <span class="text-sub-1">GloriPetgo™</span> carries the spirit of the North: pure,
-          protective, and committed to a lifetime of vitality for pets everywhere.
+        <div class="right">
+          <img src="../assets/m/why-p4.jpg" alt="">
         </div>
       </div>
     </div>
-    <div class="our-commitment" ref="commitmentRef">
-      <div class="img-block">
-        <img src="../assets/mimgs/story_bg_08.jpg" alt="">
-      </div>
-      <div class="text-1" :class="{ showCommitment }">Our Commitment <br>to <span>Sustainability</span>
-      </div>
-    </div>
-    <div class="four-re">
-      <div class="item">
-        <div class="title">Reject</div>
-        <div class="content">We’re cutting unnecessary packaging to protect the planet. Excess packaging wastes
-          resources and adds to pollution, so we design streamlined solutions that reduce waste and lower carbon
-          emissions.
+    <section class="philosophy">
+      <!-- <img src="../assets/images/about_bg_19.jpg" alt=""> -->
+      <div class="phil-block">
+        <div class="phil-text1">Q&A</div>
+        <div class="phil-items">
+          <div @click="toggleShowQA(1)" class="phil-item">
+            <div class="phil-item-top">
+              <div class="phil-item-top-text">
+                What drives Schrain at its core?
+              </div>
+              <div class="control-btn">
+                <div v-show="showQAIndex != 1">+</div>
+                <div v-show="showQAIndex == 1">-</div>
+              </div>
+            </div>
+            <div v-show="showQAIndex == 1" class="phil-item-bottom">
+              <div class="phil-item-bottom-text">
+                We believe every cat deserves to eat like an Arctic fox—close to the wild. That’s why we turn down the
+                heat, choose cold-press & freeze-dry, and let instinct flow back into the bowl.
+              </div>
+            </div>
+          </div>
+          <div @click="toggleShowQA(2)" class="phil-item">
+            <div class="phil-item-top">
+              <div class="phil-item-top-text">
+                What does “natural” really mean to you?
+              </div>
+              <div class="control-btn">
+                <div v-show="showQAIndex != 2">+</div>
+                <div v-show="showQAIndex == 2">-</div>
+              </div>
+            </div>
+            <div v-show="showQAIndex == 2" class="phil-item-bottom">
+              <div class="phil-item-bottom-text">
+                It isn’t a buzz-word; it’s a low-intervention journey: whole muscles of meat, light processing, zero
+                artificial colours or palatants. Open the bag and you’ll smell the ocean and the prairie—no translator
+                needed.
+              </div>
+            </div>
+          </div>
+          <div @click="toggleShowQA(3)" class="phil-item">
+            <div class="phil-item-top">
+              <div class="phil-item-top-text">
+                Why insist on cold-pressing?
+              </div>
+              <div class="control-btn">
+                <div v-show="showQAIndex != 3">+</div>
+                <div v-show="showQAIndex == 3">-</div>
+              </div>
+            </div>
+            <div v-show="showQAIndex == 3" class="phil-item-bottom">
+              <div class="phil-item-bottom-text">
+                High temperature is an invisible blade—it slashes vitamins, amino acids and aroma.
+                We keep the process low-temperature, so nutrition stays intact and picky cats willingly come to the
+                dish.
+              </div>
+            </div>
+          </div>
+          <div @click="toggleShowQA(4)" class="phil-item">
+            <div class="phil-item-top">
+              <div class="phil-item-top-text">
+                Which nutrition standard do you follow?
+              </div>
+              <div class="control-btn">
+                <div v-show="showQAIndex != 4">+</div>
+                <div v-show="showQAIndex == 4">-</div>
+              </div>
+            </div>
+            <div v-show="showQAIndex == 4" class="phil-item-bottom">
+              <div class="phil-item-bottom-text">
+                AAFCO “All Life Stages” is our global passport. Whether your kitty lounges in a Toronto condo or a
+                Shanghai lane-house, the same balanced nutrition reaches their bowl.
+              </div>
+            </div>
+          </div>
+          <div @click="toggleShowQA(5)" class="phil-item">
+            <div class="phil-item-top">
+              <div class="phil-item-top-text">
+                How do you view sustainability?
+              </div>
+              <div class="control-btn">
+                <div v-show="showQAIndex != 5">+</div>
+                <div v-show="showQAIndex == 5">-</div>
+              </div>
+            </div>
+            <div v-show="showQAIndex == 5" class="phil-item-bottom">
+              <div class="phil-item-bottom-text">
+                We respect every fish we fillet and every steer we harvest. Light-weight bags, FSC paper, responsible
+                fisheries and carbon-smart scheduling quietly pay the planet back—because “natural” must not stop at the
+                label edge.
+              </div>
+            </div>
+          </div>
+          <div @click="toggleShowQA(6)" class="phil-item">
+            <div class="phil-item-top">
+              <div class="phil-item-top-text">
+                What role does science play?
+              </div>
+              <div class="control-btn">
+                <div v-show="showQAIndex != 6">+</div>
+                <div v-show="showQAIndex == 6">-</div>
+              </div>
+            </div>
+            <div v-show="showQAIndex == 6" class="phil-item-bottom">
+              <div class="phil-item-bottom-text">
+                Nature proposes, science proof-reads. Each batch walks through a third-party lab magnifying
+                glass—protein authenticity, heavy-metal screen, microbial count. Only when the numbers sing do we stamp
+                the release seal.
+              </div>
+            </div>
+          </div>
+          <div @click="toggleShowQA(7)" class="phil-item">
+            <div class="phil-item-top">
+              <div class="phil-item-top-text">
+                How can I switch foods without upset tummies?
+              </div>
+              <div class="control-btn">
+                <div v-show="showQAIndex != 7">+</div>
+                <div v-show="showQAIndex == 7">-</div>
+              </div>
+            </div>
+            <div v-show="showQAIndex == 7" class="phil-item-bottom">
+              <div class="phil-item-bottom-text">
+                Give the gut a seven-day buffer: days 1–2 = 25 % new, days 3–4 = 50 %, days 5–6 = 75 %, day 7 = 100 %.
+                Slow and steady lets intestinal bacteria catch up.
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="item">
-        <div class="title">Reduce</div>
-        <div class="content">We work to minimize waste in every step of our operations, using energy efficient
-          production and logistics to decrease energy use and shrink our ecological footprint—preserving resources for
-          future generations.
-        </div>
-      </div>
-      <div class="item">
-        <div class="title">Reuse</div>
-        <div class="content">Where safety allows, we repurpose packaging materials. By reusing them in our production
-          process, we cut waste and impact, while maintaining the highest food safety standards.
-        </div>
-      </div>
-      <div class="item">
-        <div class="title">Recycle</div>
-        <div class="content">We choose recyclable materials whenever possible. This helps reduce our environmental
-          footprint and supports a future where sustainability is the norm.
-        </div>
-      </div>
-    </div>
-    <div class="final-tag">
-      <div class="img-block">
-        <img src="../assets/mimgs/story_bg_10.jpg" alt="">
-      </div>
-      <!-- <div class="text-1">GloriPetgo™ is dedicated to creating products that care for pets—and the planet.</div> -->
-    </div>
+    </section>
     <!-- Footer -->
     <FooterMPage />
   </div>
@@ -134,16 +264,16 @@
 import HeaderMPage from "@/components/HeaderMPage.vue";
 import FooterMPage from "@/components/FooterMPage.vue";
 import { ref, onMounted, onBeforeUnmount } from 'vue'
-import { useRouter } from "vue-router";
-const router = useRouter()
+import { Autoplay } from 'swiper/modules'
+import { Swiper, SwiperSlide } from 'swiper/vue'
+import { Pagination, Navigation } from 'swiper/modules'
+const modules = [Pagination, Navigation, Autoplay]
 const boxRef = ref(null)
-const commitmentRef = ref(null)
+const missionRef = ref(null)
 const showBox = ref(false);
-const showCommitment = ref(false);
-const goWhy = () => {
-  router.push({ name: 'mHealthy' });
-}
+const showMission = ref(false);
 let observers = []
+const showQAIndex = ref(-1);
 
 
 onMounted(() => {
@@ -159,22 +289,23 @@ onMounted(() => {
   );
   if (boxRef.value) observer1.observe(boxRef.value);
   observers.push(observer1);
-
-
-  // 3️⃣ commitment
-  const observer3 = new IntersectionObserver(
+  // 2️⃣ mission
+  const observer2 = new IntersectionObserver(
     ([entry]) => {
-      showCommitment.value = entry.isIntersecting;
+      showMission.value = entry.isIntersecting;
     },
     {
-      threshold: 0.2,
-      rootMargin: "0px 0px -20% 0px",
+      threshold: 0,
+      rootMargin: "0px 0px -50% 0px", // 比 box 晚一点触发
     }
   );
-  if (commitmentRef.value) observer3.observe(commitmentRef.value);
-  observers.push(observer3);
-});
+  if (missionRef.value) observer2.observe(missionRef.value);
+  observers.push(observer2);
 
+});
+const toggleShowQA = (index) => {
+  showQAIndex.value = showQAIndex.value === index ? -1 : index;
+}
 
 onBeforeUnmount(() => {
   observers.forEach((o) => o.disconnect())
@@ -185,9 +316,11 @@ onBeforeUnmount(() => {
 .landing-page {
   width: 100%;
   background: #eee8da;
+
   .hero {
     position: relative;
     font-size: 0;
+    line-height: 0;
     color: #fff;
 
     .hero-bg {
@@ -196,14 +329,7 @@ onBeforeUnmount(() => {
 
       img {
         width: 100%;
-        transform: translateY(0);
-        animation: moveUp 10s ease-out 0.5s forwards;
-      }
-    }
-
-    @keyframes moveUp {
-      to {
-        transform: translateY(-0.5333rem);
+        margin-top: -0.5333rem;
       }
     }
 
@@ -227,7 +353,10 @@ onBeforeUnmount(() => {
     margin-top: -137px;
     z-index: 1000;
     position: relative;
+    font-size: 0;
+    line-height: 0;
   }
+
   @keyframes dropIn {
     from {
       opacity: 0;
@@ -236,7 +365,7 @@ onBeforeUnmount(() => {
 
     to {
       opacity: 1;
-      transform: translateY(0);
+      transform: translateY(0px);
     }
   }
 
@@ -253,18 +382,21 @@ onBeforeUnmount(() => {
   .unleash {
     position: relative;
     font-size: 0;
-    height: 22.6667rem;
-    background: #eee8e0;
+    background: #eee8da;
     margin-top: -5px;
+    z-index: 1000;
+
     img {
       width: 100%;
     }
+
     .itall {
       position: absolute;
       width: 80%;
       left: 10%;
       top: 0;
     }
+
     .story_bg {
       position: absolute;
       width: 14.6667rem;
@@ -274,76 +406,21 @@ onBeforeUnmount(() => {
 
     .unleash-text1 {
       position: absolute;
-      top: 0.6667rem;
-      width: 70%;
-      left: 0.9333rem;
-
-      .text-sub1 {
-        font-family: "RedHatDisplay-Black";
-        font-size: 1rem;
-        line-height: 1;
-        text-align: left;
-        color: #212995;
-
-        span {
-          font-family: "RedHatDisplay-Medium";
-          font-size: 0.5rem;
-        }
-      }
-
-      .text-sub2 {
-        font-family: "RedHatDisplay-Bold";
-        font-size: 1.2rem;
-        line-height: 1;
-        text-align: left;
-      }
-
-      .text-sub3 {
-        font-family: "Khalila";
-        font-size: 1.7333rem;
-        line-height: 1;
-        text-align: left;
-        color: #a1a1a1;
-      }
-    }
-
-    .unleash-text2 {
-      position: absolute;
       width: 80%;
-      top: 11.2rem;
+      top: 160px;
       left: 10%;
-      color: #fff;
+      color: #1f150b;
       font-family: "RedHatDisplay-Regular";
-      font-size: 1.4667rem;
+      font-size: 12px;
       line-height: 1.2;
-      text-align: left;
-      opacity: 1;
-      //   transform: translateY(26.6667rem);
+      text-align: center;
+      opacity: 0;
+      transform: translateY(1000px);
       transition: all 0.8s ease-out;
 
       &.showBox {
         opacity: 1;
-        transform: translateX(0);
-      }
-    }
-
-    .unleash-text3 {
-      position: absolute;
-      width: 80%;
-      top: 13.0667rem;
-      left: 10%;
-      color: #212995;
-      font-family: "RedHatDisplay-Regular";
-      font-size: 0.4267rem;
-      line-height: 1.5;
-      text-align: left;
-      opacity: 1;
-      //   transform: translateY(26.6667rem);
-      transition: all 0.8s ease-out;
-
-      &.showBox {
-        opacity: 1;
-        transform: translateX(0);
+        transform: translatey(0px);
       }
 
       span {
@@ -351,248 +428,279 @@ onBeforeUnmount(() => {
         font-family: "RedHatDisplay-black";
       }
     }
+
+    .story_photo {
+      position: absolute;
+      top: 349px;
+      left: 50%;
+      width: 160px;
+      margin-left: -80px;
+      -o-object-fit: cover;
+      object-fit: cover;
+      transform: rotate(30deg) translateX(1000px);
+      transition: all 0.8s ease-out;
+      box-shadow: 0 0 4px 4px #c4c4c4;
+
+      &.showBox {
+        transform: rotate(-5deg) translateX(0);
+      }
+    }
   }
 
   .our-mission {
     position: relative;
     width: 100%;
-    height: 7.2rem;
+    height: 500px;
     overflow: hidden;
+    background-color: #938c34;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
 
-    img {
+    .our-mission-content {
       width: 100%;
-    }
+      margin: 0 auto;
+      padding: 30px 5%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
 
-    .img-block {
-      position: relative;
-      width: 100%;
-      line-height: 0;
-      height: 7.2rem;
+      .our-mission-item {
+        width: 49%;
+        margin-bottom: 30px;
 
-      .img-scroll {
-        position: absolute;
-        top: -0.2667rem;
-        left: 0;
-        width: 100%;
-        height: 100%;
+        .img-block {
+          width: 100px;
+          margin: 0 auto;
+
+          img {
+            width: 100%;
+          }
+        }
       }
     }
 
     .text-1 {
-      position: absolute;
-      top: 1.6rem;
-      left: 50%;
-      width: 16rem;
-      margin-left: -8rem;
-      font-family: "RedHatDisplay-black";
-      font-size: 1.2rem;
-      line-height: 1;
+      font-family: "Oswald-SemiBlod";
+      font-size: 15px;
+      line-height: 1.2;
+      font-weight: bold;
       text-align: center;
       color: #fff;
-      transform: translateY(26.6667rem);
+      opacity: 0;
+      transform: translateY(1000px);
       transition: all 0.8s ease-out;
-      text-shadow: 0.0533rem 0.0533rem 0.1067rem rgba(0, 0, 0, 0.3);
+
+      &.showMission {
+        opacity: 1;
+        transform: translatey(0px);
+      }
     }
 
     .text-2 {
-      font-family: "RedHatDisplay-Regular";
-      position: absolute;
-      width: 70%;
-      top: 2.5rem;
-      left: 15%;
-      font-size: 0.4267rem;
-      line-height: 1.5;
+      font-family: "Oswald-Regular";
+      font-size: 10px;
+      line-height: 1.2;
       text-align: center;
       color: #fff;
-      text-shadow: 0.0533rem 0.0533rem 0.1067rem rgba(0, 0, 0, 0.3);
+      opacity: 0;
+      transform: translateY(1000px);
+      transition: all 0.8s ease-out;
+      margin-top: 8px;
+
+      &.showMission {
+        opacity: 1;
+        transform: translatey(0px);
+      }
+    }
+  }
+
+  .advance-block {
+    width: 100%;
+    position: relative;
+    padding-bottom: 30px;
+    background-color: #efe8db;
+
+    .advance-content {
+      width: 100%;
+      margin: 0 auto;
+
+      .left {
+        width: 100%;
+        padding: 40px;
+
+        .text-1 {
+          font-family: "Copper";
+          font-size: 32px;
+          line-height: 1.2;
+          text-align: left;
+          color: #1f160b;
+        }
+
+        .text-2 {
+          font-family: "RedHatDisplay-Regular";
+          font-size: 12px;
+          line-height: 1.2;
+          text-align: left;
+          color: #938c34;
+          margin-top: 20px;
+          width: 80%;
+        }
+      }
+
+      .right {
+        position: relative;
+        width: 90%;
+        margin: 0 auto;
+
+        .pd-swiper-box {
+          width: 100%;
+
+          .pd-slide-item {
+            width: 100%;
+            position: relative;
+            text-align: right;
+            color: #212995;
+            img{
+              width: 100%;
+            }
+          }
+        }
+
+        .custom-pd-prev {
+          position: absolute;
+          top: 207px;
+          cursor: pointer;
+          left: 30px;
+          width: 45px;
+          height: 45px;
+          z-index: 100;
+
+          img {
+            width: 100%;
+          }
+        }
+
+        .custom-pd-next {
+          position: absolute;
+          top: 207px;
+          cursor: pointer;
+          right: 0;
+          width: 45px;
+          height: 45px;
+          z-index: 100;
+
+          img {
+            width: 100%;
+          }
+        }
+      }
     }
   }
 
   .his-2005 {
     position: relative;
     background: #fff;
-
-    .img-block {
-      width: 100%;
-      line-height: 0;
-
-      img {
-        width: 100%;
-      }
-    }
-
-    .his-content {
-      position: absolute;
-      width: 65%;
-      left: 0.9333rem;
-      top: 1.3rem;
-      text-align: left;
-
-      .text-1 {
-        font-family: "RedHatDisplay-Regular";
-        font-size: 1rem;
-        line-height: 1;
-        color: #6fc3ee;
-      }
-
-      .text-2 {
-        font-family: "RedHatDisplay-Medium";
-        font-size: 0.35rem;
-        line-height: 1.5;
-        color: #333;
-        margin-top: 0.2667rem;
-
-        .text-sub-1 {
-          font-family: "RedHatDisplay-Bold";
-        }
-
-        .text-sub-2 {
-          font-family: "RedHatDisplay-Bold";
-          color: #6fc3ee;
-        }
-      }
-    }
-  }
-
-  .his-2022 {
-    position: relative;
-    background: #fff;
-
-    .img-block {
-      width: 100%;
-      line-height: 0;
-      padding-top: 0.8rem;
-
-      img {
-        width: 100%;
-      }
-    }
-
-    .his-content {
-      position: absolute;
-      width: 80%;
-      left: 0.9333rem;
-      top: 0.6rem;
-      text-align: left;
-
-      .text-1 {
-        font-family: "RedHatDisplay-Regular";
-        font-size: 1rem;
-        line-height: 1;
-        color: #6fc3ee;
-      }
-
-      .text-2 {
-        font-family: "RedHatDisplay-Medium";
-        font-size: 0.35rem;
-        line-height: 1.5;
-        color: #333;
-        margin-top: 0.1333rem;
-
-        .text-sub-1 {
-          font-family: "RedHatDisplay-Bold";
-        }
-
-        .text-sub-2 {
-          font-family: "RedHatDisplay-Bold";
-          color: #6fc3ee;
-        }
-      }
-    }
-  }
-
-  .our-commitment {
-    position: relative;
     width: 100%;
-    overflow: hidden;
 
-    .img-block {
+    .his-2005-content {
       width: 100%;
-      line-height: 0;
+      margin: 0 auto;
 
-      img {
+      .left {
+        width: 100%;
+      }
+
+      .center {
+        flex: 1;
+        background-color: #fde2b9;
+        color: #231f20;
+        padding: 20px;
+        .text1 {
+          font-family: "Copper";
+          font-size: 20px;
+          line-height: 1.2;
+          text-align: center;
+          color: #1f160b;
+        }
+
+        .text2 {
+          font-family: "Oswald-Regular";
+          font-size: 11px;
+          line-height: 1.2;
+          text-align: center;
+          color: #1f160b;
+        }
+        .icon-cat{
+          width: 29px;
+          margin:  30px auto;
+        }
+      }
+
+      .right {
         width: 100%;
       }
     }
-
-    .text-1 {
-      position: absolute;
-      top: 3rem;
-      left: 10%;
-      width: 80%;
-      font-family: "RedHatDisplay-Medium";
-      font-size: 0.8rem;
-      line-height: 1.2;
-      text-align: center;
-      color: #fff;
-      opacity: 0;
-      transform: translateY(26.6667rem);
-      transition: all 0.8s ease-out;
-
-      &.showCommitment {
-        opacity: 1;
-        transform: translateX(0);
-      }
-
-      span {
-        font-family: "RedHatDisplay-black";
-      }
-    }
   }
 
-  .four-re {
-    padding: 1.0667rem 0 1.0667rem 0.9333rem;
-    color: #212995;
-    text-align: left;
-    justify-content: space-between;
-    background: #fff;
-
-    .item {
-      width: 80%;
-      margin-bottom: 0.8rem;
-      .title {
-        font-family: "RedHatDisplay-black";
-        font-size: 0.64rem;
-        line-height: 1.2;
-        margin-bottom: 0.5333rem;
-      }
-
-      .content {
-        font-family: "RedHatDisplay-Regular";
-        font-size: 0.3733rem;
-        line-height: 1.2;
-      }
-    }
-  }
-
-  .final-tag {
+  .philosophy {
     position: relative;
-    width: 100%;
-    overflow: hidden;
+    font-size: 0;
+    color: #efe8db;
+    padding: 60px 0;
+    background: url(../assets/m/why-p7.jpg);
+    background-size: 100%;
+    .phil-block {
+      width: 90%;
+      margin: 0 auto;
 
-    .img-block {
-      width: 100%;
-      line-height: 0;
-
-      img {
-        width: 100%;
+      .phil-text1 {
+        font-family: "RedHatDisplay-Black";
+        font-size: 26px;
+        line-height: 1;
+        color: #1f160b;
+        text-align: center;
       }
-    }
 
-    .text-1 {
-      position: absolute;
-      top: 30%;
-      left: 50%;
-      width: 16rem;
-      margin-left: -8rem;
-      font-family: "RedHatDisplay-Medium";
-      font-size: 0.5867rem;
-      line-height: 1.2;
-      text-align: center;
-      color: #fff;
+      .phil-items {
+        font-family: "RedHatDisplay-Bold";
+        font-size: 20px;
+        line-height: 1;
 
-      span {
-        font-family: "RedHatDisplay-black";
+        .phil-item {
+          cursor: pointer;
+          padding: 20px 0 10px;
+          border-bottom: 2px solid #7e7e7e;
+
+          .phil-item-top {
+            display: flex;
+            justify-content: space-between;
+            color: #1f160b;
+            align-items: center;
+
+            .phil-item-top-text {
+              width: 80%;
+              text-align: left;
+              font-size: 11px;
+              line-height: 20px;
+              text-transform: uppercase;
+            }
+
+            .control-btn {
+              font-size: 32px;
+              color: #7e7e7e;
+              cursor: pointer;
+            }
+          }
+
+          .phil-item-bottom {
+            font-family: "Oswald-Regular";
+            font-size: 10px;
+            line-height: 1.5;
+            text-align: left;
+            color: #1f160b;
+            padding: 15px 0;
+          }
+        }
       }
     }
   }
