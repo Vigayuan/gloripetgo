@@ -6,7 +6,7 @@
     <!-- Hero -->
     <section class="hero">
       <div class="hero-bg">
-        <img src="../assets/mimgs/healthy_bg_02.jpg" alt="">
+        <img src="../assets/m/why-p1.jpg" alt="">
       </div>
       <div class="title1">
         Ensuring Your Pet's<br>
@@ -19,10 +19,12 @@
         LEARN MORE
       </div>
     </section>
-
+    <div class="shape-img">
+      <img src="../assets/m/why-p5.png" alt="">
+    </div>
     <!-- Unleash energy -->
     <section class="unleash" ref="boxRef">
-      <img src="../assets/mimgs/healthy_bg_03.jpg" alt="">
+      <img src="../assets/m/why-p2.jpg" alt="">
       <div class="unleash-text1" :class="{ showBox }">
         <div class="text-sub1">At GloriPetgo™, we are dedicated to ensuring that your <span>beloved pet receives
             nutrition, safety, and deliciousness,</span> all while building a solid health barrier. </div>
@@ -281,7 +283,7 @@ onBeforeUnmount(() => {
 <style lang="scss" scoped>
 .landing-page {
   width: 100%;
-  background: #fff;
+  background: #efe8db;
 
   .hero {
     position: relative;
@@ -325,7 +327,11 @@ onBeforeUnmount(() => {
       }
     }
   }
-
+  .shape-img {
+    margin-top: -137px;
+    z-index: 1000;
+    position: relative;
+  }
   @keyframes dropIn {
     from {
       opacity: 0;
