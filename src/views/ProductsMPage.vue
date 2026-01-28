@@ -21,7 +21,8 @@
     <!-- Products -->
     <div class="swiper-block products">
       <!-- <Swiper :modules="modules" :loop="true" :slides-per-view="1" :pagination="{ clickable: true }" class="swiper-box"> -->
-      <Swiper :modules="modules" :loop="true" :slides-per-view="1" :pagination="{ clickable: true }" :autoplay="{ delay: 4000, disableOnInteraction: false }" class="swiper-box">
+      <Swiper :modules="modules" :loop="true" :slides-per-view="1" :pagination="{ clickable: true }"
+        :autoplay="{ delay: 4000, disableOnInteraction: false }" class="swiper-box">
         <SwiperSlide>
           <div @click="goProductDetail(3)" class="product-card">
             <img src="../assets/imgs/pd3-1.jpg" alt="">
@@ -59,7 +60,8 @@
             <div class="text1">BUILT<br>
               FOR </div>
             <div class="text2">CARNIVORES</div>
-            <div class="text3">Cats weren’t made to eat grains. Schrain follows<br> the Biologically Appropriate philosophy
+            <div class="text3">Cats weren’t made to eat grains. Schrain follows<br> the Biologically Appropriate
+              philosophy
               with<br> WholePrey ratios—meat, organs, and cartilage<br> in the balance nature intended.</div>
           </div>
           <div class="pd-g-3-b">
@@ -71,7 +73,8 @@
             <div class="text1">NATURE <br>
               WITHOUT </div>
             <div class="text2">COMPROMISE</div>
-            <div class="text3">Arctic salmon. North American turkey. Deep-sea<br> cod. No grains, no artificial palatants,
+            <div class="text3">Arctic salmon. North American turkey. Deep-sea<br> cod. No grains, no artificial
+              palatants,
               no artificial<br> colors—just real, honest nutrition.</div>
           </div>
           <div class="pd-g-3-b">
@@ -84,8 +87,9 @@
       <div class="pd-g-4-content">
         <div class="pd-g-4-text1">WHERE <br>NATURE</div>
         <div class="pd-g-4-text2">MEETS SCIENCE</div>
-        <img src="../assets/imgs/products/products_line.png" alt="" class="line">
-        <img class="pd-g-4-img" src="../assets/imgs/products/products_02.png" alt="">
+        <img src="../assets/m/product-line.png" alt="" class="line">
+        <img class="pd-g-4-img" src="../assets/m/product-p6.png" alt="">
+        <img class="pd-g-4-img"  src="../assets/m/product-p7.png" alt="">
       </div>
       <div class="pd-g-4-bg">
       </div>
@@ -219,6 +223,7 @@ onBeforeUnmount(() => {
   .products-block {
     position: relative;
     background-color: #efe8db;
+
     .right {
       position: relative;
       width: 90%;
@@ -232,6 +237,7 @@ onBeforeUnmount(() => {
           position: relative;
           text-align: right;
           color: #212995;
+
           img {
             width: 100%;
           }
@@ -267,6 +273,7 @@ onBeforeUnmount(() => {
       }
     }
   }
+
   .swiper-block {
     position: relative;
     overflow: hidden;
@@ -348,6 +355,7 @@ onBeforeUnmount(() => {
       }
     }
   }
+
   .products {
     position: relative;
     width: 100%;
@@ -386,6 +394,7 @@ onBeforeUnmount(() => {
         margin: 0 auto;
         height: 26px;
       }
+
       .tag3 {
         font-family: "Oswald-Regular";
         font-size: 10px;
@@ -410,6 +419,7 @@ onBeforeUnmount(() => {
       }
     }
   }
+
   .pd-g-3 {
     background-color: #efe8db;
     padding-top: 15px;
@@ -433,6 +443,7 @@ onBeforeUnmount(() => {
 
         .pd-g-3-b {
           width: 100%;
+
           img {
             width: 100%;
           }
@@ -474,16 +485,20 @@ onBeforeUnmount(() => {
     padding-bottom: 50px;
     overflow: hidden;
     margin-top: 30px;
+
     .pd-g-4-content {
       position: relative;
       width: 100%;
       margin: 0 auto;
+
       .line {
         position: absolute;
-        top: -510px;
-        left: -38px;
+        top: 0;
+        left: 0;
         opacity: 0.9;
+        width:100%
       }
+
       .pd-g-4-img {
         position: relative;
         z-index: 100;
@@ -494,38 +509,40 @@ onBeforeUnmount(() => {
       .pd-g-4-text1 {
         position: absolute;
         font-family: "Copper";
-        font-size: 22px;
+        font-size: 12px;
         line-height: 1;
         color: #1f160b;
         text-align: center;
         margin-top: 50px;
-        width: 100px;
-        left: 585px;
+        width: 100%;
+        /* left: 585px; */
         text-align: center;
-        margin-left: -50px;
-        top: 15px;
+        /* margin-left: -50px; */
+        top: -19px;
+        z-index: 10;
       }
 
       .pd-g-4-text2 {
+position: absolute;
+    font-family: "Copper";
+    font-size: 23px;
+    line-height: 1;
+    color: #efe8db;
+    text-align: center;
+    margin-top: 50px;
+    width: 100%;
+    /* left: 585px; */
+    text-align: center;
+    /* margin-left: -50px; */
+    top: 11px;
         z-index: 10;
-        font-family: "Copper";
-        position: absolute;
-        font-size: 55px;
-        line-height: 1;
-        color: #efe8db;
-        text-align: center;
-        margin-top: 50px;
-        width: 700px;
-        left: 50%;
-        text-align: center;
-        margin-left: -350px;
-        top: 70px;
       }
     }
+
     .pd-g-4-bg {
       position: absolute;
       width: 100%;
-      height: 690px;
+      height: 250px;
       bottom: 0;
       left: 0;
       background: url("../assets/imgs/products/bg.jpg") no-repeat center center;

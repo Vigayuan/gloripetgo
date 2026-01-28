@@ -2,159 +2,81 @@
   <div class="product-page">
     <HeaderMPage />
     <!-- Product Section -->
-    <section class="product-detail">
-      <div class="left">
-        <div class="main-image">
-          <img v-show="showPdIndex == 1" :src="pdInfo.pdImgList[0]" alt="">
-          <img v-show="showPdIndex == 2" :src="pdInfo.pdImgList[1]" alt="">
-          <img v-show="showPdIndex == 3" :src="pdInfo.pdImgList[2]" alt="">
-        </div>
-        <div class="point-block">
-          <div class="point" :class="showPdIndex == index + 1 ? 'active' : ''" v-for="(item, index) in pdInfo.pdImgList" :key="index" @click="showPD(index + 1)"></div>
-        </div>
-        <div class="thumbs">
-          <img @click="showPD(1)" :class="showPdIndex == 1 ? 'active' : ''" :src="pdInfo.pdImgList[0]" alt="">
-          <img @click="showPD(2)" :class="showPdIndex == 2 ? 'active' : ''" :src="pdInfo.pdImgList[1]" alt="">
-          <img @click="showPD(3)" :class="showPdIndex == 3 ? 'active' : ''" :src="pdInfo.pdImgList[2]" alt="">
-        </div>
-      </div>
-
-      <div class="right">
-        <div class="title-block">
-          <div class="subtitle">IMMUNE SUPPORT</div>
-          <div class="title">{{ pdInfo.title1 }}<br>{{ pdInfo.title2 }}</div>
-        </div>
-
-        <div v-show="!showAllDesc" class="desc-2">
-          {{ pdInfo.desc }}
-        </div>
-        <div v-show="showAllDesc" class="desc">
-          {{ pdInfo.desc }}
-        </div>
-        <div v-show="!showAllDesc" @click="toggleDesc" class="read-more">
-          READ MORE
-        </div>
-        <div class="daily-meal">
-          <div class="text">DAILY MEAL</div>
-          <img src="@/assets/pdimg/icon-soup.png" alt="">
-        </div>
-        <div class="tags">
-          <div class="tag">
-            <img :src="pdInfo.tagList[0]" alt="">
+    <div class="product-wrapper">
+      <section class="product-detail">
+        <div class="left">
+          <div class="main-image">
+            <img v-show="showPdIndex == 1" :src="pdInfo.pdImgList[0]" alt="" />
+            <img v-show="showPdIndex == 2" :src="pdInfo.pdImgList[1]" alt="" />
+            <img v-show="showPdIndex == 3" :src="pdInfo.pdImgList[2]" alt="" />
           </div>
-          <div class="tag">
-            <img :src="pdInfo.tagList[1]" alt="">
-          </div>
-          <div class="tag">
-            <img :src="pdInfo.tagList[2]" alt="">
+          <div class="thumbs">
+            <img @click="showPD(1)" :class="showPdIndex == 1 ? 'active' : ''" :src="pdInfo.pdImgList[0]" alt="" />
+            <img @click="showPD(2)" :class="showPdIndex == 2 ? 'active' : ''" :src="pdInfo.pdImgList[1]" alt="" />
+            <img @click="showPD(3)" :class="showPdIndex == 3 ? 'active' : ''" :src="pdInfo.pdImgList[2]" alt="" />
           </div>
         </div>
 
-        <div class="info">
-          <div class="info-detail"><span>{{ pdInfo.pdDetail[0].title }}</span><br>{{ pdInfo.pdDetail[0].desc
-                        }}</div>
-          <div class="info-detail"><span>{{ pdInfo.pdDetail[1].title }}</span><br>{{ pdInfo.pdDetail[1].desc
-                        }}</div>
-          <div class="info-detail"><span>{{ pdInfo.pdDetail[2].title }}</span><br>{{ pdInfo.pdDetail[2].desc
-                        }}</div>
-        </div>
+        <div class="right">
+          <div class="title-block">
+            <div class="subtitle">{{ pdInfo.subtitle }}</div>
+            <div class="title">{{ pdInfo.title1 }}</div>
+            <div class="title1">{{ pdInfo.title2 }}</div>
+            <div class="line"></div>
+          </div>
 
-        <ul class="features">
-          <li>
-            <img :src="pdInfo.features[0].url" alt="">
-            <div class="text">{{ pdInfo.features[0].desc }}</div>
-          </li>
-          <li>
-            <img :src="pdInfo.features[1].url" alt="">
-            <div class="text">{{ pdInfo.features[1].desc }}</div>
-          </li>
-          <li>
-            <img :src="pdInfo.features[2].url" alt="">
-            <div class="text">{{ pdInfo.features[2].desc }}</div>
-          </li>
-        </ul>
-      </div>
-    </section>
+          <div class="desc">
+            {{ pdInfo.desc1 }} <br><br> {{ pdInfo.desc2 }}
+          </div>
+          <div class="info">
+            <div class="info-detail">
+              <div class="title">{{ pdInfo.pdDetail[0].title }}</div>
+              <div class="content">{{ pdInfo.pdDetail[0].desc }}</div>
+            </div>
+            <div class="info-detail">
+              <div class="title">{{ pdInfo.pdDetail[1].title }}</div>
+              <div class="content">{{ pdInfo.pdDetail[1].desc }}</div>
+            </div>
+            <div class="info-detail">
+              <div class="title">{{ pdInfo.pdDetail[2].title }}</div>
+              <div class="content">{{ pdInfo.pdDetail[2].desc }}</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
 
     <div class="tab-bar">
-      <div @click="handleTagChange(1)" class="tab-header">
-        <div>
-          Ingredients</div>
-        <div class="control-btn">
-          <div v-show="showTabIndex != 1">+</div>
-          <div v-show="showTabIndex == 1">-</div>
+      <div class="tab-header">
+        <div @click="handleTagChange(1)" :class="showTabIndex == 1 ? 'tab-title active' : 'tab-title'">
+          <div>Ingredients</div>
+          <div>+</div>
         </div>
       </div>
       <div class="tab-body">
-        <div v-show="showTabIndex == 1">
-          <div class="tab-item tab-item-1">
-            <div class="left">
-              {{ pdInfo.Ingredients[0].text1 }}<br>
-              <span>{{ pdInfo.Ingredients[0].text2 }}</span><br>
-              {{ pdInfo.Ingredients[0].text3 }}
-            </div>
-            <div class="center">
-              <div>
-                {{ pdInfo.Ingredients[1].text1 }}<br v-if="pdInfo.Ingredients[3].text2">
-                {{ pdInfo.Ingredients[1].text2 }}<br>
-                <span>{{ pdInfo.Ingredients[1].text3 }}</span>
-              </div>
-              <div>
-                {{ pdInfo.Ingredients[2].text1 }}<br>
-                <span>{{ pdInfo.Ingredients[2].text2 }}</span>
-              </div>
-              <div>
-                {{ pdInfo.Ingredients[3].text1 }}<br v-if="pdInfo.Ingredients[3].text2">
-                {{ pdInfo.Ingredients[3].text2 }}<br>
-                <span>{{ pdInfo.Ingredients[3].text3 }}</span>
-              </div>
-              <div>
-                {{ pdInfo.Ingredients[4].text1 }}<br>
-                <span>{{ pdInfo.Ingredients[4].text2 }}</span>
-              </div>
-              <div v-show="pdTypeIndex == 2">Herring<br>
-                <span>5%</span>
-              </div>
-              <div v-show="pdTypeIndex == 2">Fresh chicken liver<br>
-                <span>3%</span>
-              </div>
-            </div>
-          </div>
-          <div class="right">{{ pdInfo.Ingredients[5].text1 }}</div>
+        <div class="tab-item tab-item-1">
+          {{ pdInfo.Ingredients[0].text1 }}<br /><br />
+          <span><b>Additives: </b>{{ pdInfo.Ingredients[0].text2 }}</span>
         </div>
       </div>
-      <div @click="handleTagChange(2)" class="tab-header">
-        <div>
-          Feeding Guide</div>
-        <div class="control-btn">
-          <div v-show="showTabIndex != 2">+</div>
-          <div v-show="showTabIndex == 2">-</div>
+    </div>
+    <div class="tab-bar">
+      <div class="tab-header">
+        <div @click="handleTagChange(3)" :class="showTabIndex == 3 ? 'tab-title active' : 'tab-title'">
+          <div>Guaranteed Analysis</div>
+          <div>+</div>
         </div>
       </div>
       <div class="tab-body">
-        <div v-show="showTabIndex == 2" class="tab-item tab-item-2">
-          <img :src="pdInfo.GuidImg" alt="">
-        </div>
-      </div>
-      <div @click="handleTagChange(3)" class="tab-header">
-        <div>
-          Guaranteed Analysis
-        </div>
-        <div class="control-btn">
-          <div v-show="showTabIndex != 3">+</div>
-          <div v-show="showTabIndex == 3">-</div>
-        </div>
-      </div>
-      <div class="tab-body">
-        <div v-show="showTabIndex == 3" class="tab-item tab-item-3">
+        <div class="tab-item tab-item-3">
           <div class="table-block">
             <div class="table-items">
-              <div v-for="(item,index) in pdInfo.analysisList" :key="index" class="table-item">
+              <div v-for="(item, index) in pdInfo.analysisListName" :key="index" class="table-item">
                 <div class="table-item-title">
                   {{ pdInfo.analysisListName[index] }}
                 </div>
                 <div class="table-item-title1">
-                  {{ item }}
+                  {{ pdInfo.analysisList[index] }}
                 </div>
               </div>
             </div>
@@ -162,194 +84,174 @@
         </div>
       </div>
     </div>
-    <div class="cat-bg-block">
-      <div class="img-block">
-        <div class="img-scroll" ref="imgBlockRef">
-          <img v-for="(item, index) in pdInfo.catBgList" :key="index" :src="item" alt="">
-        </div>
-      </div>
-      <div class="text">
-        <span>Daily Defense</span> in Every Bite
+    <div class="pd-logo">
+      <img src="../assets/m/pd-logo.jpg" alt="">
+    </div>
+    <div class="pd-desc">
+      <div class="pd-desc-content">
+        <img src="../assets/m/pdd-p2.jpg" alt="" class="pd-bg">
       </div>
     </div>
-    <div class="cat-desc">
-      <div class="cat-desc-1">
-        <img :src="pdInfo.catDescList[0]" alt="">
+    <div class="also-like">
+      <div>You also like</div>
+    </div>
+    <div class="another-pd">
+      <div class="pd" @click="goPdDetail(pdInfo.anotherPd[0].id)">
+        <img :src="pdInfo.anotherPd[0].img" alt="">
+        <div class="title1">{{ pdInfo.anotherPd[0].title1 }}</div>
+        <div class="title2">{{ pdInfo.anotherPd[0].title2 }}</div>
       </div>
-      <div class="cat-desc-2">
-        <img :src="pdInfo.catDescList[1]" alt="">
-      </div>
-      <div class="cat-desc-3">
-        <img :src="pdInfo.catDescList[2]" alt="">
-      </div>
-      <div class="cat-desc-4">
-        <img :src="pdInfo.catDescList[3]" alt="">
-      </div>
-      <div class="cat-desc-5">
-        <img :src="pdInfo.catDescList[4]" alt="">
+      <div class="pd" @click="goPdDetail(pdInfo.anotherPd[1].id)">
+        <img :src="pdInfo.anotherPd[1].img" alt="">
+        <div class="title1">{{ pdInfo.anotherPd[1].title1 }}</div>
+        <div class="title2">{{ pdInfo.anotherPd[1].title2 }}</div>
       </div>
     </div>
-    <section class="brand-logo">
-      <div class="logo-list">
-        <div class="logo-list-line">
-          <div class="logo-item">
-            <img src="../assets/images/icon-MSC.svg" alt="">
-          </div>
-          <div class="logo-item">
-            <img src="../assets/images/icon-aafco.svg" alt="">
-          </div>
-          <div class="logo-item">
-            <img src="../assets/images/icon-Global-Animal.svg" alt="">
-          </div>
-        </div>
-        <div class="logo-list-line">
-          <div class="logo-item">
-            <img src="../assets/images/icon-SQF.svg" alt="">
-          </div>
-          <div class="logo-item">
-            <img src="../assets/images/icon-CFIA.svg" alt="">
-          </div>
-          <div class="logo-item">
-            <img src="../assets/images/icon-FDA.svg" alt="">
-          </div>
-        </div>
-      </div>
-    </section>
     <FooterMPage />
   </div>
 </template>
 
 <script setup>
-import HeaderMPage from '@/components/HeaderMPage.vue';
-import FooterMPage from '@/components/FooterMPage.vue';
-import { ref, reactive, watch } from 'vue'
-import { useRoute } from 'vue-router';
-import { catPageInfo1, catPageInfo2, dogPageInfo } from '@/views/pdInfoM.js'
-const showTabIndex = ref(0)
-const showPdIndex = ref(1)
+import HeaderMPage from "@/components/HeaderMPage.vue";
+import FooterMPage from "@/components/FooterMPage.vue";
+import { ref, reactive, watch, onMounted, onBeforeUnmount } from "vue";
+import { useRoute, useRouter } from "vue-router";
+import { pdInfo1, pdInfo2, pdInfo3 } from "@/views/pdInfo.js";
+const showTabIndex = ref(1);
+const showPdIndex = ref(1);
 const handleTagChange = (index) => {
-  if (showTabIndex.value == index) {
-    showTabIndex.value = 0
-  } else {
-    showTabIndex.value = index
-  }
-}
+  showTabIndex.value = index;
+};
 const route = useRoute();
+const router = useRouter()
 const showPD = (index) => {
-  showPdIndex.value = index
-}
-const showAllDesc = ref(false)
-const toggleDesc = () => {
-  showAllDesc.value = !showAllDesc.value
-}
-const pdTypeIndex = ref(route.query.id)
+  showPdIndex.value = index;
+};
+// const showAllDesc = ref(false)
+// const toggleDesc = () => {
+//   showAllDesc.value = !showAllDesc.value
+// }
+const pdTypeIndex = ref(route.query.id);
 const pdInfo = reactive({
   pdImgList: [
-    new URL("@/assets/pdimg/pd-cat-1.jpg", import.meta.url).href,
-    new URL("@/assets/pdimg/pd-cat-2.jpg", import.meta.url).href,
+    new URL("@/assets/imgs/pd1-1.jpg", import.meta.url).href,
+    new URL("@/assets/imgs/pd1-2.jpg", import.meta.url).href,
+    new URL("@/assets/imgs/pd1-3.jpg", import.meta.url).href,
   ],
-  title1: "Free-Range Chicken Recipe",
-  title2: "Complete Cat Food",
-  desc: "Uses low-magnesium and low-calcium ingredients as primary components, incorporating natural acidifiers to maintain a slightly acidic urine environment in cats, reducing urinary stone risk. Dandelion flavonoids boost urine flow and hydration.Cranberries add PACs to curb bacterial adhesion, aiding daily urinary health.",
-  tagList: [
-    new URL("@/assets/pdimg/icon-urinary.png", import.meta.url).href,
-    new URL("@/assets/pdimg/icon-immune.png", import.meta.url).href,
-    new URL("@/assets/pdimg/icon-micro.png", import.meta.url).href,
+  subtitle: "Freeze-Dried and Kibble Mix",
+  title1: "High Meatiness Cat Food",
+
+  title2: "Deep Sea Fish Flavor",
+  desc1: "Cats olfactory sensitivity is more than 200,000 times that of humans. Picky cats may be eager for this freeze-dried recipe created to appeal to their senses. ",
+  desc2: " Salmon meat and egg yolk are individually freeze-dried at -40C, then combined into the original ingredients. This keeps the delicious taste and nutrients locked into every bites, and leaves the cats with full vitality all day long!",
+  analysisList: [
+    "≥ 38%",
+    "≥ 16%",
+    "≤ 3.8%",
+    "≤ 10%",
+    "≤ 9%",
+    "≥ 1.1%",
+    "≥ 0.8%",
+    "≥ 0.2%",
+    "≥ 0.3%",
   ],
-  features: [
-    {
-      url: new URL("@/assets/pdimg/pd-tag1.png", import.meta.url).href,
-      desc: "Carefully selected antibiotic-free poultry and pollution-free herbal ingredients"
-    },
-    {
-      url: new URL("@/assets/pdimg/pd-tag2.png", import.meta.url).href,
-      desc: "No artificial preservatives, chemical flavor enhancers, or coloring agents. "
-    },
-    {
-      url: new URL("@/assets/pdimg/pd-tag3.png", import.meta.url).href,
-      desc: "No corn, wheat, oats, or other cereal ingredients are added."
-    }
+  analysisListName: [
+    "Crude protein",
+    "Crude fat",
+    "Crude fiber",
+    "Moisture",
+    "Crude ash ",
+    "Calcium",
+    "Phosphorus",
+    "Taurine",
+    "Soluble chloride ",
   ],
   pdDetail: [
     {
-      title: "Food Form",
-      desc: "Dry Food"
+      title: "Net weight:",
+      desc: "5.5LB/2.5kg",
     },
     {
-      title: "Net Wt.",
-      desc: "3 lb (1.36 kg)"
+      title: "Food form:",
+      desc: "Raw Mix",
     },
     {
-      title: "Life Stage",
-      desc: "All life stages"
-    }
+      title: "Life Stage:",
+      desc: "All life stages",
+    },
   ],
-  analysisList: ['≥ 30.0%', '≥ 14.0%', '≤ 6.0%', '≤ 10.0%', '≥ 1.2% ', '≥ 1.0%', '≥ 1.6%', '≥ 0.7%', '≥ 2.3%', '≥600mg/kg', '≥600mg/kg', '≥300mg/kg', '≥600 IU/kg'],
-  analysisListName: ['Crude protein', 'Crude fat', 'Crude fiber', 'Moisture', 'Calcium', 'Phosphorus', 'Lysine', 'Omega-3*', 'Omega-6*', 'Glucosamine*', 'MSM(methy | sulfony | methane)*', 'Chondroitin sulfate*', 'Vitamin D'],
   Ingredients: [
     {
-      text1: 'Attrictive daily meal = ',
-      text2: '85%',
-      text3: 'raw meat based on',
+      text1: "sardines (22%), chicken (18%), duck (16%), cod (14%), beef (5%), freeze-dried salmon (4.2%), freeze-dried egg yolk (3.8%), chicken liver (3%), chicken fat, deep sea fish oil, potato powder, tapioca, whole egg powder, cheese powder, pumpkin,apple, carrot, broccoli, spinach, cranberry, blueberry, beer yeast powder, seaweed powder, beet meal, chicory root, plantago seed, yucca powder.",
+      text2: "Additives: taurine, bacillus subtilis, enterococcus faecalis, L-lysine, L-tryptophan, DL-methionine, oligofructose, egg yolk immunoglobulin (IgY), vitamin A, vitamin B1, riboflavin vitamins, niacin, vitamin B6, calcium pantothen-ate, folic acid, biotin, vitamin C, vitamin D3, DL-a-tocopherol, zinc methionine complex, iron glycine complex, copper methionine complex, manganese methionine complex, choline chloride, chondroitin sulfate, potassium chloride, sodium chloride, rosemary extract.",
+    }
+  ],
+  anotherPd: [
+    {
+      img: new URL("@/assets/imgs/pd2-1.jpg", import.meta.url).href,
+      title1: "Freeze-Dried MEAT CAT FOOD",
+      title2: "Beef Flavor",
     },
     {
-      text1: 'Fresh free-range',
-      text2: 'chicken',
-      text3: '36%',
-    },
-    {
-      text1: 'Fresh turkey',
-      text2: '28%',
-    },
-    {
-      text1: 'Fresh boneless',
-      text2: 'duck',
-      text3: '18%',
-    },
-    {
-      text1: 'Fresh chicken liver',
-      text2: '3%',
-    },
-    {
-      text1: 'Fresh free range chicken (36%), fresh turkey (28%), fresh boneless duck (18%), fresh chicken liver (3%), potato flour, dried sweet potato, chicken fat, deep sea fish oil, egg yolk powder, pumpkin, broccoli, carrot, papaya, dried cranberry (1.5%), dandelion granules (1%), alfalfa meal, chicory root powder, yucca powder, ice field moss extract (0.8%), natural lactic acid, fructooligosaccharides, chondroitin sulfate, lecithin, L-carnitine, sodium chloride, choline chloride, taurine, vitamin E, L-ascorbate-2-phosphate, niacin, vitamin A, thiamine mononitrate, D-calcium pantothenate, riboflavin, pyridoxine hydrochloride, cyanocobalamin, folic acid, vitamin D3, D-biotin, iron proteinate, copper proteinate, manganese proteinate, zinc proteinate, calcium iodate, sodium selenite, potassium chloride, Bacillus subtilis, rosemary extract.',
+      img: new URL("@/assets/imgs/pd3-1.jpg", import.meta.url).href,
+      title1: "Cold pressing Cat food",
+      title2: "Deep Sea Fish Flavor",
     },
   ],
-  GuidImg: new URL("@/assets/pdimg/pd-tab-bg.jpg", import.meta.url).href,
-  catBgList: [
-    new URL("@/assets/pdimg/scroll_cat_bg_01.jpg", import.meta.url).href,
-    new URL("@/assets/pdimg/scroll_cat_bg_02.jpg", import.meta.url).href,
-    new URL("@/assets/pdimg/scroll_cat_bg_03.jpg", import.meta.url).href,
-  ],
-  catDescList: [
-    new URL("@/assets/pdimg/pd-cat-1-desc_07.png", import.meta.url).href,
-    new URL("@/assets/pdimg/pd-cat-1-desc_09.png", import.meta.url).href,
-    new URL("@/assets/pdimg/pd-cat-1-desc_16.png", import.meta.url).href,
-    new URL("@/assets/pdimg/pd-cat-1-desc_25.png", import.meta.url).href,
-    new URL("@/assets/pdimg/pd-cat-1-desc_27.png", import.meta.url).href,
-  ]
-})
+});
 
-const imgBlockRef = ref(null)
+const missionRef = ref(null);
+const imgBlockRef = ref(null);
+const handleScroll = () => {
+  if (!missionRef.value || !imgBlockRef.value) return;
 
+  const rect = missionRef.value.getBoundingClientRect();
+  const windowHeight = window.innerHeight;
+
+  // 只有当元素出现在视口中时才开始视差
+  if (rect.top < windowHeight && rect.bottom > 0) {
+    const scrollRatio = rect.top / windowHeight;
+    const translateY = scrollRatio * -200; // 可调整：控制偏移力度
+    imgBlockRef.value.style.top = `${translateY - 110}px`; // 滚动速度为 1/10
+  }
+};
+const goPdDetail = (id) => {
+  router.replace({
+    path: route.path,
+    query: {
+      ...route.query, // 关键！
+      id: id
+    }
+  })
+}
+onMounted(() => {
+  // 1️⃣ box
+  window.addEventListener("scroll", handleScroll);
+});
+
+onBeforeUnmount(() => {
+  window.removeEventListener("scroll", handleScroll);
+});
 watch(
   () => route.query.id,
   (newId, oldId) => {
     if (newId && newId !== oldId) {
       pdTypeIndex.value = newId;
-      console.log('Route Id changed:', newId);
+      console.log("Route Id changed:", newId);
       if (newId == 1) {
-        Object.keys(pdInfo).forEach(key => {
-          pdInfo[key] = dogPageInfo[key]
-        })
+        Object.keys(pdInfo).forEach((key) => {
+          pdInfo[key] = pdInfo1[key];
+        });
       } else if (newId == 2) {
-        Object.keys(pdInfo).forEach(key => {
-          pdInfo[key] = catPageInfo2[key]
-        })
+        Object.keys(pdInfo).forEach((key) => {
+          pdInfo[key] = pdInfo2[key];
+        });
       } else {
-        Object.keys(pdInfo).forEach(key => {
-          pdInfo[key] = catPageInfo1[key]
-        })
+        Object.keys(pdInfo).forEach((key) => {
+          pdInfo[key] = pdInfo3[key];
+        });
       }
+
     }
   },
   { immediate: true }
@@ -360,224 +262,195 @@ watch(
 .product-page {
   font-family: "Segoe UI", sans-serif;
   color: #333;
-  background: #fff;
+  background: #efe8db;
 
-  .product-detail {
-    box-sizing: border-box;
-    background: #fff;
-    margin: 0 auto;
+  .product-wrapper {
+    background: #efe8db;
 
-    .left {
-      position: relative;
-      flex: 1;
-      text-align: center;
+    .product-detail {
+      box-sizing: border-box;
+      width: 100%;
+      margin: 0 auto;
 
-      .handle-left {
-        cursor: pointer;
-        position: absolute;
-        top: 5.3333rem;
-        left: 0;
-        width: 0.5333rem;
-
-        img {
-          width: 100%;
-        }
-      }
-
-      .handle-right {
-        cursor: pointer;
-        position: absolute;
-        top: 5.3333rem;
-        right: 0;
-        width: 0.5333rem;
-
-        img {
-          width: 100%;
-        }
-      }
-
-      .main-image img {
-        width: 100%;
-      }
-
-      .point-block {
-        position: absolute;
-        top: 8.5333rem;
-        left: 50%;
-        transform: translateX(-50%);
-        display: flex;
-        gap: 0.2667rem;
-      }
-
-      .point {
-        width: 0.2667rem;
-        height: 0.2667rem;
-        background: transparent;
-        border-radius: 50%;
-        cursor: pointer;
-        border: 0.0267rem solid #fff;
-
-        &.active {
-          background: #fff;
-        }
-      }
-
-      .thumbs {
-        margin-top: 0.2667rem;
-        display: flex;
-        justify-content: flex-start;
-        gap: 0.2667rem;
-        padding-left: 0.5333rem;
-
-        img {
-          width: 1.8667rem;
-          height: 1.8667rem;
-          object-fit: cover;
-          border-radius: 0.16rem;
-          border: 0.0267rem solid #ddd;
-
-          &.active {
-            border: 0.0533rem solid #212995;
-          }
-        }
-      }
-    }
-
-    .right {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      text-align: left;
-      padding: 0.5333rem 0.5333rem;
-
-      .subtitle {
-        font-family: "RedHatDisplay-Regular";
-        font-size: 0.48rem;
-        line-height: 1;
-        margin: 0.2667rem 0;
-        color: #676767;
-      }
-
-      .title {
-        font-family: "RedHatDisplay-Blod";
-        font-size: 0.5333rem;
-        font-weight: 700;
-        color: #212995;
-        margin-bottom: 0.32rem;
-        line-height: 1;
-      }
-
-      .desc {
-        font-family: "RedHatDisplay-Regular";
-        color: #231f20;
-        font-size: 0.3733rem;
-        line-height: 1.2;
-        margin-bottom: 0.4267rem;
-      }
-
-      .desc-2 {
-        font-family: "RedHatDisplay-Regular";
-        color: #231f20;
-        font-size: 0.3733rem;
-        line-height: 1.2;
-        margin-bottom: 0.4267rem;
-
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-        text-overflow: ellipsis;
-      }
-
-      .read-more {
-        cursor: pointer;
-        font-family: "RedHatDisplay-Blod";
-        font-size: 0.4rem;
-        font-weight: 700;
-        color: #212995;
-        margin-bottom: 0.5333rem;
-        line-height: 1;
-        padding-bottom: 0.0533rem;
-        border-bottom: 0.0267rem solid #212995;
-        width: 2.4rem;
+      .left {
+        position: relative;
+        flex: 1;
         text-align: center;
-      }
+        border-bottom: 2px solid #1f160b;
 
-      .daily-meal {
-        font-family: "Oswald-Medium";
-        color: #676767;
-        font-size: 0.5333rem;
-        line-height: 1;
-        display: flex;
-        margin-bottom: 0.2667rem;
 
-        img {
-          height: 0.5333rem;
+        .main-image {
+      padding: 50px 30px 20px;
+          border-bottom: 2px solid #1f160b;
         }
-      }
 
-      .tags {
-        display: flex;
-        gap: 0.2133rem;
-        flex-wrap: wrap;
-        margin-bottom: 0.4267rem;
-
-        .tag {
-          width: 30%;
-
-          img {
-            width: 100%;
-          }
+        .main-image img {
+          width: 90%;
         }
-      }
 
-      .info {
-        font-size: 0.3733rem;
-        line-height: 1.6;
-        margin-bottom: 0.32rem;
-        display: flex;
-        color: #212995;
-        padding: 0.5333rem 0;
-        border: 0.0533rem solid #212995;
-        border-left: none;
-        border-right: none;
-        justify-content: space-between;
-        text-align: center;
-
-        .info-detail {
-          flex: 1;
-          border-right: 0.0533rem solid #212995;
-          font-family: "RedHatDisplay-Medium";
-          font-size: 0.32rem;
-          line-height: 1.5;
-
-          &:last-child {
-            border-right: none;
-          }
-
-          span {
-            font-family: "Oswald-Medium";
-          }
-        }
-      }
-
-      .features {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-
-        li {
+        .thumbs {
+          margin-top: 20px;
           display: flex;
-          padding: 0.2667rem 0.5333rem;
-          font-size: 0.32rem;
-          line-height: 1.5;
-          margin-bottom: 0.16rem;
-          font-family: "RedHatDisplay-Medium";
-          align-items: center;
+          justify-content: center;
+          gap: 10px;
+          padding-bottom: 20px;
 
           img {
-            width: 1.6rem;
-            margin-right: 0.5333rem;
+            width: 90px;
+            height: 90px;
+            object-fit: cover;
+
+            &.active {
+              border: 1px solid #212995;
+            }
+          }
+        }
+      }
+
+      .right {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        padding-left: 40px;
+        border-bottom: 2px solid #1f160b;
+
+        .subtitle {
+          font-family: "Oswald-Medium";
+          font-size: 10px;
+          line-height: 1;
+          margin: 10px 0;
+          color: #e40012;
+        }
+
+        .title {
+          font-family: "Oswald-Medium";
+          font-size: 30px;
+          font-weight: 700;
+          color: #1f160b;
+          margin-bottom: 12px;
+          line-height: 1;
+          width: 230px;
+        }
+
+        .title1 {
+          font-family: "Oswald-Light";
+          font-size: 18px;
+          font-weight: 700;
+          color: #1f160b;
+          margin-bottom: 12px;
+          line-height: 1;
+        }
+
+        .line {
+          width: 35px;
+          height: 3px;
+          margin: 20px 0;
+          background-color: #1f160b;
+        }
+
+        .desc {
+          font-family: "Oswald-Regular";
+          color: #231f20;
+          font-size: 18px;
+          line-height: 1.2;
+          margin-bottom: 16px;
+          width:90%;
+        }
+
+        .desc-2 {
+          font-family: "RedHatDisplay-Regular";
+          color: #231f20;
+          font-size: 14px;
+          line-height: 1.2;
+          margin-bottom: 16px;
+
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          /* 限制显示2行 */
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+
+        .read-more {
+          cursor: pointer;
+          font-family: "RedHatDisplay-Blod";
+          font-size: 15px;
+          font-weight: 700;
+          color: #212995;
+          margin-bottom: 20px;
+          line-height: 1;
+          padding-bottom: 2px;
+          border-bottom: 1px solid #212995;
+          width: 90px;
+          text-align: center;
+        }
+
+        .daily-meal {
+          font-family: "Oswald-Medium";
+          color: #676767;
+          font-size: 20px;
+          line-height: 1;
+          display: flex;
+          margin-bottom: 10px;
+
+          img {
+            height: 20px;
+          }
+        }
+
+        .tags {
+          display: flex;
+          gap: 8px;
+          flex-wrap: wrap;
+          margin-bottom: 16px;
+
+          .tag {
+            width: 130px;
+
+            img {
+              width: 100%;
+            }
+          }
+        }
+
+        .info {
+          font-size: 14px;
+          line-height: 1.6;
+          margin-bottom: 12px;
+          display: flex;
+          color: #212995;
+          padding: 20px 0;
+          border-left: none;
+          border-right: none;
+          justify-content: space-between;
+          text-align: center;
+          flex-wrap: wrap;
+
+          .info-detail {
+            width: 45%;
+            margin-bottom: 15px;
+
+            .title {
+              font-family: "Oswald-Regular";
+              font-size: 12px;
+              line-height: 1.5;
+              color: #1f160b;
+              text-align: left;
+              width: 200px;
+            }
+
+            .content {
+              font-family: "Oswald-Medium";
+              width: 100px;
+              height: 30px;
+              font-size: 14px;
+              line-height: 30px;
+              color: #efe8db;
+              text-align: center;
+              background: #1f160b;
+            }
           }
         }
       }
@@ -585,75 +458,78 @@ watch(
   }
 
   .tab-bar {
-    width: 94%;
+    width: 90%;
     margin: 0 auto;
 
     .tab-header {
-      border: 0.08rem solid #d3d3d3;
       border-left: none;
       border-right: none;
-      border-bottom: none;
       padding: 0;
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      font-size: 0.5867rem;
-      line-height: 2;
-      font-family: "RedHatDisplay-Black";
-      color: #212995;
 
-      .control-btn {
+      .tab-title {
         cursor: pointer;
-        font-size: 1.0667rem;
+        position: relative;
+        font-family: "Oswald-Regular";
+        font-size: 20px;
         line-height: 1;
-        font-family: "RedHatDisplay-Blod";
-        color: #575757;
+        /* flex: 1; */
+        text-align: center;
+        width: 100%;
+        padding: 15px 22px;
+        border-bottom: 1px solid #1f160b;
+        text-align: left;
+        display: flex;
+        justify-content: space-between;
       }
     }
 
     .tab-body {
-      font-family: "RedHatDisplay-Regular";
+      display: flex;
+      justify-content: space-between;
 
       .tab-item {
-        display: flex;
-        text-align: left;
-        padding: 0.2667rem 0 0.5333rem;
+        width: 100%;
+        padding: 20px;
 
-        &.tab-item-2 {
-          padding: 0.5333rem 0 0;
-
-          img {
-            width: 100%;
-          }
+        &.tab-item-1 {
+          text-align: left;
+          font-family: "Oswald-Regular";
+          font-size: 14px;
+          line-height: 1.2;
         }
 
         &.tab-item-3 {
           .table-block {
-            width: 96%;
-            margin: 0 auto;
+            width: 100%;
+
             .table-items {
+              display: flex;
+              flex-wrap: wrap;
+
               .table-item {
+                width: 100%;
                 display: flex;
                 justify-content: space-between;
-                padding: 0 0.2667rem;
-                &:nth-child(2n) {
-                  background: #eee;
-                }
+
                 .table-item-title {
-                  flex: 1;
+                  width: 270px;
                   font-family: "Oswald-Regular";
-                  font-size: 0.4267rem;
-                  color: #212995;
-                  line-height: 0.9333rem;
-                  height: 0.9333rem;
+                  font-size: 14px;
+                  color: #1f160b;
+                  line-height: 20px;
+                  height: 20px;
+                  text-align: left;
                 }
+
                 .table-item-title1 {
+                  width: 150px;
                   font-family: "Oswald-Regular";
-                  font-size: 0.4267rem;
-                  color: #212995;
-                  line-height: 0.9333rem;
-                  height: 0.9333rem;
-                  width: 90px;
+                  font-size: 12px;
+                  color: #1f160b;
+                  line-height: 20px;
+                  height: 20px;
                   text-align: right;
                 }
               }
@@ -662,126 +538,119 @@ watch(
         }
 
         .left {
-          font-size: 0.32rem;
+          font-size: 14px;
           line-height: 1.2;
-          width: 4.8rem;
-          border-right: 0.0533rem solid #d3d3d3;
+          width: 180px;
+          border-right: 2px solid #d3d3d3;
 
           span {
             font-family: "RedHatDisplay-Blod";
-            font-size: 1.0667rem;
+            font-size: 50px;
             line-height: 1;
           }
         }
 
         .center {
-          width: 8rem;
-          padding: 0 0.5333rem;
+          width: 300px;
+          padding: 0 20px;
           display: flex;
           justify-content: space-between;
           flex-wrap: wrap;
 
           div {
-            font-size: 0.32rem;
+            font-size: 14px;
             line-height: 1;
-            width: 2.4rem;
+            width: 120px;
             text-align: left;
-            margin-bottom: 0.5333rem;
+
             span {
               font-family: "RedHatDisplay-Blod";
-              font-size: 1.0667rem;
+              font-size: 40px;
             }
           }
         }
-      }
-      .right {
-        text-align: left;
-        color: #212995;
-        margin-bottom: 0.5333rem;
+
+        .right {
+          flex: 1;
+          color: #212995;
+        }
       }
     }
   }
 
-  .cat-bg-block {
+  .pd-logo {
     width: 100%;
-    overflow: hidden;
-    position: relative;
-    font-size: 0;
-    margin-top: 1.3333rem;
+    margin: 30px auto;
+    border-top: 2px solid #1f160b;
+    border-bottom: 2px solid #1f160b;
+    img{
+      width:100%;
+    }
+  }
 
-    .img-block {
+  .pd-desc {
+    .pd-desc-content {
       position: relative;
       width: 100%;
-      line-height: 0;
-
-      .img-scroll {
-        width: 100%;
-        height: 100%;
-
-        img {
-          width: 100%;
-        }
-      }
-    }
-
-    .text {
-      width: 100%;
-      position: absolute;
-      top: 1.7333rem;
-      left: 0;
-      font-size: 0.5867rem;
-      line-height: 1;
-      color: #fff;
-      text-align: center;
-      text-shadow: 0 0 0.1067rem black;
-      font-family: "RedHatDisplay-Regular";
-
-      span {
-        font-family: "RedHatDisplay-Black";
-      }
-    }
-  }
-
-  .cat-desc {
-    margin: 0.8rem auto;
-    font-size: 0;
-    position: relative;
-
-    img {
-      cursor: pointer;
-      width: 100%;
-
-      &:hover {
-        transform: scale(1.05);
-        animation: scaleUp 0.5s linear;
-      }
-    }
-  }
-
-  .brand-logo {
-    padding: 0.5333rem 0;
-
-    .logo-list {
-      width: 90%;
       margin: 0 auto;
-      border-top: 0.0267rem solid #7c7c7c;
-      border-bottom: 0.0267rem solid #7c7c7c;
-      padding: 0.4rem 0;
+      border-bottom: 2px solid #1f160b;
+      padding: 0;
 
-      .logo-list-line {
-        display: flex;
-        justify-content: space-between;
-        margin: 0.2667rem 0;
+      .img-daily {
+        position: absolute;
+        top: 22px;
+        left: 150px;
+        width: 900px;
+      }
 
-        .logo-item {
-          height: 0.6667rem;
-          flex: 1;
-          text-align: center;
+      .pd-bg {
+        width: 100%;
+      }
+    }
+  }
 
-          img {
-            height: 0.6667rem;
-          }
+  .also-like {
+    width: 100%;
+    margin: 30px auto;
+    font-family: "Oswald-Regular";
+    font-size: 18px;
+  }
+
+  .another-pd {
+    width: 100%;
+    margin: 30px auto;
+    border-bottom: 2px solid #1f160b;
+    font-family: "Oswald-Regular";
+    font-size: 42px;
+    display: flex;
+    justify-content: space-around;
+
+    .pd {
+      width: 40%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: pointer;
+
+      img {
+        width: 100%;
+
+        &:hover {
+          animation: scaleUp 0.3s ease-out forwards;
         }
+      }
+
+      .title1 {
+        font-family: "Oswald-SemiBold";
+        font-size: 16px;
+        line-height: 1;
+        margin: 20px 0 0;
+      }
+
+      .title2 {
+        font-size: 16px;
+        line-height: 1;
+        margin: 0 0 20px 0;
       }
     }
   }
