@@ -117,7 +117,7 @@ const toggleMenu = () => (showMenu.value = !showMenu.value);
     height: 60px;
     transition: all 0.3s ease;
     padding-bottom: 10px;
-    z-index: 100;
+    z-index: 1000;
     div {
       cursor: pointer;
       margin: 20px;
@@ -143,7 +143,7 @@ const toggleMenu = () => (showMenu.value = !showMenu.value);
       position: absolute;
       top: 53px;
       left: 0;
-      z-index: 100;
+      z-index: 1000;
       width: 100%;
     }
   }
