@@ -74,7 +74,7 @@
     </section>
     <div class="swiper-block products">
       <!-- <Swiper :modules="modules" :loop="true" :slides-per-view="1" :pagination="{ clickable: true }" class="swiper-box"> -->
-        <Swiper :modules="modules" :loop="true" :slides-per-view="1" :pagination="{ clickable: true }" :autoplay="{ delay: 4000, disableOnInteraction: false }" class="swiper-box">
+      <Swiper :modules="modules" :loop="true" :slides-per-view="1" :pagination="{ clickable: true }" :autoplay="{ delay: 4000, disableOnInteraction: false }" class="swiper-box">
         <SwiperSlide>
           <div @click="goProductDetail(3)" class="product-card">
             <img src="../assets/imgs/pd3-4.png" alt="">
@@ -256,7 +256,6 @@ onBeforeUnmount(() => {
       display: flex;
       justify-content: space-between;
       align-items: center;
-
     }
   }
 
@@ -306,7 +305,6 @@ onBeforeUnmount(() => {
     }
 
     .btn-leran-more {
-
       position: absolute;
       top: 80%;
       margin-left: -65px;
@@ -492,8 +490,6 @@ onBeforeUnmount(() => {
       top: 106px;
       width: 100%;
     }
-
-
   }
 
   .products {
@@ -551,12 +547,12 @@ onBeforeUnmount(() => {
 
   .landing-g-4 {
     position: relative;
-    height: 688px;
+    height: 530px;
     background-color: #000;
 
     .bowl {
       position: absolute;
-      top: 174px;
+      top: 101px;
       left: 50%;
       width: 166px;
       opacity: 0;
@@ -622,7 +618,7 @@ onBeforeUnmount(() => {
 
     .home-pg-2 {
       width: 100%;
-      margin: 80px auto 50px;
+      margin: 0 auto 50px;
     }
 
     .home-pg-3 {
@@ -729,7 +725,6 @@ onBeforeUnmount(() => {
       border-bottom: 1px solid #7c7c7c;
 
       img {
-
         height: 40px;
       }
     }
@@ -739,8 +734,6 @@ onBeforeUnmount(() => {
     position: relative;
     overflow: hidden;
     background-color: #efe8db;
-
-
 
     :deep(.swiper-box) {
       width: 100%;
