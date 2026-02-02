@@ -169,14 +169,14 @@ const pdInfo = reactive({
   pdDetail: [
     {
       title: "Net weight:",
-      desc: "5.5LB/2.5kg",
+      desc: "5.5lb/2.5kg",
     },
     {
       title: "Food form:",
       desc: "Raw Mix",
     },
     {
-      title: "Life Stage:",
+      title: "Life stage:",
       desc: "All life stages",
     },
   ],
@@ -278,9 +278,8 @@ watch(
         text-align: center;
         border-bottom: 2px solid #1f160b;
 
-
         .main-image {
-      padding: 50px 30px 20px;
+          padding: 50px 30px 20px;
           border-bottom: 2px solid #1f160b;
         }
 
@@ -355,7 +354,7 @@ watch(
           font-size: 18px;
           line-height: 1.2;
           margin-bottom: 16px;
-          width:90%;
+          width: 90%;
         }
 
         .desc-2 {
@@ -583,8 +582,8 @@ watch(
     margin: 30px auto;
     border-top: 2px solid #1f160b;
     border-bottom: 2px solid #1f160b;
-    img{
-      width:100%;
+    img {
+      width: 100%;
     }
   }
 

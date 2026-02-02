@@ -21,8 +21,7 @@
     <!-- Products -->
     <div class="swiper-block products">
       <!-- <Swiper :modules="modules" :loop="true" :slides-per-view="1" :pagination="{ clickable: true }" class="swiper-box"> -->
-      <Swiper :modules="modules" :loop="true" :slides-per-view="1" :pagination="{ clickable: true }"
-        :autoplay="{ delay: 4000, disableOnInteraction: false }" class="swiper-box">
+      <Swiper :modules="modules" :loop="true" :slides-per-view="1" :pagination="{ clickable: true }" :autoplay="{ delay: 4000, disableOnInteraction: false }" class="swiper-box">
         <SwiperSlide>
           <div @click="goProductDetail(3)" class="product-card">
             <img src="../assets/imgs/pd3-1.jpg" alt="">
@@ -89,7 +88,7 @@
         <div class="pd-g-4-text2">MEETS SCIENCE</div>
         <img src="../assets/m/product-line.png" alt="" class="line">
         <img class="pd-g-4-img" src="../assets/m/product-p6.png" alt="">
-        <img class="pd-g-4-img"  src="../assets/m/product-p7.png" alt="">
+        <img class="pd-g-4-img" src="../assets/m/product-p7.png" alt="">
       </div>
       <div class="pd-g-4-bg">
       </div>
@@ -496,7 +495,7 @@ onBeforeUnmount(() => {
         top: 0;
         left: 0;
         opacity: 0.9;
-        width:100%
+        width: 100%;
       }
 
       .pd-g-4-img {
@@ -523,18 +522,18 @@ onBeforeUnmount(() => {
       }
 
       .pd-g-4-text2 {
-position: absolute;
-    font-family: "Copper";
-    font-size: 23px;
-    line-height: 1;
-    color: #efe8db;
-    text-align: center;
-    margin-top: 50px;
-    width: 100%;
-    /* left: 585px; */
-    text-align: center;
-    /* margin-left: -50px; */
-    top: 11px;
+        position: absolute;
+        font-family: "Copper";
+        font-size: 23px;
+        line-height: 1;
+        color: #efe8db;
+        text-align: center;
+        margin-top: 50px;
+        width: 100%;
+        /* left: 585px; */
+        text-align: center;
+        /* margin-left: -50px; */
+        top: 11px;
         z-index: 10;
       }
     }

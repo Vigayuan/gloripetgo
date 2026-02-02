@@ -164,14 +164,14 @@ const pdInfo = reactive({
   pdDetail: [
     {
       title: "Net weight:",
-      desc: "5.5LB/2.5kg",
+      desc: "5.5lb/2.5kg",
     },
     {
       title: "Food form:",
       desc: "Raw Mix",
     },
     {
-      title: "Life Stage:",
+      title: "Life stage:",
       desc: "All life stages",
     },
   ],

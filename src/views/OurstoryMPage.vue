@@ -77,8 +77,7 @@
             vitality—leading to cleaner bowls and happier, healthier cats</div>
         </div>
         <div class="right">
-          <Swiper :modules="modules" :loop="true" :slides-per-view="1" :pagination="{ clickable: true }"
-            :autoplay="{ delay: 4000, disableOnInteraction: false }"  class="pd-swiper-box">
+          <Swiper :modules="modules" :loop="true" :slides-per-view="1" :pagination="{ clickable: true }" :autoplay="{ delay: 4000, disableOnInteraction: false }" class="pd-swiper-box">
             <SwiperSlide>
               <div class="pd-slide-item">
                 <img src="../assets/imgs/why/swp-1.png" alt="">
@@ -284,7 +283,7 @@ onMounted(() => {
     },
     {
       threshold: 0.3, // 进入 10% 可视区域时触发
-      rootMargin: "0px 0px -30% 0px", // 提前 30% 触发
+      rootMargin: "0px 0px 0px 0px", // 提前 30% 触发
     }
   );
   if (boxRef.value) observer1.observe(boxRef.value);
@@ -295,8 +294,8 @@ onMounted(() => {
       showMission.value = entry.isIntersecting;
     },
     {
-      threshold: 0,
-      rootMargin: "0px 0px -50% 0px", // 比 box 晚一点触发
+      threshold: 0.3,
+      rootMargin: "0px 0px -10% 0px", // 比 box 晚一点触发
     }
   );
   if (missionRef.value) observer2.observe(missionRef.value);
@@ -316,7 +315,7 @@ onBeforeUnmount(() => {
 .landing-page {
   width: 100%;
   background: #eee8da;
-
+  overflow: hidden;
   .hero {
     position: relative;
     font-size: 0;
@@ -355,6 +354,10 @@ onBeforeUnmount(() => {
     position: relative;
     font-size: 0;
     line-height: 0;
+    width: 100%;
+    img {
+      width: 100%;
+    }
   }
 
   @keyframes dropIn {
@@ -415,7 +418,7 @@ onBeforeUnmount(() => {
       line-height: 1.2;
       text-align: center;
       opacity: 0;
-      transform: translateY(1000px);
+      transform: translateY(150px);
       transition: all 0.8s ease-out;
 
       &.showBox {
@@ -487,7 +490,7 @@ onBeforeUnmount(() => {
       text-align: center;
       color: #fff;
       opacity: 0;
-      transform: translateY(1000px);
+      transform: translateY(150px);
       transition: all 0.8s ease-out;
 
       &.showMission {
@@ -503,7 +506,7 @@ onBeforeUnmount(() => {
       text-align: center;
       color: #fff;
       opacity: 0;
-      transform: translateY(1000px);
+      transform: translateY(150px);
       transition: all 0.8s ease-out;
       margin-top: 8px;
 
@@ -545,6 +548,9 @@ onBeforeUnmount(() => {
           margin-top: 20px;
           width: 80%;
         }
+        img {
+          width: 100%;
+        }
       }
 
       .right {
@@ -560,7 +566,7 @@ onBeforeUnmount(() => {
             position: relative;
             text-align: right;
             color: #212995;
-            img{
+            img {
               width: 100%;
             }
           }
@@ -608,6 +614,9 @@ onBeforeUnmount(() => {
 
       .left {
         width: 100%;
+        img {
+          width: 100%;
+        }
       }
 
       .center {
@@ -630,14 +639,17 @@ onBeforeUnmount(() => {
           text-align: center;
           color: #1f160b;
         }
-        .icon-cat{
+        .icon-cat {
           width: 29px;
-          margin:  30px auto;
+          margin: 30px auto;
         }
       }
 
       .right {
         width: 100%;
+        img {
+          width: 100%;
+        }
       }
     }
   }

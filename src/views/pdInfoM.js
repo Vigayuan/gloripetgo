@@ -36,7 +36,7 @@ const catPageInfo1 = { //绿色 --》id 3
             desc: "3 lb (1.36 kg)"
         },
         {
-            title: "Life Stage",
+            title: "Life stage",
             desc: "All life stages"
         }
     ],
@@ -120,7 +120,7 @@ const catPageInfo2 = {
             desc: "3 lb (1.36 kg)"
         },
         {
-            title: "Life Stage",
+            title: "Life stage",
             desc: "All life stages"
         }
     ],
@@ -204,7 +204,7 @@ const dogPageInfo = {
             desc: "3 lb (1.36 kg)"
         },
         {
-            title: "Life Stage",
+            title: "Life stage",
             desc: "All life stages"
         }
     ],

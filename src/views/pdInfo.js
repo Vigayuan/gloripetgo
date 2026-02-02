@@ -22,9 +22,9 @@ const pdInfo1 = {
         "Soluble chloride ",
     ],
     pdDetail: [
-        { title: "Net weight:", desc: "5.5LB/2.5kg" },
+        { title: "Net weight:", desc: "5.5lb/2.5kg" },
         { title: "Food form:", desc: "Kibble" },
-        { title: "Life Stage:", desc: "All life stages" },
+        { title: "Life stage:", desc: "All life stages" },
     ],
     Ingredients: [
         {
@@ -76,9 +76,9 @@ const pdInfo2 = {
         "Soluble chloride ",
     ],
     pdDetail: [
-        { title: "Net weight:", desc: "5.5LB/2.5kg" },
+        { title: "Net weight:", desc: "5.5lb/2.5kg" },
         { title: "Food form:", desc: "Raw Mix" },
-        { title: "Life Stage:", desc: "All life stages" },
+        { title: "Life stage:", desc: "All life stages" },
     ],
     Ingredients: [
         {
@@ -130,9 +130,9 @@ const pdInfo3 = {
         "Soluble chloride ",
     ],
     pdDetail: [
-        { title: "Net weight:", desc: "5.5LB/2.5kg" },
+        { title: "Net weight:", desc: "5.5lb/2.5kg" },
         { title: "Food form:", desc: "Kibble" },
-        { title: "Life Stage:", desc: "All life stages" },
+        { title: "Life stage:", desc: "All life stages" },
     ],
     Ingredients: [
         {
