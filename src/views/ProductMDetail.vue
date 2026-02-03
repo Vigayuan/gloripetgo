@@ -263,6 +263,7 @@ watch(
   font-family: "Segoe UI", sans-serif;
   color: #333;
   background: #efe8db;
+  overflow:hidden;
 
   .product-wrapper {
     background: #efe8db;

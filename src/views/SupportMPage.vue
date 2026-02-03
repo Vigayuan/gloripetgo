@@ -120,6 +120,7 @@ const clearForm = () => {
 <style lang="scss" scoped>
 .landing-page {
   width: 100%;
+  overflow: hidden;
   background: #e8e8e8;
 
   .hero {

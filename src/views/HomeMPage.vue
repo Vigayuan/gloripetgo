@@ -238,6 +238,7 @@ onBeforeUnmount(() => {
 .landing-page {
   width: 100%;
   background: #e8e8e8;
+  overflow:hidden;
 
   .landing-content-line {
     width: 100%;
